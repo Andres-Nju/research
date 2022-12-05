@@ -1,0 +1,2 @@
+- Problem
+  - Existing research either predominantly uses coarse-grained Version Control System (VCS) snapshots as the primary source of code evolution data or considers only a small subset of program transformations of a single kind — refactorings.
