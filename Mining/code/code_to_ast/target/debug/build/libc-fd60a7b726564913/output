@@ -11,4 +11,3 @@ cargo:rustc-cfg=libc_cfg_target_vendor
 cargo:rustc-cfg=libc_non_exhaustive
 cargo:rustc-cfg=libc_ptr_addr_of
 cargo:rustc-cfg=libc_underscore_const_names
-cargo:rustc-cfg=libc_const_extern_fn
