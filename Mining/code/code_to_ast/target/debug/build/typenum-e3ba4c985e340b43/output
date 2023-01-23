@@ -1,0 +1,3 @@
+cargo:rerun-if-changed=build/main.rs
+cargo:rustc-env=TYPENUM_BUILD_CONSTS=/Users/zcq/Documents/GitHub/research/Mining/code/code_to_ast/target/debug/build/typenum-e3ba4c985e340b43/out/consts.rs
+cargo:rustc-env=TYPENUM_BUILD_OP=/Users/zcq/Documents/GitHub/research/Mining/code/code_to_ast/target/debug/build/typenum-e3ba4c985e340b43/out/op.rs

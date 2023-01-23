@@ -1,0 +1,7 @@
+- 不同于传统的bug detection都使用命令式语言，把detection的内容（what）和方法（how）都做的很详尽，加重了detector的维护和更新——增量式
+- JavaDL使用基于Datalog语言的声明式编程
+  - 过去的bug checker都是黑盒
+  - 开发一种新的clear-box的bug detection，能够处理user-specified detector
+    - exhaustively：在整个项目上跑
+    - incrementally：在程序被改动的部分上跑
+- Syntactic pattern matching

@@ -9,7 +9,7 @@
     - 问题：有些bug修复可能要花上开发者很长时间、很多个commit —— 人工检查代码修改不现实
     - 解决：减小搜索的范围 —— 基于bug的修复来为bug pattern进行归类。
     - 基于commit而不是bug report：commit一般都会指向对应的bug report，并且有时候开发者不会报bug report
-  - 具体：只考虑修改量在1-6条statement的commit （研究表明频繁的cross-project的bug修复一般每次修改6条或一下的语句）
+  - 具体：只考虑修改量在1-6条statement的commit （研究表明**频繁的cross-project**的bug修复一般每次修改6条或以下的语句）
 
 - 筛出来的commit还会有很多非频繁的bug，很难人工检查，所以要考虑自动化group related bug pattern的方法
 
@@ -65,3 +65,11 @@
     - summerizing：记录每个conmit的信息：包括代码行的变化、message、bug report的链接（如果有的话），summary中包含了bug pattern的描述（即bug与修复的内容）
     - grouping：基于前面每条bug与修复的描述，对bug pattern进行分组
     - reviewing：全部分组好之后检查是否需要合并/分离出一些group
+
+
+
+- **RQ**
+  - **What basic change types exist in JavaScript?**
+  - **What change types exist in JavaScript?**
+  - **What pervasive bug patterns exist in JavaScript?**
+
