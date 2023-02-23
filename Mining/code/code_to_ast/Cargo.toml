@@ -1,4 +1,4 @@
-cargo-features = ["edition2021"]
+# cargo-features = ["edition2021"]
 
 [package]
 name = "code_to_ast"
@@ -9,6 +9,6 @@ edition = "2021"
 
 [dependencies]
 rustc-ap-rustc_lexer = "727.0.0"
-# rustc_parse = {path = "../rust-master/compiler/rustc_parse"}
-# rustc_driver = {path = "../rust-master/compiler/rustc_driver"}
-# rustc-ap-rustc_parse = "727.0.0"
+rustc_parse = {path = "../../../..//rust/compiler/rustc_parse"}
+syn = { version = "1.0.107", features = ["full", "extra-traits"] }
+gag = "1.0.0"

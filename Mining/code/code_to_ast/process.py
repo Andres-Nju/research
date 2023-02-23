@@ -1,21 +1,27 @@
 import os
 
-root_dir = 'ASTs'
+root_dir = '../ASTs'
 
 
 if __name__ == '__main__':
     cur_path = os.getcwd() # 当前目录
     # 创建总文件夹
-    root_dir = cur_path + "/" + root_dir
+    os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+    os.path.abspath(os.path.dirname(os.getcwd()))
+    father_dir = os.path.abspath(os.path.join(os.getcwd(), ".."))
+    print(father_dir)
+    # root_dir = cur_path + "/" + root_dir
+    root_dir = father_dir + "/" + root_dir
     if not os.path.exists(root_dir):
         os.mkdir(root_dir)
     '''with open("repos.txt", 'r') as repos:
         for repo in repos.readlines():
             repo_name = repo.split('/')[1].strip()'''
 
-    os.system("rustc code_to_ast/src/main.rs")
+    # os.system("rustc code_to_ast/src/main.rs")
     
-    code_dir = cur_path + '/Codes' 
+    # code_dir = cur_path + '/Codes' 
+    code_dir = father_dir + '/Codes'
 
     with os.scandir(code_dir) as Codes:
         for repo in Codes: # repo level
@@ -35,5 +41,5 @@ if __name__ == '__main__':
                                         continue
                                     method_file = file_dir + '/' + method.name
                                     #os.system("rustc code_to_ast/src/main.rs")
-                                    os.system("./main " + method.path + " " + method_file)
+                                    os.system("cargo run " + method.path + " " + method_file)
                             
