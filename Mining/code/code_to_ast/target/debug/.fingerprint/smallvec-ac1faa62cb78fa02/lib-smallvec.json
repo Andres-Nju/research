@@ -1,0 +1,1 @@
+{"rustc":2756628073037347729,"features":"[\"may_dangle\", \"union\"]","target":15021638563153388439,"profile":12637318739757120569,"path":11622675509641765945,"deps":[],"local":[{"CheckDepInfo":{"dep_info":"debug/.fingerprint/smallvec-ac1faa62cb78fa02/dep-lib-smallvec"}}],"rustflags":[],"metadata":15767570753543272391,"config":2202906307356721367,"compile_kind":0}
