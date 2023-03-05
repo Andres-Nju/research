@@ -1,6 +1,6 @@
 import os
 
-root_dir = 'ASTs'
+root_dir = 'AST'
 
 
 if __name__ == '__main__':

@@ -10,7 +10,7 @@
 
 
 
-### search.py
+### code/search.py
 ```shell
 python3 search.py repos.txt
 ```
@@ -29,7 +29,7 @@ python3 search.py repos.txt
 
 筛选条件：**改动条数在6行以内，commit message关键词**
 
-### process.py
+### code/process.py
 
 遍历search.py中生成的所有文件，对每个method生成对应的rust AST，文件排布和前者类似
 

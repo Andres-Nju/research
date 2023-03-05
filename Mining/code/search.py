@@ -8,9 +8,8 @@ from pydriller import Repository
 from pydriller import ModificationType
 from urllib.parse import parse_qs, urlparse
 
-root_dir = "Codes"
-
-
+root_dir = "Code"
+LINES_THRESH = 10
  
 # 获取source code指定行的内容
 def get_content(source_code:str, start_line:int, end_line:int):
@@ -61,6 +60,8 @@ if __name__ == '__main__':
             for commit in Repository(repo_name, only_modifications_with_file_types=['.rs']).traverse_commits():
             #for commit in Repository(repo_name).traverse_commits():
                 #print(commit.hash[:10])
+                if commit.lines > LINES_THRESH:
+                    continue
                 commit_dir = repo_dir + '/' + commit.hash[:10].strip()
                 if os.path.exists(commit_dir):
                     continue
