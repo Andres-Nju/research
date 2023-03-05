@@ -5,6 +5,7 @@ import time
 import csv
 import os
 from pydriller import Repository
+from pydriller import ModificationType
 from urllib.parse import parse_qs, urlparse
 
 root_dir = "Codes"
@@ -75,11 +76,13 @@ if __name__ == '__main__':
                 added_lines: number of lines added
                 deleted_lines: number of lines removed
                 '''
+                # 根据msg做过滤
                 print(commit.msg)
 
                 for modified_file in commit.modified_files:
                     # changed_methods && methods_before
-                    if '.rs' in modified_file.filename and modified_file.content_before is not None and modified_file.content is not None: # 需要改动前和改动后的文件都不为None
+                    # if '.rs' in modified_file.filename and modified_file.content_before is not None and modified_file.content is not None: # 需要改动前和改动后的文件都不为None
+                    if '.rs' in modified_file.filename and (modified_file.change_type == ModificationType.RENAME or modified_file.change_type == ModificationType.MODIFY):
                         file_dir = commit_dir + '/' + modified_file.filename.split('.')[0].strip()
                         if os.path.exists(file_dir):
                             continue

@@ -42,3 +42,11 @@ python3 search.py repos.txt
 2、对改动前后对应的diff设计抽象，确定Change type和type类型（后续可以添加上下文信息），重点是先确定Change type，即Inserted/Removed/Updated
 
 3、确定聚类的特征向量的维度
+
+
+
+
+
+1、找10个5、6行修改的代码片段，用diffsitter测试
+
+2、找其他几个工具，对比输出结果
