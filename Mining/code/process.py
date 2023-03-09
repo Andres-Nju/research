@@ -1,6 +1,6 @@
 import os
 
-root_dir = 'AST'
+root_dir = 'ASTs'
 
 
 if __name__ == '__main__':
@@ -8,10 +8,10 @@ if __name__ == '__main__':
     # 创建总文件夹
     os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
     os.path.abspath(os.path.dirname(os.getcwd()))
-    father_dir = os.path.abspath(os.path.join(os.getcwd(), ".."))
-    print(father_dir)
-    # root_dir = cur_path + "/" + root_dir
-    root_dir = father_dir + "/" + root_dir
+    # father_dir = os.path.abspath(os.path.join(os.getcwd(), ".."))
+    # print(father_dir)
+    root_dir = cur_path + "/" + root_dir
+    # root_dir = father_dir + "/" + root_dir
     if not os.path.exists(root_dir):
         os.mkdir(root_dir)
     '''with open("repos.txt", 'r') as repos:
@@ -20,9 +20,9 @@ if __name__ == '__main__':
 
     # os.system("rustc code_to_ast/src/main.rs")
     
-    # code_dir = cur_path + '/Codes' 
-    code_dir = father_dir + '/Codes'
-
+    code_dir = cur_path + '/Codes' 
+    # code_dir = father_dir + '/Codes'
+    # os.system("cargo build")
     with os.scandir(code_dir) as Codes:
         for repo in Codes: # repo level
             repo_dir = root_dir + '/' + repo.name
@@ -41,5 +41,8 @@ if __name__ == '__main__':
                                         continue
                                     method_file = file_dir + '/' + method.name
                                     #os.system("rustc code_to_ast/src/main.rs")
-                                    os.system("cargo run " + method.path + " " + method_file)
+                                    
+                                    os.system("./get_tree/target/debug/get_tree " + method.path + " " + method_file)
                             
+
+    print("ASTs genaration finished")

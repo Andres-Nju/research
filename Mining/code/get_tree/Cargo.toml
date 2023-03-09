@@ -11,3 +11,4 @@ cc = "1.0"
 
 [dependencies]
 tree-sitter = "0.20.9"
+gag = "1.0.0"

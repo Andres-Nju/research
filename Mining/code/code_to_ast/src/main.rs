@@ -16,6 +16,10 @@ fn read_file(file_name:&str) -> String {
 fn main() {
     let args: Vec<String> = env::args().collect();
 
+
+    println!("{:?}", &args[1][..]);
+    println!("{:?}", &args[2][..]);
+
     let method_path = &args[1][..];
     let ast_path = &args[2][..];
 

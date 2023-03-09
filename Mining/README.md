@@ -25,28 +25,63 @@ python3 search.py repos.txt
 4. 获取改动前后的method信息（名称、在源文件中的起始行与结束行），并过滤出**在文件改动前后都出现**的method（即过滤掉method被add/delete的情况，仅保留modify）
 5. 获取到改动前后的method源代码，并存入文件，文件排布为 仓库——commit——改动文件——method\_改动前、method\_改动后
 
-变量root_dir为生成改动代码的根目录
+​	变量root_dir为生成改动代码的根目录
 
-筛选条件：**改动条数在6行以内，commit message关键词**
+#### 筛选条件：
 
-### code/process.py
+**改动条数在6行以内，**
 
-遍历search.py中生成的所有文件，对每个method生成对应的rust AST，文件排布和前者类似
-
-
-
-### 下阶段任务
-
-1、搞一个diff的工具，将改动前后的代码每行继续map对应起来
-
-2、对改动前后对应的diff设计抽象，确定Change type和type类型（后续可以添加上下文信息），重点是先确定Change type，即Inserted/Removed/Updated
-
-3、确定聚类的特征向量的维度
+**TODO: commit message关键词**
 
 
 
+### code/get_tree
+
+- tree-sitter::parser::parse()：将源文件转化为tree-sitter::Tree
+- tree-sitter::Tree.walk(): 获取TreeCursor用以遍历Tree
 
 
-1、找10个5、6行修改的代码片段，用diffsitter测试
 
-2、找其他几个工具，对比输出结果
+#### 生成的AST
+
+**获取的tree-sitter::Tree节点类型：**
+
+- 首先每个源文件
+
+### **difftsatic**
+
+```shell
+difft --display side-by-side-show-both --context 0 test1.rs test2.rs
+```
+
+- --display：显式模式：side-by-side-show-both：显式改动前后的对照
+- --context：显式的源代码改动中包含的上下文行数
+
+
+
+### 特征向量抽象：
+
+- change type：
+  - insert：使用difftsatic显示的前后改动中 左边没有，右边有
+  - delete：使用difftsatic显示的前后改动中 左边有，右边没有
+  - update：使用difftsatic显示的前后改动中 左边有，右边也有
+- context：
+  - 使用TreeCursor在tree-sitter::Tree中遍历
+
+
+
+
+
+
+
+## 跑起来可能会crash的点：
+
+- pydriller遍历commit崩了
+- tree-sitter::parse语法分析器解析失败
+
+#### 下周任务：确定context中的节点
+
+
+
+
+

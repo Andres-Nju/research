@@ -1,28 +1,35 @@
+use std::env;
+use std::fs;
+mod tree;
 
-use tree_sitter::{Parser, Language};
-
-extern "C" { fn tree_sitter_rust() -> Language; }
 fn main() {
+    // resolve the args
+    let args: Vec<String> = env::args().collect();
+    let method_path = &args[1][..];
+    let ast_path = &args[2][..];
 
-    let mut parser = Parser::new();
-    let language = unsafe { tree_sitter_rust() };
+    let mut rust_parser = tree::create_rust_parser(); // get a new rust parser
+
+
+    let res = fs::read_to_string(method_path);
+    match res {
+        Ok(source_code) => {
+            // source_code为读入的method代码
+            let option_tree = rust_parser.parse(&source_code[..], None);
+            match option_tree {
+                Some(ast_tree) => {
+                    tree::write_tree_to_file(ast_path, &source_code[..], &ast_tree);
+                },
+                None => {
+                    println!("parse file {} failed", method_path);
+                    return;
+                }
+            };
+        },
+        Err(error) => {
+            println!("open file {} failed", method_path);
+            return;
+        }
+    };
     
-    parser.set_language(language).unwrap();
-
-    let source_code = 
-"fn main(){
-    let b = 1;
-
-    let s = String::from(\"23\");
-    if (b >= 0){
-        b = 1;
-    }
-}";
-    let tree = parser.parse(source_code, None).unwrap();
-    let root_node = tree.root_node();
-
-    println!("{:?}", tree);
-    // assert_eq!(root_node.kind(), "source_file");
-    // assert_eq!(root_node.start_position().column, 0);
-    // assert_eq!(root_node.end_position().column, 12);
 }
