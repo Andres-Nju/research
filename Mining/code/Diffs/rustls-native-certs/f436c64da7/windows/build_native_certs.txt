@@ -1,0 +1,11 @@
+Codes/rustls-native-certs/f436c64da7/windows/build_native_certs_after.rs --- Rust
+11         match builder.load_der(cert.to_der().to_vec()) {  11         if let Err(err) = builder.load_der(cert.to_der().
+..                                                           .. to_vec()) {
+12             Err(err) => {                                 .. 
+13                 first_error = first_error                 12             first_error = first_error
+14                     .or_else(|| Some(Error::new(ErrorKind 13                 .or_else(|| Some(Error::new(ErrorKind::In
+.. ::InvalidData, err)));                                    .. validData, err)));
+15             }                                             .. 
+16             _ => {}                                       .. 
+17         };                                                14         }
+

@@ -1,0 +1,19 @@
+Codes/rustls-native-certs/3b31b4e4c2/smoketests/check_site_after.rs --- 1/2 --- Rust
+ 7     let mut config = rustls::ClientConfig::new();          7     let config = rustls::ClientConfig::builder()
+ 8     config.root_store = roots;                             8         .with_safe_defaults()
+ 9                                                            9         .with_root_certificates(roots)
+10     let dns_name = webpki::DNSNameRef::try_from_ascii_str 10         .with_no_client_auth();
+.. (domain)                                                  .. 
+11         .unwrap();                                        11 
+12     let mut sess = rustls::ClientSession::new(&Arc::new(c 12     let mut conn =
+.. onfig), dns_name);                                        .. 
+..                                                           13         rustls::ClientConnection::new(Arc::new(config), d
+..                                                           .. omain.try_into().unwrap()).unwrap();
+13     let mut sock = TcpStream::connect(format!("{}:443", d 14     let mut sock = TcpStream::connect(format!("{}:443", d
+.. omain)).unwrap();                                         .. omain)).unwrap();
+14     let mut tls = rustls::Stream::new(&mut sess, &mut soc 15     let mut tls = rustls::Stream::new(&mut conn, &mut soc
+   k);                                                          k);
+
+Codes/rustls-native-certs/3b31b4e4c2/smoketests/check_site_after.rs --- 2/2 --- Rust
+20               .as_bytes())                                25         .as_bytes(),
+

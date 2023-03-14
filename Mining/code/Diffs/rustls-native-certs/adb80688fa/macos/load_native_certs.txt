@@ -1,0 +1,28 @@
+Codes/rustls-native-certs/adb80688fa/macos/load_native_certs_after.rs --- 1/5 --- Text (1 error, exceeded DFT_PARSE_ERROR_LIMIT)
+1 pub fn load_native_certs() -> PartialResult<RootCertStore,   
+.  Error> {                                                     
+2     let mut store = RootCertStore::empty();                  
+
+Codes/rustls-native-certs/adb80688fa/macos/load_native_certs_after.rs --- 2/5 --- Text (1 error, exceeded DFT_PARSE_ERROR_LIMIT)
+20             .map_err(|err| (None, Error::new(ErrorKind::O 17             .map_err(|err| Error::new(ErrorKind::Other, e
+   ther, err)))?;                                               rr))?;
+
+Codes/rustls-native-certs/adb80688fa/macos/load_native_certs_after.rs --- 3/5 --- Text (1 error, exceeded DFT_PARSE_ERROR_LIMIT)
+32                 .map_err(|err| (None, Error::new(ErrorKin 29                 .map_err(|err| Error::new(ErrorKind::Othe
+   d::Other, err)))?                                            r, err))?
+
+Codes/rustls-native-certs/adb80688fa/macos/load_native_certs_after.rs --- 4/5 --- Text (1 error, exceeded DFT_PARSE_ERROR_LIMIT)
+48                 match store.add(&rustls::Certificate(der) 45                 match builder.load_der(der) {
+   ) {                                                          
+
+Codes/rustls-native-certs/adb80688fa/macos/load_native_certs_after.rs --- 5/5 --- Text (1 error, exceeded DFT_PARSE_ERROR_LIMIT)
+61         if store.is_empty() {                             58         Err(err)
+62             Err((None, err))                              .. 
+63         } else {                                          .. 
+64             Err((Some(store), err))                       .. 
+65         }                                                 .. 
+66     } else {                                              59     } else {
+67         Ok(store)                                         60         Ok(())
+68     }                                                     61     }
+69 }                                                         62 }
+

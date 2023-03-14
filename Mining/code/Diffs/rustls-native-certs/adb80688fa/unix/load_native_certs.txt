@@ -1,0 +1,21 @@
+Codes/rustls-native-certs/adb80688fa/unix/load_native_certs_after.rs --- 1/2 --- Text (1 error, exceeded DFT_PARSE_ERROR_LIMIT)
+1 pub fn load_native_certs() -> PartialResult<RootCertStore, . 
+.  Error> {                                                     
+2     let likely_locations = openssl_probe::probe();         . 
+3     let mut store = RootCertStore::empty();                . 
+4     let mut first_error = None;                            1     let mut first_error = None;
+5                                                            2 
+6     if let Some(file) = likely_locations.cert_file {       3     if let Some(file) = likely_locations.cert_file {
+7         match load_file(&mut store, &file) {               4         match load_file(builder, &file) {
+
+Codes/rustls-native-certs/adb80688fa/unix/load_native_certs_after.rs --- 2/2 --- Text (1 error, exceeded DFT_PARSE_ERROR_LIMIT)
+16         if store.is_empty() {                             13         Err(err)
+17             Err((None, err))                              .. 
+18         } else {                                          .. 
+19             Err((Some(store), err))                       .. 
+20         }                                                 .. 
+21     } else {                                              14     } else {
+22         Ok(store)                                         15         Ok(())
+23     }                                                     16     }
+24 }                                                         17 }
+

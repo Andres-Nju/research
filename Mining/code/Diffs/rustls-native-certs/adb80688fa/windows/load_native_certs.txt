@@ -1,0 +1,25 @@
+Codes/rustls-native-certs/adb80688fa/windows/load_native_certs_after.rs --- 1/3 --- Text (1 error, exceeded DFT_PARSE_ERROR_LIMIT)
+1 pub fn load_native_certs() -> PartialResult<RootCertStore,   
+.  Error> {                                                     
+2     let mut store = RootCertStore::empty();                  
+3     let mut first_error = None;                              
+4                                                            1 
+5     let current_user_store = schannel::cert_store::CertSto 2     let current_user_store = schannel::cert_store::CertSto
+. re::open_current_user("ROOT")                                re::open_current_user("ROOT")?;
+6         .map_err(|err| (None, err))?;                        
+
+Codes/rustls-native-certs/adb80688fa/windows/load_native_certs_after.rs --- 2/3 --- Text (1 error, exceeded DFT_PARSE_ERROR_LIMIT)
+13         match store.add(&rustls::Certificate(cert.to_der( 9         match builder.load_der(cert.to_der().to_vec()) {
+   ).to_vec())) {                                              
+
+Codes/rustls-native-certs/adb80688fa/windows/load_native_certs_after.rs --- 3/3 --- Text (1 error, exceeded DFT_PARSE_ERROR_LIMIT)
+23         if store.is_empty() {                             19         Err(err)
+24             Err((None, err))                              .. 
+25         } else {                                          .. 
+26             Err((Some(store), err))                       .. 
+27         }                                                 .. 
+28     } else {                                              20     } else {
+29         Ok(store)                                         21         Ok(())
+30     }                                                     22     }
+31 }                                                         23 }
+

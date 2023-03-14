@@ -1,0 +1,14 @@
+Codes/rustls-native-certs/adb80688fa/lib/load_native_certs_after.rs --- 1/2 --- Rust
+1 pub fn load_native_certs() -> PartialResult<RootCertStore, 1 /// snapshop of the root certificates found on this platfo
+.  Error> {                                                  . rm.  This
+2     platform::load_native_certs()                          2 /// function fails in a platform-specific way, expressed i
+.                                                            . n a `std::io::Error`.
+3 }                                                          3 ///
+
+Codes/rustls-native-certs/adb80688fa/lib/load_native_certs_after.rs --- 2/2 --- Rust
+1 pub fn load_native_certs() -> PartialResult<RootCertStore, 1 /// snapshop of the root certificates found on this platfo
+.  Error> {                                                  . rm.  This
+2     platform::load_native_certs()                          2 /// function fails in a platform-specific way, expressed i
+.                                                            . n a `std::io::Error`.
+3 }                                                          3 ///
+

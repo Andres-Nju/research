@@ -1,0 +1,19 @@
+Codes/rustls-native-certs/52c77e234c/unix/load_file_after.rs --- Text (1 error, exceeded DFT_PARSE_ERROR_LIMIT)
+ 1 fn load_file(certs: &mut Vec<Certificate>, path: &Path) - 1 
+ . > Result<(), Error> {                                     . 
+ 2     let f = File::open(&path)?;                           2     match likely_locations.cert_file {
+ 3     let mut f = BufReader::new(f);                        . 
+ 4     match rustls_pemfile::certs(&mut f) {                 . 
+ 5         Ok(contents) => {                                 3         Some(cert_file) => load_pem_certs(&cert_file),
+ 6             certs.extend(contents.into_iter().map(Certifi . 
+ . cate));                                                   . 
+ 7             Ok(())                                        4         None => Ok(Vec::new())
+ 8         }                                                 . 
+ 9         Err(_) => Err(Error::new(                         . 
+10             ErrorKind::InvalidData,                       . 
+11             format!("Could not load PEM file {:?}", path) . 
+.. ,                                                         . 
+12         )),                                               . 
+13     }                                                     5     }
+14 }                                                         6 }
+

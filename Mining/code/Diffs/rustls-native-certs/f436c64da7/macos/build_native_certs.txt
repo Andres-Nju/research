@@ -1,0 +1,10 @@
+Codes/rustls-native-certs/f436c64da7/macos/build_native_certs_after.rs --- Rust
+46                 match builder.load_der(der) {             46                 if let Err(err) = builder.load_der(der) {
+47                     Err(err) => {                         .. 
+48                         first_error = first_error         47                     first_error = first_error
+49                             .or_else(|| Some(Error::new(E 48                         .or_else(|| Some(Error::new(Error
+.. rrorKind::InvalidData, err)));                            .. Kind::InvalidData, err)));
+50                     }                                     .. 
+51                     _ => {}                               .. 
+52                 };                                        49                 }
+

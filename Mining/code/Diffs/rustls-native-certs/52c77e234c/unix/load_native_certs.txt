@@ -1,0 +1,16 @@
+Codes/rustls-native-certs/52c77e234c/unix/load_native_certs_after.rs --- Rust
+ 3     let mut first_error = None;                           . 
+ 4     let mut certs = Vec::new();                           . 
+ 5                                                           3 
+ 6     if let Some(file) = likely_locations.cert_file {      4     match likely_locations.cert_file {
+ 7         if let Err(err) = load_file(&mut certs, &file) {  5         Some(cert_file) => load_pem_certs(&cert_file),
+ 8             first_error = first_error.or(Some(err));      6         None => Ok(Vec::new())
+ 9         }                                                 . 
+10     }                                                     7     }
+11                                                             
+12     if let Some(err) = first_error {                        
+13         Err(err)                                            
+14     } else {                                                
+15         Ok(certs)                                           
+16     }                                                       
+

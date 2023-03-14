@@ -1,0 +1,27 @@
+Codes/rustls-native-certs/7368224e2c/linux/load_native_certs_after.rs --- Rust
+1 pub fn load_native_certs() -> Result<RootCertStore, Error>  1 pub fn load_native_certs() -> crate::PartialResult<RootCer
+.  {                                                          . tStore, Error> {
+2     let likely_locations = openssl_probe::probe();          2     let likely_locations = openssl_probe::probe();
+3     let mut store = RootCertStore::empty();                 3     let mut store = RootCertStore::empty();
+.                                                             4     let mut first_error = None;
+4                                                             5 
+5     if let Some(file) = likely_locations.cert_file {        6     if let Some(file) = likely_locations.cert_file {
+6         load_file(&mut store, &file)?;                      7         match load_file(&mut store, &file) {
+.                                                             8             Err(err) => {
+.                                                             9                 first_error = first_error.or_else(|| Some(
+.                                                             . err));
+.                                                            10             }
+.                                                            11             _ => {}
+.                                                            12         }
+7     }                                                      13     }
+8                                                            14 
+.                                                            15     if let Some(err) = first_error {
+.                                                            16         if store.is_empty() {
+.                                                            17             Err((None, err))
+.                                                            18         } else {
+.                                                            19             Err((Some(store), err))
+.                                                            20         }
+.                                                            21     } else {
+9     Ok(store)                                              22         Ok(store)
+                                                             23     }
+

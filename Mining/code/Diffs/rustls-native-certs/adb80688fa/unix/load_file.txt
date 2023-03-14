@@ -1,0 +1,13 @@
+Codes/rustls-native-certs/adb80688fa/unix/load_file_after.rs --- 1/2 --- Text (2 errors, exceeded DFT_PARSE_ERROR_LIMIT)
+1 fn load_file(store: &mut RootCertStore, path: &Path) -> Re   
+. sult<(), Error> {                                             
+2     let f = File::open(&path)?;                              
+3     let mut f = BufReader::new(f);                         1     let mut f = BufReader::new(f);
+4     if store.add_pem_file(&mut f).is_err() {               2     if builder.load_pem_file(&mut f).is_err() {
+
+Codes/rustls-native-certs/adb80688fa/unix/load_file_after.rs --- 2/2 --- Text (2 errors, exceeded DFT_PARSE_ERROR_LIMIT)
+10 }                                                          8 }
+                                                              9 
+                                                             10 pub fn build_native_certs<B: RootStoreBuilder>(builder: &
+                                                                mut B) -> Result<(), Error> {
+

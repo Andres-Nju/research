@@ -1,0 +1,37 @@
+Codes/rustls-native-certs/7368224e2c/macos/load_native_certs_after.rs --- 1/6 --- Rust
+1 pub fn load_native_certs() -> Result<RootCertStore, Error> 1 pub fn load_native_certs() -> PartialResult<RootCertStore,
+.  {                                                         .  Error> {
+
+Codes/rustls-native-certs/7368224e2c/macos/load_native_certs_after.rs --- 2/6 --- Rust
+20             .map_err(|err| Error::new(ErrorKind::Other, e 20             .map_err(|err| (None, Error::new(ErrorKind::O
+   rr))?;                                                       ther, err)))?;
+
+Codes/rustls-native-certs/7368224e2c/macos/load_native_certs_after.rs --- 3/6 --- Rust
+32                 .map_err(|err| Error::new(ErrorKind::Othe 32                 .map_err(|err| (None, Error::new(ErrorKin
+   r, err))?                                                    d::Other, err)))?
+
+Codes/rustls-native-certs/7368224e2c/macos/load_native_certs_after.rs --- 4/6 --- Rust
+                                                              40     let mut first_error = None;
+
+Codes/rustls-native-certs/7368224e2c/macos/load_native_certs_after.rs --- 5/6 --- Rust
+46                 store.add(&rustls::Certificate(der))      48                 match store.add(&rustls::Certificate(der)
+..                                                           .. ) {
+..                                                           49                     Err(err) => {
+..                                                           50                         first_error = first_error
+47                     .map_err(|err| Error::new(ErrorKind:: 51                             .or_else(|| Some(Error::new(E
+   InvalidData, err))?;                                      .. rrorKind::InvalidData, err)));
+                                                             52                     }
+                                                             53                     _ => {}
+                                                             54                 };
+
+Codes/rustls-native-certs/7368224e2c/macos/load_native_certs_after.rs --- 6/6 --- Rust
+..                                                           60     if let Some(err) = first_error {
+..                                                           61         if store.is_empty() {
+..                                                           62             Err((None, err))
+..                                                           63         } else {
+..                                                           64             Err((Some(store), err))
+..                                                           65         }
+..                                                           66     } else {
+53     Ok(store)                                             67         Ok(store)
+                                                             68     }
+

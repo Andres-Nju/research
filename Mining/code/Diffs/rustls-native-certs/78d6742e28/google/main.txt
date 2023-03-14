@@ -1,0 +1,12 @@
+Codes/rustls-native-certs/78d6742e28/google/main_after.rs --- Rust
+.                                                            2     let mut roots = rustls::RootCertStore::empty();
+.                                                            3     for cert in rustls_native_certs::load_native_certs().e
+                                                              . xpect("could not load platform certs") {
+.                                                            4         roots.add(&rustls::Certificate(cert.0)).unwrap();
+.                                                            5     }
+.                                                            6 
+2     let mut config = rustls::ClientConfig::new();          7     let mut config = rustls::ClientConfig::new();
+3     config.root_store = rustls_native_certs::load_native_c 8     config.root_store = roots;
+. erts()                                                       
+4         .expect("could not load platform certs");            
+

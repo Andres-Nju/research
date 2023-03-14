@@ -1,0 +1,29 @@
+Codes/rustls-native-certs/3b31b4e4c2/google/main_after.rs --- 1/3 --- Rust
+ 7     let mut config = rustls::ClientConfig::new();          7     let config = rustls::ClientConfig::builder()
+ 8     config.root_store = roots;                             8         .with_safe_defaults()
+ 9                                                            9         .with_root_certificates(roots)
+10     let dns_name = webpki::DNSNameRef::try_from_ascii_str 10         .with_no_client_auth();
+.. ("google.com")                                            .. 
+11         .unwrap();                                        11 
+12     let mut sess = rustls::ClientSession::new(&Arc::new(c 12     let mut conn =
+.. onfig), dns_name);                                        .. 
+..                                                           13         rustls::ClientConnection::new(Arc::new(config), "
+..                                                           .. google.com".try_into().unwrap()).unwrap();
+13     let mut sock = TcpStream::connect("google.com:443")   14     let mut sock = TcpStream::connect("google.com:443").e
+..                                                           .. xpect("cannot connect");
+14         .expect("cannot connect");                        .. 
+15     let mut tls = rustls::Stream::new(&mut sess, &mut soc 15     let mut tls = rustls::Stream::new(&mut conn, &mut soc
+   k);                                                          k);
+
+Codes/rustls-native-certs/3b31b4e4c2/google/main_after.rs --- 2/3 --- Rust
+21               .as_bytes())                                24         .as_bytes(),
+..                                                           25     )
+22         .expect("write failed");                          26     .expect("write failed");
+23     let ciphersuite = tls.sess.get_negotiated_ciphersuite 27     let ciphersuite = tls
+   ()                                                        .. 
+                                                             28         .conn
+                                                             29         .negotiated_cipher_suite()
+
+Codes/rustls-native-certs/3b31b4e4c2/google/main_after.rs --- 3/3 --- Rust
+                                                              34         ciphersuite.suite()
+
