@@ -45,6 +45,15 @@ python3 search.py repos.txt
 
 
 
+```shell
+code/get_tree/目录下：
+cargo build
+code/目录下：
+python3 gen_ast.py
+```
+
+
+
 ### code/get_tree 生成AST
 
 - tree-sitter::parser::parse()：将源文件转化为tree-sitter::Tree
@@ -74,6 +83,13 @@ python3 search.py repos.txt
 
 对于获取的每个仓库改动代码文件，使用difft指令生成改动前后代码的diff信息，并重定向写入文件。
 
+```shell
+code/目录下：
+python3 gen_diff.py
+```
+
+
+
 ### **difftsatic**
 
 ```shell
@@ -97,7 +113,7 @@ difft --display side-by-side-show-both --context 0 test1.rs test2.rs
 
     第二行是No syntactic changes的提示
 
-  - 若前后代码只有一处改动，那么会有形如如下的显示：
+  - 若前后代码只有一处改动（TODO：这里判断一处还是多处是由工具中的算法决定的），那么会有形如如下的显示：
 
     ```shell
     test2.rs --- Rust
@@ -115,6 +131,8 @@ difft --display side-by-side-show-both --context 0 test1.rs test2.rs
     TODO：如何判断是否是同一种变化？
 
     重定向后写入的文件中 同一行中前后都出现的代码表示前后的改动对应，其他的均为insert/remove
+    
+  - 若前后代码不止一处改动
 
 
 
