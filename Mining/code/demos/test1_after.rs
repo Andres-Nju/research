@@ -8,14 +8,12 @@ fn test_1()   {
         &[0x55, 0x04, 0x09] => "STREET",
         &[0x55, 0x04, 0x0a] => "O",
         &[0x55, 0x04, 0x0b] => "OU",
-        &[0x09, 0x92, 0x26, 0x89, 0x93, 0xf2, 0x2c, 0x64, 0x01, 0x19] => "domainComponent",
-        &[0x2a, 0x86, 0x48, 0x86, 0xf7, 0x0d, 0x01, 0x09, 0x01] => "emailAddress",
-        _ => panic!("unhandled x500 attr {:?}", oid)
+        _ => unreachable!("unhandled x500 attr {:?}", oid)
     };
 
     let str_value = match valuety {
         // PrintableString, UTF8String, TeletexString or IA5String
         0x0c | 0x13 | 0x14 | 0x16 => std::str::from_utf8(value.as_slice_less_safe()).unwrap(),
-        _ => panic!("unhandled x500 value type {:?}", valuety)
+        _ => unreachable!("unhandled x500 value type {:?}", valuety)
     };
 }

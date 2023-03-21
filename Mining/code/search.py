@@ -7,8 +7,9 @@ import os
 from pydriller import Repository
 from pydriller import ModificationType
 from urllib.parse import parse_qs, urlparse
+import git
 
-root_dir = "Code"
+root_dir = "Codes"
 LINES_THRESH = 10
  
 # 获取source code指定行的内容
@@ -43,6 +44,8 @@ def filter_methods(methods_before, changed_methods):
  
 if __name__ == '__main__':
 
+
+    
     cur_path = os.getcwd() # 当前目录
     # 创建总文件夹
     root_dir = cur_path + "/" + root_dir
@@ -60,6 +63,14 @@ if __name__ == '__main__':
             for commit in Repository(repo_name, only_modifications_with_file_types=['.rs']).traverse_commits():
             #for commit in Repository(repo_name).traverse_commits():
                 #print(commit.hash[:10])
+                # 根据msg做过滤
+                message = commit.msg
+                # 如果改动是clippy的，也过滤掉
+                if "clippy" in message or "Clippy" in message:
+                    continue
+                if "fix" not in message and "bug" not in message and "Bug" not in message and "Fix" not in message:
+                    continue
+                
                 if commit.lines > LINES_THRESH:
                     continue
                 commit_dir = repo_dir + '/' + commit.hash[:10].strip()
@@ -77,8 +88,7 @@ if __name__ == '__main__':
                 added_lines: number of lines added
                 deleted_lines: number of lines removed
                 '''
-                # 根据msg做过滤
-                print(commit.msg)
+                print(message)
 
                 for modified_file in commit.modified_files:
                     # changed_methods && methods_before

@@ -132,7 +132,18 @@ difft --display side-by-side-show-both --context 0 test1.rs test2.rs
 
     重定向后写入的文件中 同一行中前后都出现的代码表示前后的改动对应，其他的均为insert/remove
     
-  - 若前后代码不止一处改动
+  - 若前后代码不止一处改动，显示的内容如下
+  
+    ```shell
+    test1_after.rs --- 1/2 --- Rust
+    11         _ => unreachable!("unhandled x500 attr")                                                                                                          11         _ => unreachable!("unhandled x500 attr {:?}", oid)
+    
+    test1_after.rs --- 2/2 --- Rust
+    17         _ => unreachable!("unhandled x500 value type")                                                                                                    17         _ => unreachable!("unhandled x500 value type {:?}", valuety)
+    
+    ```
+  
+    比只有一处改动的显示，多了一个当前改动的计数1/n，2/n，...
 
 
 

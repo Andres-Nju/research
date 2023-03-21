@@ -1,0 +1,9 @@
+test1_after.rs --- 1/2 --- Rust
+ 9         &[0x55, 0x04, 0x0a] => "O",                                . 
+10         &[0x55, 0x04, 0x0b] => "OU",                               9         &[0x55, 0x04, 0x0b] => "OU",
+11         _ => unreachable!("unhandled x500 attr")                  10         _ => unreachable!("unhandled x500 attr {:?}", oid)
+
+test1_after.rs --- 2/2 --- Rust
+17         _ => unreachable!("unhandled x500 value type")            16         _ => unreachable!("unhandled x500 value type {:?}", value
+                                                                        ty)
+

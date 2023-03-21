@@ -40,7 +40,7 @@ if __name__ == '__main__':
                                     if ".txt" == method.name[-4:]:
                                         continue
                                     if "before.rs" == method.name[-9:]:
-                                        diff_path = file_dir + '/' + method.name[:-10] + '.txt'
+                                        diff_path = file_dir + '/' + method.name[:-10] + '.md'
                                         os.system("difft --display side-by-side-show-both --context 0 " + method.path + ' ' + method.path[:-9] + "after.rs > " + diff_path)
                             
 
