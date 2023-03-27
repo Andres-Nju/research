@@ -1,6 +1,0 @@
-Codes/rustls-native-certs/2c09a8c51f/windows/usable_for_rustls_after.rs --- Rust
-4         schannel::cert_context::ValidUses::Oids(strs) => { 4         schannel::cert_context::ValidUses::Oids(strs) => s
-.                                                            . trs
-5             strs.iter().any(|x| x == PKIX_SERVER_AUTH)     5             .iter()
-6         }                                                  6             .any(|x| x == PKIX_SERVER_AUTH),
-

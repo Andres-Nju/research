@@ -1,9 +1,0 @@
-Codes/rustls-native-certs/2c09a8c51f/smoketests/badssl_with_env_after.rs --- 1/2 --- Rust
-2     let result = panic::catch_unwind(|| {                  2     let result = panic::catch_unwind(|| check_site("self-s
-.                                                              igned.badssl.com"));
-3         check_site("self-signed.badssl.com")                 
-4     });                                                      
-
-Codes/rustls-native-certs/2c09a8c51f/smoketests/badssl_with_env_after.rs --- 2/2 --- Rust
-11         PathBuf::from("./tests/badssl-com-chain.pem")     10         PathBuf::from("./tests/badssl-com-chain.pem"),
-

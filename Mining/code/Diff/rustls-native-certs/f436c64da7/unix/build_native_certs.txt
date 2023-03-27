@@ -1,8 +1,0 @@
-Codes/rustls-native-certs/f436c64da7/unix/build_native_certs_after.rs --- Rust
- 6         match load_file(builder, &file) {                 6         if let Err(err) = load_file(builder, &file) {
- 7             Err(err) => {                                 . 
- 8                 first_error = first_error.or_else(|| Some 7             first_error = first_error.or(Some(err));
- . (err));                                                     
- 9             }                                               
-10             _ => {}                                         
-

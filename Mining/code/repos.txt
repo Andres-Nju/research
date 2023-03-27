@@ -1,1 +1,3 @@
-tauri-apps/tauri
+alacritty/alacritty
+sharkdp/bat
+BurntSushi/ripgrep

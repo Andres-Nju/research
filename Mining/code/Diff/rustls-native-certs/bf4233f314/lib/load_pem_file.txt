@@ -1,7 +1,0 @@
-Codes/rustls-native-certs/bf4233f314/lib/load_pem_file_after.rs --- Rust
-1         fn load_pem_file(&mut self, rd: &mut dyn BufRead) -> Result<(), Error> {
-2             self.store.add_pem_file(rd)
-3                 .map(|_| ())
-4                 .map_err(|()| Error::new(ErrorKind::InvalidData, format!("could not load PEM file")))
-5         }
-

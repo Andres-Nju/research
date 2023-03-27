@@ -1,0 +1,706 @@
+[
+    List id:1 content:55 {
+        open_content: "",
+        open_position: "0:0-0",
+        children: [
+            Atom id:2 content:1 {
+                content: "fn",
+                position: "0:0-2",
+            },
+            Atom id:3 content:2 {
+                content: "set_controlling_terminal",
+                position: "0:3-27",
+            },
+            List id:4 content:7 {
+                open_content: "(",
+                open_position: "0:27-28",
+                children: [
+                    List id:5 content:6 {
+                        open_content: "",
+                        open_position: "0:28-28",
+                        children: [
+                            Atom id:6 content:3 {
+                                content: "fd",
+                                position: "0:28-30",
+                            },
+                            Atom id:7 content:4 {
+                                content: ":",
+                                position: "0:30-31",
+                            },
+                            Atom id:8 content:5 {
+                                content: "c_int",
+                                position: "0:32-37",
+                            },
+                        ],
+                        close_content: "",
+                        close_position: "0:37-37",
+                    },
+                ],
+                close_content: ")",
+                close_position: "0:37-38",
+            },
+            List id:9 content:54 {
+                open_content: "{",
+                open_position: "0:39-40",
+                children: [
+                    List id:10 content:40 {
+                        open_content: "",
+                        open_position: "1:4-4",
+                        children: [
+                            Atom id:11 content:8 {
+                                content: "let",
+                                position: "1:4-7",
+                            },
+                            Atom id:12 content:9 {
+                                content: "res",
+                                position: "1:8-11",
+                            },
+                            Atom id:13 content:10 {
+                                content: "=",
+                                position: "1:12-13",
+                            },
+                            List id:14 content:38 {
+                                open_content: "",
+                                open_position: "1:14-14",
+                                children: [
+                                    Atom id:15 content:11 {
+                                        content: "unsafe",
+                                        position: "1:14-20",
+                                    },
+                                    List id:16 content:37 {
+                                        open_content: "{",
+                                        open_position: "1:21-22",
+                                        children: [
+                                            List id:17 content:25 {
+                                                open_content: "",
+                                                open_position: "4:8-8",
+                                                children: [
+                                                    Atom id:18 content:12 {
+                                                        content: "#",
+                                                        position: "4:8-9",
+                                                    },
+                                                    List id:19 content:24 {
+                                                        open_content: "[",
+                                                        open_position: "4:9-10",
+                                                        children: [
+                                                            List id:20 content:23 {
+                                                                open_content: "",
+                                                                open_position: "4:10-10",
+                                                                children: [
+                                                                    Atom id:21 content:13 {
+                                                                        content: "cfg_attr",
+                                                                        position: "4:10-18",
+                                                                    },
+                                                                    List id:22 content:22 {
+                                                                        open_content: "(",
+                                                                        open_position: "4:18-19",
+                                                                        children: [
+                                                                            List id:23 content:16 {
+                                                                                open_content: "",
+                                                                                open_position: "4:19-19",
+                                                                                children: [
+                                                                                    Atom id:24 content:14 {
+                                                                                        content: "feature",
+                                                                                        position: "4:19-26",
+                                                                                    },
+                                                                                    Atom id:25 content:10 {
+                                                                                        content: "=",
+                                                                                        position: "4:27-28",
+                                                                                    },
+                                                                                    Atom id:26 content:15 {
+                                                                                        content: "\"clippy\"",
+                                                                                        position: "4:29-37",
+                                                                                    },
+                                                                                ],
+                                                                                close_content: "",
+                                                                                close_position: "4:37-37",
+                                                                            },
+                                                                            Atom id:27 content:17 {
+                                                                                content: ",",
+                                                                                position: "4:37-38",
+                                                                            },
+                                                                            List id:28 content:21 {
+                                                                                open_content: "",
+                                                                                open_position: "4:39-39",
+                                                                                children: [
+                                                                                    Atom id:29 content:18 {
+                                                                                        content: "allow",
+                                                                                        position: "4:39-44",
+                                                                                    },
+                                                                                    List id:30 content:20 {
+                                                                                        open_content: "(",
+                                                                                        open_position: "4:44-45",
+                                                                                        children: [
+                                                                                            Atom id:31 content:19 {
+                                                                                                content: "cast_lossless",
+                                                                                                position: "4:45-58",
+                                                                                            },
+                                                                                        ],
+                                                                                        close_content: ")",
+                                                                                        close_position: "4:58-59",
+                                                                                    },
+                                                                                ],
+                                                                                close_content: "",
+                                                                                close_position: "4:59-59",
+                                                                            },
+                                                                        ],
+                                                                        close_content: ")",
+                                                                        close_position: "4:59-60",
+                                                                    },
+                                                                ],
+                                                                close_content: "",
+                                                                close_position: "4:60-60",
+                                                            },
+                                                        ],
+                                                        close_content: "]",
+                                                        close_position: "4:60-61",
+                                                    },
+                                                ],
+                                                close_content: "",
+                                                close_position: "4:61-61",
+                                            },
+                                            List id:32 content:36 {
+                                                open_content: "",
+                                                open_position: "5:8-8",
+                                                children: [
+                                                    List id:33 content:29 {
+                                                        open_content: "",
+                                                        open_position: "5:8-8",
+                                                        children: [
+                                                            Atom id:34 content:26 {
+                                                                content: "libc",
+                                                                position: "5:8-12",
+                                                            },
+                                                            Atom id:35 content:27 {
+                                                                content: "::",
+                                                                position: "5:12-14",
+                                                            },
+                                                            Atom id:36 content:28 {
+                                                                content: "ioctl",
+                                                                position: "5:14-19",
+                                                            },
+                                                        ],
+                                                        close_content: "",
+                                                        close_position: "5:19-19",
+                                                    },
+                                                    List id:37 content:35 {
+                                                        open_content: "(",
+                                                        open_position: "5:19-20",
+                                                        children: [
+                                                            Atom id:38 content:3 {
+                                                                content: "fd",
+                                                                position: "5:20-22",
+                                                            },
+                                                            Atom id:39 content:17 {
+                                                                content: ",",
+                                                                position: "5:22-23",
+                                                            },
+                                                            List id:40 content:33 {
+                                                                open_content: "",
+                                                                open_position: "5:24-24",
+                                                                children: [
+                                                                    Atom id:41 content:30 {
+                                                                        content: "TIOCSCTTY",
+                                                                        position: "5:24-33",
+                                                                    },
+                                                                    Atom id:42 content:31 {
+                                                                        content: "as",
+                                                                        position: "5:34-36",
+                                                                    },
+                                                                    Atom id:43 content:32 {
+                                                                        content: "u64",
+                                                                        position: "5:37-40",
+                                                                    },
+                                                                ],
+                                                                close_content: "",
+                                                                close_position: "5:40-40",
+                                                            },
+                                                            Atom id:44 content:17 {
+                                                                content: ",",
+                                                                position: "5:40-41",
+                                                            },
+                                                            Atom id:45 content:34 {
+                                                                content: "0",
+                                                                position: "5:42-43",
+                                                            },
+                                                        ],
+                                                        close_content: ")",
+                                                        close_position: "5:43-44",
+                                                    },
+                                                ],
+                                                close_content: "",
+                                                close_position: "5:44-44",
+                                            },
+                                        ],
+                                        close_content: "}",
+                                        close_position: "6:4-5",
+                                    },
+                                ],
+                                close_content: "",
+                                close_position: "6:5-5",
+                            },
+                            Atom id:46 content:39 {
+                                content: ";",
+                                position: "6:5-6",
+                            },
+                        ],
+                        close_content: "",
+                        close_position: "6:6-6",
+                    },
+                    List id:47 content:53 {
+                        open_content: "",
+                        open_position: "8:4-4",
+                        children: [
+                            Atom id:48 content:41 {
+                                content: "if",
+                                position: "8:4-6",
+                            },
+                            List id:49 content:43 {
+                                open_content: "",
+                                open_position: "8:7-7",
+                                children: [
+                                    Atom id:50 content:9 {
+                                        content: "res",
+                                        position: "8:7-10",
+                                    },
+                                    Atom id:51 content:42 {
+                                        content: "<",
+                                        position: "8:11-12",
+                                    },
+                                    Atom id:52 content:34 {
+                                        content: "0",
+                                        position: "8:13-14",
+                                    },
+                                ],
+                                close_content: "",
+                                close_position: "8:14-14",
+                            },
+                            List id:53 content:52 {
+                                open_content: "{",
+                                open_position: "8:15-16",
+                                children: [
+                                    List id:54 content:51 {
+                                        open_content: "",
+                                        open_position: "9:8-8",
+                                        children: [
+                                            List id:55 content:50 {
+                                                open_content: "",
+                                                open_position: "9:8-8",
+                                                children: [
+                                                    Atom id:56 content:44 {
+                                                        content: "die",
+                                                        position: "9:8-11",
+                                                    },
+                                                    Atom id:57 content:45 {
+                                                        content: "!",
+                                                        position: "9:11-12",
+                                                    },
+                                                    List id:58 content:49 {
+                                                        open_content: "(",
+                                                        open_position: "9:12-13",
+                                                        children: [
+                                                            Atom id:59 content:46 {
+                                                                content: "\"ioctl TIOCSCTTY failed: {}\"",
+                                                                position: "9:13-41",
+                                                            },
+                                                            Atom id:60 content:17 {
+                                                                content: ",",
+                                                                position: "9:41-42",
+                                                            },
+                                                            Atom id:61 content:47 {
+                                                                content: "errno",
+                                                                position: "9:43-48",
+                                                            },
+                                                            List id:62 content:48 {
+                                                                open_content: "(",
+                                                                open_position: "9:48-49",
+                                                                children: [],
+                                                                close_content: ")",
+                                                                close_position: "9:49-50",
+                                                            },
+                                                        ],
+                                                        close_content: ")",
+                                                        close_position: "9:50-51",
+                                                    },
+                                                ],
+                                                close_content: "",
+                                                close_position: "9:51-51",
+                                            },
+                                            Atom id:63 content:39 {
+                                                content: ";",
+                                                position: "9:51-52",
+                                            },
+                                        ],
+                                        close_content: "",
+                                        close_position: "9:52-52",
+                                    },
+                                ],
+                                close_content: "}",
+                                close_position: "10:4-5",
+                            },
+                        ],
+                        close_content: "",
+                        close_position: "10:5-5",
+                    },
+                ],
+                close_content: "}",
+                close_position: "11:0-1",
+            },
+        ],
+        close_content: "",
+        close_position: "11:1-1",
+    },
+]
+[
+    List id:64 content:64 {
+        open_content: "",
+        open_position: "0:0-0",
+        children: [
+            Atom id:65 content:1 {
+                content: "fn",
+                position: "0:0-2",
+            },
+            Atom id:66 content:2 {
+                content: "set_controlling_terminal",
+                position: "0:3-27",
+            },
+            List id:67 content:7 {
+                open_content: "(",
+                open_position: "0:27-28",
+                children: [
+                    List id:68 content:6 {
+                        open_content: "",
+                        open_position: "0:28-28",
+                        children: [
+                            Atom id:69 content:3 {
+                                content: "fd",
+                                position: "0:28-30",
+                            },
+                            Atom id:70 content:4 {
+                                content: ":",
+                                position: "0:30-31",
+                            },
+                            Atom id:71 content:5 {
+                                content: "c_int",
+                                position: "0:32-37",
+                            },
+                        ],
+                        close_content: "",
+                        close_position: "0:37-37",
+                    },
+                ],
+                close_content: ")",
+                close_position: "0:37-38",
+            },
+            List id:72 content:63 {
+                open_content: "{",
+                open_position: "0:39-40",
+                children: [
+                    List id:73 content:62 {
+                        open_content: "",
+                        open_position: "1:4-4",
+                        children: [
+                            Atom id:74 content:8 {
+                                content: "let",
+                                position: "1:4-7",
+                            },
+                            Atom id:75 content:9 {
+                                content: "res",
+                                position: "1:8-11",
+                            },
+                            Atom id:76 content:10 {
+                                content: "=",
+                                position: "1:12-13",
+                            },
+                            List id:77 content:61 {
+                                open_content: "",
+                                open_position: "1:14-14",
+                                children: [
+                                    Atom id:78 content:11 {
+                                        content: "unsafe",
+                                        position: "1:14-20",
+                                    },
+                                    List id:79 content:60 {
+                                        open_content: "{",
+                                        open_position: "1:21-22",
+                                        children: [
+                                            List id:80 content:25 {
+                                                open_content: "",
+                                                open_position: "6:8-8",
+                                                children: [
+                                                    Atom id:81 content:12 {
+                                                        content: "#",
+                                                        position: "6:8-9",
+                                                    },
+                                                    List id:82 content:24 {
+                                                        open_content: "[",
+                                                        open_position: "6:9-10",
+                                                        children: [
+                                                            List id:83 content:23 {
+                                                                open_content: "",
+                                                                open_position: "6:10-10",
+                                                                children: [
+                                                                    Atom id:84 content:13 {
+                                                                        content: "cfg_attr",
+                                                                        position: "6:10-18",
+                                                                    },
+                                                                    List id:85 content:22 {
+                                                                        open_content: "(",
+                                                                        open_position: "6:18-19",
+                                                                        children: [
+                                                                            List id:86 content:16 {
+                                                                                open_content: "",
+                                                                                open_position: "6:19-19",
+                                                                                children: [
+                                                                                    Atom id:87 content:14 {
+                                                                                        content: "feature",
+                                                                                        position: "6:19-26",
+                                                                                    },
+                                                                                    Atom id:88 content:10 {
+                                                                                        content: "=",
+                                                                                        position: "6:27-28",
+                                                                                    },
+                                                                                    Atom id:89 content:15 {
+                                                                                        content: "\"clippy\"",
+                                                                                        position: "6:29-37",
+                                                                                    },
+                                                                                ],
+                                                                                close_content: "",
+                                                                                close_position: "6:37-37",
+                                                                            },
+                                                                            Atom id:90 content:17 {
+                                                                                content: ",",
+                                                                                position: "6:37-38",
+                                                                            },
+                                                                            List id:91 content:21 {
+                                                                                open_content: "",
+                                                                                open_position: "6:39-39",
+                                                                                children: [
+                                                                                    Atom id:92 content:18 {
+                                                                                        content: "allow",
+                                                                                        position: "6:39-44",
+                                                                                    },
+                                                                                    List id:93 content:20 {
+                                                                                        open_content: "(",
+                                                                                        open_position: "6:44-45",
+                                                                                        children: [
+                                                                                            Atom id:94 content:19 {
+                                                                                                content: "cast_lossless",
+                                                                                                position: "6:45-58",
+                                                                                            },
+                                                                                        ],
+                                                                                        close_content: ")",
+                                                                                        close_position: "6:58-59",
+                                                                                    },
+                                                                                ],
+                                                                                close_content: "",
+                                                                                close_position: "6:59-59",
+                                                                            },
+                                                                        ],
+                                                                        close_content: ")",
+                                                                        close_position: "6:59-60",
+                                                                    },
+                                                                ],
+                                                                close_content: "",
+                                                                close_position: "6:60-60",
+                                                            },
+                                                        ],
+                                                        close_content: "]",
+                                                        close_position: "6:60-61",
+                                                    },
+                                                ],
+                                                close_content: "",
+                                                close_position: "6:61-61",
+                                            },
+                                            List id:95 content:59 {
+                                                open_content: "",
+                                                open_position: "7:8-8",
+                                                children: [
+                                                    List id:96 content:29 {
+                                                        open_content: "",
+                                                        open_position: "7:8-8",
+                                                        children: [
+                                                            Atom id:97 content:26 {
+                                                                content: "libc",
+                                                                position: "7:8-12",
+                                                            },
+                                                            Atom id:98 content:27 {
+                                                                content: "::",
+                                                                position: "7:12-14",
+                                                            },
+                                                            Atom id:99 content:28 {
+                                                                content: "ioctl",
+                                                                position: "7:14-19",
+                                                            },
+                                                        ],
+                                                        close_content: "",
+                                                        close_position: "7:19-19",
+                                                    },
+                                                    List id:100 content:58 {
+                                                        open_content: "(",
+                                                        open_position: "7:19-20",
+                                                        children: [
+                                                            Atom id:101 content:3 {
+                                                                content: "fd",
+                                                                position: "7:20-22",
+                                                            },
+                                                            Atom id:102 content:17 {
+                                                                content: ",",
+                                                                position: "7:22-23",
+                                                            },
+                                                            List id:103 content:57 {
+                                                                open_content: "",
+                                                                open_position: "7:24-24",
+                                                                children: [
+                                                                    Atom id:104 content:30 {
+                                                                        content: "TIOCSCTTY",
+                                                                        position: "7:24-33",
+                                                                    },
+                                                                    Atom id:105 content:31 {
+                                                                        content: "as",
+                                                                        position: "7:34-36",
+                                                                    },
+                                                                    Atom id:106 content:56 {
+                                                                        content: "_",
+                                                                        position: "7:37-38",
+                                                                    },
+                                                                ],
+                                                                close_content: "",
+                                                                close_position: "7:38-38",
+                                                            },
+                                                            Atom id:107 content:17 {
+                                                                content: ",",
+                                                                position: "7:38-39",
+                                                            },
+                                                            Atom id:108 content:34 {
+                                                                content: "0",
+                                                                position: "7:40-41",
+                                                            },
+                                                        ],
+                                                        close_content: ")",
+                                                        close_position: "7:41-42",
+                                                    },
+                                                ],
+                                                close_content: "",
+                                                close_position: "7:42-42",
+                                            },
+                                        ],
+                                        close_content: "}",
+                                        close_position: "8:4-5",
+                                    },
+                                ],
+                                close_content: "",
+                                close_position: "8:5-5",
+                            },
+                            Atom id:109 content:39 {
+                                content: ";",
+                                position: "8:5-6",
+                            },
+                        ],
+                        close_content: "",
+                        close_position: "8:6-6",
+                    },
+                    List id:110 content:53 {
+                        open_content: "",
+                        open_position: "10:4-4",
+                        children: [
+                            Atom id:111 content:41 {
+                                content: "if",
+                                position: "10:4-6",
+                            },
+                            List id:112 content:43 {
+                                open_content: "",
+                                open_position: "10:7-7",
+                                children: [
+                                    Atom id:113 content:9 {
+                                        content: "res",
+                                        position: "10:7-10",
+                                    },
+                                    Atom id:114 content:42 {
+                                        content: "<",
+                                        position: "10:11-12",
+                                    },
+                                    Atom id:115 content:34 {
+                                        content: "0",
+                                        position: "10:13-14",
+                                    },
+                                ],
+                                close_content: "",
+                                close_position: "10:14-14",
+                            },
+                            List id:116 content:52 {
+                                open_content: "{",
+                                open_position: "10:15-16",
+                                children: [
+                                    List id:117 content:51 {
+                                        open_content: "",
+                                        open_position: "11:8-8",
+                                        children: [
+                                            List id:118 content:50 {
+                                                open_content: "",
+                                                open_position: "11:8-8",
+                                                children: [
+                                                    Atom id:119 content:44 {
+                                                        content: "die",
+                                                        position: "11:8-11",
+                                                    },
+                                                    Atom id:120 content:45 {
+                                                        content: "!",
+                                                        position: "11:11-12",
+                                                    },
+                                                    List id:121 content:49 {
+                                                        open_content: "(",
+                                                        open_position: "11:12-13",
+                                                        children: [
+                                                            Atom id:122 content:46 {
+                                                                content: "\"ioctl TIOCSCTTY failed: {}\"",
+                                                                position: "11:13-41",
+                                                            },
+                                                            Atom id:123 content:17 {
+                                                                content: ",",
+                                                                position: "11:41-42",
+                                                            },
+                                                            Atom id:124 content:47 {
+                                                                content: "errno",
+                                                                position: "11:43-48",
+                                                            },
+                                                            List id:125 content:48 {
+                                                                open_content: "(",
+                                                                open_position: "11:48-49",
+                                                                children: [],
+                                                                close_content: ")",
+                                                                close_position: "11:49-50",
+                                                            },
+                                                        ],
+                                                        close_content: ")",
+                                                        close_position: "11:50-51",
+                                                    },
+                                                ],
+                                                close_content: "",
+                                                close_position: "11:51-51",
+                                            },
+                                            Atom id:126 content:39 {
+                                                content: ";",
+                                                position: "11:51-52",
+                                            },
+                                        ],
+                                        close_content: "",
+                                        close_position: "11:52-52",
+                                    },
+                                ],
+                                close_content: "}",
+                                close_position: "12:4-5",
+                            },
+                        ],
+                        close_content: "",
+                        close_position: "12:5-5",
+                    },
+                ],
+                close_content: "}",
+                close_position: "13:0-1",
+            },
+        ],
+        close_content: "",
+        close_position: "13:1-1",
+    },
+]

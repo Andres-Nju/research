@@ -1,3 +1,0 @@
-Codes/rustls-native-certs/62efde220d/compare_mozilla/stringify_x500name_after.rs --- Rust
-                                                             29             &[0x55, 0x04, 0x11] => "postalCode",
-
