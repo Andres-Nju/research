@@ -29,9 +29,12 @@ python3 search.py repos.txt
 
 #### 筛选条件：
 
-**改动条数在6行以内，**
+- 改动条数在6行以内
+- 针对issue和pull request对应的commit
+  - 从已经closed的pull request中获取commits
+    - 过滤pr：在tag或pr title中出现某些特定关键词
 
-**TODO: commit message关键词**
+
 
 
 

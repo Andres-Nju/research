@@ -7,11 +7,12 @@ import os
 from pydriller import Repository
 from pydriller import ModificationType
 from urllib.parse import parse_qs, urlparse
-import git
-
+import github3
 root_dir = "Codes"
 LINES_THRESH = 10
- 
+
+
+pr_key_words = []
 # 获取source code指定行的内容
 def get_content(source_code:str, start_line:int, end_line:int):
     res = ""
@@ -39,13 +40,41 @@ def filter_methods(methods_before, changed_methods):
 
         
 
+def get_repository(gh, owner:str, repo_name:str):
+    return gh.repository(owner, repo_name)
 
+def get_short_pull_requests(repo, state:str):
+    return repo.pull_requests(state=state)
 
- 
+def contain_key_words(src:str, key_words:list):
+    for key in key_words:
+        if key in src:
+            return True
+    return False
 if __name__ == '__main__':
 
+    # test
+    my_token = "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"
+    gh = github3.login(token=my_token)
+    owner = "matsadler"
+    repo_name = "magnus"
+    repo = get_repository(gh, owner, repo_name)
+    short_pull_requests = get_short_pull_requests(repo, "closed")
 
-    
+    # 遍历short pull requests
+    for short_pr in short_pull_requests:
+        print("Pull Request #{0}: {1}".format(short_pr.number, short_pr.title))
+        # print("Tag: {0}".format(short_pr.head.ref))
+        # 获得对应的pull request
+        pr = repo.pull_request(short_pr.number)
+        if pr.is_merged() and (contain_key_words(short_pr.head.ref, pr_key_words) or contain_key_words(short_pr.title, pr_key_words)):
+            for commit in pr.commits():
+                print("Commit SHA: {0}".format(commit.sha))
+
+    exit()
+
+
+
     cur_path = os.getcwd() # 当前目录
     # 创建总文件夹
     root_dir = cur_path + "/" + root_dir
@@ -61,8 +90,6 @@ if __name__ == '__main__':
                 os.mkdir(repo_dir)
             repo_name = "https://github.com/" + repo_name.strip()            
             for commit in Repository(repo_name, only_modifications_with_file_types=['.rs']).traverse_commits():
-            #for commit in Repository(repo_name).traverse_commits():
-                #print(commit.hash[:10])
                 # 根据msg做过滤
                 message = commit.msg
                 # 如果改动是clippy的，也过滤掉
@@ -92,7 +119,6 @@ if __name__ == '__main__':
 
                 for modified_file in commit.modified_files:
                     # changed_methods && methods_before
-                    # if '.rs' in modified_file.filename and modified_file.content_before is not None and modified_file.content is not None: # 需要改动前和改动后的文件都不为None
                     if '.rs' in modified_file.filename and (modified_file.change_type == ModificationType.RENAME or modified_file.change_type == ModificationType.MODIFY):
                         file_dir = commit_dir + '/' + modified_file.filename.split('.')[0].strip()
                         if os.path.exists(file_dir):
