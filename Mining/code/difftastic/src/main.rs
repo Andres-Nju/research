@@ -245,41 +245,41 @@ fn main() {
             let mut lhs_positions = syntax::change_positions(&lhs_ast, &change_map);
             let mut rhs_positions = syntax::change_positions(&rhs_ast, &change_map);
 
-            // println!("lhs_pos = {:?}", lhs_positions);
-            // println!("rhs_pos = {:?}", rhs_positions);
-            // for (i, po) in lhs_positions.iter().enumerate(){
-            //     match &po.kind{
-            //         syntax::MatchKind::UnchangedToken {
-            //             self_pos,
-            //             opposite_pos,
-            //             ..
-            //         } => {},
-            //         _ => {
-            //             println!("l_po = {:?}", po);
-            //             println!("kind = {:?}", po.kind);
-            //             }
-            //     }
-            // }
-            // for (i, po) in rhs_positions.iter().enumerate(){
-            //     match &po.kind{
-            //         syntax::MatchKind::UnchangedToken {
-            //             self_pos,
-            //             opposite_pos,
-            //             ..
-            //         } => {},
-            //         _ => {
-            //             println!("r_po = {:?}", po);
-            //             println!("kind = {:?}", po.kind);
-            //             }
-            //     }
-            // }
+             println!("lhs_pos = {:#?}", lhs_positions);
+             println!("rhs_pos = {:#?}", rhs_positions);
+            for (i, po) in lhs_positions.iter().enumerate(){
+                match &po.kind{
+                    syntax::MatchKind::UnchangedToken {
+                        self_pos,
+                        opposite_pos,
+                        ..
+                    } => {},
+                    _ => {
+                        println!("l_po = {:?}", po);
+                        println!("kind = {:?}", po.kind);
+                        }
+                }
+            }
+            for (i, po) in rhs_positions.iter().enumerate(){
+                match &po.kind{
+                    syntax::MatchKind::UnchangedToken {
+                        self_pos,
+                        opposite_pos,
+                        ..
+                    } => {},
+                    _ => {
+                        println!("r_po = {:?}", po);
+                        println!("kind = {:?}", po.kind);
+                        }
+                }
+            }
 
             let opposite_to_lhs = opposite_positions(&lhs_positions);
             let opposite_to_rhs = opposite_positions(&rhs_positions);
 
-            // 源代码中行粒度的对应
-            // println!("opposite_to_lhs = {:?}", opposite_to_lhs);
-            // println!("opposite_to_rhs = {:?}", opposite_to_rhs);
+            // 源代码中行粒度的对应: 对于新增或删除的行 不会出现，只有左右都有的行对应
+            // println!("opposite_to_lhs = {:#?}", opposite_to_lhs);
+            // println!("opposite_to_rhs = {:#?}", opposite_to_rhs);
 
             let hunks = matched_pos_to_hunks(&lhs_positions, &rhs_positions);
             let hunks = merge_adjacent(
@@ -290,16 +290,16 @@ fn main() {
                 rhs_src.max_line(),
                 display_options.num_context_lines as usize,
             );
-            for (_, hunk) in hunks.iter().enumerate(){
-                for (_, lhs_line) in hunk.novel_lhs.iter().enumerate(){
-                    let poses = syntax::get_novel_nodes(&lhs_positions, lhs_line);
-                    for (_, po) in poses.iter().enumerate(){
-                        println!("po = {:?}", po);
-                        println!("kind = {:?}", po.kind);
-                    }
-                }
-            }
-
+            // for (_, hunk) in hunks.iter().enumerate(){
+            //     for (_, lhs_line) in hunk.novel_lhs.iter().enumerate(){
+            //         let poses = syntax::get_novel_nodes(&lhs_positions, lhs_line);
+            //         for (_, po) in poses.iter().enumerate(){
+            //             println!("po = {:?}", po);
+            //             println!("kind = {:?}", po.kind);
+            //         }
+            //     }
+            // }
+            // println!("{:#?}", hunks);
             // get diff result
             let has_syntactic_changes = !hunks.is_empty();
             let file_format = FileFormat::SupportedLanguage(language);

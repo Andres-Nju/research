@@ -208,16 +208,16 @@ difft --display side-by-side-show-both --context 0 test1.rs test2.rs
 
 - 现在能有的：
   - 源代码中改动前后对应的行的map
+    - 行粒度的映射 lhs_line对应若干条rhs_line，反之同理
+    - 对于lhs中删去，或rhs中新增的行不会出现，只有左右都有的行对应
   - 前后两棵tree-sitter::Tree
     - todo：如何遍历？
   - 对tree-sitter::Tree做处理后用于diff的 Vec<&Syntax>
     - 在我们的项目中，对于1个function，Vec中只有一个节点，是一个List类型
+    - 这个用于diff的东西，有节点位置信息，但是没有节点名称信息，比如method_call这种，只存了字符串，比如foo()应该是一个method_call节点，但是Syntax只保存了"foo"和"()"
     - 没有节点类型信息（这里是指比如if、while类型这样应该是一个控制流类型的节点），单纯是一个树的模型，包含了字符串和位置的信息
-  - 
 - 想要搞得：
   - 源代码改动前后对应的tree节点
-
-
 
 
 ### 特征向量抽象：
@@ -231,7 +231,83 @@ difft --display side-by-side-show-both --context 0 test1.rs test2.rs
 
 ![1](related work/ref/1.png)
 
+#### 特征向量与hunk间的关系
 
+- hunk数据结构
+
+  - lhs中涉及到修改的代码**行**  LineNumber的集合
+
+  - rhs中涉及到修改的代码**行** LineNumber的集合
+
+  -  lines：
+
+    ```rust
+    Vec<(Option<LineNumber>, Option<LineNumber>)>
+    ```
+
+    如果左边是None，就代表右边是新增的；
+
+    如果右边是None，就代表左边被删掉了。
+
+- opposite_to_lhs / opposite_to_rhs 数据结构：
+
+  ```rust
+  HashMap<LineNumber, HashSet<LineNumber>>
+  ```
+
+  以lhs为例，opposite_to_lhs 是lhs源代码中每一行与rhs源码的行之间的对应关系
+
+  ​	**注意**：只保存了能对应上的，即lhs中的一行能和rhs中的若干行对应上，否则就不会包含这一行 （**e.g.** 左边第3行是删除的，右边没有能对应上的行，那么在HashMap中不会有以第3行为key的内容）；反之同理
+  
+- MatchedPos数据结构
+
+  ```rust
+  pub struct MatchedPos {
+      pub kind: MatchKind,
+      pub pos: SingleLineSpan,
+  }
+  pub enum MatchKind {
+      UnchangedToken {
+          highlight: TokenKind,
+          self_pos: Vec<SingleLineSpan>,
+          opposite_pos: Vec<SingleLineSpan>,
+      },
+      Novel {
+          highlight: TokenKind,
+      },
+      NovelLinePart {
+          highlight: TokenKind,
+          self_pos: SingleLineSpan,
+          opposite_pos: Vec<SingleLineSpan>,
+      },
+      NovelWord {
+          highlight: TokenKind,
+      },
+      Ignored {
+          highlight: TokenKind,
+      },
+  }
+  pub struct SingleLineSpan {
+      /// All zero-indexed.
+      pub line: LineNumber,
+      pub start_col: u32,
+      pub end_col: u32,
+  }
+  ```
+  
+  MatchedPos包含了所有节点的位置信息，以及是否是novel的，但是没有节点名称信息，即Tree中的节点名，也没有Syntax中存节点的字符串，对于MatchKind我们只需要关心UnchangedToken和Novel（未变化的为前者，有变化的为后者）
+  
+- Change Type	
+
+  - Inserted：遍历hunk中的内容，lines中左边全为None，即新增的全是**行**，显然是Inserted
+  - Removed：遍历hunk中的内容，lines中右边全为None，即新删除的的全是**行**，显然是Inserted
+  - Updated：遍历hunk中的内容，lines中左右都不为None，**可能是Updated**
+    - TODO：如果某一边部分是None，部分有，怎么判断究竟是哪个？比如删了两行，又加了一行
+    - TODO：如果都不为None，是否可以是inserted/removed？ 遍历这一行的MatchedPos，有UnchangedToken，也有Novel的，如何分辨？（比如三个节点，两边都是没变的，中间那个变了，那么显然是Updated）
+      - 可以遍历双方MatchedPos，对于UnchangedToken，我们有其对应的内容，对应的内容一定是一样的（因为没变）
+      - 查看节点？
+  
+- hunk是一个行级别的对应，我们有行的信息可以获取对应行中Novel的节点，找它们的公共祖先？
 
 
 
