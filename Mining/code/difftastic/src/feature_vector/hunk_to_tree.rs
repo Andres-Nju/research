@@ -8,16 +8,16 @@ use tree_sitter as ts;
 use ts::Node;
 
 
-pub fn get_novels_from_hunk<'a>(positions: &'a Vec<MatchedPos>, hunk: &Hunk) -> (FxHashMap<LineNumber, Vec<&'a MatchedPos>>, FxHashMap<LineNumber, Vec<&'a MatchedPos>>){
+pub fn get_novels_from_hunk<'a>(lhs_positions: &'a Vec<MatchedPos>, rhs_positions: &'a Vec<MatchedPos>, hunk: &Hunk) -> (FxHashMap<LineNumber, Vec<&'a MatchedPos>>, FxHashMap<LineNumber, Vec<&'a MatchedPos>>){
     let mut lhs_novels = FxHashMap::default();
     for (_, lhs_line) in hunk.novel_lhs.iter().enumerate(){
-        let lhs_line_nodes = get_novel_nodes(positions, lhs_line);
+        let lhs_line_nodes = get_novel_nodes(lhs_positions, lhs_line);
         lhs_novels.insert((*lhs_line).clone(), lhs_line_nodes);
     }
 
     let mut rhs_novels = FxHashMap::default();
     for (_, rhs_line) in hunk.novel_rhs.iter().enumerate(){
-        let rhs_line_nodes = get_novel_nodes(positions, rhs_line);
+        let rhs_line_nodes = get_novel_nodes(rhs_positions, rhs_line);
         rhs_novels.insert((*rhs_line).clone(), rhs_line_nodes);
     }
 

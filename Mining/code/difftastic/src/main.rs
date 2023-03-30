@@ -293,7 +293,7 @@ fn main() {
                 display_options.num_context_lines as usize,
             );
             for (_, hunk) in hunks.iter().enumerate(){
-                println!("{:#?}", hunk_to_tree::get_novels_from_hunk(&lhs_positions, hunk));
+                println!("{:#?}", hunk_to_tree::get_novels_from_hunk(&lhs_positions, &rhs_positions, hunk));
             }
             // println!("{:#?}", hunks);
             // get diff result
