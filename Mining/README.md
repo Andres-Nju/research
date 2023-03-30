@@ -304,10 +304,28 @@ difft --display side-by-side-show-both --context 0 test1.rs test2.rs
   - Updated：遍历hunk中的内容，lines中左右都不为None，**可能是Updated**
     - TODO：如果某一边部分是None，部分有，怎么判断究竟是哪个？比如删了两行，又加了一行
     - TODO：如果都不为None，是否可以是inserted/removed？ 遍历这一行的MatchedPos，有UnchangedToken，也有Novel的，如何分辨？（比如三个节点，两边都是没变的，中间那个变了，那么显然是Updated）
-      - 可以遍历双方MatchedPos，对于UnchangedToken，我们有其对应的内容，对应的内容一定是一样的（因为没变）
+      - //可以遍历双方MatchedPos，对于UnchangedToken，我们有其对应的内容，对应的内容一定是一样的（因为没变）
       - 查看节点？
   
-- hunk是一个行级别的对应，我们有行的信息可以获取对应行中Novel的节点，找它们的公共祖先？
+- 三种数据结构：
+
+  - Tree node
+    - 节点名称
+    - 字符串
+    - 起始行，起始列 （从0开始）
+    - 终止行，终止列
+  - Syntax node （Enum）
+    - Syntax info （包括parent、前一个sibling、后一个sibling）
+    - 对于List，包含起始字符串（起始行，起始列）、子孙节点、终止字符串
+    - 对于Atom，包含（起始行，起始列-终止列）、字符串
+  - MatchedPos
+    - MatchKind：改动前后完全没变的：UnchangedToken；发生变化的：Novel
+    - 所在行、起始列-终止列
+  
+- hunk是一个行级别的对应，我们有行的信息可以获取对应行中的所有节点（Tree node or Syntax），找它们的公共祖先？
+
+  - 不用MatchedPos是因为MatchedPos无法进行遍历，Tree node提供了cursor进行便遍历：goto_first_child，goto_next_sibling，goto_parent
+
 
 
 
