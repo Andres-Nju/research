@@ -657,7 +657,7 @@ pub struct MatchedPos {
 }
 
 // get novel_nodes in a Vec<MatchedPos>
-pub fn get_novel_nodes(positions: &Vec<MatchedPos>, _line: &LineNumber) -> Vec<MatchedPos>{
+pub fn get_novel_nodes<'a>(positions: &'a Vec<MatchedPos>, _line: &LineNumber) -> Vec<&'a MatchedPos>{
     let mut res = vec![];
     for (_, po) in positions.iter().enumerate(){
         match &po.kind{
@@ -665,10 +665,10 @@ pub fn get_novel_nodes(positions: &Vec<MatchedPos>, _line: &LineNumber) -> Vec<M
                 ..
             } => {},
             _ => {
-                    if (po.pos.line == *_line){
+                    if po.pos.line == *_line{
                         // println!("po = {:?}", po);
                         // println!("kind = {:?}", po.kind);
-                        res.push(po.clone());
+                        res.push(po);
                     }
                 }
         }

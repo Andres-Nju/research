@@ -324,7 +324,7 @@ difft --display side-by-side-show-both --context 0 test1.rs test2.rs
   
 - hunk是一个行级别的对应，我们有行的信息可以获取对应行中的所有节点（Tree node or Syntax），找它们的公共祖先？
 
-  - 不用MatchedPos是因为MatchedPos无法进行遍历，Tree node提供了cursor进行便遍历：goto_first_child，goto_next_sibling，goto_parent
+  - 不用MatchedPos是因为MatchedPos无法进行遍历，Tree node提供了cursor进行遍历：goto_first_child，goto_next_sibling，goto_parent
 
 
 

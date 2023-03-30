@@ -34,12 +34,14 @@ mod options;
 mod parse;
 mod positions;
 mod summary;
+mod feature_vector;
 
 #[macro_use]
 extern crate log;
 
 use crate::diff::{dijkstra, unchanged};
 use crate::display::hunks::{matched_pos_to_hunks, merge_adjacent};
+use crate::feature_vector::hunk_to_tree;
 use crate::parse::guess_language::{LANG_EXTENSIONS, LANG_FILE_NAMES};
 use crate::parse::syntax;
 use diff::changes::ChangeMap;
@@ -179,8 +181,6 @@ fn main() {
             rhs_display_path,
         } => {
             // get tree-sitter::Tree
-            // let lhs_tree = tsp::to_tree(&lhs_src[..], &ts_lang);
-            // let rhs_tree = tsp::to_tree(&rhs_src[..], &ts_lang);
             // if diff_options.ignore_comments {
             //     let lhs_comments =
             //         tsp::comment_positions(&lhs_tree, &lhs_src, &ts_lang);
@@ -211,7 +211,9 @@ fn main() {
             init_all_info(&lhs_ast, &rhs_ast);
             // println!("{}", rhs_ast.len());
 
-            
+            // tree-sitter::Tree
+            let lhs_tree = tsp::to_tree(&lhs_src[..], &ts_lang);
+            let rhs_tree = tsp::to_tree(&rhs_src[..], &ts_lang);
 
             let mut change_map = ChangeMap::default();
             let possibly_changed = if env::var("DFT_DBG_KEEP_UNCHANGED").is_ok() {
@@ -245,34 +247,34 @@ fn main() {
             let mut lhs_positions = syntax::change_positions(&lhs_ast, &change_map);
             let mut rhs_positions = syntax::change_positions(&rhs_ast, &change_map);
 
-             println!("lhs_pos = {:#?}", lhs_positions);
-             println!("rhs_pos = {:#?}", rhs_positions);
-            for (i, po) in lhs_positions.iter().enumerate(){
-                match &po.kind{
-                    syntax::MatchKind::UnchangedToken {
-                        self_pos,
-                        opposite_pos,
-                        ..
-                    } => {},
-                    _ => {
-                        println!("l_po = {:?}", po);
-                        println!("kind = {:?}", po.kind);
-                        }
-                }
-            }
-            for (i, po) in rhs_positions.iter().enumerate(){
-                match &po.kind{
-                    syntax::MatchKind::UnchangedToken {
-                        self_pos,
-                        opposite_pos,
-                        ..
-                    } => {},
-                    _ => {
-                        println!("r_po = {:?}", po);
-                        println!("kind = {:?}", po.kind);
-                        }
-                }
-            }
+            //println!("lhs_pos = {:#?}", lhs_positions);
+            //println!("rhs_pos = {:#?}", rhs_positions);
+            // for (i, po) in lhs_positions.iter().enumerate(){
+            //     match &po.kind{
+            //         syntax::MatchKind::UnchangedToken {
+            //             self_pos,
+            //             opposite_pos,
+            //             ..
+            //         } => {},
+            //         _ => {
+            //             println!("l_po = {:?}", po);
+            //             println!("kind = {:?}", po.kind);
+            //             }
+            //     }
+            // }
+            // for (i, po) in rhs_positions.iter().enumerate(){
+            //     match &po.kind{
+            //         syntax::MatchKind::UnchangedToken {
+            //             self_pos,
+            //             opposite_pos,
+            //             ..
+            //         } => {},
+            //         _ => {
+            //             println!("r_po = {:?}", po);
+            //             println!("kind = {:?}", po.kind);
+            //             }
+            //     }
+            // }
 
             let opposite_to_lhs = opposite_positions(&lhs_positions);
             let opposite_to_rhs = opposite_positions(&rhs_positions);
@@ -290,15 +292,9 @@ fn main() {
                 rhs_src.max_line(),
                 display_options.num_context_lines as usize,
             );
-            // for (_, hunk) in hunks.iter().enumerate(){
-            //     for (_, lhs_line) in hunk.novel_lhs.iter().enumerate(){
-            //         let poses = syntax::get_novel_nodes(&lhs_positions, lhs_line);
-            //         for (_, po) in poses.iter().enumerate(){
-            //             println!("po = {:?}", po);
-            //             println!("kind = {:?}", po.kind);
-            //         }
-            //     }
-            // }
+            for (_, hunk) in hunks.iter().enumerate(){
+                println!("{:#?}", hunk_to_tree::get_novels_from_hunk(&lhs_positions, hunk));
+            }
             // println!("{:#?}", hunks);
             // get diff result
             let has_syntactic_changes = !hunks.is_empty();
