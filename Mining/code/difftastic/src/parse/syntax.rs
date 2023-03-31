@@ -2,7 +2,7 @@
 
 #![allow(clippy::mutable_key_type)] // Hash for Syntax doesn't use mutable fields.
 
-use std::{cell::Cell, collections::HashMap, env, fmt, hash::Hash, num::NonZeroU32};
+use std::{cell::Cell, collections::HashMap, env, fmt, hash::Hash, num::NonZeroU32, cmp::Ordering};
 use typed_arena::Arena;
 
 use crate::{
@@ -598,8 +598,19 @@ impl<'a> PartialEq for Syntax<'a> {
         self.content_id() == other.content_id()
     }
 }
+
 impl<'a> Eq for Syntax<'a> {}
 
+impl<'a> Ord for Syntax<'a> {
+    fn cmp(&self, other: &Self) -> Ordering {
+        self.content_id().cmp(&other.content_id())
+    }
+}
+impl <'a> PartialOrd for Syntax<'a> {
+    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
+        Some(self.cmp(other))
+    }
+}
 #[derive(PartialEq, Eq, Debug, Clone, Copy, Hash)]
 pub enum AtomKind {
     Normal,

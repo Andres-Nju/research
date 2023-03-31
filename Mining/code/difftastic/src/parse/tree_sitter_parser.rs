@@ -1255,6 +1255,7 @@ pub fn to_syntax<'a>(
     let subtrees = parse_subtrees(src, config, tree);
 
     let nl_pos = NewlinePositions::from(src);
+    // println!("{:?}", nl_pos);
     let mut cursor = tree.walk();
 
     let mut error_count: usize = 0;
@@ -1462,8 +1463,14 @@ fn list_from_cursor<'a>(
     // delimiter positions.
     let outer_open_content = "";
     let outer_open_position = nl_pos.from_offsets(root_node.start_byte(), root_node.start_byte());
+    // if (outer_open_position.len() > 1){
+    //     println!("{:?}", outer_open_position);
+    // }
     let outer_close_content = "";
     let outer_close_position = nl_pos.from_offsets(root_node.end_byte(), root_node.end_byte());
+    // if (outer_open_position.len() > 1){
+    //     println!("{:?}", outer_close_position);
+    // }
 
     let (i, j) = match find_delim_positions(src, cursor, &config.delimiter_tokens) {
         Some((i, j)) => (i as isize, j as isize),
@@ -1591,6 +1598,9 @@ fn atom_from_cursor<'a>(
 ) -> Option<&'a Syntax<'a>> {
     let node = cursor.node();
     let position = nl_pos.from_offsets(node.start_byte(), node.end_byte());
+    // if (position.len() > 1){
+    //     println!("{:?}", position);
+    // }
     let mut content = &src[node.start_byte()..node.end_byte()];
 
     // The C and C++ grammars have a '\n' node with the

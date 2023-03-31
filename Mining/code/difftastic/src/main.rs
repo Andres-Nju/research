@@ -43,7 +43,7 @@ use crate::diff::{dijkstra, unchanged};
 use crate::display::hunks::{matched_pos_to_hunks, merge_adjacent};
 use crate::feature_vector::hunk_to_tree;
 use crate::parse::guess_language::{LANG_EXTENSIONS, LANG_FILE_NAMES};
-use crate::parse::syntax;
+use crate::parse::syntax::{self, Syntax};
 use diff::changes::ChangeMap;
 use diff::dijkstra::ExceededGraphLimit;
 use display::context::opposite_positions;
@@ -247,8 +247,8 @@ fn main() {
             let mut lhs_positions = syntax::change_positions(&lhs_ast, &change_map);
             let mut rhs_positions = syntax::change_positions(&rhs_ast, &change_map);
 
-            //println!("lhs_pos = {:#?}", lhs_positions);
-            //println!("rhs_pos = {:#?}", rhs_positions);
+            // println!("lhs_pos = {:#?}", lhs_positions);
+            // println!("rhs_pos = {:#?}", rhs_positions);
             // for (i, po) in lhs_positions.iter().enumerate(){
             //     match &po.kind{
             //         syntax::MatchKind::UnchangedToken {
@@ -292,8 +292,36 @@ fn main() {
                 rhs_src.max_line(),
                 display_options.num_context_lines as usize,
             );
+
+            // 获取每个hunk中Novel的MatchedPos对应的Syntax节点
             for (_, hunk) in hunks.iter().enumerate(){
-                println!("{:#?}", hunk_to_tree::get_novels_from_hunk(&lhs_positions, &rhs_positions, hunk));
+                let mut lhs_novel_syntax:Vec<&Syntax> = vec![];
+                let (lhs_novels, rhs_novels) = hunk_to_tree::get_novels_from_hunk(&lhs_positions, &rhs_positions, hunk);
+                //println!("{:#?}", lhs_novels);
+                for (_, line_and_pos) in lhs_novels.iter().enumerate(){
+                    for (_, matched_pos) in line_and_pos.1.iter().enumerate(){
+                        let mut flag = true;
+                        let matched_syntax = hunk_to_tree::matched_pos_to_syntax(*matched_pos, &lhs_ast).unwrap();
+                        for (_, temp) in lhs_novel_syntax.iter().enumerate(){// 去重
+                            match *temp{
+                                syntax::Syntax::List { .. } => {}
+                                syntax::Syntax::Atom { info, position, .. } =>{
+                                    let temp_position = position;
+                                    match matched_syntax{
+                                        syntax::Syntax::Atom { info, position, .. } => {
+                                            flag &= temp_position != position;
+                                            //println!("{:?}", temp_position);
+                                            //println!("{:?}", position);
+                                        }
+                                        _ =>{}
+                                    }
+                                }
+                            }
+                        }
+                        if flag { lhs_novel_syntax.push(matched_syntax); }
+                    }   
+                }
+                println!("{:#?}", lhs_novel_syntax);
             }
             // println!("{:#?}", hunks);
             // get diff result

@@ -300,7 +300,7 @@ difft --display side-by-side-show-both --context 0 test1.rs test2.rs
 - Change Type	
 
   - Inserted：遍历hunk中的内容，lines中左边全为None，即新增的全是**行**，显然是Inserted
-  - Removed：遍历hunk中的内容，lines中右边全为None，即新删除的的全是**行**，显然是Inserted
+  - Removed：遍历hunk中的内容，lines中右边全为None，即新删除的的全是**行**，显然是removed
   - Updated：遍历hunk中的内容，lines中左右都不为None，**可能是Updated**
     - TODO：如果某一边部分是None，部分有，怎么判断究竟是哪个？比如删了两行，又加了一行
     - TODO：如果都不为None，是否可以是inserted/removed？ 遍历这一行的MatchedPos，有UnchangedToken，也有Novel的，如何分辨？（比如三个节点，两边都是没变的，中间那个变了，那么显然是Updated）
@@ -314,10 +314,32 @@ difft --display side-by-side-show-both --context 0 test1.rs test2.rs
     - 字符串
     - 起始行，起始列 （从0开始）
     - 终止行，终止列
+    
   - Syntax node （Enum）
     - Syntax info （包括parent、前一个sibling、后一个sibling）
     - 对于List，包含起始字符串（起始行，起始列）、子孙节点、终止字符串
     - 对于Atom，包含（起始行，起始列-终止列）、字符串
+    
+    ```rust
+    pub enum Syntax<'a> {
+        List {
+            info: SyntaxInfo<'a>,
+            open_position: Vec<SingleLineSpan>, // 为什么是Vec？SingleLineSpan只记录一行中的信息，而可能有的节点在源代码中跨行了，所以要存成Vec
+            open_content: String,
+            children: Vec<&'a Syntax<'a>>,
+            close_position: Vec<SingleLineSpan>,
+            close_content: String,
+            num_descendants: u32,
+        },
+        Atom {
+            info: SyntaxInfo<'a>,
+            position: Vec<SingleLineSpan>,
+            content: String,
+            kind: AtomKind,
+        },
+    }
+    ```
+    
   - MatchedPos
     - MatchKind：改动前后完全没变的：UnchangedToken；发生变化的：Novel
     - 所在行、起始列-终止列
