@@ -44,7 +44,7 @@ pub fn matched_pos_to_syntax<'a>(matched_pos: &MatchedPos, syntax_vec:&Vec<&'a S
                 position, 
                 content, 
                 .. } => {
-                    if isInsideSpan(matched_pos.pos, position) {
+                    if is_inside_span(matched_pos.pos, position) {
                         return Some(*syntax_ref);
                     }
                 }
@@ -53,8 +53,39 @@ pub fn matched_pos_to_syntax<'a>(matched_pos: &MatchedPos, syntax_vec:&Vec<&'a S
     None
 }
 
+// 根据Syntax节点获取对应的tree-sitter::tree节点的cursor
+pub fn syntax_to_tree_node<'a>(syntax: &'a Syntax<'a>, cursor: &mut ts::TreeCursor<'a>) -> Option<ts::TreeCursor<'a>>{
+    match syntax{
+        Syntax::Atom { 
+            info, 
+            position, 
+            content, 
+            .. } => {
+                loop {
+                    let node = cursor.node();
+                    if is_the_same_position(&node, syntax) {
+                        return Some(cursor.clone());
+                    }
+                    if cursor.goto_first_child() {
+                        match syntax_to_tree_node(syntax, cursor){
+                            Some(n) => {return Some(n);}
+                            None => {}
+                        }
+                        cursor.goto_parent();
+                    }
+            
+                    if !cursor.goto_next_sibling() {
+                        break;
+                    }
+                }
+            }
+        _ =>{}
+    }
+    None
+}
+
 // 判断一个matchedpos的line span是否包含在一个syntax node对应的line span中（一个syntax node可能跨行，而matched pos不会）
-fn isInsideSpan(single_span: SingleLineSpan, spans: &Vec<SingleLineSpan>) -> bool{
+fn is_inside_span(single_span: SingleLineSpan, spans: &Vec<SingleLineSpan>) -> bool{
     if spans.len() == 1{ // syntax node 没有跨行，那么只要判断两个line span是否相同
         return single_span == spans[0];
     }
@@ -64,4 +95,21 @@ fn isInsideSpan(single_span: SingleLineSpan, spans: &Vec<SingleLineSpan>) -> boo
         }
     }
     return false;
+}
+
+// 判断一个tree-sitter node和syntax node是否是同一个（位置的）
+fn is_the_same_position(node: &Node, syntax: &Syntax) -> bool{
+    match syntax{
+        Syntax::Atom { 
+            info, 
+            position, 
+            .. } => {
+                let node_start_pos = node.start_position();
+                let node_end_pos = node.end_position();
+                return node_start_pos.row == position[0].line.0 as usize && node_start_pos.column == position[0].start_col as usize &&
+                node_end_pos.row == position[position.len() - 1].line.0 as usize && node_end_pos.column == position[position.len() - 1].end_col as usize;
+            }
+        _ =>{}
+    }
+    false
 }

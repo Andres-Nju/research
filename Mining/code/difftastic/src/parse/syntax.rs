@@ -13,7 +13,9 @@ use crate::{
     positions::SingleLineSpan,
 };
 use Syntax::*;
-
+use tree_edit_distance::*;
+use std::mem::{discriminant, Discriminant};
+use std::iter::empty;
 /// A Debug implementation that does not recurse into the
 /// corresponding node mentioned for Unchanged. Otherwise we will
 /// infinitely loop on unchanged nodes, which both point to the other.
@@ -107,6 +109,38 @@ pub enum Syntax<'a> {
     },
 }
 
+// impl <'a>tree_edit_distance::Node for Syntax<'a> {
+//     type Kind = Discriminant<Syntax<'a>>;
+//     fn kind(&self) -> Self::Kind {
+//         discriminant(self)
+//     }
+
+//     type Weight = u64;
+//     fn weight(&self) -> Self::Weight {
+//         1
+//     }
+// }
+
+// impl tree_edit_distance::Tree for Syntax<'_> {
+//     type Children<'c> = Box<dyn Iterator<Item = &'c Self> + 'c>
+//     where
+//         Self: 'c;
+
+//     fn children(&self) -> Self::Children<'_> {
+//         match self {
+//             Syntax::List { info, open_position, open_content, children, close_position, close_content, num_descendants } => {
+//                 let cc= vec![];
+//                 for (_, child) in children.iter().enumerate(){
+//                     cc.push((*child).clone());
+//                 }
+//                 Box::new(children.iter())
+//             },
+//             Syntax::Atom { info, position, content, kind } => {
+//                 Box::new(m.iter().map(|(_, v)| v))
+//             }
+//         }
+//     }
+// }
 fn dbg_pos(pos: &[SingleLineSpan]) -> String {
     match pos {
         [] => "-".into(),
@@ -675,13 +709,14 @@ pub fn get_novel_nodes<'a>(positions: &'a Vec<MatchedPos>, _line: &LineNumber) -
             MatchKind::UnchangedToken {
                 ..
             } => {},
-            _ => {
-                    if po.pos.line == *_line{
-                        // println!("po = {:?}", po);
-                        // println!("kind = {:?}", po.kind);
-                        res.push(po);
-                    }
+            MatchKind::Novel { highlight } =>{
+                if (*highlight != TokenKind::Delimiter && po.pos.line == *_line){
+                    // println!("po = {:?}", po);
+                    // println!("kind = {:?}", po.kind);
+                    res.push(po);
                 }
+            }
+            _ => {}
         }
     }
     res

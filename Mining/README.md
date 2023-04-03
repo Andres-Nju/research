@@ -206,19 +206,6 @@ difft --display side-by-side-show-both --context 0 test1.rs test2.rs
 
 
 
-- 现在能有的：
-  - 源代码中改动前后对应的行的map
-    - 行粒度的映射 lhs_line对应若干条rhs_line，反之同理
-    - 对于lhs中删去，或rhs中新增的行不会出现，只有左右都有的行对应
-  - 前后两棵tree-sitter::Tree
-    - todo：如何遍历？
-  - 对tree-sitter::Tree做处理后用于diff的 Vec<&Syntax>
-    - 在我们的项目中，对于1个function，Vec中只有一个节点，是一个List类型
-    - 这个用于diff的东西，有节点位置信息，但是没有节点名称信息，比如method_call这种，只存了字符串，比如foo()应该是一个method_call节点，但是Syntax只保存了"foo"和"()"
-    - 没有节点类型信息（这里是指比如if、while类型这样应该是一个控制流类型的节点），单纯是一个树的模型，包含了字符串和位置的信息
-- 想要搞得：
-  - 源代码改动前后对应的tree节点
-
 
 ### 特征向量抽象：
 
@@ -231,7 +218,11 @@ difft --display side-by-side-show-both --context 0 test1.rs test2.rs
 
 ![1](related work/ref/1.png)
 
-#### 特征向量与hunk间的关系
+
+
+
+
+#### 特征向量与hunk间的关系 (一个hunk对应一个特征向量时)
 
 - hunk数据结构
 
@@ -347,6 +338,23 @@ difft --display side-by-side-show-both --context 0 test1.rs test2.rs
 - hunk是一个行级别的对应，我们有行的信息可以获取对应行中的所有节点（Tree node or Syntax），找它们的公共祖先？
 
   - 不用MatchedPos是因为MatchedPos无法进行遍历，Tree node提供了cursor进行遍历：goto_first_child，goto_next_sibling，goto_parent
+
+
+
+
+
+#### 特征向量与node间的关系（一个node对应一个特征向量时）
+
+![1](related work/ref/1.png)
+
+
+
+- Change Type
+  - 输入：所有标记为Novel的节点（可能kind即label不同，可能kind相同但是value不同）
+  - 输出：所有标记为Novel节点的change type
+    - added
+    - deleted
+    - updated
 
 
 

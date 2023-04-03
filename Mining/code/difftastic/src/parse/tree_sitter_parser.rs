@@ -1152,10 +1152,11 @@ fn print_cursor(src: &str, cursor: &mut ts::TreeCursor, depth: usize) {
         node.end_position();
 
         let formatted_node = format!(
-            "{} {} - {}",
+            "{} {} - {}, id: {}",
             node.kind().replace('\n', "\\n"),
             node.start_position(),
-            node.end_position()
+            node.end_position(),
+            node.id()
         );
 
         if node.child_count() == 0 {

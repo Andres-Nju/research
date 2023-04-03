@@ -72,6 +72,7 @@ use std::{env, path::Path};
 use summary::{DiffResult, FileContent, FileFormat};
 use syntax::init_next_prev;
 use typed_arena::Arena;
+//use tree_edit_distance::diff;
 
 use crate::{
     dijkstra::mark_syntax, lines::MaxLine, parse::syntax::init_all_info,
@@ -280,7 +281,7 @@ fn main() {
             let opposite_to_rhs = opposite_positions(&rhs_positions);
 
             // 源代码中行粒度的对应: 对于新增或删除的行 不会出现，只有左右都有的行对应
-            // println!("opposite_to_lhs = {:#?}", opposite_to_lhs);
+             println!("opposite_to_lhs = {:#?}", opposite_to_lhs);
             // println!("opposite_to_rhs = {:#?}", opposite_to_rhs);
 
             let hunks = matched_pos_to_hunks(&lhs_positions, &rhs_positions);
@@ -292,12 +293,17 @@ fn main() {
                 rhs_src.max_line(),
                 display_options.num_context_lines as usize,
             );
+            
+            println!("{:#?}", hunks);
 
             // 获取每个hunk中Novel的MatchedPos对应的Syntax节点
             for (_, hunk) in hunks.iter().enumerate(){
                 let mut lhs_novel_syntax:Vec<&Syntax> = vec![];
+                let mut lhs_novel_tree_node = vec![];
+                let mut rhs_novel_syntax:Vec<&Syntax> = vec![];
+                let mut rhs_novel_tree_node = vec![];
                 let (lhs_novels, rhs_novels) = hunk_to_tree::get_novels_from_hunk(&lhs_positions, &rhs_positions, hunk);
-                //println!("{:#?}", lhs_novels);
+                // println!("{:#?}", lhs_novels);
                 for (_, line_and_pos) in lhs_novels.iter().enumerate(){
                     for (_, matched_pos) in line_and_pos.1.iter().enumerate(){
                         let mut flag = true;
@@ -321,9 +327,72 @@ fn main() {
                         if flag { lhs_novel_syntax.push(matched_syntax); }
                     }   
                 }
+                // println!("{:#?}", lhs_novels);
+                for (_, line_and_pos) in rhs_novels.iter().enumerate(){
+                    for (_, matched_pos) in line_and_pos.1.iter().enumerate(){
+                        let mut flag = true;
+                        // println!("{:?}", matched_pos);
+                        let matched_syntax = hunk_to_tree::matched_pos_to_syntax(*matched_pos, &rhs_ast).unwrap();
+                        for (_, temp) in rhs_novel_syntax.iter().enumerate(){// 去重
+                            match *temp{
+                                syntax::Syntax::List { .. } => {}
+                                syntax::Syntax::Atom { info, position, .. } =>{
+                                    let temp_position = position;
+                                    match matched_syntax{
+                                        syntax::Syntax::Atom { info, position, .. } => {
+                                            flag &= temp_position != position;
+                                        }
+                                        _ =>{}
+                                    }
+                                }
+                            }
+                        }
+                        if flag { rhs_novel_syntax.push(matched_syntax); }
+                    }   
+                }
+
+                for (_, syntax) in lhs_novel_syntax.iter().enumerate(){
+                    let mut cursor = lhs_tree.walk();
+                    lhs_novel_tree_node.push(hunk_to_tree::syntax_to_tree_node(*syntax, &mut cursor).unwrap());
+                }
+
+                for (_, syntax) in rhs_novel_syntax.iter().enumerate(){
+                    let mut cursor = rhs_tree.walk();
+                    rhs_novel_tree_node.push(hunk_to_tree::syntax_to_tree_node(*syntax, &mut cursor).unwrap());
+                }
                 println!("{:#?}", lhs_novel_syntax);
+                //println!("{:#?}", lhs_novel_tree_node);
+                println!("{:#?}", rhs_novel_syntax);
+                //println!("{:#?}", rhs_novel_tree_node);
+                for (_, cursor) in lhs_novel_tree_node.iter().enumerate(){
+                    let node = cursor.node();
+                    println!("{:?}, kind: {}, str:{}", node, node.kind(), &lhs_src[node.start_byte()..node.end_byte()]);
+                }
+                println!("--------------------------");
+                for (_, cursor) in rhs_novel_tree_node.iter().enumerate(){
+                    let node = cursor.node();
+                    println!("{:?}, kind: {}, str:{}", node, node.kind(), &rhs_src[node.start_byte()..node.end_byte()]);
+                }
             }
-            // println!("{:#?}", hunks);
+            println!("--------------------------\n");
+            let lhs_root = lhs_tree.walk();
+            let rhs_root = rhs_tree.walk();
+            let (added, deleted, updated) = feature_vector::tree_to_vector::tree_to_edit_action(&lhs_root, &lhs_src[..], &rhs_root, &rhs_src[..]);
+            println!("added node:");
+            for (_, added_cursor) in added.iter().enumerate(){
+                println!("{:?}", added_cursor.node());
+            }
+            println!("--------------------------\n");
+            println!("deleted node:");
+            for (_, deleted_cursor) in deleted.iter().enumerate(){
+                println!("{:?}", deleted_cursor.node());
+            }
+            println!("--------------------------\n");
+            println!("updated node:");
+            for (_, updated_cursor) in updated.iter().enumerate(){
+                println!("{:?}, {:?}", updated_cursor.0.node(), updated_cursor.1.node());
+            }
+            println!("--------------------------\n");
             // get diff result
             let has_syntactic_changes = !hunks.is_empty();
             let file_format = FileFormat::SupportedLanguage(language);
@@ -340,6 +409,7 @@ fn main() {
                 has_syntactic_changes,
             };
             print_diff_result(&display_options, &diff_result);
+            //let (edits, cost) = diff(&lhs_tree, &rhs_tree);
         }
     };
 }
