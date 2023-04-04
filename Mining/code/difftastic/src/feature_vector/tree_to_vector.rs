@@ -5,7 +5,9 @@ use crate::{
     display::hunks::{Hunk},
     lines::LineNumber, positions::SingleLineSpan,
 };
+use crossterm::cursor;
 use rustc_hash::FxHashMap;
+use tree_edit_distance::Tree;
 use tree_sitter as ts;
 use ts::{Node, TreeCursor};
 
@@ -128,7 +130,7 @@ fn calculate_edit_action<'a>(nodes_1: &Vec<TreeCursor>, nodes_2: &Vec<TreeCursor
                 cost[i][j] = cost[i - 1][j - 1];
                 // node_1[i - 1]的children 和 node_2[j - 1]的children进行递归比较
             }
-            else if (cost[i][j - 1] <= cost[i - 1][j] && cost[i][j - 1] <= cost[i - 1][j - 1] + 1){
+            else if (cost[i][j - 1] <= cost[i - 1][j] && cost[i][j - 1] <= cost[i - 1][j - 1] + 1) {
                 cost[i][j] = cost[i][j - 1] + 1;
                 path[i][j] = ChangeType::Added;
                 // nodes_2[j- 1]: add 
@@ -147,4 +149,36 @@ fn calculate_edit_action<'a>(nodes_1: &Vec<TreeCursor>, nodes_2: &Vec<TreeCursor
         }
     }
     path
+}
+
+fn is_same_label(cursor_1: &TreeCursor, cursor_2: &TreeCursor) -> bool {
+    if cursor_1.node().kind() == cursor_2.node().kind(){
+        if cursor_1.node().kind() == "block"{
+            return true;
+        }
+        if (cursor_1.node().child_count() == cursor_2.node().child_count()){
+            if cursor_1.node().child_count() == 0{
+                return true;
+            }
+            let mut cursor1 = cursor_1.clone();
+            let mut cursor2 = cursor_2.clone();
+            cursor1.goto_first_child();
+            cursor2.goto_first_child();
+            loop {
+                if cursor1.node().kind() != cursor2.node().kind(){
+                    return false;
+                }
+
+                if !cursor1.goto_next_sibling(){
+                    break;
+                }
+                if !cursor2.goto_next_sibling(){
+                    break;
+                }
+            }
+            return true;
+        }
+    }
+
+    false
 }
