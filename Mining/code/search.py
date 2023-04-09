@@ -44,7 +44,7 @@ if __name__ == '__main__':
     root_dir = cur_path + "/" + root_dir
     if not os.path.exists(root_dir):
         os.mkdir(root_dir)
-
+    commit_list = []
     #get the repo
     repo_file = sys.argv[1]
     with open(repo_file, 'r') as f:
@@ -56,11 +56,15 @@ if __name__ == '__main__':
             repo_url = "https://github.com/" + repo_full_name.strip()  
 
             # 查找之前存储的对应仓库的commit hash
-            commit_list = []     
-            c = open (cur_path + '/Commits/' + repo_name + '.txt' )     
+            commit_list.clear()
+            with open (cur_path + '/Commits/' + repo_name + '.txt' ) as hash_file:
+                for commit_hash in hash_file.readlines():
+                    commit_list.append(commit_hash.strip())
+            # print(commit_list)
             for commit in Repository(repo_url, only_modifications_with_file_types=['.rs'], only_commits = commit_list).traverse_commits():
                 # 根据msg做过滤
                 message = commit.msg
+                # print(message)
                 '''# 如果改动是clippy的, 也过滤掉
                 if "clippy" in message or "Clippy" in message:
                     continue
