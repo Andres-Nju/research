@@ -368,6 +368,7 @@ difft --display side-by-side-show-both --context 0 test1.rs test2.rs
 ### 需要进行改动以比较的参数
 
 - commit中修改的代码行数（search.py  LINES_THRESH）
+- pull request 对应的commit个数 （fixminer那篇文章中是只考虑了一个commit就修复的bug，并且fixminer中寻找bug fix patch的方法看上去更靠谱一些）
 - 将代码改动划分成不同hunk时用于判定不同行的改动是否算成同一处改动的标准
   - 行数：k  （hunks.rs ：MAX_DISTANCE）
     - 比如k = 4时，改动前的第1行对应改动后的2，3行，改动前的第5行对应改动后的4，5行。这样相差了4行，将其判定成两处改动

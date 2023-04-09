@@ -1,18 +1,15 @@
-import requests
-import json
 import sys
 import time
-import csv
 import os
 from pydriller import Repository
 from pydriller import ModificationType
 from urllib.parse import parse_qs, urlparse
 import github3
-root_dir = "Codes"
-LINES_THRESH = 10
+root_dir = "Code"
+LINES_THRESH = 6
 
 
-pr_key_words = []
+
 # 获取source code指定行的内容
 def get_content(source_code:str, start_line:int, end_line:int):
     res = ""
@@ -40,40 +37,7 @@ def filter_methods(methods_before, changed_methods):
 
         
 
-def get_repository(gh, owner:str, repo_name:str):
-    return gh.repository(owner, repo_name)
-
-def get_short_pull_requests(repo, state:str):
-    return repo.pull_requests(state=state)
-
-def contain_key_words(src:str, key_words:list):
-    for key in key_words:
-        if key in src:
-            return True
-    return False
 if __name__ == '__main__':
-
-    # test
-    my_token = "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"
-    gh = github3.login(token=my_token)
-    owner = "matsadler"
-    repo_name = "magnus"
-    repo = get_repository(gh, owner, repo_name)
-    short_pull_requests = get_short_pull_requests(repo, "closed")
-
-    # 遍历short pull requests
-    for short_pr in short_pull_requests:
-        print("Pull Request #{0}: {1}".format(short_pr.number, short_pr.title))
-        # print("Tag: {0}".format(short_pr.head.ref))
-        # 获得对应的pull request
-        pr = repo.pull_request(short_pr.number)
-        if pr.is_merged() and (contain_key_words(short_pr.head.ref, pr_key_words) or contain_key_words(short_pr.title, pr_key_words)):
-            for commit in pr.commits():
-                print("Commit SHA: {0}".format(commit.sha))
-
-    exit()
-
-
 
     cur_path = os.getcwd() # 当前目录
     # 创建总文件夹
@@ -84,19 +48,24 @@ if __name__ == '__main__':
     #get the repo
     repo_file = sys.argv[1]
     with open(repo_file, 'r') as f:
-        for repo_name in f.readlines():
-            repo_dir = root_dir + '/' + repo_name.split('/')[1].strip()
+        for repo_full_name in f.readlines():
+            repo_name = repo_full_name.split('/')[1].strip()
+            repo_dir = root_dir + '/' + repo_name
             if not os.path.exists(repo_dir):
                 os.mkdir(repo_dir)
-            repo_name = "https://github.com/" + repo_name.strip()            
-            for commit in Repository(repo_name, only_modifications_with_file_types=['.rs']).traverse_commits():
+            repo_url = "https://github.com/" + repo_full_name.strip()  
+
+            # 查找之前存储的对应仓库的commit hash
+            commit_list = []     
+            c = open (cur_path + '/Commits/' + repo_name + '.txt' )     
+            for commit in Repository(repo_url, only_modifications_with_file_types=['.rs'], only_commits = commit_list).traverse_commits():
                 # 根据msg做过滤
                 message = commit.msg
-                # 如果改动是clippy的，也过滤掉
+                '''# 如果改动是clippy的, 也过滤掉
                 if "clippy" in message or "Clippy" in message:
                     continue
                 if "fix" not in message and "bug" not in message and "Bug" not in message and "Fix" not in message:
-                    continue
+                    continue'''
                 
                 if commit.lines > LINES_THRESH:
                     continue
@@ -141,6 +110,9 @@ if __name__ == '__main__':
                             # 记录改动的方法名
                             with open(file_dir + "/methods.txt", 'a') as method_file:
                                 method_file.write(filtered_method.name + '\n')
+                            # 记录改动的commit message
+                            with open(file_dir + "/commit_message.txt", 'a') as method_file:
+                                method_file.write(message)
 
 
 
@@ -148,9 +120,9 @@ if __name__ == '__main__':
         
         
         '''sha_token = "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"
-        repo_name = sys.argv[1] 
-        query_url = 'https://api.github.com/search/repositories?q=' + repo_name
-        project_url = 'https://github.com/' + repo_name
+        repo_full_name = sys.argv[1] 
+        query_url = 'https://api.github.com/search/repositories?q=' + repo_full_name
+        project_url = 'https://github.com/' + repo_full_name
         repo_info = fetchUrl(query_url, sha_token)["items"][0]
         time.sleep(1)       
         print(repo_info) '''

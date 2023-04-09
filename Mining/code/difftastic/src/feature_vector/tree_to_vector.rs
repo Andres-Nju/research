@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+use std::{collections::HashMap, fmt::{Display, write}};
 
 use crate::{
     parse::syntax::{Syntax, MatchedPos, MatchKind, get_novel_nodes},
@@ -11,14 +11,23 @@ use tree_edit_distance::Tree;
 use tree_sitter as ts;
 use ts::{Node, TreeCursor};
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum ChangeType{
     Added,
     Deleted,
     MaybeUpdated,
     DeletedThenAdded
 }
-
+impl Display for ChangeType{
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self{
+            ChangeType::Added => write!(f, "Added"),
+            ChangeType::Deleted => write!(f, "Deleted"),
+            ChangeType::DeletedThenAdded => write!(f, "DeltedThenAdded"),
+            ChangeType::MaybeUpdated => write!(f, "MaybeUpdated")
+        }
+    }
+}
 pub fn tree_to_edit_action<'a> (lhs_root: &TreeCursor<'a>, lhs_src: &str, rhs_root: &TreeCursor<'a>, rhs_src: &str) -> (Vec<TreeCursor<'a>>, Vec<TreeCursor<'a>>, Vec<(TreeCursor<'a>, TreeCursor<'a>)>){
     let mut added = vec![];
     let mut deleted = vec![];
@@ -45,6 +54,9 @@ pub fn tree_to_edit_action<'a> (lhs_root: &TreeCursor<'a>, lhs_src: &str, rhs_ro
         }
     }
     else {
+        // if (lhs_root.node().kind() == "match_block" && rhs_root.node().kind() == "match_block") {
+        //     println!("{}, {}", lhs_root.node().child_count(), rhs_root.node().child_count());
+        // }
         let mut lhs_nodes = vec![];
         let mut rhs_nodes = vec![];
         let mut lhs_cursor = lhs_root.clone();
@@ -113,7 +125,18 @@ pub fn get_node_change_type<'a> (nodes_1: &Vec<TreeCursor<'a>>, nodes_2: &Vec<Tr
     (added, deleted, maybe_updated)
 }
 
-fn calculate_edit_action<'a>(nodes_1: &Vec<TreeCursor>, nodes_2: &Vec<TreeCursor>) -> Vec<Vec<ChangeType>>{
+
+pub fn tag_change_type<'a>(lhs_nodes: &'a Vec<Node<'a>>, rhs_nodes: &'a Vec<Node<'a>>) -> HashMap<&'a Node<'a>, ChangeType>{
+    let mut change_type_map = HashMap::new();
+    for (_, lhs_node) in lhs_nodes.iter().enumerate(){
+        change_type_map.entry(lhs_node).or_insert(ChangeType::Deleted);
+    }
+    for (_, rhs_node) in rhs_nodes.iter().enumerate(){
+        change_type_map.entry(rhs_node).or_insert(ChangeType::Added);
+    }
+    change_type_map
+}
+pub fn calculate_edit_action<'a>(nodes_1: &Vec<TreeCursor>, nodes_2: &Vec<TreeCursor>) -> Vec<Vec<ChangeType>>{
     let n = nodes_1.len();
     let m = nodes_2.len();
 
@@ -130,27 +153,65 @@ fn calculate_edit_action<'a>(nodes_1: &Vec<TreeCursor>, nodes_2: &Vec<TreeCursor
                 cost[i][j] = cost[i - 1][j - 1];
                 // node_1[i - 1]的children 和 node_2[j - 1]的children进行递归比较
             }
-            else if (cost[i][j - 1] <= cost[i - 1][j] && cost[i][j - 1] <= cost[i - 1][j - 1] + 1) {
+            else if (cost[i][j - 1] <= cost[i - 1][j] && cost[i][j - 1] <= cost[i - 1][j - 1]) {
                 cost[i][j] = cost[i][j - 1] + 1;
                 path[i][j] = ChangeType::Added;
                 // nodes_2[j- 1]: add 
             }
-            else if (cost[i - 1][j] <= cost[i][j - 1] && cost[i - 1][j] <= cost[i - 1][j - 1] + 1) {
+            else if (cost[i - 1][j] <= cost[i][j - 1] && cost[i - 1][j] <= cost[i - 1][j - 1]) {
                 cost[i][j] = cost[i - 1][j] + 1;
                 path[i][j] = ChangeType::Deleted;
                 // nodes_1[i- 1]: delete 
             }
             else{
-                cost[i][j] = cost[i - 1][j - 1] + 2;
+                cost[i][j] = cost[i - 1][j - 1] + 1;
                 path[i][j] = ChangeType::DeletedThenAdded;
                 // nodes_1[i- 1]: delete 
                 // nodes_2[j- 1]: add 
             }
         }
     }
+    if (nodes_1.len() == 6 && nodes_2.len() == 7){
+        println!("{:#?}", path);
+    }
     path
 }
 
+
+pub fn get_parent_kind(node: &Node) -> &'static str{
+    node.parent().unwrap().kind()
+}
+
+pub fn get_grandparent_kind(node: &Node) -> &'static str{
+    node.parent().unwrap().parent().unwrap().kind()
+}
+
+pub fn is_same_tree(cursor_1: &TreeCursor, cursor_2: &TreeCursor) -> bool {
+    if cursor_1.node().kind() == cursor_2.node().kind(){
+        if (cursor_1.node().child_count() == cursor_2.node().child_count()){
+            if cursor_1.node().child_count() == 0{
+                return true;
+            }
+            let mut cursor1 = cursor_1.clone();
+            let mut cursor2 = cursor_2.clone();
+            cursor1.goto_first_child();
+            cursor2.goto_first_child();
+            let mut flag = true;
+            loop {
+                flag &= is_same_tree(&cursor1, &cursor2);
+
+                if !cursor1.goto_next_sibling(){
+                    break;
+                }
+                if !cursor2.goto_next_sibling(){
+                    break;
+                }
+            }
+            return flag;
+        }
+    }
+    false
+}
 fn is_same_label(cursor_1: &TreeCursor, cursor_2: &TreeCursor) -> bool {
     if cursor_1.node().kind() == cursor_2.node().kind(){
         if cursor_1.node().kind() == "block"{

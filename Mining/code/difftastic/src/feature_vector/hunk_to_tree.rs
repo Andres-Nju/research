@@ -84,6 +84,35 @@ pub fn syntax_to_tree_node<'a>(syntax: &'a Syntax<'a>, cursor: &mut ts::TreeCurs
     None
 }
 
+// 从Tree中找到与指定matchedpos对应的节点 
+pub fn matched_pos_to_tree_node<'a>(matched_pos: &MatchedPos, cursor: &mut ts::TreeCursor<'a>) -> Option<ts::TreeCursor<'a>>{
+    let node = cursor.node();
+    if (node.kind().contains("literal")){
+        if is_inside_node_span(matched_pos.pos, &node){
+            return Some(cursor.clone());
+        }
+    }
+    if (node.child_count() == 0){
+        //println!("{:?}", matched_pos);
+        //println!("{:?}", node);
+        if is_inside_node_span(matched_pos.pos, &node){
+            return Some(cursor.clone());
+        }
+        else {
+            return None;
+        }
+    }
+    else {
+        for c in node.children(cursor){
+            match matched_pos_to_tree_node(matched_pos, &mut c.walk()){
+                Some(n) => {return Some(n);}
+                None => {}
+            }
+        }
+        None
+    }
+}
+
 // 判断一个matchedpos的line span是否包含在一个syntax node对应的line span中（一个syntax node可能跨行，而matched pos不会）
 fn is_inside_span(single_span: SingleLineSpan, spans: &Vec<SingleLineSpan>) -> bool{
     if spans.len() == 1{ // syntax node 没有跨行，那么只要判断两个line span是否相同
@@ -97,6 +126,25 @@ fn is_inside_span(single_span: SingleLineSpan, spans: &Vec<SingleLineSpan>) -> b
     return false;
 }
 
+// 判断一个matchedpos的line span是否包含在一个tree node对应的line span中（一个tree node可能跨行，而matched pos不会）
+fn is_inside_node_span(single_span: SingleLineSpan, node: &ts::Node) -> bool{
+    let node_start_pos = node.start_position();
+    let node_end_pos = node.end_position();
+    if (node_start_pos.row <= single_span.line.0 as usize && node_end_pos.row >= single_span.line.0 as usize){
+        if (node_start_pos.row == node_end_pos.row) { // tree node 不跨行
+            return node_start_pos.column <= single_span.start_col as usize && node_end_pos.column >= single_span.end_col as usize;
+        }
+        // tree node 跨行
+        if ( node_start_pos.row == single_span.line.0 as usize) { // matched pos在node的起始行
+            return node_start_pos.column <= single_span.start_col as usize;
+        }
+        if ( node_end_pos.row == single_span.line.0 as usize ){ // matched pos在node的结束行
+            return node_end_pos.column >= single_span.end_col as usize;
+        }
+        return true;
+    }
+    return false;
+}
 // 判断一个tree-sitter node和syntax node是否是同一个（位置的）
 fn is_the_same_position(node: &Node, syntax: &Syntax) -> bool{
     match syntax{

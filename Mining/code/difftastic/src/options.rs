@@ -1,6 +1,6 @@
 //! CLI option parsing.
 
-use std::{env, ffi::OsStr, path::Path, path::PathBuf};
+use std::{env, ffi::OsStr, path::Path, path::PathBuf, fs::File};
 
 use clap::{crate_authors, crate_description, crate_version, Arg, Command};
 use const_format::formatcp;
@@ -340,6 +340,9 @@ pub enum Mode {
         lhs_display_path: String,
         /// The path that we should display for the RHS file.
         rhs_display_path: String,
+        repo_name: String,
+        commit_hash: String,
+        vector_file: String,
     },
     ListLanguages {
         use_color: bool,
@@ -408,11 +411,41 @@ pub fn parse_args() -> Mode {
     let args: Vec<_> = matches.values_of_os("paths").unwrap_or_default().collect();
     info!("CLI arguments: {:?}", args);
 
+    let mut repo_name= String::new();
+    let mut commit_hash = String::new();
+    let mut vector_file = String::new();
     // TODO: document these different ways of calling difftastic.
     let (lhs_display_path, rhs_display_path, lhs_path, rhs_path, in_vcs) = match &args[..] {
         [lhs_path, rhs_path] => {
             let lhs_arg = FileArgument::from_cli_argument(lhs_path);
             let rhs_arg = FileArgument::from_cli_argument(rhs_path);
+            (
+                lhs_arg.display(),
+                rhs_arg.display(),
+                lhs_arg,
+                rhs_arg,
+                false,
+            )
+        }
+        [lhs_path, rhs_path, repo_path, commit_] => {
+            let lhs_arg = FileArgument::from_cli_argument(lhs_path);
+            let rhs_arg = FileArgument::from_cli_argument(rhs_path);
+            repo_name.push_str(&FileArgument::from_cli_argument(repo_path).display()[..]);
+            commit_hash.push_str(&FileArgument::from_cli_argument(commit_).display()[..]);
+            (
+                lhs_arg.display(),
+                rhs_arg.display(),
+                lhs_arg,
+                rhs_arg,
+                false,
+            )
+        }
+        [lhs_path, rhs_path, repo_path, commit_, vector_] => {
+            let lhs_arg = FileArgument::from_cli_argument(lhs_path);
+            let rhs_arg = FileArgument::from_cli_argument(rhs_path);
+            repo_name.push_str(&FileArgument::from_cli_argument(repo_path).display()[..]);
+            commit_hash.push_str(&FileArgument::from_cli_argument(commit_).display()[..]);
+            vector_file.push_str(&FileArgument::from_cli_argument(vector_).display()[..]);
             (
                 lhs_arg.display(),
                 rhs_arg.display(),
@@ -550,6 +583,9 @@ pub fn parse_args() -> Mode {
         rhs_path,
         lhs_display_path,
         rhs_display_path,
+        repo_name,
+        commit_hash,
+        vector_file,
     }
 }
 

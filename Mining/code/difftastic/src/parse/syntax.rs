@@ -638,6 +638,7 @@ impl<'a> Eq for Syntax<'a> {}
 impl<'a> Ord for Syntax<'a> {
     fn cmp(&self, other: &Self) -> Ordering {
         self.content_id().cmp(&other.content_id())
+        // self.id().cmp(&other.id())
     }
 }
 impl <'a> PartialOrd for Syntax<'a> {
@@ -710,7 +711,7 @@ pub fn get_novel_nodes<'a>(positions: &'a Vec<MatchedPos>, _line: &LineNumber) -
                 ..
             } => {},
             MatchKind::Novel { highlight } =>{
-                if (*highlight != TokenKind::Delimiter && po.pos.line == *_line){
+                if (po.pos.line == *_line){
                     // println!("po = {:?}", po);
                     // println!("kind = {:?}", po.kind);
                     res.push(po);

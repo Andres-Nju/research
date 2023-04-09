@@ -54,7 +54,7 @@ bumpalo = "3.11.1"
 unicode-width = "0.1.9"
 crossterm = { version = "0.25.0", features = [] }
 tree-edit-distance = "0.4.0"
-
+csv = "1.2.1"
 [dev-dependencies]
 # This is the last version of assert_cmd that supports rustc 1.57.
 assert_cmd = ">= 2, <= 2.0.5"

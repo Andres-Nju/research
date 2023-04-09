@@ -66,6 +66,8 @@ use diff::sliders::fix_all_sliders;
 use options::{DiffOptions, DisplayMode, DisplayOptions, FileArgument, Mode};
 use owo_colors::OwoColorize;
 use rayon::prelude::*;
+use std::fs::OpenOptions;
+use std::io::Write;
 use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::Arc;
 use std::{env, path::Path};
@@ -180,6 +182,9 @@ fn main() {
             rhs_path,
             lhs_display_path,
             rhs_display_path,
+            repo_name,
+            commit_hash,
+            vector_file,
         } => {
             // get tree-sitter::Tree
             // if diff_options.ignore_comments {
@@ -281,7 +286,7 @@ fn main() {
             let opposite_to_rhs = opposite_positions(&rhs_positions);
 
             // 源代码中行粒度的对应: 对于新增或删除的行 不会出现，只有左右都有的行对应
-             println!("opposite_to_lhs = {:#?}", opposite_to_lhs);
+            // println!("opposite_to_lhs = {:#?}", opposite_to_lhs);
             // println!("opposite_to_rhs = {:#?}", opposite_to_rhs);
 
             let hunks = matched_pos_to_hunks(&lhs_positions, &rhs_positions);
@@ -294,7 +299,7 @@ fn main() {
                 display_options.num_context_lines as usize,
             );
             
-            println!("{:#?}", hunks);
+
 
             // 获取每个hunk中Novel的MatchedPos对应的Syntax节点
             for (_, hunk) in hunks.iter().enumerate(){
@@ -304,95 +309,142 @@ fn main() {
                 let mut rhs_novel_tree_node = vec![];
                 let (lhs_novels, rhs_novels) = hunk_to_tree::get_novels_from_hunk(&lhs_positions, &rhs_positions, hunk);
                 // println!("{:#?}", lhs_novels);
-                for (_, line_and_pos) in lhs_novels.iter().enumerate(){
-                    for (_, matched_pos) in line_and_pos.1.iter().enumerate(){
-                        let mut flag = true;
-                        let matched_syntax = hunk_to_tree::matched_pos_to_syntax(*matched_pos, &lhs_ast).unwrap();
-                        for (_, temp) in lhs_novel_syntax.iter().enumerate(){// 去重
-                            match *temp{
-                                syntax::Syntax::List { .. } => {}
-                                syntax::Syntax::Atom { info, position, .. } =>{
-                                    let temp_position = position;
-                                    match matched_syntax{
-                                        syntax::Syntax::Atom { info, position, .. } => {
-                                            flag &= temp_position != position;
-                                            //println!("{:?}", temp_position);
-                                            //println!("{:?}", position);
-                                        }
-                                        _ =>{}
-                                    }
-                                }
-                            }
-                        }
-                        if flag { lhs_novel_syntax.push(matched_syntax); }
-                    }   
-                }
-                // println!("{:#?}", lhs_novels);
-                for (_, line_and_pos) in rhs_novels.iter().enumerate(){
-                    for (_, matched_pos) in line_and_pos.1.iter().enumerate(){
-                        let mut flag = true;
-                        // println!("{:?}", matched_pos);
-                        let matched_syntax = hunk_to_tree::matched_pos_to_syntax(*matched_pos, &rhs_ast).unwrap();
-                        for (_, temp) in rhs_novel_syntax.iter().enumerate(){// 去重
-                            match *temp{
-                                syntax::Syntax::List { .. } => {}
-                                syntax::Syntax::Atom { info, position, .. } =>{
-                                    let temp_position = position;
-                                    match matched_syntax{
-                                        syntax::Syntax::Atom { info, position, .. } => {
-                                            flag &= temp_position != position;
-                                        }
-                                        _ =>{}
-                                    }
-                                }
-                            }
-                        }
-                        if flag { rhs_novel_syntax.push(matched_syntax); }
-                    }   
+                // for (_, line_and_pos) in lhs_novels.iter().enumerate(){
+                //     for (_, matched_pos) in line_and_pos.1.iter().enumerate(){
+                //         let mut flag = true;
+                //         let matched_syntax = hunk_to_tree::matched_pos_to_syntax(*matched_pos, &lhs_ast).unwrap();
+                //         for (_, temp) in lhs_novel_syntax.iter().enumerate(){// 去重
+                //             match *temp{
+                //                 syntax::Syntax::List { .. } => {}
+                //                 syntax::Syntax::Atom { info, position, .. } =>{
+                //                     let temp_position = position;
+                //                     match matched_syntax{
+                //                         syntax::Syntax::Atom { info, position, .. } => {
+                //                             flag &= temp_position != position;
+                //                             //println!("{:?}", temp_position);
+                //                             //println!("{:?}", position);
+                //                         }
+                //                         _ =>{}
+                //                     }
+                //                 }
+                //             }
+                //         }
+                //         if flag { lhs_novel_syntax.push(matched_syntax); }
+                //     }   
+                // }
+                // // println!("{:#?}", lhs_novels);
+                // for (_, line_and_pos) in rhs_novels.iter().enumerate(){
+                //     for (_, matched_pos) in line_and_pos.1.iter().enumerate(){
+                //         let mut flag = true;
+                //         // println!("{:?}", matched_pos);
+                //         let matched_syntax = hunk_to_tree::matched_pos_to_syntax(*matched_pos, &rhs_ast).unwrap();
+                //         for (_, temp) in rhs_novel_syntax.iter().enumerate(){// 去重
+                //             match *temp{
+                //                 syntax::Syntax::List { .. } => {}
+                //                 syntax::Syntax::Atom { info, position, .. } =>{
+                //                     let temp_position = position;
+                //                     match matched_syntax{
+                //                         syntax::Syntax::Atom { info, position, .. } => {
+                //                             flag &= temp_position != position;
+                //                         }
+                //                         _ =>{}
+                //                     }
+                //                 }
+                //             }
+                //         }
+                //         if flag { rhs_novel_syntax.push(matched_syntax); }
+                //     }   
+                // }
+                // lhs_novel_syntax.sort();
+                // println!("{:#?}", lhs_novel_syntax);
+                // println!("{:#?}", lhs_novel_tree_node);
+                // rhs_novel_syntax.sort();
+                // println!("{:#?}", rhs_novel_syntax);
+                // println!("{:#?}", rhs_novel_tree_node);
+                // for (_, syntax) in lhs_novel_syntax.iter().enumerate(){
+                //     let mut cursor = lhs_tree.walk();
+                //     lhs_novel_tree_node.push(hunk_to_tree::syntax_to_tree_node(*syntax, &mut cursor).unwrap().node());
+                // }
+
+                // for (_, syntax) in rhs_novel_syntax.iter().enumerate(){
+                //     let mut cursor = rhs_tree.walk();
+                //     rhs_novel_tree_node.push(hunk_to_tree::syntax_to_tree_node(*syntax, &mut cursor).unwrap().node());
+                // }
+                
+                
+                // matched pos 匹配到tree node
+                for (_, matched_pos_map) in lhs_novels.iter().enumerate(){
+                    for (_, matched_pos) in matched_pos_map.1.iter().enumerate(){
+                        let mut cursor = lhs_tree.walk();
+                        lhs_novel_tree_node.push(hunk_to_tree::matched_pos_to_tree_node(*matched_pos, &mut cursor).unwrap().node());
+                    }
                 }
 
-                for (_, syntax) in lhs_novel_syntax.iter().enumerate(){
-                    let mut cursor = lhs_tree.walk();
-                    lhs_novel_tree_node.push(hunk_to_tree::syntax_to_tree_node(*syntax, &mut cursor).unwrap());
+                for (_, matched_pos_map) in rhs_novels.iter().enumerate(){
+                    for (_, matched_pos) in matched_pos_map.1.iter().enumerate(){
+                        let mut cursor = rhs_tree.walk();
+                        rhs_novel_tree_node.push(hunk_to_tree::matched_pos_to_tree_node(*matched_pos, &mut cursor).unwrap().node());
+                    }
                 }
 
-                for (_, syntax) in rhs_novel_syntax.iter().enumerate(){
-                    let mut cursor = rhs_tree.walk();
-                    rhs_novel_tree_node.push(hunk_to_tree::syntax_to_tree_node(*syntax, &mut cursor).unwrap());
+                // for (_, node) in lhs_novel_tree_node.iter().enumerate(){
+                //     // let node = cursor.node();
+                //     println!("{:?}, kind: {}, str:{}", node, node.kind(), &lhs_src[node.start_byte()..node.end_byte()]);
+                // }
+                // println!("--------------------------");
+                // for (_, node) in rhs_novel_tree_node.iter().enumerate(){
+                //     // let node = cursor.node();
+                //     println!("{:?}, kind: {}, str:{}", node, node.kind(), &rhs_src[node.start_byte()..node.end_byte()]);
+                // }
+                let change_type_map = feature_vector::tree_to_vector::tag_change_type(&lhs_novel_tree_node, &rhs_novel_tree_node);
+                for (_, map) in change_type_map.iter().enumerate(){
+                    //println!("node = {:?},\n  change_type = {:?},\n  type = {:?},\n  context = {:?}", map.0, map.1, feature_vector::tree_to_vector::get_parent_kind(*map.0), feature_vector::tree_to_vector::get_grandparent_kind(*map.0));
+                    let mut vector_fp = OpenOptions::new().append(true).open(&vector_file[..]).expect("cannot open file");
+                    let mut wtr = csv::Writer::from_writer(vector_fp);
+                    wtr.write_record(&[&repo_name, &commit_hash, &map.1.to_string(), &feature_vector::tree_to_vector::get_parent_kind(*map.0).to_string(), &feature_vector::tree_to_vector::get_grandparent_kind(*map.0).to_string()]).expect("wrtie vector into file failed");
+                    wtr.flush().expect("flush failed");
+                    //vector_fp.write_all()
                 }
-                println!("{:#?}", lhs_novel_syntax);
-                //println!("{:#?}", lhs_novel_tree_node);
-                println!("{:#?}", rhs_novel_syntax);
-                //println!("{:#?}", rhs_novel_tree_node);
-                for (_, cursor) in lhs_novel_tree_node.iter().enumerate(){
-                    let node = cursor.node();
-                    println!("{:?}, kind: {}, str:{}", node, node.kind(), &lhs_src[node.start_byte()..node.end_byte()]);
-                }
-                println!("--------------------------");
-                for (_, cursor) in rhs_novel_tree_node.iter().enumerate(){
-                    let node = cursor.node();
-                    println!("{:?}, kind: {}, str:{}", node, node.kind(), &rhs_src[node.start_byte()..node.end_byte()]);
-                }
+                
+                // let (added_nodes, deleted_nodes, updated_nodes ) = feature_vector::tree_to_vector::get_node_change_type(&lhs_novel_tree_node, &rhs_novel_tree_node, &feature_vector::tree_to_vector::calculate_edit_action(&lhs_novel_tree_node, &rhs_novel_tree_node));
+                // println!("--------------------------\n");
+                // let lhs_root = lhs_tree.walk();
+                // let rhs_root = rhs_tree.walk();
+                // println!("added node:");
+                // for (_, added_cursor) in added_nodes.iter().enumerate(){
+                //     println!("{:?}", added_cursor.node());
+                // }
+                // println!("--------------------------\n");
+                // println!("deleted node:");
+                // for (_, deleted_cursor) in deleted_nodes.iter().enumerate(){
+                //     println!("{:?}", deleted_cursor.node());
+                // }
+                // println!("--------------------------\n");
+                // println!("updated node:");
+                // for (_, updated_cursor) in updated_nodes.iter().enumerate(){
+                //     println!("{:?}, {:?}", updated_cursor.0.node(), updated_cursor.1.node());
+                // }
+                println!("--------------------------\n");
             }
-            println!("--------------------------\n");
-            let lhs_root = lhs_tree.walk();
-            let rhs_root = rhs_tree.walk();
-            let (added, deleted, updated) = feature_vector::tree_to_vector::tree_to_edit_action(&lhs_root, &lhs_src[..], &rhs_root, &rhs_src[..]);
-            println!("added node:");
-            for (_, added_cursor) in added.iter().enumerate(){
-                println!("{:?}", added_cursor.node());
-            }
-            println!("--------------------------\n");
-            println!("deleted node:");
-            for (_, deleted_cursor) in deleted.iter().enumerate(){
-                println!("{:?}", deleted_cursor.node());
-            }
-            println!("--------------------------\n");
-            println!("updated node:");
-            for (_, updated_cursor) in updated.iter().enumerate(){
-                println!("{:?}, {:?}", updated_cursor.0.node(), updated_cursor.1.node());
-            }
-            println!("--------------------------\n");
+            // println!("--------------------------\n");
+            // let lhs_root = lhs_tree.walk();
+            // let rhs_root = rhs_tree.walk();
+            // let (added, deleted, updated) = feature_vector::tree_to_vector::tree_to_edit_action(&lhs_root, &lhs_src[..], &rhs_root, &rhs_src[..]);
+            // println!("added node:");
+            // for (_, added_cursor) in added.iter().enumerate(){
+            //     println!("{:?}", added_cursor.node());
+            // }
+            // println!("--------------------------\n");
+            // println!("deleted node:");
+            // for (_, deleted_cursor) in deleted.iter().enumerate(){
+            //     println!("{:?}", deleted_cursor.node());
+            // }
+            // println!("--------------------------\n");
+            // println!("updated node:");
+            // for (_, updated_cursor) in updated.iter().enumerate(){
+            //     println!("{:?}, {:?}", updated_cursor.0.node(), updated_cursor.1.node());
+            // }
+            // println!("--------------------------\n");
             // get diff result
             let has_syntactic_changes = !hunks.is_empty();
             let file_format = FileFormat::SupportedLanguage(language);
@@ -409,7 +461,9 @@ fn main() {
                 has_syntactic_changes,
             };
             print_diff_result(&display_options, &diff_result);
+            println!("repo name = {}, commit hash = {}", repo_name, commit_hash);
             //let (edits, cost) = diff(&lhs_tree, &rhs_tree);
+            // println!("{}", feature_vector::tree_to_vector::is_same_tree(&lhs_tree.walk(), &rhs_tree.walk()));
         }
     };
 }

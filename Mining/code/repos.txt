@@ -1,1 +1,4 @@
-matsadler/magnus
+denoland/deno
+tauri-apps/tauri
+alacritty/alacritty
+sharkdp/bat
