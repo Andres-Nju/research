@@ -1,0 +1,4 @@
+Fix process test when using busybox mkdir
+
+busybox mkdir . returns 0
+busybox mkdir ./ returns 1

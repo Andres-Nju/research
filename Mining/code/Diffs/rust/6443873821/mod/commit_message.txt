@@ -1,0 +1,3 @@
+Fix broken link markup in Hasher::finish docs
+
+There were apostrophes when there needed to be backticks.

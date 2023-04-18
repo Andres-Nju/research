@@ -1,0 +1,1 @@
+Add note about global state in try_print_query_stackAdd note about global state in try_print_query_stack

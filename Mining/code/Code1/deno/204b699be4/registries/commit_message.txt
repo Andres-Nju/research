@@ -1,0 +1,7 @@
+chore(cli/lsp): fix 2 lint errors (#10228)
+
+1. error: called `.iter().count()` on a `Vec`
+2. error: inconsistent struct constructorchore(cli/lsp): fix 2 lint errors (#10228)
+
+1. error: called `.iter().count()` on a `Vec`
+2. error: inconsistent struct constructor

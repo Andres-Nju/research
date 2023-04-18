@@ -1,0 +1,1 @@
+Fix equivalent string in escape_default

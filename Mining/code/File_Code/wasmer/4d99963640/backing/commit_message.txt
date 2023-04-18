@@ -1,0 +1,1 @@
+Replace "be the i32 type" with "be an i32" in error messages.

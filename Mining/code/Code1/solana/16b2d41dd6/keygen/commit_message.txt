@@ -1,0 +1,1 @@
+Improve error message on `solana-keygen new` filesystem permission errorsImprove error message on `solana-keygen new` filesystem permission errors

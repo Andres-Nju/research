@@ -1,0 +1,3 @@
+Fix warning when compilin libcore on 16bit targets.
+
+Fixes #49617

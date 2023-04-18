@@ -1,0 +1,11 @@
+fix(cli): fix default-run not deserialized (#6584)
+
+* fix(cli): fix default-run not deserialized
+
+* Create fix-cli-default-run.md
+
+* Update .changes/fix-cli-default-run.md [skip ci]
+
+---------
+
+Co-authored-by: Lucas Fernandes Nogueira <lucas@tauri.app>

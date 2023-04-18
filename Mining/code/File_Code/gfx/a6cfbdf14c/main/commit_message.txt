@@ -1,0 +1,3 @@
+Display correct time in ms
+
+Changed duration_to_f64 to duration_to_ms to display the correct time in ms.

@@ -1,0 +1,2 @@
+get_num_blocks_since_signature_confirmation
+get_signature_status_with_commitment

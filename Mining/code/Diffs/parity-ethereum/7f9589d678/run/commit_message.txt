@@ -1,0 +1,1 @@
+Fix warning about --no-hardcoded-sync being printed when it shouldn't (#8261)

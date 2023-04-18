@@ -1,0 +1,1 @@
+Fix PoW blockchains sealing notifications in chain_new_blocks (#8656)

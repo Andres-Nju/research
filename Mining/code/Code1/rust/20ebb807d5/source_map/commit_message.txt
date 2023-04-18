@@ -1,0 +1,1 @@
+span_to_lines: account for DUMMY_SP

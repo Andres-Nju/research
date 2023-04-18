@@ -1,0 +1,6 @@
+Fix block selection expansion with Ctrl + RMB
+
+When 'ExpandSelection' binding was added only default binding for
+RightClick was added, however to expand block selection holding control
+when doing a click is required, so this commit adds a binding for
+'RMB + Control'.

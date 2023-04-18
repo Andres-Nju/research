@@ -1,0 +1,3 @@
+Fix Bench-tps being too strict (#6105)
+
+automerge

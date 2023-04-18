@@ -1,0 +1,1 @@
+Fix link capitalization in documentation of std::io::BufWriter.

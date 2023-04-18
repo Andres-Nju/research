@@ -1,0 +1,3 @@
+fix: confusing comment in conversions/try_from_into.rs
+
+Co-authored-by: Lebedev <sergey.lebedev@corp.mail.ru>

@@ -1,0 +1,10 @@
+Fix test failure in changing_bin_features_caches_targets for Linux.
+
+Fixes rust-lang/rust#50962.
+
+My theory is that while copying the binary, another thread forked with the fd
+open.  The copy finishes and attempts to exec before the other child execs (and
+closes the writeable fd).
+
+I was able to easily repro this on linux.  I ran some stress tests of this fix
+locally on linux and on appveyor, and was unable to trigger it again.

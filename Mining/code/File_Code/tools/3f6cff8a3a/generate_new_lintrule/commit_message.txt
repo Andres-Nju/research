@@ -1,0 +1,1 @@
+fix(xtask): `just new-lintrule` document generation error (#4306)

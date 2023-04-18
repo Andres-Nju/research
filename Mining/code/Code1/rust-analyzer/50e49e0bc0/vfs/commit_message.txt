@@ -1,0 +1,6 @@
+Fix test_vfs_works failing on Windows due to extra Write events
+
+On Windows `notify` generates extra `Write` events for folders, which caused
+`process_tasks` to not handle all tasks generated on Windows.
+
+This fixes #827

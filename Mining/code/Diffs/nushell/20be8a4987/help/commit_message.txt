@@ -1,0 +1,5 @@
+Fix for search terms in `help --find` (#5081)
+
+* Fix search terms in help --find
+
+* Update help --find description

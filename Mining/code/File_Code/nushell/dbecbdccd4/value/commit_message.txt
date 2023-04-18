@@ -1,0 +1,3 @@
+Fix type error when Value is viewed as file path (#3305)
+
+I believe this should be "path", not "string".

@@ -1,0 +1,3 @@
+Fix incorrect vi mode search origin
+
+Fixes #5460.

@@ -1,0 +1,1 @@
+Fix missing `c_void` error when building for Android

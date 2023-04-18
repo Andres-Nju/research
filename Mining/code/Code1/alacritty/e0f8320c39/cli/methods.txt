@@ -1,0 +1,3 @@
+dynamic_title_overridden_by_options
+dynamic_title_not_overridden_by_config
+dynamic_title_ignoring_options_by_default

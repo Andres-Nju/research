@@ -1,0 +1,1 @@
+Fix buffer usage flags in compute example and destroy command pool

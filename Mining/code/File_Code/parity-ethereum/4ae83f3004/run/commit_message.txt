@@ -1,0 +1,7 @@
+Fix ipc compilation and add ipc feature to test targets (#1902)
+
+* fix compilation and add it to the ci run
+
+* no separator?
+
+* use quotes and spaces

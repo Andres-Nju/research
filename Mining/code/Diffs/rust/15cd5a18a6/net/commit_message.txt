@@ -1,0 +1,4 @@
+std: Fix usage of SOCK_CLOEXEC
+
+This code path was intended to only get executed on Linux, but unfortunately the
+`cfg!` was malformed so it actually never got executed.

@@ -1,0 +1,3 @@
+Wait on blob fetch before window, Seems to fix instability (#1304)
+
+also cleanup ledger.

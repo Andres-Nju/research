@@ -1,0 +1,1 @@
+Inverts `disable_fees_sysvar` feature gating condition to match `is_fee_sysvar_via_syscall_active`. (#21297)

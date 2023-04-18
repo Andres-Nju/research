@@ -1,0 +1,11 @@
+fix(functions2): Change signature to trigger precise error message: (#605)
+
+Now trigger this error:
+```
+error: expected type, found `)`
+  --> exercises/functions/functions2.rs:10:16
+   |
+10 | fn call_me(num:) {
+   |                ^ expected type
+
+```

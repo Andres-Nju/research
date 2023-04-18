@@ -1,0 +1,5 @@
+Bug(Bundler): fix target arch in wix (#426)
+
+* fix target arch in wix
+
+* update github action to .amd64.msi

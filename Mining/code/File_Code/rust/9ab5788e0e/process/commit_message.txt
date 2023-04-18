@@ -1,0 +1,5 @@
+Fix "since" version for getpid feature.
+
+It was stabilized right before the beta branch was cut for 1.26.0.
+
+See https://github.com/rust-lang/rust/pull/49523#issuecomment-377996315

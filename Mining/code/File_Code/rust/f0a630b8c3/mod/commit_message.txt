@@ -1,0 +1,1 @@
+ICH: Don't store hashes for individual foreign items.

@@ -1,0 +1,4 @@
+Add check for hook state (#2042)
+
+This checks if the hook state has been set and if not provides a
+specific error message for why the hook state has not been set.

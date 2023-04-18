@@ -1,0 +1,2 @@
+is_fn_ty
+is_fn_ty

@@ -1,0 +1,8 @@
+Fix visual bell getting stuck
+
+This resolves a problem with the visual bell where it would not
+automatically trigger a redraw itself after the initial frame has been
+rendered.
+
+Since the unit of the visual bell duration is also unclear, it has been
+clarified.

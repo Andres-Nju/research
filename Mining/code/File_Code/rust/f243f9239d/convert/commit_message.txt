@@ -1,0 +1,4 @@
+Fix info about generic impls in AsMut docs
+
+This text was copy-pasted from the `AsRef` docs to `AsMut`, but needed
+some additional adjustments for correctness.

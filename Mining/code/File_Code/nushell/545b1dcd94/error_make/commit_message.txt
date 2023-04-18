@@ -1,0 +1,7 @@
+Add search terms to error make (#5657)
+
+* add search terms to error make
+
+* add throw
+
+Co-authored-by: Darren Schroeder <343840+fdncred@users.noreply.github.com>

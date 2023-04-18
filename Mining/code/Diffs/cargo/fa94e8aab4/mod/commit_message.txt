@@ -1,0 +1,5 @@
+Fix panic-in-panic in tests.
+
+There are some very rare circumstances that can cause a double panic during
+development. For example, `.with_json("")` will panic, and then the drop
+will also panic.

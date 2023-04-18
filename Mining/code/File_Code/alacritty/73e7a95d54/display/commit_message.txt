@@ -1,0 +1,1 @@
+Fix message bar not updating PTY size

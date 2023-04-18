@@ -1,0 +1,3 @@
+Fix the links in Vec(Deque)-from-Vec(Deque)
+
+Ok, I can't use `std` in doc-links, only in doc-tests.  Try 7...

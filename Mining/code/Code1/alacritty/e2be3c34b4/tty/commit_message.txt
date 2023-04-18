@@ -1,0 +1,6 @@
+Remove incorrect close (#552)
+
+Ownership of the slave file descriptor is passed to the process::Stdio
+structs and will be closed when they are dropped. If the slave fd is
+closed explicitly then the next fd that is opened during the same scope
+will get silently closed by the Stdio structs when they are dropped.

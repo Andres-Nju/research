@@ -1,0 +1,3 @@
+doc: fix typo
+
+PR #2313

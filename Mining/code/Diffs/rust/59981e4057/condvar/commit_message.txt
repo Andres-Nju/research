@@ -1,0 +1,4 @@
+Redox: Fix Condvar.wait(); do not lock mutex twice
+
+The atomic_xchg() loop locks the mutex, so the call to mutex_lock is
+incorrect, and blocks.

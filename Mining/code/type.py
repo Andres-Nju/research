@@ -6,16 +6,14 @@ if __name__ == '__main__':
         content  = json.load(f)
         print(len(content))
         dic = {}
+        subtypes = {}
         for item in content:
-            # print(item["type"])
             if "subtypes" in item.keys():
-                '''for subtype_item in item["subtypes"]:
-                    ty = subtype_item["type"]
-                    if ty not in dic.keys():
-                        dic[ty] = 1
-                    else:
-                        dic[ty] = dic[ty] + 1'''
-                print("{} subtypes exist", item["type"])
-            elif "field" in 
-                # print(len(item["subtypes"]))
-        # print(dic)
+                for i in item["subtypes"]:
+                    subtypes[i['type']] = 1
+            if "fields" in item.keys() or "children" in item.keys():
+                dic[item["type"]] = 1
+        for key in dic.keys():
+            print(key)
+        print(len(dic.keys()))
+        print(len(subtypes.keys()))

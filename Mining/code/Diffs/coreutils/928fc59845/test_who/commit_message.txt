@@ -1,0 +1,1 @@
+Ignore test_lookup until issue #2181 is fixed

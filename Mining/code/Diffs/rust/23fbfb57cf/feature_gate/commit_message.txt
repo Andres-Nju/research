@@ -1,0 +1,3 @@
+rustc: Update tracking issue for wasm_import_module
+
+It's now https://github.com/rust-lang/rust/issues/52090

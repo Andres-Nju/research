@@ -1,0 +1,1 @@
+Fix broken link in rustc_plugin doc

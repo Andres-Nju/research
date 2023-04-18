@@ -1,0 +1,3 @@
+fix(quiz1): Fix inconsistent wording (#826)
+
+The second test expects the function to return 80 when there is an order of 40 apples, but the current wording implies returning 40 will pass as well

@@ -1,0 +1,1 @@
+Fix sorting order of stakes in confirmation time calculations

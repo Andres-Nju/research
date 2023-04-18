@@ -1,0 +1,3 @@
+Fix macOS OpenGL context resize ordering
+
+Fixes #2226.

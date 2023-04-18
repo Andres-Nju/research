@@ -1,0 +1,5 @@
+Improve error messages on LLVM bitcode parsing failure
+
+The LLVM error causing the parse failure is now printed, in the style
+of the other thin LTO error messages. This prevents a flood of
+assertion failure messages if the bitcode can’t be parsed.

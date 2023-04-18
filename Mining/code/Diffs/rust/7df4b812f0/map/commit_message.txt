@@ -1,0 +1,1 @@
+Fix bug in from_key_hashed_nocheck

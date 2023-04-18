@@ -1,0 +1,11 @@
+Fix hollow block cursor being drawn for hidden cursor
+
+Commit 530de00 refactored large chunk of Alacritty's internal handling
+of renderable cells, cursors, and such. This patch fixes a regression
+where a hollow block cursor was drawn for unfocused windows even if the
+terminal cursor was hidden.Fix hollow block cursor being drawn for hidden cursor
+
+Commit 530de00 refactored large chunk of Alacritty's internal handling
+of renderable cells, cursors, and such. This patch fixes a regression
+where a hollow block cursor was drawn for unfocused windows even if the
+terminal cursor was hidden.

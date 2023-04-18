@@ -1,0 +1,6 @@
+fix several issues in String docs
+
+- In some places &str was shown instead of String.
+- into_bytes is the reverse of from_utf8
+
+Fixes #63797

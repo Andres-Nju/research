@@ -1,0 +1,2 @@
+guards_delete_folders
+restored_is_equivalent

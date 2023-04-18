@@ -1,0 +1,3 @@
+Use a different error to test rpc response (#7900)
+
+automerge

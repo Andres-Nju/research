@@ -1,0 +1,1 @@
+add `failure-status: 1` to the test

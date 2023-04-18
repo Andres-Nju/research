@@ -1,0 +1,5 @@
+Ctrl c exit issue (#2548)
+
+* fix ctrl_c problem on windows
+
+* updated cargo.lock

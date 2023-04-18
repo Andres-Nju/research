@@ -1,0 +1,1 @@
+Remove all usage of hoedown_buffer_puts

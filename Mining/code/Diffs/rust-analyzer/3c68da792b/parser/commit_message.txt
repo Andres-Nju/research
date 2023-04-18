@@ -1,0 +1,6 @@
+don't break parser error recovery in presence of macros
+
+Parser has the invariant that `{}` are balanced.
+Previous code tried (unsucesfuly) maintain the same invariant for
+`$()` as well, but it was done in a rather ad-hoc manner: it's not at
+all obvious that it is possible to maintain both invariants!

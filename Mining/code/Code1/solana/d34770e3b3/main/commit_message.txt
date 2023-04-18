@@ -1,0 +1,1 @@
+Log each validator's identity/vote/baseline/bonus address for easier issue triage

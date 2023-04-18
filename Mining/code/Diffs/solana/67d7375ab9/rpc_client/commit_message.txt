@@ -1,0 +1,3 @@
+Add more descriptive error on a stuck blockhash (#6010)
+
+automerge

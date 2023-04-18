@@ -1,0 +1,1 @@
+fix vector fmin/fmax non-fast/fast intrinsics NaN handling

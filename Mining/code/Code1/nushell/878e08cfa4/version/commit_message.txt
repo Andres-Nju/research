@@ -1,0 +1,6 @@
+Fix the SQLite feature name in `version` (#8381)
+
+A tiny fix: make the naming of the `sqlite` feature consistent across
+both `Cargo.toml` and the `version` command's output. Previously
+`version` displayed it as `database`, a user was asking about that the
+other day.

@@ -1,0 +1,10 @@
+Fix backtraces on ARM EHABI.
+
+Before this patch, our rust_eh_personality_catch routine would cut
+backtracing short at the __rust_try function, due to it not handling
+the _US_FORCE_UNWIND bit properly, which is passed by libunwind
+implementations on ARM EHABI.
+
+Examples of where the _US_FORCE_UNWIND bit is passed to the PR:
+- GCC's libunwind: https://github.com/gcc-mirror/gcc/blob/f1717362de1e56fe1ffab540289d7d0c6ed48b20/libgcc/unwind-arm-common.inc#L590
+- LLVM's libunwind: https://github.com/llvm-mirror/libunwind/blob/61278584b5c84c422ff5da10f46c3235c54636c9/src/UnwindLevel1-gcc-ext.c#L153

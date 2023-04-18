@@ -1,0 +1,13 @@
+Fix default terminfo code for reset (sg0 -> sgr0)
+
+Resetting the terminal should first try `sgr0` (as per the comment), not
+`sg0` which I believe to be a typo.
+
+This will at least fix rustc output in Emacs terminals (e.g., ansi-term)
+with `TERM=eterm-color` which does not provide the next fallback `sgr`. In
+such a terminal, the final fallback `op` (`\e[39;49`) is used  which
+resets only colors, not all attributes. This causes all text to be
+printed in bold from the first string printed in bold by rustc onwards,
+including the terminal prompt and the output from all following commands.
+
+The typo seems to have been introduced by #29999

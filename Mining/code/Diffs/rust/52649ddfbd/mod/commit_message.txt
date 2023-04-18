@@ -1,0 +1,3 @@
+Fix documentation of pattern for str::matches()
+
+Made it the same as rmatches()

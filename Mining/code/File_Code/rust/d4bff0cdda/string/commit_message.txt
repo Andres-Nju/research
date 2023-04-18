@@ -1,0 +1,1 @@
+doc: Fix comment in std::string::String example code

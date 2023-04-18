@@ -1,0 +1,5 @@
+Fix system call docs for time::Instant
+
+The link for UNIX was pointing to the Cloud ABI docs. It should have
+been pointing to the clock_gettime docs instead. The table is repeated
+in the docs for SystemTime, but there the UNIX entry was already correct.

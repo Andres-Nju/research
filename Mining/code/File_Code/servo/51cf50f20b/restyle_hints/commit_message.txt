@@ -1,0 +1,1 @@
+Fix the situation when :any-link starts or stops matching to actually restyle correctly.

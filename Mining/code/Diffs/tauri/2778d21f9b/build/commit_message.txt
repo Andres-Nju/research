@@ -1,0 +1,1 @@
+Fix binary extension duplicate "." char (#4055)

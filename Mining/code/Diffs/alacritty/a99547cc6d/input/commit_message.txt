@@ -1,0 +1,6 @@
+Fix mouse move handling
+
+This commit fixes the regression introduced in
+84aca672964e29b5b4503b7da7bc34fc395f08ab.
+
+Fixes #2635.

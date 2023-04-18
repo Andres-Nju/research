@@ -1,0 +1,1 @@
+Fix typos in unix/rwlock.rs

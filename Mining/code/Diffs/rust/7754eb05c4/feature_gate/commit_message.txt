@@ -1,0 +1,1 @@
+fix stabilization order of uniform_paths.

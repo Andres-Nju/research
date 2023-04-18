@@ -1,0 +1,14 @@
+Fix a problem with `Durability` of libraries
+
+When processing a change with added libraries, we used
+`Default::default` for `SourceRoot` which sets `is_library` to false.
+Since we use `is_library` to decide whether to use low or high
+durability, I believe that this caused us to mark many library
+dependencies as having low durability and thus increased the size of the
+graph that salsa needed to verify on every change.
+
+Based on my initial tests this speeds up the `CrateDefMapQuery` on
+rust-analyzer from about ~64ms to ~14ms and reduces the number of
+validations for the query from over 60k to about 7k.
+
+Signed-off-by: Michal Terepeta <michal.terepeta@gmail.com>

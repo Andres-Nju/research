@@ -1,0 +1,1 @@
+fix panic when logging directory does not exist, closes #10420 (#10424)

@@ -1,0 +1,5 @@
+Fix test --example docs.
+
+As part of #5464 I forgot to update the help text.
+
+Closes #5177

@@ -1,0 +1,1 @@
+Use Add::add for overflow checks instead of [rustc_inherit_overflow_checks]

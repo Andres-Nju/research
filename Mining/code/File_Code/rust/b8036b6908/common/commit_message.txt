@@ -1,0 +1,5 @@
+Fix another endian-ness issue in i128 trans
+
+Apparently LLVMArbitraryPrecisionInteger demands integers to be in low-endian 64-bytes, rather than
+host-endian 64-bytes. This is weird, and obviously, not documented. Also, fixed now. And rustc now
+works a teeny bit more on big endians.

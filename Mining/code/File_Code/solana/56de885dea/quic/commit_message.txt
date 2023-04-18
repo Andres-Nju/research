@@ -1,0 +1,1 @@
+fix total_connections metric (#27603)

@@ -1,0 +1,5 @@
+nu-cli/completions: fix file completions with quotes (#5242)
+
+* nu-cli/completions: fix file completions with quotes
+
+* wrap with backticks

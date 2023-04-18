@@ -1,0 +1,20 @@
+Rustyline bug fixes (#3916)
+
+* Mitigate history file bug in Rustyline
+
+Rustyline's duplicate ignoring code has a bug that can cause data loss and
+history file corruption. Testing seems to indicate that disabling this behavior
+and allowing duplicates will prevent the bug from showing up. Many people have
+complained about this issue, I think it is worthwhile to fix the bug at the cost
+of permitting duplicate history entries.
+
+Upstream bug: https://github.com/kkawakam/rustyline/issues/559
+
+* Increase Rustyline historyfile limit
+
+Rustyline will only store 100 history items by default. This is quite a small
+limit for a shell that people use as a daily driver. Especially when the
+deduplication code is removed, we will hit that limit quickly and start to lose
+history. This commit bumps the limit up to 10k. We can discuss if this is an
+inappropriate limit or if we should allow users to specify this setting in their
+nushell config file instead.

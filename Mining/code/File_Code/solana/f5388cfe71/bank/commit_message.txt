@@ -1,0 +1,5 @@
+tests which assert or panic in other threads now will report an error (#19532)
+
+* tests which assert or panic in other threads now will report an error
+
+* rename, add assert detecting time out

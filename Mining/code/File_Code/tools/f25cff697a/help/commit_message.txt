@@ -1,0 +1,1 @@
+docs: fix typo in formatter help section (#3184)

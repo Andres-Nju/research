@@ -1,0 +1,1 @@
+[sextants] fix copy-and-paste error on U+1FB06

@@ -1,0 +1,1 @@
+Fix 'enter' to expand path before checking for it (#4370)

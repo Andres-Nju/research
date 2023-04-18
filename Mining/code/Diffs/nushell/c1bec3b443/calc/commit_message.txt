@@ -1,0 +1,3 @@
+Return error on a divide by zero (#1376)
+
+Return error on a divide by zero

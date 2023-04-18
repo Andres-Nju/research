@@ -1,0 +1,9 @@
+Keygen grind fix and improve --ignore-case (#6901)
+
+* keygen: grind --ignore-case was not honored
+
+* keygen: Improve grind --ignore-case ergonomics
+
+Don't silently require the user to know their search term needs to be lowercase
+
+* fmt

@@ -1,0 +1,1 @@
+list_style_should_show_all_properties_when_values_are_set

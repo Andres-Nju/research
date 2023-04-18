@@ -1,0 +1,1 @@
+Fix that harfbuzz skips the usage of some freetype functions unexpectedly

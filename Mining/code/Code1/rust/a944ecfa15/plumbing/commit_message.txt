@@ -1,0 +1,5 @@
+Fix 'be be' constructs
+
+I noticed a duplicated "be" somewhere in the code. A search for it
+manifested a couple more locations with the same problem. This change
+removes one of the "be"s.

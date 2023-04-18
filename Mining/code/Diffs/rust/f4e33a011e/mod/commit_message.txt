@@ -1,0 +1,1 @@
+fix typo in libstd/sync/mpsc/mod.rs docs

@@ -1,0 +1,1 @@
+Fix confirmation metrics (#7035)

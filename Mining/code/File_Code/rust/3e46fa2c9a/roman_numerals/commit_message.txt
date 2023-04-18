@@ -1,0 +1,1 @@
+Fix invalid docs path for compiler plugins

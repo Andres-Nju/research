@@ -1,0 +1,1 @@
+Fix sources sidebar not showing up

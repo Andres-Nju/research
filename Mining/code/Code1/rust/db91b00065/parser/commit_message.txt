@@ -1,0 +1,7 @@
+output compiler message updated
+
+output message is shown in another 'help:' block
+
+line with +100 columns formatted
+
+test adjusted

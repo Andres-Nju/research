@@ -1,0 +1,4 @@
+Fix characters swallowed during search
+
+This resolves a bug where characters get swallowed when pressing them
+after pressing backspace before the backspace key is released.

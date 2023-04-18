@@ -1,0 +1,7 @@
+Fix incorrect 'memory leak' example for `Vec::set_len`.
+
+Example was written in https://github.com/rust-lang/rust/pull/34911
+
+Issue was brought up in this comment:
+
+https://github.com/rust-lang/rust/commit/a005b2cd2ac679da7393e537aa05e2b7d32d36d5#commitcomment-18346958

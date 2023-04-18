@@ -1,0 +1,3 @@
+Fix panic condition docs for Vec::insert.
+
+Fixes https://github.com/rust-lang/rust/issues/47065.

@@ -1,0 +1,6 @@
+Only error about MSVC + PGO + unwind if we're generating code
+
+When `rustc` is invoked with the `--print` argument, we don't actually
+generate any code (unless it's the `native-static-libs` option). So we
+don't need to error our in this case since there's no risk of generating
+either LLVM assertions or corrupted binaries.

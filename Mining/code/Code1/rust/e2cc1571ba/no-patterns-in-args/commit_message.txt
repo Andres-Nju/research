@@ -1,0 +1,1 @@
+Fixed no-pattern-in-args test for new E0130 format

@@ -1,0 +1,1 @@
+nu-command/filesystem: fix rm .sock file (#5524)

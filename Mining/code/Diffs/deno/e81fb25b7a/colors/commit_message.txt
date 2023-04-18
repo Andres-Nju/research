@@ -1,0 +1,1 @@
+Fix unwanted ANSI Reset Sequence (#4268)

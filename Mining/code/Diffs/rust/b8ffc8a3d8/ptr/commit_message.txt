@@ -1,0 +1,3 @@
+Add an unstable `cast<U>() -> NonNull<U>` method to `NonNull<T>`.
+
+This is less verbose than going through raw pointers to cast with `as`.

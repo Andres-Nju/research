@@ -1,0 +1,7 @@
+librustc_back: fix incorrect comment about RUST_TARGET_PATH
+
+The path `/etc/rustc/` is not the default last entry in
+RUST_TARGET_PATH. This was in RFC131 but was never implemented in rustc
+so it was removed as part of #31117 and rust-lang/rfcs#1473.
+
+Signed-off-by: Doug Goldstein <cardoe@cardoe.com>

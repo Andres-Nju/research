@@ -1,0 +1,6 @@
+Fix incremental builds of core by allowing unused attribute.
+
+The same problem as in https://github.com/rust-lang/rust/issues/65023 was
+introduced by https://github.com/rust-lang/rust/pull/67657. This works
+around the current incrcomp issue with these attributes by allowing it
+here.

@@ -1,0 +1,3 @@
+Fix snap build
+
+cuda and chacha features required for chacha_cuda

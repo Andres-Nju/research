@@ -1,0 +1,1 @@
+collapse_assignment_to_vars

@@ -1,0 +1,3 @@
+Fix doc typo for is_ascii_graphic
+
+Fixes #47067.

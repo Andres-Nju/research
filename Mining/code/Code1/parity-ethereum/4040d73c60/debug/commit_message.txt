@@ -1,0 +1,1 @@
+rpc(debug_getBadBlocks): fix test (#9502)

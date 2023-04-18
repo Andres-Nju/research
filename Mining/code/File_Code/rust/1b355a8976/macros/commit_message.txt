@@ -1,0 +1,3 @@
+Fix incorrect link in println! documentation
+
+The eprintln! link was incorrectly linking to eprint! instead

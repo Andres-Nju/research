@@ -1,0 +1,7 @@
+rustbuild: Nicer error for host builds of targets
+
+If a triple is configured only as a target, not a host, then trying to build
+that triple with host artifacts would cause a panic. Fail a little nicer
+instead.
+
+Closes #36268

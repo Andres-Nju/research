@@ -1,0 +1,18 @@
+Print a more useful error message when the target binary can't be removed.
+
+This happens sometimes on Windows if the target is still running, and right
+now cargo prints a very cryptic message:
+```
+$ cargo build
+   Compiling sccache v0.1.0 (file:///C:/build/sccache2)
+An unknown error occurred
+```
+
+With this patch we get a much more useful error:
+```
+$ ../cargo/target/debug/cargo build
+   Compiling sccache v0.1.0 (file:///C:/build/sccache2)
+error: Could not remove file: c:\build\sccache2\target\debug\sccache.exe.
+
+To learn more, run the command again with --verbose.
+```

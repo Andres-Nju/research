@@ -1,0 +1,3 @@
+Fix "Furthermore" Typo in String Docs
+
+It used to say "Furtheremore" instead of "Furthermore".

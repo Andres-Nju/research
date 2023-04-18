@@ -1,0 +1,7 @@
+fix small typos in std::convert documentation
+
+Fix subject-verb agreement in copypasta: "`AsRef` dereference" to
+"`AsRef` dereferences".
+
+Formalize "eg" to "e.g." Italicization of common Latin abbreviations
+seems to be going out of style in written English, so I left it plain.

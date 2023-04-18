@@ -1,0 +1,3 @@
+tests: fix typo in test name
+
+PR #1528

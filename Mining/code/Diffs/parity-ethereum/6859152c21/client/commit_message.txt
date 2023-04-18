@@ -1,0 +1,1 @@
+Fixed losing queued blocks on ancient block error (#1453)

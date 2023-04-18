@@ -1,0 +1,6 @@
+Fix indentation of error message
+
+So I just encountered this error for the first time. It's unclear what
+it means, why I encountered it, or how to fix it. But worst of all, it
+has a random newline and weird indentation! This commit fixes that last
+bit.

@@ -1,0 +1,1 @@
+Replace hard split on \n with ::lines() + ::trim() to fix \r\n

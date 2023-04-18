@@ -1,0 +1,3 @@
+set_urgent on mac throws a warning (#867)
+
+On mac, compiling throws a warning due to `is_urgent` not being used within `set_urgent`. This can be changed just by using an underscore instead.

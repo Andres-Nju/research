@@ -1,0 +1,8 @@
+Run the error index tool against the sysroot libdir
+
+Previously when building the error index tool in stage 0 we would
+attempt to use stage 0 libraries, but because it depends on rustdoc,
+those don't exist: rustdoc is built against stage 1 libraries.
+
+This patch aligns those two and passes the stage 1 libdir to the error
+index.

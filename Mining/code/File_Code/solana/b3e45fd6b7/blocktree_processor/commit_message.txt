@@ -1,0 +1,5 @@
+Add erroring tx to unexpected validator error logging (#4314)
+
+* Add tx logging to error
+
+* Add tx logging to unexpected validator errors

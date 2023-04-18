@@ -1,0 +1,5 @@
+Fix compile warning for some targets (#29258)
+
+* Fix compile warning for some targets
+
+* Reduce redundant code

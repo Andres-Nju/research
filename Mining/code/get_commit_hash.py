@@ -1,12 +1,12 @@
 import sys
 import time
 import os
-
-import github3
+import subprocess
+import json
 
 root_dir = "Commits"
 TIME_FOR_SLEEP = 1
-pr_key_words = ["fix", "defect", "error", "bug", "issue", "mistake", "incorrect","fault", "flaw"]
+
 
 def get_repository(gh, owner:str, repo_name:str):
     #print(owner)
@@ -19,50 +19,64 @@ def get_short_pull_requests(repo, state:str):
 def contain_key_words(src:str, key_words:list):
     for key in key_words:
         for str in src.split(' '):
-            if key in src.lower():
+            if key == str.lower():
                 return True
     return False
 
-if __name__ == '__main__':
+keywords = ["fix", "defect", "error", "bug", "issue", "mistake", "incorrect", "flaw"]
 
-    cur_path = os.getcwd() # 当前目录
+
+
+
+if __name__ == '__main__':
     # 创建总文件夹
-    root_dir = cur_path + "/" + root_dir
+    root_dir = os.getcwd() + "/" + root_dir
     if not os.path.exists(root_dir):
         os.mkdir(root_dir)
 
-    # login
-    my_token = "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"
-    gh = github3.login(token=my_token)
-    
     #get the repo
     repo_file = sys.argv[1]
     with open(repo_file, 'r') as f:
         for repo_full_name in f.readlines():
             owner = repo_full_name.split('/')[0].strip()
             repo_name = repo_full_name.split('/')[1].strip()
-            repo = get_repository(gh, owner, repo_name)
             cnt = 0
-            repo_dir = root_dir
-            # 遍历short pull requests
-            for short_pr in get_short_pull_requests(repo, "closed"):
-                #print("Pull Request #{0}: {1}".format(short_pr.number, short_pr.title))
-                # print("Tag: {0}".format(short_pr.head.ref))
-                # 获得对应的pull request
-                pr = repo.pull_request(short_pr.number)
-                if pr.is_merged() and (contain_key_words(short_pr.head.ref, pr_key_words) or contain_key_words(short_pr.title, pr_key_words)):
-                    for commit in pr.commits():
-                        # 在这里判断修改行数？
-                        print(cnt)
-                        cnt = cnt + 1
-                        with open(repo_dir + '/' + repo_name + ".txt", 'a') as c:
-                            c.write(commit.sha + '\n')
-                            time.sleep(TIME_FOR_SLEEP)
+            print(f'repo: {repo_name}')
+            repo_path = root_dir + '/' + repo_name
+            # Retrieve pull request using gh pr list
+            prs = subprocess.check_output(
+                f'cd {repo_path} && gh pr list --state merged --limit 10000000', shell=True).decode().split('\n')[:-1]
 
+            # Loop through each merged commit and check if it belongs to a pull request
+            for pr in prs:
+                pr_title = pr.split('\t')[1]
+                pr_num = pr.split('\t')[0]
 
+                # filter certain pr
+                if not contain_key_words(pr_title, keywords):
+                    '''pr_labels = json.loads(subprocess.check_output(f'cd {repo_path} && gh pr view {pr_num} --json labels', shell=True).decode())
+                    flag = False
+                    for label in pr_labels:
+                        if contain_key_words(label, keywords):
+                            flag = True
+                            break
+                    if not flag:
+                        continue'''
+                    continue
+                while True:
+                    try:
+                        pr_merge_commit = json.loads(subprocess.check_output(f'cd {repo_path} && gh pr view {pr_num} --json mergeCommit', shell=True).decode())
+                        #print(pr_commits)
+                        if pr_merge_commit is not None:
+                            if 'mergeCommit' in pr_merge_commit.keys():
+                                if pr_merge_commit['mergeCommit'] is not None:
+                                    if 'oid' in pr_merge_commit['mergeCommit'].keys():
+                                        with open(root_dir + '/' + repo_name + ".txt", 'a') as c:
+                                            c.write(pr_merge_commit['mergeCommit']['oid'] + '\n')
+                                            cnt = cnt + 1
+                        break
+                    except:
+                        continue
+            print(cnt)
+        
 
-
-
-    
-    
-   

@@ -1,0 +1,14 @@
+Fix argument to FIONBIO ioctl
+
+The FIONBIO ioctl takes as argument a pointer to an integer, which
+should be either 0 or 1 to indicate whether nonblocking mode is to
+be switched off or on.  The type of the pointed-to variable is "int".
+
+However, the set_nonblocking routine in libstd/sys/unix/net.rs passes
+a pointer to a libc::c_ulong variable.  This doesn't matter on all
+32-bit platforms and on all litte-endian platforms, but it will
+break on big-endian 64-bit platforms.
+
+Found while porting Rust to s390x (a big-endian 64-bit platform).
+
+Signed-off-by: Ulrich Weigand <ulrich.weigand@de.ibm.com>

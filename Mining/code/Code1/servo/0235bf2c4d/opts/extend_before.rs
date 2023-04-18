@@ -1,0 +1,40 @@
+    pub fn extend(&mut self, debug_string: String) -> Result<(), String> {
+        for option in debug_string.split(',') {
+            match option {
+                "help" => self.help = true,
+                "bubble-widths" => self.bubble_widths = true,
+                "disable-text-aa" => self.disable_text_aa = true,
+                "disable-subpixel-aa" => self.disable_subpixel_aa = true,
+                "disable-canvas-aa" => self.disable_text_aa = true,
+                "dump-style-tree" => self.dump_style_tree = true,
+                "dump-rule-tree" => self.dump_rule_tree = true,
+                "dump-flow-tree" => self.dump_flow_tree = true,
+                "dump-display-list" => self.dump_display_list = true,
+                "dump-display-list-json" => self.dump_display_list_json = true,
+                "relayout-event" => self.relayout_event = true,
+                "profile-script-events" => self.profile_script_events = true,
+                "profile-heartbeats" => self.profile_heartbeats = true,
+                "show-fragment-borders" => self.show_fragment_borders = true,
+                "show-parallel-layout" => self.show_parallel_layout = true,
+                "trace-layout" => self.trace_layout = true,
+                "disable-share-style-cache" => self.disable_share_style_cache = true,
+                "style-sharing-stats" => self.style_sharing_stats = true,
+                "convert-mouse-to-touch" => self.convert_mouse_to_touch = true,
+                "replace-surrogates" => self.replace_surrogates = true,
+                "gc-profile" => self.gc_profile = true,
+                "load-webfonts-synchronously" => self.load_webfonts_synchronously = true,
+                "disable-vsync" => self.disable_vsync = true,
+                "wr-stats" => self.webrender_stats = true,
+                "wr-debug" => self.webrender_debug = true,
+                "wr-record" => self.webrender_record = true,
+                "wr-no-batch" => self.webrender_batch = false,
+                "msaa" => self.use_msaa = true,
+                "full-backtraces" => self.full_backtraces = true,
+                "precache-shaders" => self.precache_shaders = true,
+                "signpost" => self.signpost = true,
+                "" => {},
+                _ => return Err(String::from(option)),
+            };
+        };
+        Ok(())
+    }

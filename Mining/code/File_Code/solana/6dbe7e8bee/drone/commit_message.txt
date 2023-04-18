@@ -1,0 +1,7 @@
+Better drone error when cap is hit. (#3884)
+
+* Better drone error when cap is hit.
+
+* Update drone/src/drone.rs
+
+Co-Authored-By: sakridge <sakridge@gmail.com>

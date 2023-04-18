@@ -1,0 +1,4 @@
+Silence crate external span error in x86 platforms
+
+This causes issues in at least `dist-i586-gnu-i586-i686-musl`,
+possibly others.

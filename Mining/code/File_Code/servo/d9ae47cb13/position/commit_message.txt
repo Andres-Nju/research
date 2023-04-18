@@ -1,0 +1,5 @@
+style: Fix interpolation of the gecko-size properties.
+
+Followup to #19966 because, well...
+
+The animation code should probably be more obvious.

@@ -1,0 +1,1 @@
+fix(es): Fix wasm (#6755)

@@ -1,0 +1,1 @@
+test_loading_rust_analyzer

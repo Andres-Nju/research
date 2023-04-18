@@ -1,0 +1,5 @@
+changed stability annotations
+
+Changed stability annotations for the new Error and Display impls
+for std::ffi::FromBytesWithNulError as they aren't subject to
+stability the same way.

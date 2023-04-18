@@ -1,0 +1,3 @@
+Fix broken macro doc links (#27125)
+
+These don't resolve correctly in Rust 1.63.

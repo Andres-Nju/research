@@ -1,0 +1,4 @@
+fix(es/minifier): Fix minifier (#2528)
+
+swc_ecma_minifier:
+ - `collapse_vars`: Respect operator.

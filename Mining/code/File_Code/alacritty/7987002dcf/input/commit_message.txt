@@ -1,0 +1,5 @@
+Fix vi ScrollToBottom motion
+
+This resolves an issue with the ScrollToBottom motion in vi mode where
+it would jump between the first unoccupied cell across wrapped lines and the
+first unoccupied cell in the current line.

@@ -1,0 +1,3 @@
+Fix - Turns binary `&` into logical `&&` in `translate_slice_inner()`. (#29038)
+
+Turns binary & into logical && in translate_slice_inner().

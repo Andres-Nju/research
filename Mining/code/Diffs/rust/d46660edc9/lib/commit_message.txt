@@ -1,0 +1,4 @@
+libproc_macro docs: fix brace and bracket mixup
+
+the documentation indicates that brace is `[` but maps to token::Brace
+which (expectedly) is `{`. Just a little confusion in the docs.

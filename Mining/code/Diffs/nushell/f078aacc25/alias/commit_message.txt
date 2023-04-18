@@ -1,0 +1,5 @@
+Improve the error message if alias type inference fails (#2399)
+
+* Improve the error message if alias type inference fails
+
+* Improve error further

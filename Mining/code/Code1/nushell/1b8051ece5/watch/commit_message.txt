@@ -1,0 +1,5 @@
+Fix doc building for vuepress-next, avoid using angle brackets (#5696)
+
+* Fix doc building for vuepress-next, avoid using angle brackets
+
+* [ci skip]

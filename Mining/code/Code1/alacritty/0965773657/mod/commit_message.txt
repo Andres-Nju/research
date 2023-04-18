@@ -1,0 +1,18 @@
+Fix crash when searching during reset
+
+This fixes a crash which occurs when the terminal is reset while
+searching, due to the vi mode cursor being outside of the visible area.
+
+This also fixes an issue where the search state reset would incorrectly
+clamp the vi mode cursor to the grid, rather than the absolute viewport
+position.
+
+While this fix does resolve all crashes when searching while running
+`cat /dev/urandom`, it does raise the question if manually clamping the
+vi mode cursor in every location where it is modified is the right
+choice.
+
+A follow-up to provide a safer API which guarantees correct modification
+of the vi mode cursor location is probably a good idea.
+
+Fixes #5942.

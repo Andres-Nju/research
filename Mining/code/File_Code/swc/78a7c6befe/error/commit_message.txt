@@ -1,0 +1,4 @@
+chore(es/parser): Update an error message (#2148)
+
+swc_ecma_parser:
+ - Update an error message to match one of `tsc`.

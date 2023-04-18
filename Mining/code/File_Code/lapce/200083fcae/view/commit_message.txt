@@ -1,0 +1,1 @@
+Fix autosave trying to save scratch files

@@ -1,0 +1,4 @@
+rustbuild: Fix dependencies of check-docs step
+
+Some of the doc tests depend on `extern crate test`, so depend on libtest
+instead of libstd here.

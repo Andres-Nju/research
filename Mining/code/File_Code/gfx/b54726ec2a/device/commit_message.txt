@@ -1,0 +1,1 @@
+[mtl] fix format_depth24_stencil8 crashes on iOS, which is macOS only feature

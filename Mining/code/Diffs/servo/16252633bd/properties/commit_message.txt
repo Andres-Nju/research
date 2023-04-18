@@ -1,0 +1,7 @@
+Fix writing-mode display fixup to check the right condition.
+
+It should be checking the value of the 'writing-mode' property, not the value of
+the "writing mode" concept.  The latter is influenced by other properties like
+'direction' and whatnot.  That was causing this code to convert inlines to
+inline-blocks if they just had a different direction from their parent, which is
+not correct

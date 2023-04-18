@@ -1,0 +1,2 @@
+resolve_signer_from_path
+signer_from_path

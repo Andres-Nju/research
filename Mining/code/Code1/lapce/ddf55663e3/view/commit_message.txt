@@ -1,0 +1,5 @@
+fix(editor): diagnosis cause cursor x calculate error (#1615)
+
+* fix(editor): diagnosis cause cursor x calculate error
+
+* change col_at to col_after

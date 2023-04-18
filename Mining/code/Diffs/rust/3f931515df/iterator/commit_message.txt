@@ -1,0 +1,1 @@
+Fix count usize link typo in docs

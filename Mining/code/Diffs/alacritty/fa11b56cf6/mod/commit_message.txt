@@ -1,0 +1,1 @@
+Fix config reload updating incorrect grid

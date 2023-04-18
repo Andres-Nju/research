@@ -1,0 +1,1 @@
+core::iter::repeat_with: fix spelling, s/not/note

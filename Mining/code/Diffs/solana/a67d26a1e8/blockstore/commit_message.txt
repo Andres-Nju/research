@@ -1,0 +1,1 @@
+Fixed an issue doing the set_roots repeatedly for the same set. Instead doing the per chunks. (#18314)

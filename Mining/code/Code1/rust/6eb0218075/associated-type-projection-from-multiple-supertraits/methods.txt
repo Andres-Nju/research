@@ -1,0 +1,3 @@
+paint
+dent
+dent_object

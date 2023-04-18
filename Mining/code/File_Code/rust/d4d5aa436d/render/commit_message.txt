@@ -1,0 +1,1 @@
+Fix invalid span generation when it should be div

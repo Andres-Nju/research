@@ -1,0 +1,5 @@
+fix(es/plugin): Fix starter template (#6815)
+
+**Related issue:**
+
+ - Closes https://github.com/swc-project/swc/issues/6814.

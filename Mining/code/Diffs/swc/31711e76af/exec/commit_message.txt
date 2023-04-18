@@ -1,0 +1,5 @@
+test(es/minifier): Add an execution test for a fixed issue (#5925)
+
+**Related issue:**
+
+ - Closes https://github.com/swc-project/swc/issues/5914.

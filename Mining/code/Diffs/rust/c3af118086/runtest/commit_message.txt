@@ -1,0 +1,1 @@
+Add doc for output_base_name_stage.

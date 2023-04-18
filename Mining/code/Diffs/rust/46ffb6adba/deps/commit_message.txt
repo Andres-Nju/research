@@ -1,0 +1,4 @@
+tidy: don't short-circuit on license error
+
+If there is more than one license error, tidy would only print the first
+error. This changes it so that all license errors are printed.

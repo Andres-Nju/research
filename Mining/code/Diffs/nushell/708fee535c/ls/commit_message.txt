@@ -1,0 +1,3 @@
+fix: ls not show pattern error (#7143)
+
+Log: fix pattern error show in ls command

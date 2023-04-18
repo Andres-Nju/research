@@ -1,0 +1,3 @@
+Update compiler error E0076 to use new error format
+
+Fixes #35221 part of #35233

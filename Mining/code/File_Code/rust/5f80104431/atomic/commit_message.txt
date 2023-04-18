@@ -1,0 +1,4 @@
+core: fix `cargo build` for targets with "max-atomic-width": 0
+
+This crate was failing to compile due to dead_code/unused_imports
+warnings. This commits disables these two lints for these targets.

@@ -1,0 +1,2 @@
+join
+test_replicator_startup

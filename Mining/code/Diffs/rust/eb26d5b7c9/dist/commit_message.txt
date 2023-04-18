@@ -1,0 +1,6 @@
+rustbuild: Fix a distribution bug with rustdoc
+
+Apparently `File::create` was called when there was an existing hard link or the
+like, causing an existing file to get accidentally truncated!
+
+Closes #44487

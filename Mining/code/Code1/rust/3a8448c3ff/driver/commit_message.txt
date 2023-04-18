@@ -1,0 +1,1 @@
+Fix rustc_driver swallowing errors when compilation is stopped

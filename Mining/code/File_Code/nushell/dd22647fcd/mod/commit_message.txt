@@ -1,0 +1,4 @@
+Fix mode tests which use sh to not run on windows (#8601)
+
+See
+https://github.com/nushell/nushell/pull/8306#issuecomment-1483111380.

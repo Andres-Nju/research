@@ -1,0 +1,8 @@
+Fix attempting to canonicalize a path when saving a new file (#2225)
+
+Since the file doesn't exist, it is going to fail.
+Thus aborting the save procedure.
+
+Fixes: https://github.com/lapce/lapce/issues/2210
+
+Signed-off-by: Hanif Bin Ariffin <hanif.ariffin.4326@gmail.com>

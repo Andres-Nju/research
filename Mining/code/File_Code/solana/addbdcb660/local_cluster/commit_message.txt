@@ -1,0 +1,1 @@
+Remove wait_for_majority

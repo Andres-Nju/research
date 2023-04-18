@@ -1,0 +1,1 @@
+Fix let-env in banner (#6795)

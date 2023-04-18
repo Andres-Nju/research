@@ -1,0 +1,3 @@
+Fix compilation on recent nightlies (#10991)
+
+For reasons unknown (to me) recent rustc nightlies can't find the `format!`-macro in `core` when there is an import named `core`. This PR removes the package rename and uses the full `jsonrpc_core` crate name instead.

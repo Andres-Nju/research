@@ -1,0 +1,5 @@
+Fix documentation for merge (#7329)
+
+# Description
+
+`merge` no longer accepts blocks as arguments.

@@ -1,0 +1,7 @@
+tpu-client: Fix counter for expired blockhash retries (#30360)
+
+tpu-client: Fix counter for expired blockhash retries
+
+The original counter would expire after saying "1 retry left", which was
+misleading. We can safely change the comparison to >= 0 as our counter
+is an i32.

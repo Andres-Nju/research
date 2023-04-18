@@ -1,0 +1,16 @@
+fix `NotAConstant` error help message (#8293)
+
+```
+Error: nu::parser::not_a_constant (link)
+
+  × Not a constant.
+   ╭─[entry #23:1:1]
+ 1 │ let file = "/home/user/file"; source $file
+   ·                                      ──┬──
+   ·                                        ╰── Value is not a parse-time constant
+   ╰────
+  help: Only a subset of expressions are allowed
+        constants during parsing. Try using the 'let'
+        command or typing the value literally.
+```
+this pr changes the help message to 'Try using the `const` command ...'

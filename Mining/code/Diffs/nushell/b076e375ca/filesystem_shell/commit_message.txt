@@ -1,0 +1,44 @@
+Fix broken removal of sockets (#2629)
+
+* make sort-by fail gracefully if mismatched types are compared
+
+* Added a test to check if sorted-by with invalid types exists gracefully
+
+* Linter changes
+
+* removed redundant pattern matching
+
+* Changed the error message
+
+* Added a comma after every argument
+
+* Changed the test to accomodate the new err messages
+
+* Err message for sort-by invalid types now shows the mismatched types
+
+* Lints problems
+
+* Changed unwrap to expect
+
+* Added the -f flag to rm command
+
+Now when you a use rm -f there will be no error message, even if the
+file doesnt actually exist
+
+* Lint problems
+
+* Fixed the wrong line
+
+* Removed println
+
+* Spelling mistake
+
+* Fix problems when you mv a file into itself
+
+* Lint mistakes
+
+* Remove unecessary filtering in most cases
+
+* Allow the removal of sockets
+
+* Conditional compilations to systems without socket

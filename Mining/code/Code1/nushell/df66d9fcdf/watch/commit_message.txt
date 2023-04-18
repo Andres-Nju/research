@@ -1,0 +1,8 @@
+Fix `watch` for block+closure split (#7374)
+
+The block+closure split broke `watch` for some use cases. Fixed.
+
+We should eventually add some tests for `watch` but it's a little tricky
+since it's an interactive command.
+
+Closes #7362.

@@ -1,0 +1,6 @@
+Adjust example for error E0225
+
+It's using Copy as a trait object compatible trait, which is not
+appropriate, change to use a more typical Read + Send + Sync example.
+
+Also use whitespace around `+`.

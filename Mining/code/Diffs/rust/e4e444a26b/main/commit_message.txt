@@ -1,0 +1,1 @@
+Fix make check-stage1 by conditionally activating question_mark feature for compiletest tool.

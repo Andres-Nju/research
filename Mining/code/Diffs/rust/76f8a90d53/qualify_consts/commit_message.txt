@@ -1,0 +1,1 @@
+Add comments explaining why some operations are not constant inside normal functions

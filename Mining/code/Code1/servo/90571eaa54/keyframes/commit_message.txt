@@ -1,0 +1,3 @@
+Bug 1328787 - Part 11: The last keyframe's KeyframePercentage is 1.0. r=heycam
+
+MozReview-Commit-ID: Hgsc45m9401

@@ -1,0 +1,5 @@
+Fix test_bench_tps_local_cluster_solana (#27448)
+
+* Fix test_bench_tps_local_cluster_solana
+* Remove #[ignore] annotations from dos tests (which are also fixed by this change)
+* Remove #[ignore] annotations from local cluster tests (which are also fixed by this change)

@@ -1,0 +1,3 @@
+Fix build failure on macOS without features
+
+Fixes #4353.

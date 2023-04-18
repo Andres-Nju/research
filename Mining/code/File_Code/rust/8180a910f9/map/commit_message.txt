@@ -1,0 +1,3 @@
+Fix BTreeMap example typo
+
+The whole example is made around movies reviews, but that one line says "review some books".

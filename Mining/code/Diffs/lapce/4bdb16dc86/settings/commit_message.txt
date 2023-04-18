@@ -1,0 +1,1 @@
+Fix "Open Keyboard Shortcuts" enum. (#1803)

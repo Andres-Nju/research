@@ -1,0 +1,1 @@
+Fix title setting via IPC when dynamic_title is enabled

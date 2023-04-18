@@ -1,0 +1,8 @@
+Fix doc of `std::fs::canonicalize`
+
+Point out that the final component of the path name might be a filename
+(and not a directory name). Previously, the doc said that all components
+of the path must be directory names, when it actually only ment all but
+the final one.
+
+Fixes #54056.

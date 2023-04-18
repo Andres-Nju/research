@@ -1,0 +1,7 @@
+rustbuild: Update where we look for mtime changes
+
+Recent versions of Cargo lift less output up into the "main" directory, so let's
+look more inside the `deps` folder for changes to propagate differences.
+
+Closes #38744
+Closes #38746

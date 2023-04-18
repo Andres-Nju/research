@@ -1,0 +1,6 @@
+rustbuild: Fix a typo with the Cargo book
+
+The usage of `Path::new` prevented out-of-tree builds (like the bots do) from
+working by accident!
+
+Closes #46195

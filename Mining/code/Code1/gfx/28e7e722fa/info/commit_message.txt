@@ -1,0 +1,5 @@
+fix the `Limits::framebuffer_color_samples_count` field on the gl backend
+
+It is supposed to be a mask of acceptable sample counts (which must be a power
+of 2).  We assume here that GL_MAX_SAMPLES is a power of 2, all powers of 2 less
+than it are acceptable sample counts.

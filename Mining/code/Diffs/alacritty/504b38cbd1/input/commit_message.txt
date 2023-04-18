@@ -1,0 +1,7 @@
+Fix mouse reports
+
+The patch 9cb5562 has introduced a regression which would abort if a
+mouse report's line was bigger than zero, which is the exact opposite of
+when a mouse report is required.
+
+Fixes #4980.

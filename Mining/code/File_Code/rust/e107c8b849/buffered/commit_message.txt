@@ -1,0 +1,5 @@
+Fix outdated Doc Comment on BufReader::seek
+
+A long time ago non-panicking `unwrap` methods were renamed to `into_inner` in this Pull Request: https://github.com/rust-lang/rust/pull/19149
+
+Looks like this doc comment was not updated however.

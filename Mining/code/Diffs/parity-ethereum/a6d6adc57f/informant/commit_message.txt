@@ -1,0 +1,5 @@
+ethcore: fix compilation when using slow-blocks or evm-debug features (#8936)
+
+* ethcore: fix compilation when slow-blocks feature is enabled
+
+* ethcore: fix compilation when evm-debug feature is enabled

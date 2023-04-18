@@ -1,0 +1,5 @@
+Fix deprecated anonymous functions parameters
+
+Anonymous functions parameters are deprecated (RFC 1685)Fix deprecated anonymous functions parameters
+
+Anonymous functions parameters are deprecated (RFC 1685)

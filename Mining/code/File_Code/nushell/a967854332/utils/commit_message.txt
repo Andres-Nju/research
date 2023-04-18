@@ -1,0 +1,3 @@
+Fix stream printing on Windows (#4527)
+
+Co-authored-by: Genna Wingert <wingertge@gmail.com>

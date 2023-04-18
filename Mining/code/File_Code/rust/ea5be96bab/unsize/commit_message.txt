@@ -1,0 +1,1 @@
+Fix some more typos, this time words that are duplicated.

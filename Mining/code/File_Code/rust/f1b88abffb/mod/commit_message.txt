@@ -1,0 +1,1 @@
+Fix copy-pasted typo for read_string return value

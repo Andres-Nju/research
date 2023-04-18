@@ -1,0 +1,1 @@
+Error monitor should emit error to stderr instead of stdout

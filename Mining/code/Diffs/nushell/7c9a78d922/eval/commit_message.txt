@@ -1,0 +1,1 @@
+Fixed ctrl-c in recursion loop bug #5362 (#5409)

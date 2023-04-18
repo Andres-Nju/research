@@ -1,0 +1,7 @@
+ripgrep: don't skip stdout in --files mode
+
+Specifically, this avoids triggering Windows antimalware when in --files mode.
+
+See also #600.
+
+Fixes #1121

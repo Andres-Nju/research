@@ -1,0 +1,3 @@
+refactor(core): fix typo in event.rs (#2126)
+
+recieved -> received

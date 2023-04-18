@@ -1,0 +1,3 @@
+doc: fix typo in --glob flag docs
+
+PR #1899

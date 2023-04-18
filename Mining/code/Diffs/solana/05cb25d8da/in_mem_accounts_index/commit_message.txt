@@ -1,0 +1,1 @@
+fix double count of account index del stats (#25797)

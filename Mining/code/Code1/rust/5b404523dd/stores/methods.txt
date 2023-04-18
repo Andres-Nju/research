@@ -1,0 +1,2 @@
+small_struct_alignment
+small_array_alignment

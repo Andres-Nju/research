@@ -1,0 +1,3 @@
+fix(box1): fix comment typo (#426)
+
+Doesn't effect the code.

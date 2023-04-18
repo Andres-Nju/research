@@ -1,0 +1,25 @@
+Fix SQLite table creation sql (#8430)
+
+# Description
+
+The "CREATE TABLE" statement in `into sqlite` does not add quotes to the
+column names, reproduction steps are below:
+
+```
+/home/xxx〉[[name,y/n];[a,y]] | into sqlite test.db
+Error: 
+  × Failed to prepare SQLite statement
+   ╭─[entry #1:1:1]
+ 1 │ [[name,y/n];[a,y]] | into sqlite test.db
+   ·                                                       ───┬───
+   ·                                                             ╰── near "/": syntax error in CREATE TABLE IF NOT EXISTS main (name TEXT,y/n TEXT) at offset 44
+   ╰────
+```
+
+# User-Facing Changes
+
+None
+
+---------
+
+Co-authored-by: Reilly Wood <reilly.wood@icloud.com>

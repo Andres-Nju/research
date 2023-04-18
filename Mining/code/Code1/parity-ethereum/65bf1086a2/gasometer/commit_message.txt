@@ -1,0 +1,1 @@
+In create memory calculation is the same for create2 because the additional parameter was popped before. (#9522)

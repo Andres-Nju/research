@@ -1,0 +1,5 @@
+Fix span of MethodProp (#877)
+
+- Fix span of MethodProp (needs to include async keyword).
+
+Co-authored-by: 강동윤 <kdy1997.dev@gmail.com>

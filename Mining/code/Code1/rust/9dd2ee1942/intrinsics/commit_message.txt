@@ -1,0 +1,1 @@
+Fix example in transmute; add safety requirement to Vec::from_raw_parts

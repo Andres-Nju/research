@@ -1,0 +1,18 @@
+fix(upgrade): Added error message when using canary option with M1 (#16382)
+
+before
+```
+Looking up latest version
+Found latest version 8c9e6c5565c1c00437d083de76cdd944e44b1d99
+Checking https://dl.deno.land/canary/8c9e6c5565c1c00437d083de76cdd944e44b1d99/deno-aarch64-apple-darwin.zip
+Download could not be found, aborting
+```
+
+after
+```
+Looking up latest canary version
+Found latest version 8c9e6c5565c1c00437d083de76cdd944e44b1d99
+error: Canary builds are not available for M1
+```
+
+Co-authored-by: Bartek Iwańczuk <biwanczuk@gmail.com>

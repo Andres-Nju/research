@@ -1,0 +1,5 @@
+Propagate error in read_line (#2005)
+
+Signed-off-by: Hanif Bin Ariffin <hanif.ariffin.4326@gmail.com>
+
+Signed-off-by: Hanif Bin Ariffin <hanif.ariffin.4326@gmail.com>

@@ -1,0 +1,4 @@
+Fix running `cargo test -p stylo_test` from repo root
+
+… in order to add it to Rust CI though
+https://github.com/rust-lang/rust/blob/master/src/tools/cargotest/main.rs

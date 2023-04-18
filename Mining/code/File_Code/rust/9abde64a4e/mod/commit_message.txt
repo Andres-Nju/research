@@ -1,0 +1,3 @@
+docs: std::convert::From: Fix typo
+
+Fix a minor typo

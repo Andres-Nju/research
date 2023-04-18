@@ -1,0 +1,9 @@
+Fix small errors in docs for `rchunks_exact` and `rchunks_exact_mut`.
+
+The documentation for `rchunks_exact` said it started at the beginning
+of the slice, bit it actually starts at the end of the slice.
+
+In addition, there were a couple of "of the slice of the slice"
+duplicate phrases going on for `rchunks_exact` and `rchunks_exact_mut`.
+
+This fixes #60068.

@@ -1,0 +1,1 @@
+Use ast::Name::text() instead of name().syntax().text()

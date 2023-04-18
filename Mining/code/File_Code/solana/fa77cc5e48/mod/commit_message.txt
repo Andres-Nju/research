@@ -1,0 +1,1 @@
+Fix active vote account close error (#26250)

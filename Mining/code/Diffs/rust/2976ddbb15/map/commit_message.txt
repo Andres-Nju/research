@@ -1,0 +1,1 @@
+Fix a spelling error in HashMap documentation, and slightly reword it to be more precise.

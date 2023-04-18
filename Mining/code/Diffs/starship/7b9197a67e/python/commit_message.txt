@@ -1,0 +1,4 @@
+fix: Fix the python module ignoring error codes (#563)
+
+This is a quick fix to stop the python module from displaying error
+messages that have been printed to stderr as the version.

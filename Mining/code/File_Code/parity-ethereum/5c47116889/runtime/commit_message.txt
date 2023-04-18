@@ -1,0 +1,1 @@
+fix comment for gas extern in Wasm runtime (#8101)

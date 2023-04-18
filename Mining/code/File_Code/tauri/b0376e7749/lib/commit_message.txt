@@ -1,0 +1,1 @@
+fix doc generation when using `updater-docs` flag (#3711)

@@ -1,0 +1,1 @@
+Fixed a syntax error in the pin docs

@@ -1,0 +1,5 @@
+Fix ansi rgb fg (#3293)
+
+* add term size command
+
+* bug: fix ansi rgb_fg

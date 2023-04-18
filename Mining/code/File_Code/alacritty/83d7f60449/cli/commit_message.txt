@@ -1,0 +1,1 @@
+Fix dimensions CLI/manpage docs

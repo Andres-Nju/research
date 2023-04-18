@@ -1,0 +1,1 @@
+Bug 1398593 - stylo: mitigate performance impact of fallible allocation on stylist rebuilds.  r=emilio.

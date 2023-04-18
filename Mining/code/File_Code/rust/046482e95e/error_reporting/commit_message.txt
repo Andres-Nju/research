@@ -1,0 +1,1 @@
+rustc: future-proof error reporting for polymorphic constants in types.

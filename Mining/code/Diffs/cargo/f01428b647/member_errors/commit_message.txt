@@ -1,0 +1,1 @@
+Fix member_manifest_version_error accessing the network.

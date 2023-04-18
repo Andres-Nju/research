@@ -1,0 +1,7 @@
+Fix invisible file path text in PowerShell (#557)
+
+change default path color on Windows
+
+This avoids a conflict with a PowerShell configuration that causes text to be invisible.
+
+Fixes #342

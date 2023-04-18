@@ -1,0 +1,4 @@
+Avoid creating multiple scroll roots for sticky tables
+
+This should prevent problems when a table has position:sticky and
+overflow:scroll.

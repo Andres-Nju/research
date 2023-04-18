@@ -1,0 +1,4 @@
+Fix missing semicolon in doc
+
+A semicolon is missing in the examples of compile_error.
+Macros that expand to items must be delimited with braces or followed by a semicolon.

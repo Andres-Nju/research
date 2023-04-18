@@ -1,0 +1,3 @@
+Fix unused import warning
+
+This fixes an unused import warning introduced with 198d3cb.

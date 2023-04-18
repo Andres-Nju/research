@@ -1,0 +1,7 @@
+fix view tab drag-drop (#1253)
+
+* fix view tab drag-drop
+
+* refactor + apply suggestions
+
+* move things

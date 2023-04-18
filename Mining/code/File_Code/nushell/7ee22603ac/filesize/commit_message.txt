@@ -1,0 +1,1 @@
+Fix #5469, making $nothing or null convert to filesize of 0B (#5485)

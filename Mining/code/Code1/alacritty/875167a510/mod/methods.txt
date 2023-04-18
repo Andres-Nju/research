@@ -1,0 +1,4 @@
+set_mode
+swap_alt
+string_from_selection
+unset_mode

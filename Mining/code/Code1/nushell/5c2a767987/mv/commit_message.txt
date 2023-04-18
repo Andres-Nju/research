@@ -1,0 +1,27 @@
+Better error message for `mv` when file not found (#8586)
+
+Closes #8546.
+
+### Before:
+```
+> mv foo.txt bar.txt
+Error:
+  × Invalid file or pattern
+   ╭─[entry #2:1:1]
+ 1 │ mv foo.txt bar.txt
+   ·    ───┬───
+   ·       ╰── invalid file or pattern
+   ╰────
+```
+
+### After:
+```
+> mv foo.txt bar.txt
+Error:
+  × File(s) not found
+   ╭─[entry #2:1:1]
+ 1 │ mv foo.txt bar.txt
+   ·    ───┬───
+   ·       ╰── could not find any files matching this glob pattern
+   ╰────
+```

@@ -1,0 +1,1 @@
+Fix XEmbed compilation error on 32-bit platforms

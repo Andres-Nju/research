@@ -1,0 +1,1 @@
+fix copy-paste typo in docs for ptr::read_volatile

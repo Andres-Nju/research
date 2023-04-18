@@ -1,0 +1,9 @@
+Fix DocOpt deserialization type bounds
+
+This is wrt https://github.com/docopt/docopt.rs/pull/222
+
+DocOpt does not support deserializing borrowed types.
+
+This change was reverted in
+https://github.com/docopt/docopt.rs/commit/7292a374e69afb192bb7aaa00f9d9f4afebc200d
+because it broke crates like Cargo etc.

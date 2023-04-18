@@ -1,0 +1,4 @@
+Actually fix manifest generation
+
+The previous fix contained an error where `toml::encode` returned a runtime
+error, so this version just constructs a literal `toml::Value`.

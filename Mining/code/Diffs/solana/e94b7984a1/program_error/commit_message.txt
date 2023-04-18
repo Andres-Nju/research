@@ -1,0 +1,3 @@
+fix Borsh typo
+
+changes `BORSH_IO_ERROR` from `unkown` to `unknown` error

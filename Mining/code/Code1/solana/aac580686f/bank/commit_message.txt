@@ -1,0 +1,1 @@
+fix test compilation from add_static_program change (#9755)

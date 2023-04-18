@@ -1,0 +1,1 @@
+ethcore client: fix a double Read Lock bug in fn Client::logs() (#11172)

@@ -1,0 +1,1 @@
+grid.clear(|c| c.reset(&template));

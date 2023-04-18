@@ -1,0 +1,1 @@
+Fix a typo in the doc comment of `std::os::unix::thread::JoinHandleExt`

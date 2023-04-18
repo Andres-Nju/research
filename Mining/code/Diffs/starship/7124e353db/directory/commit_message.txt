@@ -1,0 +1,1 @@
+fix: Fix compilation on NixOS with sandboxing (#164)

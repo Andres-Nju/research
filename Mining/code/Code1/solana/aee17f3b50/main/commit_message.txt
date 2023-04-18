@@ -1,0 +1,3 @@
+fix typo on validator help (#24844)
+
+Co-authored-by: Austin <support@thetaproxies.com>

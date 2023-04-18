@@ -1,0 +1,3 @@
+doc(libcore) Fix CS
+
+A small PR to fix a small CS typo in `iter/traits/collect.rs`.

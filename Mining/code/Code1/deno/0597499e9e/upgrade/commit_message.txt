@@ -1,0 +1,3 @@
+chore(cli/tools): fix typo in upgrade.rs (#17690)
+
+vesion -> version

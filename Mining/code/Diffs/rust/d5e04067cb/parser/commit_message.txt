@@ -1,0 +1,4 @@
+Add FIXME about `construct_async_arguments`.
+
+This is unrelated to the rest of this PR but it made sense to add a
+FIXME explaining that the function shouldn't really be in the parser.

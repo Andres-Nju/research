@@ -1,0 +1,9 @@
+Fix a possible test hang in runtime::test_shared_buffer_sweep (#25545)
+
+* Fix a possible test hang in runtime::test_shared_buffer_sweep
+
+The test may hang if the total number of threads it wants to start
+is greater than the number of threads configured in the rayon
+threadpool. Check to avoid this situation from happening.
+
+* Incorporate comment from Xiang Zhu, using std::cmp::min() to simplify the code

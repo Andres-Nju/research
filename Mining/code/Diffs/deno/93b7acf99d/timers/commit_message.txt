@@ -1,0 +1,11 @@
+js: reschedule global timer if it fires earlier than expected (#2989)
+
+When the global timer fires earlier than expected, which apparently
+happens sometimes on server editions of Windows, we didn't call any
+setTimeout callbacks, but we *also* didn't reschedule the global timer
+to fire again later.
+
+When this situation occurred it would make deno exit abruptly if there
+were no other asynchronous ops running on the event loop. It could also
+lead to application hangs if the upcoming setTimeout callback was
+critical for the application to make progress.

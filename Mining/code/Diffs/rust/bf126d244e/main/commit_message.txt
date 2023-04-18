@@ -1,0 +1,4 @@
+Fix a manifest-generation bug on beta
+
+Right now all Cargo release tarballs are 'nightly', they're not on the standard
+channels yet.

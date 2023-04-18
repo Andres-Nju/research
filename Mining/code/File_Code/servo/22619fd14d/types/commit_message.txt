@@ -1,0 +1,1 @@
+Issue 17882: Remove rendering_threads option in the CEF port

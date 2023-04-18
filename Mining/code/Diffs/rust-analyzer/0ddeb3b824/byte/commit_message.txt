@@ -1,0 +1,1 @@
+Fix the same bug as #396 but for bytes too

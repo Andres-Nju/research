@@ -1,0 +1,1 @@
+Fix an incorrect docstring for Immediate in librustc_mir/interpret.

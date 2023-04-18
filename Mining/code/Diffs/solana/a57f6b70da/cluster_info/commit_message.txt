@@ -1,0 +1,3 @@
+Fix swapped repair and forwards addrs (#6691)
+
+automerge

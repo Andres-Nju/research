@@ -1,0 +1,3 @@
+doc: fix typo "used" -> "use"
+
+PR #1936

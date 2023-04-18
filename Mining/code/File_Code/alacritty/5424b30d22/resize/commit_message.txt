@@ -1,0 +1,3 @@
+Fix crash on cursor resize
+
+Fixes #3960.

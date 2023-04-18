@@ -1,0 +1,4 @@
+Fix the Solaris pthread_t raw type in std to match what's in libc
+
+The old type causes failures when building cargo 0.20.0 after
+changeset 8304e06b5 in the libc repo.

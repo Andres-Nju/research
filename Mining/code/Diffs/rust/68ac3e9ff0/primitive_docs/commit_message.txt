@@ -1,0 +1,1 @@
+Fix broken link name in `bool` documentation

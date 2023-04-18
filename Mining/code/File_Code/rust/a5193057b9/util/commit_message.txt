@@ -1,0 +1,6 @@
+rustbuild: Fix `copy` helper with existing files
+
+This erroneously truncated files when the destination already existed and was an
+existing hard link to the source. This in turn caused weird bugs!
+
+Closes #37745

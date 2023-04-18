@@ -1,0 +1,9 @@
+Fix `to md --pretty` when rendering a list (#5932)
+
+Fixes #5931
+
+Signed-off-by: nibon7 <nibon7@163.com>Fix `to md --pretty` when rendering a list (#5932)
+
+Fixes #5931
+
+Signed-off-by: nibon7 <nibon7@163.com>

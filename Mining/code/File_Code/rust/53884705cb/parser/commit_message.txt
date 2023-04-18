@@ -1,0 +1,1 @@
+Fix the spans of catch blocks to include the `do`

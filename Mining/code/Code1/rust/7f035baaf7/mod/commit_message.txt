@@ -1,0 +1,1 @@
+Fix a typo in Write::write_vectored docs

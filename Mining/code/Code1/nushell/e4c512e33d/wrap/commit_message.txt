@@ -1,0 +1,5 @@
+nu-table: Fix wrap logic (#5998)
+
+Adding space may overflow a cell_width.
+
+Signed-off-by: Maxim Zhiburt <zhiburt@gmail.com>

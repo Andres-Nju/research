@@ -1,0 +1,1 @@
+fix logging: only walk remote dir if it exist (#23663)

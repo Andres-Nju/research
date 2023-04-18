@@ -1,0 +1,1 @@
+s/OsStr/&OsStr in docs to align with &str/String comparison

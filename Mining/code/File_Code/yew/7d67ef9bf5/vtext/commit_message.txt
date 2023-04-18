@@ -1,0 +1,4 @@
+Fix web_sys build (#997)
+
+CharacterData needs to be deref'd to make a Node out of it.
+Fixes #996

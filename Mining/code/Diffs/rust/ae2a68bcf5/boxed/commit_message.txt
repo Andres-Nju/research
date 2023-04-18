@@ -1,0 +1,1 @@
+Fix broken links on std::boxed doc page

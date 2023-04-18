@@ -1,0 +1,7 @@
+fix help for the --print option
+
+Since 8285ab5c99, which was merged in with #38061, the help for the
+--print option is missing the surrounding [ ] around the possible
+options.
+
+Signed-off-by: Doug Goldstein <cardoe@cardoe.com>

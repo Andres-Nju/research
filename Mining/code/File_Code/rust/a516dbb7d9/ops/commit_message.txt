@@ -1,0 +1,9 @@
+note that calling drop() explicitly is a compiler error
+
+Part of #29365
+
+explain that std::mem::drop in prelude will invoke Drop
+
+change "prelude" -> "the prelude"; change links to reference-style
+
+move link references to links' section

@@ -1,0 +1,3 @@
+fix: unicode byte counting error #3150 (#3159)
+
+Co-authored-by: hk <alexhaka10@protonmail.com>

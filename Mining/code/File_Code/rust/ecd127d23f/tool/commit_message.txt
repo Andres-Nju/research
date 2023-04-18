@@ -1,0 +1,5 @@
+rustbuild: Fix dependencies of build-manifest
+
+No need to depend on librustc! All we need is libstd
+
+Closes #44140

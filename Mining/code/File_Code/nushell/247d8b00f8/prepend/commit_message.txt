@@ -1,0 +1,4 @@
+doc: fix prepend example definition (#1761)
+
+It seems that the description was copy-pasted by mistake from the
+append command.

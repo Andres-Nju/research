@@ -1,0 +1,1 @@
+[vk] fix warnings wrt missing WSI extensions on macOS

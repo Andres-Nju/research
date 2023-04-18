@@ -1,0 +1,1 @@
+Fix spurious error in dirty_both_lib_and_test.

@@ -1,0 +1,3 @@
+Add a more helpful error on genesis block mismatch (#5744)
+
+automerge

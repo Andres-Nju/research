@@ -1,0 +1,5 @@
+rustbuild: Deny and fix warnings
+
+Turned out this lint uncovered an actual bug!
+
+Closes #38484

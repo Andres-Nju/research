@@ -1,0 +1,10 @@
+Fix build failure on 32-bit machines
+
+Alacritty has some checks in place to make sure that unsafe
+code would not fail because of invalid struct sizes. This managed
+to successfully catch an incorrect unsafe block on 32-bit machines.
+
+To make sure this block works on both 32-bit and 64-bit systems,
+it has been altered to make use of the platform-dependent `usize`
+type. This will always make use of correct sizes without having to
+rely on conditional compilation.

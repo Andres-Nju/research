@@ -1,0 +1,1 @@
+ci: fix codegen (#3427)

@@ -1,0 +1,33 @@
+fix logic error in #44269's `prune_cache_value_obligations`
+
+We want to retain obligations that *contain* inference variables, not
+obligations that *don't contain* them, in order to fix #43132. Because
+of surrounding changes to inference, the ICE doesn't occur in its
+original case, but I believe it could still be made to occur on master.
+
+Maybe I should try to write a new test case? Certainly not right now
+(I'm mainly trying to get us a beta that we can ship) but maybe before
+we land this PR on nightly?
+
+This seems to cause a 10% performance regression in my imprecise
+attempt to benchmark item-body checking for #43613, but it's better to
+be slow and right than fast and wrong. If we want to recover that, I
+think we can change the constrained-type-parameter code to actually
+give a list of projections that are important for resolving inference
+variables and filter everything else out.fix logic error in #44269's `prune_cache_value_obligations`
+
+We want to retain obligations that *contain* inference variables, not
+obligations that *don't contain* them, in order to fix #43132. Because
+of surrounding changes to inference, the ICE doesn't occur in its
+original case, but I believe it could still be made to occur on master.
+
+Maybe I should try to write a new test case? Certainly not right now
+(I'm mainly trying to get us a beta that we can ship) but maybe before
+we land this PR on nightly?
+
+This seems to cause a 10% performance regression in my imprecise
+attempt to benchmark item-body checking for #43613, but it's better to
+be slow and right than fast and wrong. If we want to recover that, I
+think we can change the constrained-type-parameter code to actually
+give a list of projections that are important for resolving inference
+variables and filter everything else out.

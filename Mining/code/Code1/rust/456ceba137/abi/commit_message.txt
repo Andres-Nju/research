@@ -1,0 +1,25 @@
+fix `extern "aapcs" fn`
+
+to actually use the AAPCS calling convention
+
+closes #37810
+
+This is technically a [breaking-change] because it changes the ABI of
+`extern "aapcs"` functions that (a) involve `f32`/`f64` arguments/return
+values and (b) are compiled for arm-eabihf targets from
+"aapcs-vfp" (wrong) to "aapcs" (correct).
+
+Appendix:
+
+What these ABIs mean?
+
+- In the "aapcs-vfp" ABI or "hard float" calling convention: Floating
+point values are passed/returned through FPU registers (s0, s1, d0, etc.)
+
+- Whereas, in the "aapcs" ABI or "soft float" calling convention:
+Floating point values are passed/returned through general purpose
+registers (r0, r1, etc.)
+
+Mixing these ABIs can cause problems if the caller assumes that the
+routine is using one of these ABIs but it's actually using the other
+one.

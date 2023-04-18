@@ -1,0 +1,4 @@
+rustc: Fix a suggestion for the `proc_macro` feature
+
+This feature is stable, we shouldn't suggest it any more! Instead suggest the
+real feature, `use_extern_macros`.

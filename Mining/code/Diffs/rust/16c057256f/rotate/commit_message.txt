@@ -1,0 +1,1 @@
+fix safety-related comment in slice::rotate

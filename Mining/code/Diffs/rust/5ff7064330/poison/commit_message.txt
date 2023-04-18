@@ -1,0 +1,3 @@
+Fix incorrect `into_inner` link in docs.
+
+Fixes https://github.com/rust-lang/rust/issues/42373.

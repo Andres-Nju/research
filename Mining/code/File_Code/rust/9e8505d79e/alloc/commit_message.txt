@@ -1,0 +1,1 @@
+Change "attributes" to "attribute" in `Alloc`'s docs

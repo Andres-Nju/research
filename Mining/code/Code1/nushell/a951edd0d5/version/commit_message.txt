@@ -1,0 +1,5 @@
+Fix the version command to include the commit hash (#2390)
+
+* Fix the version command to include the commit hash when it is _not_ empty
+
+* Format code

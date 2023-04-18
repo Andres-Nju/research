@@ -1,0 +1,1 @@
+remove appveyor specific code paths (#3071)

@@ -1,0 +1,1 @@
+get_absolute_root_path

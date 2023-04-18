@@ -1,0 +1,1 @@
+Fix Duration::subsec_millis and Duration::subsec_micros examples

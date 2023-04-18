@@ -1,0 +1,3 @@
+fix typos in growth algo description
+
+modified to read "the first table overflows into the second, and the second into the first." plus smaller typos

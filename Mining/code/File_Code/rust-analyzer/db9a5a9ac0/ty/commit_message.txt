@@ -1,0 +1,1 @@
+Add an assert (and fix the other)

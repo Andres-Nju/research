@@ -1,0 +1,1 @@
+fix infinite rendered which cause browser frozenfix infinite rendered which cause browser frozen

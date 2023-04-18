@@ -1,0 +1,1 @@
+Fix running `cargo test` at the repository root

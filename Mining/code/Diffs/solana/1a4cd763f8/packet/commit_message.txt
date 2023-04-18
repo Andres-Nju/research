@@ -1,0 +1,6 @@
+Fix missing recycle in recv_from (#1205)
+
+In the error case that i>0 (we have blobs to send)
+we break out of the loop and do not push the allocated r
+to the v array. We should recycle this blob, otherwise it
+will be dropped.

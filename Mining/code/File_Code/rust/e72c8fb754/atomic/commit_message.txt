@@ -1,0 +1,1 @@
+Fix formatting in the documentation for AtomicIsize::compare_exchange_weak

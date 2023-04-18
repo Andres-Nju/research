@@ -1,0 +1,5 @@
+str: Fix documentation typo
+
+from_utf8 returns a Result, not an Option.
+
+Signed-off-by: David Henningsson <diwic@ubuntu.com>

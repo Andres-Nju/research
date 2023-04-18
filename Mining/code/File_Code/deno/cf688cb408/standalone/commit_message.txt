@@ -1,0 +1,1 @@
+docs(cli): fix return type in comment (#9248)

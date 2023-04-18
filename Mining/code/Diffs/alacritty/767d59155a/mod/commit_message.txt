@@ -1,0 +1,3 @@
+Fix stack overflow when printing shader error
+
+Fixes #3238.

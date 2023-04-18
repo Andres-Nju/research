@@ -1,0 +1,10 @@
+Minor fix in the merge_sort comments
+
+There was an off-by-one error discovered by @tbelaire.
+So, the two invariants we are enforcing are:
+
+1. Run lengths are decreasing.
+2. Sum of lengths of any two adjacent runs is less than the length of
+their predecessor.
+
+This commit changes the comment to be clearer and have correct bounds on `i`.

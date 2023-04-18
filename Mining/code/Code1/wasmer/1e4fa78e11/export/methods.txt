@@ -1,0 +1,1 @@
+wasmer_export_to_memory

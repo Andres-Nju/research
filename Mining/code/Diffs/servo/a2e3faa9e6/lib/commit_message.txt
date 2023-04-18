@@ -1,0 +1,1 @@
+WebDriver: Fix POST /session/:session_id/elements to return multiple

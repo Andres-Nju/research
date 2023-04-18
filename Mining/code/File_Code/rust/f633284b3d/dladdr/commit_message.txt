@@ -1,0 +1,5 @@
+std: Fix a segfault on OSX with backtraces
+
+Apparently `dladdr` can succeed but still give you NULL pointers!
+
+Closes #44379

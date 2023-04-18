@@ -1,0 +1,5 @@
+Fix some unaligned reads on SPARC in LTO
+
+This fixes #43593 by eliminating some undefined behavior.Fix some unaligned reads on SPARC in LTO
+
+This fixes #43593 by eliminating some undefined behavior.

@@ -1,0 +1,4 @@
+Fix while ctrlc behavior (#7195)
+
+Currently while didn't respect ctrl-c, and thus non-terminating loops
+couldn't be interrupted. This patch fixes this.

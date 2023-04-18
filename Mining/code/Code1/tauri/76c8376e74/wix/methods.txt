@@ -1,0 +1,1 @@
+app_installer_dir

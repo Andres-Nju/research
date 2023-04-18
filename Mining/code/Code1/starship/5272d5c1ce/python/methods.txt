@@ -1,0 +1,3 @@
+folder_with_setup_py
+folder_with_init_py
+disabled_scan_for_pyfiles_and_folder_with_setup_py

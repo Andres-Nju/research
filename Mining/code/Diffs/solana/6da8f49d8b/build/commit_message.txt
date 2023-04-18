@@ -1,0 +1,3 @@
+nit, clearer error message (#7748)
+
+automerge

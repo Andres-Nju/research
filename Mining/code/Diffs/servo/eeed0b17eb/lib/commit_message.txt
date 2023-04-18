@@ -1,0 +1,14 @@
+Fix MallocSizeOf for TypedSize2D.
+
+TypedSize2D's MallocSizeOf impl has two problems.
+
+- It measures `width` twice, and `height` not at all.
+
+- It erroneously asserts that `width` and `height` are scalars. This
+  seems reasonable at first blush, but Stylo uses
+  `BorderRadius<LengthAndPercentage>` which contains a
+  `TypedSize2D<LengthAndPercentage, UnknownUnit>`, and
+  `LengthAndPercentage` is non-scalar.
+
+This patch fixes both of these problems, and also removes a low-value
+`use` statement.

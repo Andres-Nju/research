@@ -1,0 +1,4 @@
+Fix test js_error_apply_source_map_2
+
+If the project is checked out into a directory not called "deno" this
+test fails.

@@ -1,0 +1,5 @@
+#36553 specialisation error 520 is misleading
+
+fit string in one line#36553 specialisation error 520 is misleading
+
+fit string in one line

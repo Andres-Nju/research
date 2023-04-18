@@ -1,0 +1,13 @@
+Remove ungrammatical dots from the error index.
+
+They were probably meant as a shorthand for omitted code.
+
+Part of #32446 but there should be a separate fix for the issue.
+
+Signed-off-by: NODA, Kai <nodakai@gmail.com>Remove ungrammatical dots from the error index.
+
+They were probably meant as a shorthand for omitted code.
+
+Part of #32446 but there should be a separate fix for the issue.
+
+Signed-off-by: NODA, Kai <nodakai@gmail.com>

@@ -1,0 +1,1 @@
+chore: cleanup setup error usage (#1588)

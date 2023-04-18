@@ -1,0 +1,10 @@
+fix small doc mistake
+
+The std::io::read main documentation can lead to error because the
+buffer is prefilled with 10 zeros that will pad the response.
+Using an empty vector is better.
+
+The `read_to_end` documentation is already correct though.
+
+This is my first rust PR, don't hesitate to tell me if I did something
+wrong.

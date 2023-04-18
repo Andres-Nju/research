@@ -1,0 +1,1 @@
+Fix a couple of dead links on core::num::ParseFloatError docs

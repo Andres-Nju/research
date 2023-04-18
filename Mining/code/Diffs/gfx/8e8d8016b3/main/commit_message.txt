@@ -1,0 +1,5 @@
+Fix swapchain validation errors in quad example
+
+This commit fixes the Vulkan validation errors caused by not destroying the swapchain.
+
+It also fixes a typo and adds a small comment explaining why `main` extends the lifetime of `window` beyond its initial scope.

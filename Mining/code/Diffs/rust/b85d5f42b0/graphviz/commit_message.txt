@@ -1,0 +1,3 @@
+Fix angle bracket formatting when dumping MIR debug vars
+
+Fixes #66985

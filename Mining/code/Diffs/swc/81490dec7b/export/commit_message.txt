@@ -1,0 +1,4 @@
+Fix unexporter (#1128)
+
+swc_bundler:
+ - Make DepUnexporter unexport export declarations.

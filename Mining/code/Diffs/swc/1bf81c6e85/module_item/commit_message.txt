@@ -1,0 +1,1 @@
+Fix span of the ExportNamespaceSpecifer  (#651)

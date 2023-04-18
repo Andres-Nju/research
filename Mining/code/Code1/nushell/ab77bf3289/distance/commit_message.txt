@@ -1,0 +1,4 @@
+Fix search terms for `str distance` (#6398)
+
+Redundancy with the command name is unnecessary and now tested since #6380 
+Fixes CI failure

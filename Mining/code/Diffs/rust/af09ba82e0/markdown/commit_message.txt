@@ -1,0 +1,1 @@
+change footnote anchor formats to fix spurious rendering differences

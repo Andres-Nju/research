@@ -1,0 +1,8 @@
+Fix trash functionality (#3146)
+
+For now the trash doesn't work because the trash-support flag isn't enabled in nu-engine
+crate, so make it work by adding this flag.
+
+Signed-off-by: Tw <wei.tan@intel.com>
+
+Co-authored-by: Tw <wei.tan@intel.com>

@@ -1,0 +1,4 @@
+Fix gpg signing in manifest builder
+
+GPG versions 2.x+ require that --batch be passed if --passphrase-fd is
+to be accepted.

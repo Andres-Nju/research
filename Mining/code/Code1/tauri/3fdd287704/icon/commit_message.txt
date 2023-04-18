@@ -1,0 +1,1 @@
+fix(cli): fix wrong filename for 256px png icon (#5164)

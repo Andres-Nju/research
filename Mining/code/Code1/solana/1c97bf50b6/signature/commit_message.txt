@@ -1,0 +1,3 @@
+Fix nightly
+
+No longer ignore failures in the nightly build.

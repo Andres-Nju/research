@@ -1,0 +1,1 @@
+keygen: fix debug build after migration to clap-v3-utils (#24686)

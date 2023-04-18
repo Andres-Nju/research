@@ -1,0 +1,1 @@
+send_and_confirm_messages_with_spinner

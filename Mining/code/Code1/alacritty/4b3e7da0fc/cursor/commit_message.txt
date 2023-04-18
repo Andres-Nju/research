@@ -1,0 +1,10 @@
+Fix hidden cursor inverting cell colors
+
+Since the block cursor inverts the background and foreground colors of a
+cell, the hidden cursor has done the same thing without rendering a
+cursor since it was using the block cursor shape.
+
+A new `Hidden` cursor style has been introduced for explicitly handling
+the invisible cursor differently.
+
+This fixes #2342.

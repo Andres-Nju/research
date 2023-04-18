@@ -1,0 +1,1 @@
+Return Ok(None) when the registrar contract returns empty slice (#11257)

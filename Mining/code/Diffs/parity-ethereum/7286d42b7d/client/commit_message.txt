@@ -1,0 +1,5 @@
+Fix call/estimate_gas (#4121)
+
+* Return 0 instead of error with out of gas on estimate_gas
+
+* Fix stuff up.

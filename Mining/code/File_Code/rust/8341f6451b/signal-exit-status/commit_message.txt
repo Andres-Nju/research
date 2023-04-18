@@ -1,0 +1,1 @@
+Fix run-pass/signal-exit-status to not trigger UB by writing to NULL.

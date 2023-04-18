@@ -1,0 +1,3 @@
+libcore: sort_unstable: remove unnecessary loop.
+
+`other` is guaranteed to be less than `2 * len`.

@@ -1,0 +1,1 @@
+fix failing master build: update tests to new init_restore signature. (#2069)

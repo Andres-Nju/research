@@ -1,0 +1,1 @@
+Fix the brainwallet functionality. (#2994)

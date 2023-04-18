@@ -1,0 +1,2 @@
+Fix typo in hal/src/device.rs, hal/src/command/raw.rs, backend/metal/src/command.rs
+Add a new line breaks two adjacent function definition in backend/gl/src/queue.rs

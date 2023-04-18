@@ -1,0 +1,6 @@
+ignore/types: fix postscript globs
+
+The postscript globs were missing asterisks, so they were treated as
+literal filenames.
+
+PR #1461

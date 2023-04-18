@@ -1,0 +1,2 @@
+test_c_rwlock_initializer
+rwlock_new

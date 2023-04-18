@@ -1,0 +1,1 @@
+Fix DENO_DIR docs (#6271)

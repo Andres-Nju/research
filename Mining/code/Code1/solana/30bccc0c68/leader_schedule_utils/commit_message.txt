@@ -1,0 +1,3 @@
+Fix slot index used while calculating leader schedule
+
+- slot_leader_at() was using absolute slot number instead of index in the epoch

@@ -1,0 +1,5 @@
+Revert "test: fix flaky deno_land_unsafe_ssl test (#17357)" (#17368)
+
+This reverts commit ee2c6cb04af232be672b31b81f7c377b2f571267.
+
+Closes https://github.com/denoland/deno/issues/17359

@@ -1,0 +1,1 @@
+Implement Error trait for fmt::Error type

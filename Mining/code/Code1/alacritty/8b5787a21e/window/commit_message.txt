@@ -1,0 +1,13 @@
+Fix negative window position
+
+This resolves an issue where negative window positions set in the
+configuration file would not place the Alacritty window in the correct
+location.
+
+Fixes #4061.Fix negative window position
+
+This resolves an issue where negative window positions set in the
+configuration file would not place the Alacritty window in the correct
+location.
+
+Fixes #4061.

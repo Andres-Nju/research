@@ -1,0 +1,5 @@
+Fix icon decoding on X11
+
+Glutin is waiting for an RGBA buffer with 8-bit depth, but our icon is
+16-bit depth. So we need to normalize the color data when decoding the
+icon.

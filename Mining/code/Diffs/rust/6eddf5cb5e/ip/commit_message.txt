@@ -1,0 +1,3 @@
+Correct error in documentation for Ipv4Addr method
+
+Correct statement in doctests on line 539 of `is_global` method of the `Ipv4Addr` object, which falsely attributed the tests to the broadcast address.

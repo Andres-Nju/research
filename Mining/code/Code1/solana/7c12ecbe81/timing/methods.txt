@@ -1,0 +1,1 @@
+get_complete_segment_from_slot

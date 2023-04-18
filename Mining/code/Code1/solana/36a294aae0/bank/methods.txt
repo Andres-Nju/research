@@ -1,0 +1,1 @@
+test_ensure_no_storage_rewards_pool

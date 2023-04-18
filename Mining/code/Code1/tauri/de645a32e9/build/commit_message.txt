@@ -1,0 +1,1 @@
+fix(cli): Typo in beforeBuildCommand error message (#4516)

@@ -1,0 +1,1 @@
+test: fix lock_write_fetch test (#9318)

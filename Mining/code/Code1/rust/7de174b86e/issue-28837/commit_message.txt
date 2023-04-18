@@ -1,0 +1,9 @@
+Fix Typo on cannot "substract"
+
+Fix Typo on hir::BinOpKind::Sub
+
+"substract" to "subtract"
+
+Fix Typo on "Error cannot substract"
+
+Fix Typo on cannot "substract"

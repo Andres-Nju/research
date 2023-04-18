@@ -1,0 +1,7 @@
+Fix selection after search without match
+
+This resolves an issue where the last match would be selected after
+leaving non-vi search, even if further changes to the search regex did
+not result in any matches.
+
+Fixes #4831.

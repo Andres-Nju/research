@@ -1,0 +1,1 @@
+Fix panic when `x.py` is called without any arguments.

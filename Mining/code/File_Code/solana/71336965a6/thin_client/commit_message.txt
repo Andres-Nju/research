@@ -1,0 +1,4 @@
+Limit targets to 4 in bench-tps
+
+Transaction got bigger so can only fit 4 targets in a
+Transaction now.

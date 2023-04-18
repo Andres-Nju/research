@@ -1,0 +1,3 @@
+Fix panic strings.
+
+ - Fix panic string in `check_ast_crate`.

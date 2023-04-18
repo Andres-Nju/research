@@ -1,0 +1,7 @@
+Fix vi mode terminal reset
+
+Since the vi mode is unrelated to the terminal emulation itself, it
+should not be reset during a `reset` to prevent unnecessary confusion.
+
+This also prevents the search from switching from vi mode to vi-less
+search without any indication to the user.

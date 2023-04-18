@@ -1,0 +1,24 @@
+Fix fetch test for same-origin referrer URL (#1788)
+
+The `yew_services::fetch::tests::fetch_referrer_same_origin_url`
+test broke for Chrome after Chrome changed the default
+`Referrer-Policy` from `no-referrer-when-downgrade` to
+`strict-origin-when-cross-origin`
+(See: https://developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default)
+
+The test makes a cross-site fetch (from the headless test
+origin to the httpbin server) and the new default policy
+causes the path to be stripped from the `Referer` header,
+whereas the old policy didn't.
+
+Fix this problem by explicitly setting the referrer policy
+to the previous default `no-referrer-when-downgrade` when
+making the test fetch.  This makes the test pass with Chrome
+and should have no effect for other browsers which are
+still using a default of `no-referrer-when-downgrade`
+(i.e. Firefox).
+
+Tested with both Chrome and Firefox:
+
+* wasm-pack test --chrome --headless -- --features "wasm_test httpbin_test"
+* wasm-pack test --firefox --headless -- --features "wasm_test httpbin_test"

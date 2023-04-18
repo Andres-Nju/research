@@ -1,0 +1,2 @@
+bench_sigverify_shreds_sign_gpu
+bench_sigverify_shreds_sign_cpu

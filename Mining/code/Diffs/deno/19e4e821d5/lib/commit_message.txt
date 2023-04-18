@@ -1,0 +1,9 @@
+fix(ext/ffi): Fix usize and isize FFI callback parameters missing match arm (#16172)
+
+Mea culpa. Back when I re-introduced parameter and return value types to
+FFI callbacks I failed to properly account for the change in match arm
+logic. As a result, usize and isize parameters in FFI callbacks
+currently enter the branch meant for void only.
+
+This PR changes the match arms to all be explicit, making sure that void
+is the only arm marked unreachable and that it stays that way.

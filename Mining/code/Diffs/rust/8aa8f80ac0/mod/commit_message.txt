@@ -1,0 +1,1 @@
+std::thread::spawn: Fix grammar in documentation

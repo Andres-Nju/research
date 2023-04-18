@@ -1,0 +1,1 @@
+Fix pipeline definition macro due to recent restrictions for $crate in macros

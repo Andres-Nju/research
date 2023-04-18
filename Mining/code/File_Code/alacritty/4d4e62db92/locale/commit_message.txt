@@ -1,0 +1,3 @@
+Fix locale_id for older versions of OS X (<= 10.11)
+
+This fixes a regression introduced in https://github.com/jwilm/alacritty/pull/1087/files#diff-5ffadea12561d6964b05ac2a0b8e388fL33.

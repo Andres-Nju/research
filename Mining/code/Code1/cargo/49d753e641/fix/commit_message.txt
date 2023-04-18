@@ -1,0 +1,7 @@
+Fix flakey broken_fixes_backed_out test.
+
+Since `fix` does `--all-targets` there is a race condition as to which target goes first. This has less than a 1% failure rate on CI, but it has been seen several times lately:
+
+https://ci.appveyor.com/project/rust-lang-libs/cargo/builds/20878003/job/v01k5j14od50mghw
+https://ci.appveyor.com/project/rust-lang-libs/cargo/builds/18699824/job/465w7uav7ew24yka
+https://ci.appveyor.com/project/rust-lang-libs/cargo/builds/17283788/job/7cxp8bwm4d3i1xgl

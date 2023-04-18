@@ -1,0 +1,1 @@
+SGX: Fix target linker used by bootstrap

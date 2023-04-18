@@ -1,0 +1,1 @@
+Bug 1363639 - stylo: Make interpolation of rect() match GeckoBug 1363639 - stylo: Make interpolation of rect() match Gecko

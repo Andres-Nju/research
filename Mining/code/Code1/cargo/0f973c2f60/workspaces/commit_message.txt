@@ -1,0 +1,3 @@
+Add a sleep to a rebuilding test to fix nightlies
+
+Just the standard issue with fs timestamps, OSX, etc.

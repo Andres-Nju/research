@@ -1,0 +1,4 @@
+rustdoc: Fix string escaping in implementors js files
+
+The generates HTML can contain quotes so we need to make sure they are
+escaped before inserting into the js files.

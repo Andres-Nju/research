@@ -1,0 +1,6 @@
+rustbuild: Fix panic message when musl-root not set
+
+The previous panic message delivered when a musl target was specified
+but musl-root was not specified incorrectly instructed the user to add
+the musl-root key to the "build" section of config.toml. The key
+actually needs to be added to the "rust" section.

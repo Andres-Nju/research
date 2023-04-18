@@ -1,0 +1,7 @@
+Fix Rustbuild linking on Illumos
+
+Illumos (an OpenSolaris fork) expects to get several
+extra library references for some system functions used
+by Rust standard library. This commit adds required linker
+options to rustbuild, which is currently doesn't work on
+Illumos-based operating systems.

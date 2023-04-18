@@ -1,0 +1,5 @@
+Fix comment for fn gas() in wasm/runtime (#8122)
+
+* Update runtime.rs
+
+* Update runtime.rs

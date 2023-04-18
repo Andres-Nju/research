@@ -1,0 +1,1 @@
+Fix syntax hightlight when using Circumflex-Operator (#3613)

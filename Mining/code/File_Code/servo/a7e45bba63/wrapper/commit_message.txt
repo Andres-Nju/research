@@ -1,0 +1,12 @@
+stylo: Fix skip_root_and_item_display_fixup.
+
+The check isn't doing what the comment is saying.
+
+XBL subtrees for video controls all have the
+NODE_IS_IN_NATIVE_ANONYMOUS_SUBTREE flag, but not all of them are NAC
+themselves, so we may incorrectly miss blockification.
+
+Bug: 1366163
+Reviewed-by: heycam
+MozReview-Commit-ID: Oq3W258Lz2
+Signed-off-by: Emilio Cobos Álvarez <emilio@crisal.io>

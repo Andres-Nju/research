@@ -1,0 +1,5 @@
+rustdoc: Fix missing *mut T impl
+
+`impl<T> *mut T` is currently missing from
+https://doc.rust-lang.org/nightly/std/primitive.pointer.html and this adds
+it back.

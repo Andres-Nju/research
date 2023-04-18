@@ -1,0 +1,1 @@
+trans: don't create allocas anywhere other than the entry block.

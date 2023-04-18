@@ -1,0 +1,4 @@
+fix(bundler): Fix pass ordering (#1363)
+
+swc_bundler:
+ - Invoke iife handler before fixer.

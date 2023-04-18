@@ -1,0 +1,3 @@
+benches (#7480)
+
+automerge

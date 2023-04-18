@@ -1,0 +1,7 @@
+SigVerify: Fix num_valid_packets metric (#25643)
+
+It used to report the number of packets with successful signature
+validations but was accidentally changed to count packets passed into
+the verifier by e4409a87feae400d8430d3756853e8ff7cdded2f.
+
+This restores the previous meaning.

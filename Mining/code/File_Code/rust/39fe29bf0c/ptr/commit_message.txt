@@ -1,0 +1,3 @@
+src/libcore/ptr.rs: Fix documentation for size of `Option<NonNull<T>>`
+
+Seems more useful to say that it has the same size as `*mut T`.

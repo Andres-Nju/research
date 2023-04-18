@@ -1,0 +1,10 @@
+Fix dimming of indexed colors
+
+It seems like the list of colors might have changed a bit, leading to
+indexed colors not being transformed into their dim colors correctly.
+
+To prevent this from happening in the future, the dimming for colors in
+the range '0..=7' is now performed by offsetting them from the
+'NamedColor::DimBlack'. Since this is the first dimmed color, this
+should always work as long as all dimmed colors are added in the correct
+order.

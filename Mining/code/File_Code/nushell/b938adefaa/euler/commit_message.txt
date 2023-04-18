@@ -1,0 +1,7 @@
+Fix `math e` usage text (#7406)
+
+Closes #7401
+
+# Tests + Formatting
+
+Doesn't apply, doc fix

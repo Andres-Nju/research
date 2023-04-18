@@ -1,0 +1,3 @@
+Fix unstable test after eager rent collection (#10031)
+
+automerge

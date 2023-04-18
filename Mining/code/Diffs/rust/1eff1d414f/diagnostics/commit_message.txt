@@ -1,0 +1,1 @@
+Fixed minor error in Compiler Error Index, E0603.

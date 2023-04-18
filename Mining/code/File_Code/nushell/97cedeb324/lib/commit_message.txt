@@ -1,0 +1,1 @@
+Fix str --to-int usages (#2167)

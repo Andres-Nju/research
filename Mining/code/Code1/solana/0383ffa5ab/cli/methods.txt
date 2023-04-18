@@ -1,0 +1,3 @@
+test_cli_parse_command
+fmt
+fmt

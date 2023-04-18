@@ -1,0 +1,11 @@
+Fix message bar drawing over terminal after resize
+
+This regression was introduced in
+729eef0c933831bccfeac6a355bdb410787fbe5f.
+
+Fixes #2924.Fix message bar drawing over terminal after resize
+
+This regression was introduced in
+729eef0c933831bccfeac6a355bdb410787fbe5f.
+
+Fixes #2924.

@@ -1,0 +1,3 @@
+rustbuild: fix bash completion installation dir
+
+Signed-off-by: Marc-Antoine Perennou <Marc-Antoine@Perennou.com>

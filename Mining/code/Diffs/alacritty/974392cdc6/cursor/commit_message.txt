@@ -1,0 +1,3 @@
+Fix cursor thickness on wide cells
+
+Fixes #4922.

@@ -1,0 +1,1 @@
+wasmer_trampoline_buffer_destroy

@@ -1,0 +1,1 @@
+Removed the incorrect documentation for from_str

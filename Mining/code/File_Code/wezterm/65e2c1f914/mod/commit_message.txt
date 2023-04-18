@@ -1,0 +1,6 @@
+Fix DECRPTUI response
+
+DECRPTUI, the response to DA3, should be:
+ DCS ! | D...D ST
+not
+ CSI = D...D ST

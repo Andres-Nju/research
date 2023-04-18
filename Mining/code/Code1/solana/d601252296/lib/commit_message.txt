@@ -1,0 +1,1 @@
+make diff command on new line in abi error message

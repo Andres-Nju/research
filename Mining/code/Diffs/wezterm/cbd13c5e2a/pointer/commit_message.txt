@@ -1,0 +1,3 @@
+wayland: clipboard: fix pasting if active surface id was not set
+
+refs: #1385

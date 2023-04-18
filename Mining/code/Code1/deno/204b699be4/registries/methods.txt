@@ -1,0 +1,2 @@
+get_completions
+test_parse_replacement_variables

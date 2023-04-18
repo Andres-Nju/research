@@ -1,0 +1,3 @@
+Fix negative cursor movement
+
+I noticed moving-up does not work and tracked it down here.

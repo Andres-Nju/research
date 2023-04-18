@@ -1,0 +1,3 @@
+Fix up vec guarnatee around capacity
+
+Fixes #37746

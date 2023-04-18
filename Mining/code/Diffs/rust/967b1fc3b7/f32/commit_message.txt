@@ -1,0 +1,8 @@
+Fix a small mistake regarding NaNs in a deprecation message
+
+`max` on floats returns the other argument if one of them is NaN, which
+would be `0.0` in this case. This is unlike the C functions `fdim` and
+`fdimf` which return NaN if either of their arguments is NaN.
+
+https://doc.rust-lang.org/1.31.0/std/primitive.f32.html#method.max
+https://en.cppreference.com/w/c/numeric/math/fdim

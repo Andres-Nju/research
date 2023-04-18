@@ -1,0 +1,3 @@
+save-analysis: fix issue with sub-exprs in for loops
+
+Fixes https://github.com/nrc/rls-analysis/issues/78

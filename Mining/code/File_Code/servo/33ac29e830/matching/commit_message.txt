@@ -1,0 +1,1 @@
+Fix feature check for Gecko-specific assertions.

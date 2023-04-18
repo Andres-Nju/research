@@ -1,0 +1,7 @@
+stylo: Fix restyle hints check.
+
+It's clearly wrong to use intersects() there, since the coming check may be a
+bigger hint.
+
+MozReview-Commit-ID: 1YZ8OD0ajSz
+Signed-off-by: Emilio Cobos Álvarez <emilio@crisal.io>

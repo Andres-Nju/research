@@ -1,0 +1,1 @@
+Heed the advice of rustc's into_iter() warning

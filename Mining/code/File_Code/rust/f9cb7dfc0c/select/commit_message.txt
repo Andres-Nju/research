@@ -1,0 +1,1 @@
+Fix typo that resulted in comparison-to-self

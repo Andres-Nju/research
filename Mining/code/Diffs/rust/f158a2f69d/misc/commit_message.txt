@@ -1,0 +1,1 @@
+mir: remove unused float support from zero_literal.

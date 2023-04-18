@@ -1,0 +1,5 @@
+doc: fix typo
+
+"cretion" -> "creation"
+
+PR #1045

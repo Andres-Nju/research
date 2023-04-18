@@ -20,7 +20,7 @@ if __name__ == '__main__':
 
     # os.system("rustc code_to_ast/src/main.rs")
     
-    code_dir = cur_path + '/Codes' 
+    code_dir = cur_path + '/File_Code' 
     # code_dir = father_dir + '/Codes'
     # os.system("cargo build")
     with os.scandir(code_dir) as Codes:
@@ -37,9 +37,13 @@ if __name__ == '__main__':
                             os.mkdir(file_dir)
                             with os.scandir(file.path) as methods:
                                 for method in methods:
-                                    if ".txt" == method.name[-4:]:
+                                    if method.name == 'commit_message.txt':
+                                        with open(method.path, 'r') as msg:
+                                            with open(file_dir + '/commit_message.txt', 'w') as m:
+                                                m.write(msg.read())
+                                    elif ".txt" == method.name[-4:]:
                                         continue
-                                    if "before.rs" == method.name[-9:]:
+                                    elif "before.rs" == method.name[-9:]:
                                         diff_path = file_dir + '/' + method.name[:-10] + '.md'
                                         os.system("difft --display side-by-side-show-both --context 0 " + method.path + ' ' + method.path[:-9] + "after.rs > " + diff_path)
                             

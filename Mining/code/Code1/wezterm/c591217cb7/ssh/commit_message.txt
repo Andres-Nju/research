@@ -1,0 +1,1 @@
+Use clap::derive::Parser::parse() to fix deprecated warning

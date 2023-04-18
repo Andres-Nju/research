@@ -1,0 +1,5 @@
+Clarify error phrase in `sub_instant` function
+
+Uses the same wording as [`src/libstd/sys/windows/time.rs`][1].
+
+1: https://github.com/avdv/rust/blob/95e2bf253d864c5e14ad000ffa2040ce85916056/src/libstd/sys/windows/time.rs#L65

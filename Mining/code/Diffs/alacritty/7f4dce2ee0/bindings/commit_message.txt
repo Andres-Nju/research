@@ -1,0 +1,3 @@
+Fix backspace deleting chars when IME is open
+
+Fixes #1606.

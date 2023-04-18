@@ -1,0 +1,5 @@
+core: fix unused_macro warning
+
+when compiling the crate for a target with max-atomic-width = 0
+
+fixes #42097

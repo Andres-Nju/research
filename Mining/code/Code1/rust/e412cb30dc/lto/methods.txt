@@ -1,0 +1,2 @@
+extract_bytecode_format_version
+extract_compressed_bytecode_size_v1

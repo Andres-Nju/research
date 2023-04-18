@@ -1,0 +1,17 @@
+Fixes incorrect comment. (#10913)
+
+I _believe_ (someone please double-check my work) that this comment is subtly incorrect and in fact the replacement will occur if the new gas price is exactly 12.5% (given current configuration) higher.
+
+Relevant pieces of code:
+```rust
+fn bump_gas_price(old_gp: U256) -> U256 {
+	old_gp.saturating_add(old_gp >> GAS_PRICE_BUMP_SHIFT)
+}
+```
+```rust
+let min_required_gp = bump_gas_price(*old_gp);
+match min_required_gp.cmp(&new_gp) {
+	cmp::Ordering::Greater => scoring::Choice::RejectNew,
+	_ => scoring::Choice::ReplaceOld,
+}
+```

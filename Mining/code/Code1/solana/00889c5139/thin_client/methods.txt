@@ -1,0 +1,1 @@
+test_register_vote_account

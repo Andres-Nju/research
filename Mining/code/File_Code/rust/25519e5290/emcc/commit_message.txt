@@ -1,0 +1,1 @@
+Fix destructor in emcc.rs

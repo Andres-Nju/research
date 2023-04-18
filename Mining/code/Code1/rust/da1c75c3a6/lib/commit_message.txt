@@ -1,0 +1,1 @@
+boostrap: dist: if a file cannot be installed because it does not exist, print its name in the error message.

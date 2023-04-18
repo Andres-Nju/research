@@ -1,0 +1,6 @@
+Fix #573. Ensure we don't write 0 bytes to pty
+
+Any action that results in 0 bytes, such as pasting 0 bytes
+from the clipboard hangs the terminal (`pbcopy </dev/null`
+followed by ctrl-v), hangs the terminal on both macOS and
+Linux. This ensures we never send 0 bytes.

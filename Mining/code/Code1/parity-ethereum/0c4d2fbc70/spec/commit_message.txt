@@ -1,0 +1,9 @@
+Fix light sync with initial validator-set contract (#8528)
+
+* Fix #8468
+
+* Use U256::max_value() instead
+
+* Fix again
+
+* Also change initial transaction gas

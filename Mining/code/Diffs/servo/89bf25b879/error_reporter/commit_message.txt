@@ -1,0 +1,1 @@
+geckolib: Fix typo in CSS parser error message name.

@@ -1,0 +1,6 @@
+Fix URL highlighting with unicode whitespace
+
+The URL highlighting regex would automatically terminate on an ascii
+whitespace, however there are several other forms of whitespace that are
+indistinguisable to a user from normal whitespace. To make things a
+little more intuitive, all unicode whitespace will now terminate URLs.

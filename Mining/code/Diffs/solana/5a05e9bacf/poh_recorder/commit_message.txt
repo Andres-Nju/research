@@ -1,0 +1,1 @@
+Remove unused error variant (#30871)

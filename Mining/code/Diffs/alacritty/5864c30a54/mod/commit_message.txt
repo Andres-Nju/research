@@ -1,0 +1,11 @@
+Fix tabs overwriting cells during movement
+
+When compiling ncurses with the `--enable-hard-tabs` option, it will
+make use of tabs to speed up cursor movement. These tabs can be set at
+positions which will overwrite existing characters.
+
+Since these are only for movement and not supposed to write anything to
+the terminal, it is now checked that a cell does not contain any
+character before writing a tab to it.
+
+This fixes #1933.

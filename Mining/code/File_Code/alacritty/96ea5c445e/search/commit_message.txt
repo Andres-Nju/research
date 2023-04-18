@@ -1,0 +1,14 @@
+Fix handling of wrapline flag in last line
+
+This resolves an issue where Alacritty would crash when a wrapline flag
+was present in the last column of the last line.
+
+While it should not be possible to achieve this with normal text flow,
+it is possible to rotate the content downwards using the `CSI Ps T`
+escape, causing this bug to occur.
+
+This also works around other issues like the vi cursor jumping to the
+top of the screen when trying to move beyond the last column using the
+`l` key. In debug mode this even lead to a crash due to the overflow.
+
+Fixes #4109.

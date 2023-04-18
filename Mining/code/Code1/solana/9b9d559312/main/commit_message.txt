@@ -1,0 +1,1 @@
+Increase message_processor logging to error level (#11945)

@@ -1,0 +1,1 @@
+Fix incorrect hex value in doc comment example.

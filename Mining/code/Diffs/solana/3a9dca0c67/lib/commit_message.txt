@@ -1,0 +1,7 @@
+Add back BPF error logging (#13633)
+
+* Add back BPF error logging
+
+* Update programs/bpf_loader/src/lib.rs
+
+Co-authored-by: Michael Vines <mvines@gmail.com>

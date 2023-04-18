@@ -1,0 +1,3 @@
+stylo: Fix missing null terminators in error reporting code.
+
+This was causing the patch in bug 1420026 to fail.

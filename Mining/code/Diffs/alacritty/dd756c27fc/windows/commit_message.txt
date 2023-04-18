@@ -1,0 +1,10 @@
+Fix selection copying on Windows
+
+The `copypasta` crate incorrectly mapped the secondary clipboard on
+Windows to the primary clipboard, leading to the primary clipboard
+getting overwritten whenever the selection clipboard was updated.
+
+The new Windows clipboard mimics the macOS clipboard, which also does
+not have a selection clipboard.
+
+This fixes #2050.

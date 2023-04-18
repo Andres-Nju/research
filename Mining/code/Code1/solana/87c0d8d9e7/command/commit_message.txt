@@ -1,0 +1,9 @@
+fix syntax error in bash_profile
+
+if there is no newline at the end of the file, this export is glued to the rest of the code and generates a syntax error like this
+
+```bash
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fiexport PATH="/Users/user/.local/share/solana/install/active_release/bin:$PATH"
+```

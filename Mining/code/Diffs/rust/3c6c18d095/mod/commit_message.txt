@@ -1,0 +1,1 @@
+Add missing \[allow(missing_docs)\]

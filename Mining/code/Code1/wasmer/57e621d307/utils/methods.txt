@@ -1,0 +1,1 @@
+get_emscripten_memory_size

@@ -1,0 +1,3 @@
+Fix sending chars with bind not clearing selection
+
+Fixes #2925.

@@ -1,0 +1,3 @@
+chore: fix pty_complete_imports test (#16992)
+
+This test doesn't run on the CI.

@@ -1,0 +1,1 @@
+Fix no colour on windows. (#1498)Fix no colour on windows. (#1498)Fix no colour on windows. (#1498)

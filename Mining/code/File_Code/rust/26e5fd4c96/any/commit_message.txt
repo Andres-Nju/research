@@ -1,0 +1,3 @@
+Minor documentation fix
+
+Fixed the documentation for any as is a trait rather than a type.

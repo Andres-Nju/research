@@ -1,0 +1,4 @@
+fix(webgl): fix issue https://github.com/servo/servo/issues/21352
+
+If we have a bounded framebuffer previously, which is not the one to delete.
+we would not change the !binding, but we would change the GLSide with Command::BindFramebuffer(Default).

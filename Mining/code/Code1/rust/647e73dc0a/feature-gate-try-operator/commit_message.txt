@@ -1,0 +1,3 @@
+Fix beta branch
+
+This test tests a message that is only displayed on nightly.

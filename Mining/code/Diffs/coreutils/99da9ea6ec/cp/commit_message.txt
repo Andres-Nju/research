@@ -1,0 +1,3 @@
+Cleanup: Fix grammar in "cp" macro comments. (#1905)
+
+Replaced "they if" with "if they" in the comments above the "prompt_yes" macro.

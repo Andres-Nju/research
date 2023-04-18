@@ -1,0 +1,3 @@
+dx12: Fix wrong memory heap selection for transfer dst usage.
+
+Tier 1 GPUs require placing images with TRANSFER_DST usage on the RT_DS heap as we internally use render targets for transfer operations.

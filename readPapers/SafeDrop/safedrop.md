@@ -175,7 +175,7 @@ Terminator := Goto(BB) | Panic(BB)
   
   - use-after-free
   - double-free
-  - Invalid mamory access (use or drop directly)
+  - Invalid memory access (use or drop directly)
   
 - Approach detecting invalid memory deallocation problems
   

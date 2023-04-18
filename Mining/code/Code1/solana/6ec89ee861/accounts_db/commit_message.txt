@@ -1,0 +1,5 @@
+log error for cache_hash_data save failure (#26676)
+
+log error for cach_hash_data savelog error for cache_hash_data save failure (#26676)
+
+log error for cach_hash_data save

@@ -1,0 +1,1 @@
+fix(ext/fetch): fix `size_hint` on response body resource (#16254)

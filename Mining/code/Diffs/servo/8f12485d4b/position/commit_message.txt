@@ -1,0 +1,3 @@
+stylo: Fix grid-template serialization in grid shorthand
+
+Because of some unnecessary checks, it wasn't able to serialize the '40px / none' value properly before.

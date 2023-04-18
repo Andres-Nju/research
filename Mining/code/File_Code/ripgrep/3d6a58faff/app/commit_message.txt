@@ -1,0 +1,3 @@
+doc: fix typo in help description
+
+PR #1536

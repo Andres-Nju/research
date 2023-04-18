@@ -1,0 +1,3 @@
+Fix documentation for Vec::dedup_by.
+
+The previous docstring was copied from dedup_by_key.

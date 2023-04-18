@@ -1,0 +1,1 @@
+Fix check in should_insert_data_shred (#6649)

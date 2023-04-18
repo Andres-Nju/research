@@ -1,0 +1,5 @@
+Fix gap in builtin box drawing
+
+Builtin box drawing glyphs in range from '\u{2580}' to `\u{2587}`
+could have gap due to missing rounding. Previously height was rounded,
+however not the `y` offset. This commit fixes it.

@@ -1,0 +1,4 @@
+Fix a typo in an env var name
+
+Not actually used yet in rust-lang/rust, but may as well try to get it
+right on the first try.

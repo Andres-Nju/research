@@ -1,0 +1,3 @@
+Fix documentation typo: --pager=never → --paging=never
+
+Signed-off-by: Anders Kaseorg <andersk@mit.edu>

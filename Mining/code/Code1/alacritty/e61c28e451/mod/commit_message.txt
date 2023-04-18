@@ -1,0 +1,3 @@
+Fix underline position for bitmap fonts
+
+Fixes #3235.

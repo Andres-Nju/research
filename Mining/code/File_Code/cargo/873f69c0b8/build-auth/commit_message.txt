@@ -1,0 +1,3 @@
+Relax a few error messages from libgit2
+
+They were tweaked a bit recently so let's enusre they're not too strict.

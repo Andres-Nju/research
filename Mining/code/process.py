@@ -1,10 +1,10 @@
 import os
 
-vector_file = "vector.csv"
+vector_file = "vector2.csv"
 
 if __name__ == '__main__':
     cur_path = os.getcwd() # 当前目录
-    code_dir = cur_path + '/Codes' 
+    code_dir = cur_path + '/File_Code' 
     with os.scandir(code_dir) as Codes:
         for repo in Codes: # repo level
             with os.scandir(repo.path) as Commmits:

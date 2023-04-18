@@ -1,0 +1,14 @@
+Build fix for `no implementation for `&[u8] == std::vec::Vec<u8>`
+
+Full error
+```
+error[E0277]: can't compare `&[u8]` with `std::vec::Vec<u8>`
+   --> wezterm-gui/src/gui/termwindow.rs:817:40
+    |
+817 |                     if existing.data() == data {
+    |                                        ^^ no implementation for `&[u8] == std::vec::Vec<u8>`
+    |
+    = help: the trait `std::cmp::PartialEq<std::vec::Vec<u8>>` is not implemented for `&[u8]`
+
+error: aborting due to previous error
+```

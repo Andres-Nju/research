@@ -1,0 +1,4 @@
+Fix `asm!` blocks
+
+The `volatile` modifier was incorrectly written outside of the `asm!`
+blocks.

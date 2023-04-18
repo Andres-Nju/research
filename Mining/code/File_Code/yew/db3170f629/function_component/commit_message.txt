@@ -1,0 +1,1 @@
+Fix broken import in yew-functional (#1683)

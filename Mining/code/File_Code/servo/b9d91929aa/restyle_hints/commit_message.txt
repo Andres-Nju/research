@@ -1,0 +1,4 @@
+Fix debug assertion introduced in #13108 by me.
+
+I'm stupid, and when I did the last moving-the-code-around, I failed miserably
+to double-check it in a debug build.

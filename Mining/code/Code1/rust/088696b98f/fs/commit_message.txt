@@ -1,0 +1,4 @@
+Fix problems left in `concurrent_recursive_mkdir`
+
+Increase lifetime of `tmpdir`, and really change the length of test
+path.

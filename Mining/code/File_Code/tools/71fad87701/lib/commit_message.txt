@@ -1,0 +1,13 @@
+fix(benchmark): Fix `critcmp` output for benchmark (#2083)
+
+The `Display` implementation of `FeatureToBenchmark` emitted new lines after the benchmark name. This screwed up the formatting of the table emitted by `critcmp`.
+
+This PR removes the `\n` after the name of the benchmark feature.
+
+```
+group                                 main                                   pr
+-----                                 ----                                   --
+parser/react-dom.production.min.js    1.00     12.0±0.19ms     9.6 MB/sec    1.00     12.1±0.19ms     9.5 MB/sec
+parser/react.production.min.js        1.04  633.9±102.48µs     9.7 MB/sec    1.00   609.5±16.06µs    10.1 MB/sec
+
+```

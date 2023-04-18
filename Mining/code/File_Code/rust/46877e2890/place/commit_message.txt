@@ -1,0 +1,9 @@
+Fix const eval bug breaking run-pass tests in Miri
+
+PR #63580 broke miri's ability to run the run-pass test suite with MIR
+optimizations enabled. The issue was that we weren't properly handling
+the substs and DefId associated with a Promoted value. This didn't break
+anything in rustc because in rustc this code runs before the Inliner
+pass which is where the DefId and substs can diverge from their initial
+values. It broke Miri though because it ran this code again after
+running the optimization pass.

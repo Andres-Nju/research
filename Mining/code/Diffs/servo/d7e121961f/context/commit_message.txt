@@ -1,0 +1,3 @@
+Disable the style sharing cache on opt builds to avoid regressing Talos by matching too many revalidation selectors.
+
+MozReview-Commit-ID: 10qSho1gXjw

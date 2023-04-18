@@ -1,0 +1,5 @@
+Fix changing to a new Windows drive (#1721)
+
+* Fix changing to a new Windows drive
+
+* Update cli.rs

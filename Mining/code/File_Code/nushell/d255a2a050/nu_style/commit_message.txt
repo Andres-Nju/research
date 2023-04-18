@@ -1,0 +1,3 @@
+Fix color parsing (#6234)
+
+Signed-off-by: nibon7 <nibon7@163.com>

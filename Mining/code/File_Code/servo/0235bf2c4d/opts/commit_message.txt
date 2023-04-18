@@ -1,0 +1,7 @@
+Fix the -Z wr-no-batch option.
+
+The DebugOpts struct uses the Default trait to set all the values
+to false initialily. So bools in the DebugOpts struct must be
+negative verbs to work correctly.
+
+This drops the draw call count on HN from ~2000 back to ~5.

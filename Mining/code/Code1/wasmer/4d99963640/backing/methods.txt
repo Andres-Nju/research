@@ -1,0 +1,4 @@
+finalize_tables
+validate_memories
+finalize_memories
+validate_tables

@@ -1,0 +1,9 @@
+Print themes directory in error message if no themes could be loaded from it.
+
+Before this patch:
+    $ bat cache --init
+    [bat error]: Could not load themes from '{}'
+
+After:
+    $ bat cache --init
+    [bat error]: Could not load themes from '/home/user/.config/bat/themes'

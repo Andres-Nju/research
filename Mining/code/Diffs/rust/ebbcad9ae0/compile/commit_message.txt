@@ -1,0 +1,1 @@
+Fix rustbuild --color conflict when building on Travis outside of Docker.

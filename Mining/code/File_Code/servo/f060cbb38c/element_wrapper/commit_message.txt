@@ -1,0 +1,4 @@
+style: Properly forward ElementWrapper::blocks_ancestor_combinators.
+
+Not doing it is buggy. I think the only outcome of it is that we may
+over-invalidate, so it's probably not a huge deal, but worth doing it.

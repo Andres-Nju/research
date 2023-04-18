@@ -1,0 +1,1 @@
+Remove incorrect doc comment in rustc_mir::monomorphize::item

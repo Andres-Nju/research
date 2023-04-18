@@ -1,0 +1,5 @@
+Fix crash in link to destroyed agents (#1827)
+
+The destroyed field on the agent state was never set, so the early
+return in `run` didn't prevent crashes when agents receive messages
+after they are destroyed.

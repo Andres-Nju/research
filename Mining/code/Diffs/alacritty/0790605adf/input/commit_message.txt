@@ -1,0 +1,8 @@
+Fix characters getting swallowed during IME input
+
+This reverts 1d00883 since it is not necessary anymore after all search
+bindings are now proper key bindings. This fixes a bug which would cause
+the first character to be swallowed when using IME after triggering any
+key binding which doesn't send any `ReceivedCharacter` event.
+
+Fixes #4588.

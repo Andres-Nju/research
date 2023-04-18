@@ -1,0 +1,1 @@
+typo-fix stable ed'n error: "an onlyavailable" → "and only available"

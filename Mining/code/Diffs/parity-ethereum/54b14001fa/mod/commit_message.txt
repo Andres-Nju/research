@@ -1,0 +1,16 @@
+fix mining help (#6885)
+
+was
+        --min-gas-price=[STRING]
+	                Minimum amount of Wei per GAS to be paid for a
+			transaction to be accepted for mining. Overrides
+			--basic-tx-usd.
+
+Issue: --basic-tx-usd does not exist. Author probably meant
+--usd-per-tx.
+
+New:
+        --min-gas-price=[STRING]
+	                Minimum amount of Wei per GAS to be paid for a
+			transaction to be accepted for mining. Overrides
+			--usd-per-tx.

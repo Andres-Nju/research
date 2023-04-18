@@ -1,0 +1,8 @@
+Acknowledge first click on unfocused windows with bsd/linux
+
+Fixes a regression on non-macOS platforms caused by the fix for
+issue #1291. The fix is to follow platform norms for mouse click
+behavior on unfocused terminals. On macOS, the first click (that
+gives the window focus) is swallowed, and has no effect on the
+terminal. On all other platforms, the first click is passed through
+to the terminal.

@@ -1,0 +1,3 @@
+Fix launching of pager so text is interpreted as UTF-8 by default.
+
+This fixes issue https://github.com/sharkdp/bat/issues/98

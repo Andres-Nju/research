@@ -1,0 +1,1 @@
+Squash closure cast error into fn ptr cast error

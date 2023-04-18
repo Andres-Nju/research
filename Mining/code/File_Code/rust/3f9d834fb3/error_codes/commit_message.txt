@@ -1,0 +1,1 @@
+Add failing example for Self in supertrait listing in E0038 documentation

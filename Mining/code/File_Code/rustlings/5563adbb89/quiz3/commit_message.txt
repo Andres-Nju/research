@@ -1,0 +1,3 @@
+fix: fix quiz naming inconsistency (#421)
+
+Inconsistent naming when compared with the other quiz files.

@@ -1,0 +1,19 @@
+    fn repaint<'a, 'b>(&mut self, possibly_locked_rw_data: &mut RwData<'a, 'b>) -> bool {
+        let mut rw_data = possibly_locked_rw_data.lock();
+
+        let reflow_info = Reflow {
+            goal: ReflowGoal::ForDisplay,
+            page_clip_rect: MAX_RECT,
+        };
+        let mut layout_context = self.build_shared_layout_context(&*rw_data,
+                                                                  false,
+                                                                  &self.url.borrow(),
+                                                                  reflow_info.goal);
+
+        self.perform_post_style_recalc_layout_passes(&reflow_info,
+                                                     &mut *rw_data,
+                                                     &mut layout_context);
+
+
+        true
+    }

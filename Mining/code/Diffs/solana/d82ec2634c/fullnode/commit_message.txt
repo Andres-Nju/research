@@ -1,0 +1,3 @@
+Fix is_leader boolean (#1115)
+
+A node is the leader if the address is none

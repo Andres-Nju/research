@@ -1,0 +1,1 @@
+copy_third_party_objects -> copy_musl_third_party_objects

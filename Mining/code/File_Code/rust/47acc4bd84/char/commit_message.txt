@@ -1,0 +1,3 @@
+Fix documentation for DecodeUtf16Error
+
+Fixes #46307

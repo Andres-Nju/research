@@ -1,0 +1,12 @@
+Fix HashSet::union performance
+
+Consider this example: small_set = 0..2, large_set = 0..1000.
+
+To efficiently compute the union of these sets, we should
+* take all elements of the larger set
+* for each element of the smaller set check it is not in the larger set
+
+This is exactly what this commit does.
+
+This particular optimization was implemented a year ago, but the
+author mistaken `<` and `>`.

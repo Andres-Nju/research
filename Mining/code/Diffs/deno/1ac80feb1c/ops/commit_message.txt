@@ -1,0 +1,1 @@
+Replace panic with error on windows for symlink

@@ -1,0 +1,8 @@
+Fix block selection including last column
+
+The block selection will now only insert extra newline characters after
+each line if the last line isn't already included. This resolves an
+issue with duplicate newlines, since newlines are automatically appended
+when the last column is part of a selection.
+
+Fixes #3304.

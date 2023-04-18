@@ -1,0 +1,5 @@
+Improve error message in make_tests
+
+We should use expect instead of unwrap.
+
+This commit is based on https://github.com/laumann/compiletest-rs/pull/58. Thanks to @colin-kiegel.

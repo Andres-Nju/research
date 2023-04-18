@@ -1,0 +1,4 @@
+Fix flaky test
+
+The test would fail any time the original value was coincidently
+the same as the new bogus value.

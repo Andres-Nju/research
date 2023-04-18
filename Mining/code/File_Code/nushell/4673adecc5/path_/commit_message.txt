@@ -1,0 +1,1 @@
+Fix wrong `path` help message (#5698)

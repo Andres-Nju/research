@@ -1,0 +1,1 @@
+Remove incorrect span for second label inner macro invocation

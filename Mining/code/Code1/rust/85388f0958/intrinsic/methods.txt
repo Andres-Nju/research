@@ -1,0 +1,1 @@
+equate_intrinsic_type

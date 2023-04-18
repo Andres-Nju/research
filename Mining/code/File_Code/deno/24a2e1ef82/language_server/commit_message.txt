@@ -1,0 +1,1 @@
+docs(cli/dts): fix link from master to main (#10633)

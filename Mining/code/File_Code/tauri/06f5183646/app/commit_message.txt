@@ -1,0 +1,1 @@
+documentation: fix typo (#940)

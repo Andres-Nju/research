@@ -1,0 +1,4 @@
+Fix std::future::from_generator documentation
+
+This function takes a generator and wraps it in a future, not
+vice-versa.

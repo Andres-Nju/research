@@ -1,0 +1,1 @@
+fix plugin detection in help commands (#7088)

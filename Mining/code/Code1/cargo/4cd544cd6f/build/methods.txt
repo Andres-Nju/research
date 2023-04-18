@@ -1,0 +1,1 @@
+cargo_compile_with_invalid_manifest

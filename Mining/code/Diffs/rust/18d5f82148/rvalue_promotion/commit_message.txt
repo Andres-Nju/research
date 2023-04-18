@@ -1,0 +1,4 @@
+Change order of copy and borrow to avoid conflict
+
+Note that the first argument is `self as &mut dyn Delegate`, so this
+isn't allowed with two-phase borrows.

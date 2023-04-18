@@ -1,0 +1,1 @@
+rpc_debug_get_bad_blocks

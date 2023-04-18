@@ -1,0 +1,1 @@
+Fix X11 IME candidate window position

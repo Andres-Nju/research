@@ -1,0 +1,1 @@
+read_drop_type_from_vtable

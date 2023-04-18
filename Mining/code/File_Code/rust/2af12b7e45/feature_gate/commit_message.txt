@@ -1,0 +1,1 @@
+add the issue number to doc_masked's feature gate

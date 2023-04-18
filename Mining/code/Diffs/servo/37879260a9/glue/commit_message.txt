@@ -1,0 +1,1 @@
+Bug 1398393 - Add a way to initialize a cooperative thread in servo.

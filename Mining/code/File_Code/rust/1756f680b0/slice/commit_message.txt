@@ -1,0 +1,3 @@
+Fix broken links to other slice functions in chunks/chunks_mut/exact_chunk/exact_chunks_mut docs
+
+See https://github.com/rust-lang/rust/pull/47126#discussion_r162780492

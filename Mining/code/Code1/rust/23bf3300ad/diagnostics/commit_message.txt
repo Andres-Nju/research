@@ -1,0 +1,5 @@
+Add explanatory text for error E0599
+
+Add a text description of this error instead of just example error codeAdd explanatory text for error E0599
+
+Add a text description of this error instead of just example error code

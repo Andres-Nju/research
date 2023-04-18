@@ -1,0 +1,3 @@
+can_run_batch_files_without_bat_extension
+can_run_batch_files_without_cmd_extension
+can_run_batch_files

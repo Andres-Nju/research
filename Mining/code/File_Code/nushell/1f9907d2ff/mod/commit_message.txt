@@ -1,0 +1,4 @@
+Fix failing test after #7051 (#7299)
+
+Numerics as record names have to be quoted
+Changed to string

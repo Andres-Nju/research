@@ -1,0 +1,1 @@
+Fix f32::sin_cos and f64::sin_cos examples

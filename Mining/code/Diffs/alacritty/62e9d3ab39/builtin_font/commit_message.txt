@@ -1,0 +1,3 @@
+Fix crash with very low font sizes
+
+Fixes #6432.

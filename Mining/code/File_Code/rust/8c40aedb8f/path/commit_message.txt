@@ -1,0 +1,9 @@
+Fix feature gate to point to 1.32.0 for `path_from_str`
+
+When the feature has been added back (#55148) the feature gate has not
+been adjusted accordingly. We have it enabled for 1.32.0, currently in
+Beta, so adjust it.
+
+Refs: #44431.
+
+Signed-off-by: Otavio Salvador <otavio@ossystems.com.br>

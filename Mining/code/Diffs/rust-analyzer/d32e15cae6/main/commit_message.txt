@@ -1,0 +1,9 @@
+Temp fix for slow onEnter issue
+
+The issue was windows specific -- cancellation caused collection of
+bracktraces at some point, and that was slow on windows.
+
+The proper fix here is to make sure that we don't collect bracktraces
+unnecessary (which we currently do due to failure), but, as a
+temporary fix, let's just not force their collection in the first
+place!

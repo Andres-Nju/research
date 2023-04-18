@@ -1,0 +1,2 @@
+default
+window_opacity

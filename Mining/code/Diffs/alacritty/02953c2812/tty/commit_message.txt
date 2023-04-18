@@ -1,0 +1,1 @@
+Fix `ioctl` call failing on 32 bit architecture (#1011)

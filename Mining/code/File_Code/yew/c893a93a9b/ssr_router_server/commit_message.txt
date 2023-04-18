@@ -1,0 +1,10 @@
+[examples::ssr_router] remove workaround for fixed tower issue (#2756)
+
+otherwise I was seeing
+
+```
+Missing request extension: Extension of type `alloc::string::String` was not
+found. Perhaps you forgot to add it? See `axum::Extension`.
+```
+
+when navigating to localhost:8080

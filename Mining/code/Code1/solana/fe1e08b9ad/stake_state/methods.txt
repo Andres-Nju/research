@@ -1,0 +1,3 @@
+redelegate
+delegate
+initialize

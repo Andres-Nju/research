@@ -1,0 +1,5 @@
+style: fix name of battery info provider implementation (#2836)
+
+* fix name of battery info implementation
+
+* empty commit for squash

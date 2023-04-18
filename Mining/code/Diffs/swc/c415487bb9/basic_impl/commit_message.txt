@@ -1,0 +1,4 @@
+fix(es/codegen): Fix sourcemap bug related to multi-line comments (#3023)
+
+swc_ecma_codegen:
+ - Compute line starts in multi-line comments.

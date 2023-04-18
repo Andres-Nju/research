@@ -1,0 +1,1 @@
+style: Make starts_with_ignore_ascii_case not lie if the strings are the same length.

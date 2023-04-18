@@ -1,0 +1,3 @@
+stylo: Fix the serialization of image-orientation property. r=heycam
+
+Gecko bug: Bug 1363295

@@ -1,0 +1,1 @@
+FreeBSD uses Clang which can return small structs as an integer.

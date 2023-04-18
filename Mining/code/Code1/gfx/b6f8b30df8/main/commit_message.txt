@@ -1,0 +1,1 @@
+Fix OSX compilation of trianglell example due to lack of d3d12 or vulkan support.

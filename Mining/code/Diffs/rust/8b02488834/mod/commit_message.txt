@@ -1,0 +1,4 @@
+Fix warning when building stage0 libcore
+
+When building stage0 a warning will be triggered when compiling libcore
+due to align_to_offsets not being used.

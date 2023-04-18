@@ -1,0 +1,1 @@
+[hal] Fix typo in documentation

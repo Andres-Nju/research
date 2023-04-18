@@ -1,0 +1,1 @@
+Add clarifying comment regarding the trailing type of a block

@@ -1,0 +1,4 @@
+rustc_trans: Fix indentation in trans_set_discr.
+
+Just noticed this while reading through #46521, which introduced this weird
+alignment.

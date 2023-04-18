@@ -1,0 +1,1 @@
+new_fullnode_for_tests

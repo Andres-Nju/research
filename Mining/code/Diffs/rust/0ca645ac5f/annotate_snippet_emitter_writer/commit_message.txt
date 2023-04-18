@@ -1,0 +1,3 @@
+annotate-snippet emitter: Update issue number
+
+The tracking issue has been replaced by one with mentoring instructions.

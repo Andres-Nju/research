@@ -1,0 +1,8 @@
+Fix `js_callback` example. (#838)
+
+* Fix `js_callback` example.
+
+-  Add `#[allow(unused_imports)]` for `js` macro.
+-  Add `self.link.callback` to `oninput`.
+
+* Fix missing type annotation.

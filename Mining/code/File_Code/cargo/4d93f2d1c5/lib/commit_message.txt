@@ -1,0 +1,3 @@
+Don't display the timeout error if the API returned errors
+
+https://github.com/rust-lang/cargo/pull/6936#discussion_r283922456

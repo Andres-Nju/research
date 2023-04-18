@@ -1,0 +1,1 @@
+socketpair() uses AF_UNIX on all non-Linux systems

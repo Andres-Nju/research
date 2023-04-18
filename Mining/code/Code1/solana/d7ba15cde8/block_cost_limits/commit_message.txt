@@ -1,0 +1,9 @@
+Update block max cost limit to fix performance regession (#19276)
+
+* increase block_cost_max by 10 times to accommodate updated account read and write costs; Otherwise during performace test, banking_stage will start reject and retry transactions in next block, result regressed performance.
+
+* fix typoUpdate block max cost limit to fix performance regession (#19276)
+
+* increase block_cost_max by 10 times to accommodate updated account read and write costs; Otherwise during performace test, banking_stage will start reject and retry transactions in next block, result regressed performance.
+
+* fix typo

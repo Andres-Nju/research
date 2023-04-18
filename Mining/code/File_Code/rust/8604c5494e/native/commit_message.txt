@@ -1,0 +1,4 @@
+Follow-up to 1afb17ed5f9206e1e04c5d72ea724c5fadadd46c
+
+Disable gcc_personality_v0.c in rustbuild as well as the normal build.
+Rustbuild now gets further on FreeBSD, but it still fails due to other problems.

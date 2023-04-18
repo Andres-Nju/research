@@ -1,0 +1,5 @@
+Fix help text for alias command. (#1742)
+
+* Fix help text for alias command.
+
+* Rust fmt

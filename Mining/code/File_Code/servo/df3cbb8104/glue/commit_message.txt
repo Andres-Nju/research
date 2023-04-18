@@ -1,0 +1,1 @@
+geckolib: fix debug message about skipping traversal with an unstyled parent

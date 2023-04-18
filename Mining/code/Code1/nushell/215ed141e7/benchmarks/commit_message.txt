@@ -1,0 +1,33 @@
+Fix code in benchmarks (#7949)
+
+# Description
+
+Broken after #7415
+
+We currently don't try to build the benchmarks in the CI thus this
+slipped through the cracks.
+
+
+# User-Facing Changes
+
+None
+
+# Tests + Formatting
+
+Compile check is currently missing, but working towards thatFix code in benchmarks (#7949)
+
+# Description
+
+Broken after #7415
+
+We currently don't try to build the benchmarks in the CI thus this
+slipped through the cracks.
+
+
+# User-Facing Changes
+
+None
+
+# Tests + Formatting
+
+Compile check is currently missing, but working towards that

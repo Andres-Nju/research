@@ -1,0 +1,1 @@
+Address LLVM assertion failure by prepopulating with *just* name-anon-globals.

@@ -1,0 +1,5 @@
+fix(hashmap2): Update incorrect assertion (#660)
+
+The test description says "at least five types of fruit", but the test itself is checking for exactly five types of fruit, which was a bit misleading for newcomers like me :) 
+
+A simple change from "==" to ">=" should do the trick and successfully check for the "at least" condition.

@@ -1,0 +1,3 @@
+Fix documentation for std::path::PathBuf::pop
+
+Closes #58474.

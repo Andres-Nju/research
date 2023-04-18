@@ -1,0 +1,1 @@
+Fix quic mode with thinclient (#24890)

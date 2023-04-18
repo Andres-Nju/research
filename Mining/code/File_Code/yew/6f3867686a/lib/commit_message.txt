@@ -1,0 +1,1 @@
+Supress unused field warning in game_of_life example

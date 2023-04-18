@@ -1,0 +1,3 @@
+Fix compilation on 32bit targets
+
+Fixes #3915.

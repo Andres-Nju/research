@@ -1,0 +1,1 @@
+test_behavior_withdrawal_then_redelegate_with_less_than_minimum_stake_delegation

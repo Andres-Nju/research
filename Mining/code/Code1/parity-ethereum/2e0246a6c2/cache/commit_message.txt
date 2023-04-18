@@ -1,0 +1,11 @@
+Fix: test corpus_inaccessible panic (#10019)
+
+If system uptime is less than the duration in the test, thread
+will panic due to: 'overflow when subtracting duration from instant'.
+
+Changed duration to 20 seconds to make it unlikely the test will
+fail due to this condition.
+
+Since no operations that carry a similar risk of panic occur outside
+of the tests, it doesn't seem warranted to depend on an external crate
+to fix this.

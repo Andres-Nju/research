@@ -1,0 +1,1 @@
+docs(updater): fix server missing required key (#5050)

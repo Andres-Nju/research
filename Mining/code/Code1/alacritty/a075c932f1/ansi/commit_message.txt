@@ -1,0 +1,9 @@
+Fix `OSC 52` with empty clipboard param
+
+This fixes the behavior of the clipboard escape (`OSC 52`) when the
+second parameter is not specified. If it is missing, the parameter is
+now assumed to be `c`, defaulting to the default clipboard.
+
+This has been fixed both for writing and reading.
+
+Fixes #3037.

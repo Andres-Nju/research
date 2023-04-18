@@ -1,0 +1,5 @@
+privacy: Fix an ICE in `path_is_private_type`
+
+Fixes https://github.com/rust-lang/rust/issues/52879
+
+(Untested.)

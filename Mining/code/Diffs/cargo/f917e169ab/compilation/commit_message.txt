@@ -1,0 +1,6 @@
+Fix wrong directories in host_libdir.
+
+This fixes a regression from #7475 where the sysroot_target_libdir leaks into
+the host libdir. This can cause problems when the dynamic linker does
+not ignore the target libraries but tries to load them instead. This
+happens for example when building on x86_64-musl for aarch64-musl.

@@ -1,0 +1,4 @@
+Fix deletion edit intervals (#1380)
+
+Iterator with matcher `CounterMatcher::NonZero` yields correct intervals
+for deletion edits. Remove faulty interval calculations for deletions.

@@ -1,0 +1,2 @@
+get_base_type_def_id
+get_base_type_def_id

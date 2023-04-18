@@ -1,0 +1,1 @@
+Add trace! when an error is mapped to GenericFailureAdd trace! when an error is mapped to GenericFailure

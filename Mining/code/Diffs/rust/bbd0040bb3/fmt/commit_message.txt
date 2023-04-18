@@ -1,0 +1,3 @@
+Fix documentation for `write!` on `std::fmt` page
+
+Fixes #36906

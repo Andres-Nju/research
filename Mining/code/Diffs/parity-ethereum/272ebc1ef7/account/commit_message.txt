@@ -1,0 +1,5 @@
+Fix account list double 0x display (#8596)
+
+* Remove unused self import
+
+* Fix account list double 0x display

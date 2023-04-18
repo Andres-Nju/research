@@ -1,0 +1,3 @@
+Fix node count metrics (#3997)
+
+- the count was truncated to avalanche neighborhood size

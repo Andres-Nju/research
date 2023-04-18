@@ -1,0 +1,4 @@
+Include rustdoc tests that have been fixed by #33133
+
+There was an issue (#33025) which caused these tests to not work. The issue has
+since been fixed in #33133, and so we can now include them.

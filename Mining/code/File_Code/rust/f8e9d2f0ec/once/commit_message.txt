@@ -1,0 +1,5 @@
+Fix Once perf regression
+
+Because `call_once` is generic, but `is_completed` is not, we need
+`#[inline]` annotation to allow LLVM to inline `is_completed` into
+`call_once` in downstream crates.

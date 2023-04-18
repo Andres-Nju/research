@@ -1,0 +1,3 @@
+Fix rust-analyzer #[derive(Properties)] warnings (#2007)
+
+Fix #2006

@@ -1,0 +1,1 @@
+Fix #33213, a bug in which glob imports are not included in save-analysis data

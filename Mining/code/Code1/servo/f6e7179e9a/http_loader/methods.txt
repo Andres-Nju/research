@@ -1,0 +1,1 @@
+test_redirected_request_to_devtools

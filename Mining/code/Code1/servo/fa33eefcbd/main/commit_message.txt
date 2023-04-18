@@ -1,0 +1,4 @@
+Fix Android APK building (packaging)
+
+I missed this syntax error during my review, and we don't check that
+packaging succeeds in regular build suite, but only as a Nightly build.

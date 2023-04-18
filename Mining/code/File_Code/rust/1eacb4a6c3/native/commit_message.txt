@@ -1,0 +1,3 @@
+Revert "disable llvm assertions on ARM compilers"
+
+This reverts commit afbbb74fecb3945336520d1930bd52bed9ed0819.

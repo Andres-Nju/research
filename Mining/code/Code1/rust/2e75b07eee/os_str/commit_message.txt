@@ -1,0 +1,7 @@
+Fix the stable release of os_str_str_ref_eq
+
+This was added and stabilized in commit 02503029b83a, but while that
+claimed to be for 1.28.0, it didn't actually make it until 1.29.0.Fix the stable release of os_str_str_ref_eq
+
+This was added and stabilized in commit 02503029b83a, but while that
+claimed to be for 1.28.0, it didn't actually make it until 1.29.0.

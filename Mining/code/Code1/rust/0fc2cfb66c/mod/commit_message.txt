@@ -1,0 +1,4 @@
+Fix minor typos for ItemLocalId
+
+* added comma before 'that is'
+* "can be implement" -> "can be implemented"

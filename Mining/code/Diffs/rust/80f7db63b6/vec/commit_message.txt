@@ -1,0 +1,5 @@
+std: Fix IntoIter::as_mut_slice's signature
+
+This was intended to require `&mut self`, not `&self`, otherwise it's unsound!
+
+Closes #39465

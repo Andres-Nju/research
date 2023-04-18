@@ -1,0 +1,3 @@
+redox: Correct error on exec when file is not found
+
+`.raw_os_error()` (called in `spawn()`) returned None, so this produced an incorrect error.

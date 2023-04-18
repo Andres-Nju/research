@@ -1,0 +1,3 @@
+Apply #![feature(proc_macro_hygiene)] when needed
+
+This allows the rust-bpf-builder toolchain to build the sdk

@@ -1,0 +1,10 @@
+Fix 'background_opacity' deprecation
+
+During the deprecation of the 'background_opacity' field, it was
+incorrectly renamed to 'window_opacity'. This changes that back to ensure
+the old field still works and a warning is emitted accordingly.
+
+See the original regression here:
+https://github.com/alacritty/alacritty/commit/c24d7dfd0d2d8849f0398d7cb1a65d6562ee7a0d#diff-f92f0b1ad70a7b75b7266f3c9e569025e023d186814aa88c2b690800850ccb78L72-R73
+
+Fixes #5437.

@@ -1,0 +1,3 @@
+save-analysis: cope with lack of method data after a type error
+
+Fixes #39957

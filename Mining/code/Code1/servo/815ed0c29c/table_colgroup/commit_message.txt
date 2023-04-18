@@ -1,0 +1,9 @@
+Fix warning in scroll root id assignment to TableColGroupFlow
+
+The traversal currently expects every flow to have a scroll root id
+assigned, even if it doesn't produce any display items. This change
+fixes the error that arises from this situation.Fix warning in scroll root id assignment to TableColGroupFlow
+
+The traversal currently expects every flow to have a scroll root id
+assigned, even if it doesn't produce any display items. This change
+fixes the error that arises from this situation.

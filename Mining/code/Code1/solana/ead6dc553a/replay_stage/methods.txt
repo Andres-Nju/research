@@ -1,0 +1,2 @@
+report_memory
+report_memory

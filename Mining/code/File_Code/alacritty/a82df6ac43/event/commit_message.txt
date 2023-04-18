@@ -1,0 +1,3 @@
+Fix font size reset when moving between screens
+
+Fixes #3183.

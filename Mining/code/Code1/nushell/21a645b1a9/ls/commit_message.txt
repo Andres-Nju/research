@@ -1,0 +1,26 @@
+Improve error message for illegal filenames on Windows (#7348)
+
+`ls` can fail when a directory contains a file that violates [the
+Windows file naming
+conventions](https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file#naming-conventions).
+This PR tweaks the error message so we tell the user _which_ file caused
+the problem.
+
+Closes #7345.
+
+### Before:
+
+![image](https://user-images.githubusercontent.com/26268125/205508355-2875f851-6b61-4897-97b8-9094b24ea197.png)
+
+### After:
+
+
+![image](https://user-images.githubusercontent.com/26268125/205508325-0b4efd25-b454-4d1b-b8e9-cb26803fbcff.png)
+
+
+## Future Work
+
+Like Chris said in the linked issue, it would be even better if Nu could
+just handle these naughty files like cmd.exe and pwsh do. If someone has
+the time to dive into how PowerShell does this, that would be much
+appreciated.

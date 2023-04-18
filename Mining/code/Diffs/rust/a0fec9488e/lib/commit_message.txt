@@ -1,0 +1,4 @@
+Fix panic with outlives in existential type
+
+Don't panic in determining the privacy of a type if a lifetime outlives
+generic exists in an existential type.

@@ -1,0 +1,1 @@
+Improve error message when unable to read a file (#6978)

@@ -1,0 +1,10 @@
+stylo: Fix Y scale computation while decomposing a 3D matrix.
+
+While decomposing a 3D matrix, we should normalize the 2nd row right after the
+Y scale computation. However, we accidentally use the length of the 1st row to
+do the normalization. This causes the wrong Scale3D function while decomposing,
+and then leads to the wrong decomposed 3D matrix.
+
+Here, we correct it by using the right value (the length of the 2nd row).
+
+r=hiro https://bugzilla.mozilla.org/show_bug.cgi?id=1381196

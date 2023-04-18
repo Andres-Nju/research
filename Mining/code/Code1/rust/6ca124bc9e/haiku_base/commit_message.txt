@@ -1,0 +1,4 @@
+haiku/librustc_back: Remove incorrect no_integrated_as
+
+* Makes rust bootstrap incorrectly search for xxx.s vs xxx.0.s
+* Not needed or incorrect fix for another issue.

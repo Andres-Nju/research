@@ -1,0 +1,1 @@
+Fix span in char documentation

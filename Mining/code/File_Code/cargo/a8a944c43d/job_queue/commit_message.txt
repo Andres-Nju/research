@@ -1,0 +1,1 @@
+directly print error only if there is more than one job in the queue

@@ -1,0 +1,1 @@
+Remove incorrect comment about `PartialEq` implementation

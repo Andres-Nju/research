@@ -1,0 +1,4 @@
+ledger-tool: Fix argument matching for accounts_db_ancient_append_vecs (#29976)
+
+The logic was searching for argument in global argument matches when it
+should have been searching in the subcommand matches.

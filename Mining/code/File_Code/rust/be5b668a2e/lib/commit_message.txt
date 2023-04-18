@@ -1,0 +1,3 @@
+Place the ignore comments in the correct file for test issue-18804
+
+Signed-off-by: Gabriel Smith <ga29smith@gmail.com>

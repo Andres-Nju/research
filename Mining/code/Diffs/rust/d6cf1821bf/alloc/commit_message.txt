@@ -1,0 +1,1 @@
+Fix inconsequential typo in GlobalAlloc doc example

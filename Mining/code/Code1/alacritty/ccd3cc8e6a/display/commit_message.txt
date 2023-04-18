@@ -1,0 +1,3 @@
+Fix viewport_size.height calculation
+
+Closes #556

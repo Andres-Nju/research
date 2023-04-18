@@ -1,0 +1,1 @@
+Fix outdated rustdoc of Once::init_locking function

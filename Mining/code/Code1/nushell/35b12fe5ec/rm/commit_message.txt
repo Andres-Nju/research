@@ -1,0 +1,3 @@
+Fix usage of deprecated C-style logical `and` (#7627)
+
+n untested examples we still had `&&`

@@ -1,0 +1,1 @@
+Docs: Explain why/when `.lines()` returns an error

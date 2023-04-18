@@ -1,0 +1,3 @@
+Fix vote metrics (#6038)
+
+automerge

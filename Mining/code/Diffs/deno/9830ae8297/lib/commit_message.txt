@@ -1,0 +1,10 @@
+fix(ext/flash): Fix panic when JS caller doesn't consume request body (#16173)
+
+
+
+If the JS handler gets a POST, PUT, or PATCH request, but doesn't
+`await` the body, deno would panic because it will try to read the body
+even though the request has already been handled.
+
+Not sure how/where to test this case, so I could use some help with
+that.

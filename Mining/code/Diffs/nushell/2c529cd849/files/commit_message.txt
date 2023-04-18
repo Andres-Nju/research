@@ -1,0 +1,1 @@
+Fix bug where `--with-symlink-targets` would not display the `targets` column (#1300)

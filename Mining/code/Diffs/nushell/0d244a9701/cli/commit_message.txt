@@ -1,0 +1,7 @@
+Open fails silently, fix #1493 (#1495)
+
+* Fix #1493
+
+The error was wrongfully discarded
+
+* Run cargo fmt

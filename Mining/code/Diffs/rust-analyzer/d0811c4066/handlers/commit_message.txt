@@ -1,0 +1,4 @@
+Fix diagnostic fixes showing up everywhere
+
+The LSP code action request always returned the fixes for all diagnostics
+anywhere in the file, because of a shadowed variable.

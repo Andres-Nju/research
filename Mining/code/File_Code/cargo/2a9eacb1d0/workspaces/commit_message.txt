@@ -1,0 +1,3 @@
+Fix a test.
+
+Presumably, it should failed when it was first written, but Cargo does not do such validation yet.

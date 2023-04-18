@@ -1,0 +1,5 @@
+Fix Tendermint deadlock (#4654)
+
+* scope read
+
+* consistent step

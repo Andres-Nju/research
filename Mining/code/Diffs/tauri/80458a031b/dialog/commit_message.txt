@@ -1,0 +1,3 @@
+Fix `message_dialog` flag (#4204)
+
+Co-authored-by: Lucas Nogueira <lucas@tauri.studio>

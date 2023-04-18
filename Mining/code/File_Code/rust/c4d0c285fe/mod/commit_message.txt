@@ -1,0 +1,3 @@
+Fix word repetition in str documentation
+
+Fixes a few repetitions of "like like" in the `trim*` methods documentation of `str`.

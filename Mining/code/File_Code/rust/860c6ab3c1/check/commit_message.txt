@@ -1,0 +1,4 @@
+rustbuild: Fix check-error-index step
+
+If it ran too soon there wasn't a `test` directory lying around but we'll need
+one!

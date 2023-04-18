@@ -1,0 +1,1 @@
+Ignore test_helper_sol_log due to solana_logger concurency issue (#9654)

@@ -1,0 +1,8 @@
+Fix rustdoc highlighting of `&` and `*`.
+
+Whitespace tokens were included, so the span check used with `&` was
+incorrect, and it was never highlighted as kw-2.
+
+The `*` in `*foo` and `*const T` should also be highlighted kw-2, so I
+added them. Note that this *will* cause mishighlighting of code like
+`1*2`, but that should have been written `1 * 2`. Same deal with `1&2`.

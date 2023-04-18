@@ -1,0 +1,5 @@
+Fix version of `ignore`.
+
+Some tests relied on new behavior, so bump the minimal version.
+
+The change to `gitignore_negate` was just an innocuous typo.

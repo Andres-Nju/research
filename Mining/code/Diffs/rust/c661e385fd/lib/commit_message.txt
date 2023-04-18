@@ -1,0 +1,4 @@
+Build the right platform module on CloudABI.
+
+After #47089 lands, CloudABI will no longer be considered UNIX. We need
+to pick the right allocator flavour now.

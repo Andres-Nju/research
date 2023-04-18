@@ -1,0 +1,2 @@
+finalize_memories
+finalize_tables

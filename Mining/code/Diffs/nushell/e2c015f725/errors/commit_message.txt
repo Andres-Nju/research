@@ -1,0 +1,3 @@
+Clarify error message for `let` in pipeline (#5677)
+
+Refer to the suggestion as an assignment

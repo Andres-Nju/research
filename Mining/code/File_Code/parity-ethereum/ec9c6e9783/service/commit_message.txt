@@ -1,0 +1,3 @@
+Fix compilation error on nightly rust (#8707)
+
+On nightly rust passing `public_url` works but that breaks on stable. This works for both.

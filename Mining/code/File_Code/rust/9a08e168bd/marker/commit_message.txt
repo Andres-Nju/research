@@ -1,0 +1,3 @@
+Fix one missing `dyn`.
+
+It's in the documentation of `Unsize`.

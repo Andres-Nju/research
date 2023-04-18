@@ -1,0 +1,1 @@
+Fix getting votes from gossip (#3723)Fix getting votes from gossip (#3723)

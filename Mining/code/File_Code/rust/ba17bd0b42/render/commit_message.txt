@@ -1,0 +1,5 @@
+rustdoc: fix emitting duplicate implementors in .js files
+
+The collect() fn checks for double quotes; use them here as well.
+
+Fixes: #30219

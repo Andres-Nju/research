@@ -1,0 +1,4 @@
+rustbuild: Fix a bug when manifesting with Cargo
+
+The wrong Cargo version was passed down so it ended up panicking the
+build-manifest script as it couldn't find the right tarball.

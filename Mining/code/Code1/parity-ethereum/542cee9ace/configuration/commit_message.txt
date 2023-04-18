@@ -1,0 +1,29 @@
+fix #6228: do not display eth price in cli for etc (#6877)
+
+* fix #6228: do not display eth price in cli for etc
+
+Current behaviour:
+
+When the client is started with defaults, the miner's gas calibrator
+periodically queries the price of ether in usd and uses it to adjust
+the wei_per_gas variable, displaying an info message in the cli each
+time calibration happens. The info message mentions the price of ETH.
+
+When started with the --min-gas-price option, the calibrator is inactive
+and the price is not displayed.
+
+Problem:
+
+When running on an alternate chain such as ethereum classic, the info
+message mentioning the ETH price is present, unless the --min-gas-price
+option is used.
+
+Solution:
+
+if chain != foundation and --min-gas-price is not set,
+don't use GasPricerConfig::Calibrated as default but rather fix
+the minimum gas price to zero.
+
+* self.chain() returns ChainType.
+
+* match chain based on SpecType

@@ -1,0 +1,9 @@
+Fix inconsitent cursor position when scrolling
+
+This commit fixes regression introduced in cfc20d4f34dca535654cc32df18e785296af4cc5.
+`self.cursor.line` forced the cursor to hold a fixed location while scrolling
+until its "original" location (usually the shell prompt) went off the screen.
+So cursor position should be keep updated, which can be achieved by using
+`self.inner.line()`.
+
+Fixes #2570.

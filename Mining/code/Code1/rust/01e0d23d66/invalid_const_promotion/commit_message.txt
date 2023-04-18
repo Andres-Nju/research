@@ -1,0 +1,3 @@
+Fix invalid_const_promotion test on some archs
+
+On at least AArch64 `llvm.trap` raises SIGTRAP.

@@ -1,0 +1,1 @@
+Bubble up an overflow error so that rustdoc can ignore it

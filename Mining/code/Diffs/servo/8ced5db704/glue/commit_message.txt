@@ -1,0 +1,1 @@
+Fix wrong index for missing properties in the initial and final keyframes.

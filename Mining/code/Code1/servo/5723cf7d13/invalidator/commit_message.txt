@@ -1,0 +1,1 @@
+style: Tweak the quirks mode while collecting invalidations in XBL stuff.

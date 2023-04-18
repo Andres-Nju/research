@@ -1,0 +1,1 @@
+clean up visuals on error index #40425

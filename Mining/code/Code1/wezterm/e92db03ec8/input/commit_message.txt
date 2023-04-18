@@ -1,0 +1,1 @@
+termwiz: add comment about bracketed paste offset

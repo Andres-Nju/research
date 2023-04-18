@@ -1,0 +1,1 @@
+fix panic in parity-evm json tracer (#6338)

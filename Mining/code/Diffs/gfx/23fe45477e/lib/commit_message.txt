@@ -1,0 +1,3 @@
+Fix crash on iPhone5s iOS 12.1
+
+ Crash log: -[MTLDebugRenderCommandEncoder setDepthClipMode:]:2621: failed assertion `-[MTLDebugRenderCommandEncoder setDepthClipMode:] is only supported on MTLFeatureSet_iOS_GPUFamily2_v1 and later'

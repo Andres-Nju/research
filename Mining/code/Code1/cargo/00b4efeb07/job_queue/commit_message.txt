@@ -1,0 +1,1 @@
+Fix overlapping progress with stdout.

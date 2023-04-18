@@ -1,0 +1,10 @@
+Fix select current line not working (#2046)
+
+2 issues:
+
+1. it overlapped with select all current.
+2. it never overwrites the selection of the cursor.
+
+Signed-off-by: Hanif Ariffin <hanif.ariffin.4326@gmail.com>
+
+Signed-off-by: Hanif Ariffin <hanif.ariffin.4326@gmail.com>

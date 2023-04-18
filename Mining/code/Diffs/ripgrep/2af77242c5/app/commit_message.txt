@@ -1,0 +1,3 @@
+doc: fix typo in --engine flag docs
+
+Fixes #1862

@@ -1,0 +1,1 @@
+vulkan: Fix unsound conversion of `&str` to `CStr`

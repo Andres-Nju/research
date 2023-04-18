@@ -1,0 +1,1 @@
+fix doc test for E0001

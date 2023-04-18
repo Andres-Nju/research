@@ -1,0 +1,2 @@
+aligned
+test_syscall_sol_alloc_free

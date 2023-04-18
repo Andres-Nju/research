@@ -1,0 +1,5 @@
+Fix #5578, assume pipe file be zero-sized (#5594)
+
+* Fix #5578, assume pipe file be zero-sized
+
+* rust fmt

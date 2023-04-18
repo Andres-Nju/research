@@ -1,0 +1,6 @@
+x11: query focus after repaint delay
+
+The focus events used to trigger a query of geometry are inaccurate, so the window's focus state should also be queried.
+
+refs: #2063
+refs: #1992

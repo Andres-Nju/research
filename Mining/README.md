@@ -10,14 +10,39 @@
 
 ## Coding
 
-### code/search.py 爬取仓库
+### code/get_commit_hash.py 爬取仓库的pull request，从而获取对应的commit hash
 ```shell
-python3 search.py repos.txt
+python3 get_commit_hash.py repos.txt
 ```
+
+使用如上指令，将遍历repos.txt中的所有仓库，获取特定pull request对应的commit hash
+
+获取commit hash流程：
+
+1. 读取仓库名
+2. 克隆仓库到本地
+3. 使用github cli指令获取所有的closed pull request
+4. 获取pull request的title和labels，过滤掉不包含bug相关关键词的pr
+
+```python
+keywords = ["fix", "defect", "error", "bug", "issue", "mistake", "incorrect","fault", "flaw"]
+```
+
+参考文献：Joshua Garcia, Yang Feng, Junjie Shen, Sumaya Almanee, Yuan Xia, and and Qi Alfred Chen. 2020. A comprehensive study of autonomous vehicle bugs. In Proceedings of the ACM/IEEE 42nd International Conference on Software Engineering (ICSE '20). Association for Computing Machinery, New York, NY, USA, 385–396. https://doi.org/10.1145/3377811.3380397
+
+  5.获取pull request对应的改动commit
+
+  6.将commit hash写入仓库对应的文件
+
+变量root_dir为生成commit hash的根目录。
+
+
+
+### code/search.py 根据获取的仓库的commit hash，爬取改动前后的代码
 
 使用如上指令，将遍历repos.txt中的所有仓库
 
-获取仓库改动流程：
+获取仓库改动流程：（使用pydriller工具，该工具可以获取指定仓库的commit，并解析commit以获取其改动的内容，可以细化到method粒度）
 
 1. 读取仓库名
 2. 遍历仓库中与后缀名为.rs（即rust源代码文件）的commit
@@ -29,10 +54,8 @@ python3 search.py repos.txt
 
 #### 筛选条件：
 
-- 改动条数在6行以内
+- commit改动条数在6行以内
 - 针对issue和pull request对应的commit
-  - 从已经closed的pull request中获取commits
-    - 过滤pr：在tag或pr title中出现某些特定关键词
 
 
 
@@ -44,7 +67,6 @@ python3 search.py repos.txt
 
 - 使用code/difftastic
   - 进行diff
-  - 进行
 
 ### code/gen_ast.py 
 
@@ -76,7 +98,7 @@ python3 gen_ast.py
 
 **获取的tree-sitter::Tree节点类型：**
 
-- 首先每个源文件中的内容都是一个function，所以Tree的最顶层的两个节点是
+- 每个源文件中的内容都是一个function，所以Tree的最顶层的两个节点是
   - source_file
     - function_item
       - fn
@@ -212,17 +234,96 @@ difft --display side-by-side-show-both --context 0 test1.rs test2.rs
 - change type：
   - insert：使用difftsatic获取的的前后改动中 左边没有，右边有
   - delete：使用difftsatic获取的前后改动中 左边有，右边没有
-  - update：使用difftsatic获取的前后改动中 左边有，右边也有
 - context：
   - 使用TreeCursor在tree-sitter::Tree中遍历
 
 ![1](related work/ref/1.png)
 
+- field_expression：访问对象的field或method：a.foo()和a.foo都是
+
+- arguments：函数调用时的实参
+
+- token_tree：宏中的token
+
+- scoped_identifier： A::b的::
+
+- let_declaration
+
+- block
+
+- non_special_punctuation：标点符号；或是token_tree中的符号（包括::）
+
+- type_arguments：泛型参数/返回值
+
+  ```rust
+  fn set_outer_position(&self, pos: PhysicalPosition<i32>)
+  
+  -> Result<(), MatchAccountOwnerError>
+  ```
+
+  上面<>内的i32 Result<>内的()和MatchAccountOwnerError，即尖括号内的内容就是泛型的type_arguments
+
+- tuple_struct_pattern： if let 或 match语句中 
+
+  ```rust
+  let v = Some(5);
+  
+  if let Some(5) = v {
+      println!("{}", n);
+  }
+  ```
+
+  Some(5)就是一个tuple_struct_pattern，说是struct是因为长得像一个struct，
+
+  如果把Some(5)换成(5)，就是一个tuple_pattern，所以说是tuple是因为有()，而如果再去掉括号编程if let 5 = v，就是integer_literal
+
+  而let a = (1, 2); 这种的(1, 2)是一个tuple_expression，如果是let a = Some(5)这种会把Some当作method_call
+
+- match_arm：每个match语句中的一条匹配和其内容
+
+- macro_invocation：整条宏语句，是由一个identifier + 感叹号! + token_tree即括号里()的内容
+
+- binary_expression：二元表达式
+
+- expression_statement：与表达式有关的statement，比如a.foo();  或是一个while for循环，详见其子节点_expression
+
+- function_item： 函数声明
+
+- reference_item： 引用表达式 比如&a，对比reference_type：引用类型，比如&str
+
+- meta_item：
+
+  ```rust
+  #[derive(Debug, Display)]
+  ```
+
+  整个是一个attribute_item，然后其中[]内算一个meta_item，然后外层的derive是identifier，内层()内的每一个都是一个meta_item
+
+  ()里的test是meta_arguments
+
+- parameters
+
+- parameter
+
+- meta_arguments
+
+- call_expression
+
+- closure_parameters
+
+  ```rust
+  grid.clear(|c| c.reset(&template));
+  ```
+
+  ||中的内容是closure_parameters
+
+  |c| c.reset(&template)是一个closure_expression
+
+- tuple_pattern
 
 
 
-
-#### 特征向量与hunk间的关系 (一个hunk对应一个特征向量时)
+#### 特征向量与hunk间的关系 (一个commit对应一个特征向量时)
 
 - hunk数据结构
 
@@ -335,15 +436,12 @@ difft --display side-by-side-show-both --context 0 test1.rs test2.rs
     - MatchKind：改动前后完全没变的：UnchangedToken；发生变化的：Novel
     - 所在行、起始列-终止列
   
-- hunk是一个行级别的对应，我们有行的信息可以获取对应行中的所有节点（Tree node or Syntax），找它们的公共祖先？
-
-  - 不用MatchedPos是因为MatchedPos无法进行遍历，Tree node提供了cursor进行遍历：goto_first_child，goto_next_sibling，goto_parent
+- 
 
 
 
 
-
-#### 特征向量与node间的关系（一个node对应一个特征向量时）
+#### 特征向量与node间的关系
 
 ![1](related work/ref/1.png)
 
@@ -354,16 +452,25 @@ difft --display side-by-side-show-both --context 0 test1.rs test2.rs
   - 输出：所有标记为Novel节点的change type
     - added
     - deleted
-    - updated
+- Type
+  - 当前node的父节点
+
+- Context
+  - 当前node的祖父节点
 
 
 
 
-## 跑起来可能会crash的点：
-
-- tree-sitter::parse语法分析器解析失败
+- 
 
 
+
+
+
+
+## TODO
+
+修复pydriller获取method出错
 
 ### 需要进行改动以比较的参数
 
@@ -375,6 +482,11 @@ difft --display side-by-side-show-both --context 0 test1.rs test2.rs
       反过来 改动前的23对应改动后的1，然后下一块对应改动后的5，它也是判定为两处
   - 更加精确的判断
     - 根据语法树的节点进行判断
+- 一个commit对应多少个特征向量
+  - 一个commit对应多个hunk，每个hunk对应一个特征向量
+  - 一个commit里所有的改动整合成一个向量
+- 函数搜索的准确度：直接爬整个文件？
+
 
 
 

@@ -1,0 +1,3 @@
+Fix typo in blockstore_metrics.rs (#29503)
+
+embeded -> embedded

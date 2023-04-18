@@ -1,0 +1,4 @@
+E0094 error message updated
+
+Part of #35233
+Fixes #35231

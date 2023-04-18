@@ -1,0 +1,21 @@
+Fix ls behaviour when directory is empty (#8439)
+
+Prior to this PR, `ls` would return `nothing` in an empty directory.
+After this PR, it returns an empty `List`. This makes the behaviour of
+`ls` more consistent and easier to reason about (IMO).
+
+This was prompted by a user noticing that `ls | where size == 0KB and
+type == file` breaks when run in an empty directory:
+
+```
+  × Input type not supported.
+   ╭─[entry #12:1:1]
+ 1 │ ls | where size == 0KB and type == file
+   · ─┬   ──┬──
+   ·  │     ╰── only list, binary, raw data or range input data is supported
+   ·  ╰── input type: nothing
+   ╰────
+```
+
+If people agree with this change, let's wait until after the 0.77
+release so we have a bit more time to test it.

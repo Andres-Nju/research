@@ -1,0 +1,3 @@
+stylo: Fix GeckoNode::is_element implementation.
+
+Because I'm stupid.

@@ -1,0 +1,3 @@
+Fix code comment (#6640)
+
+automerge

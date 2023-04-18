@@ -1,0 +1,3 @@
+Fix compile error for write_entries
+
+Takes a reference now.

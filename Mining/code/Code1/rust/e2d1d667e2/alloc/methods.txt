@@ -1,0 +1,2 @@
+__rust_c_alloc
+__rust_c_dealloc

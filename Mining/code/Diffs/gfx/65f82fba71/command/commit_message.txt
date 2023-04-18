@@ -1,0 +1,1 @@
+[dx12] fix layer offset for the buffer footprint

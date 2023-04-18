@@ -1,0 +1,3 @@
+Fix duplicated path to fullnode
+
+Fixes flaky tests.

@@ -1,0 +1,3 @@
+Fix Typo in Barrier::wait documentation
+
+This should be `have` instead of `has`.

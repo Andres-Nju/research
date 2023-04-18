@@ -1,0 +1,1 @@
+Fix minor type in informant (#3056)

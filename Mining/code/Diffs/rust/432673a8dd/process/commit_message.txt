@@ -1,0 +1,5 @@
+Add a missing feature attribute to the example for std::process::Command::envs().
+
+The person who originally wrote the example forgot to include this attribute.
+This caused Travis CI to fail on commit 9b0a4a4e97 (#40794), which just fixed
+formatting in the description of std::process::Command::envs().

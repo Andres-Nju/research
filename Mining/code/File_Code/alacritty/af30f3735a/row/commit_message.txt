@@ -1,0 +1,7 @@
+Fix rows only resetting partially
+
+This resolves an issue with rows only resetting partially, based on
+their `occ` state. However this state is not always accurate, so more
+than just the occupied elements need to be cleared.
+
+Fixes #2340.

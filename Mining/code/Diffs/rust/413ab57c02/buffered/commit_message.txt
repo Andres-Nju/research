@@ -1,0 +1,5 @@
+docs: Fix link to BufWriter::flush
+
+One of the links in the docs was being rendered as a literal
+open-bracket followed by a single quote, instead of being transformed
+into a link. Fix it to match the link earlier in the same paragraph.

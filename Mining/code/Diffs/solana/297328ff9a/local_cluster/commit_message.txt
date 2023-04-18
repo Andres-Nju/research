@@ -1,0 +1,3 @@
+Fix improper tick sleeping time in test (#4155)
+
+automerge

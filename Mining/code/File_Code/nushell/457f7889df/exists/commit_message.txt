@@ -1,0 +1,1 @@
+use path.try_exist() to fix silent errors (#7069)

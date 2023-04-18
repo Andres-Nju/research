@@ -1,0 +1,2 @@
+normalize_projection_type
+normalize_projection_type

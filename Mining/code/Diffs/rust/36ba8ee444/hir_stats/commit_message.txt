@@ -1,0 +1,1 @@
+Fix `-Z hir-stats` always panics (fix #43232).

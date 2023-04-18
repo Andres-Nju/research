@@ -1,0 +1,5 @@
+Update the error message for a missing global allocator
+
+Don’t mention `#[default_lib_allocator]` (which is an implementation detail
+irrelevant to most users) and instead suggest using `#[global_allocator]`,
+which is often the correct fix.

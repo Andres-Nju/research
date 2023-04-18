@@ -1,0 +1,3 @@
+fix issue with compilation when 'slow-blocks' feature enabled (#10585)
+
+change call to a `header()` function to the field `header`

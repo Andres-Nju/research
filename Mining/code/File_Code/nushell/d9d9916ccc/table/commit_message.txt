@@ -1,0 +1,32 @@
+Fix streaming page missing newline (#7466)
+
+Fixes #7342. `0..1000 | table` before this change:
+
+
+![image](https://user-images.githubusercontent.com/26268125/207474492-dead4267-d828-4840-8da0-4edfda3e3916.png)
+
+`0..1000 | table` after this change:
+
+
+![image](https://user-images.githubusercontent.com/26268125/207474583-26633db0-46c5-4c30-8681-654855e7042b.png)
+
+When piping data to `table`, pages were not getting a newline at the
+end[^1]. This problem was uncovered and exacerbated by the new
+`display_output` hook which implicitly piped _everything_ to `table`.
+
+## The Fix
+
+`PagingTableCreator` now adds a newline to each page instead of relying
+on later code to do it.
+
+## Tests
+
+I spent a while trying to write a regression test for this behaviour but
+I couldn't get the test to fail before my fix! I think the test
+infrastructure does something special with newlines when it's checking
+command output. I eventually ran out of steam trying to investigate
+that, sorry.
+
+[^1]: unless the pipe to table was the implicit one that's done when
+there is no `display_output` hook set. That situation was still working
+OK.

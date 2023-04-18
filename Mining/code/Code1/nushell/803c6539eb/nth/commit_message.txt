@@ -1,0 +1,1 @@
+doc: fix nth examples (#1768)

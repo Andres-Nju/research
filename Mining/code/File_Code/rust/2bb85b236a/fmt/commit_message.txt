@@ -1,0 +1,1 @@
+doc: fix sentence structure in std::fmt

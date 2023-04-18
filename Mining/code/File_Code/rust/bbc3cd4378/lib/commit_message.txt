@@ -1,0 +1,8 @@
+rustbuild: fix remap-debuginfo when building a release
+
+Fallback to the release number as we can't get the
+git commit sha as we're not in a git repository.
+
+Fixes #55341
+
+Signed-off-by: Marc-Antoine Perennou <Marc-Antoine@Perennou.com>

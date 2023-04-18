@@ -1,0 +1,1 @@
+Issue #3003: Rename constant CONSTANT_BUFFER_READ to UNIFORM_READ

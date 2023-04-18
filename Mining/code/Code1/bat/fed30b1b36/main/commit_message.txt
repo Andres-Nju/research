@@ -1,0 +1,1 @@
+Fix theme dir hint in --list-themes output

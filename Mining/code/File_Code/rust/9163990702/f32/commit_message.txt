@@ -1,0 +1,1 @@
+doc: Fix typo in float from bytes methods

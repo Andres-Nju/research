@@ -1,0 +1,1 @@
+Refine error message when ledger can't be opened (#5582)

@@ -1,0 +1,3 @@
+Fix incorrect help message
+
+The `cargo clean --target` command does not have a default setting, but the command-line help text says it does.

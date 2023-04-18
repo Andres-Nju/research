@@ -1,0 +1,1 @@
+CLI: Fix offline signing Pay TX (#7566)

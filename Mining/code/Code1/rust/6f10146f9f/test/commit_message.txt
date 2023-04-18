@@ -1,0 +1,1 @@
+Fix test failure in src/tools/rustdoc-themes when rust.rpath = false

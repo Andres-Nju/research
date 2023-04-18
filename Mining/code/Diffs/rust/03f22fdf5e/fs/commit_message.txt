@@ -1,0 +1,1 @@
+windows::fs::symlink_dir: fix example to actually use symlink_dir

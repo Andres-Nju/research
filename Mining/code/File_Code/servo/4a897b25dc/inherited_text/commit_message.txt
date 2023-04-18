@@ -1,0 +1,1 @@
+Restore text-align-last removed in #15839 by mistake

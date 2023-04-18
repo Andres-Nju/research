@@ -1,0 +1,4 @@
+Fix build on DragonFly (unused function errno_location)
+
+Function errno_location() is not used on DragonFly. As warnings are
+errors, this breaks the build.

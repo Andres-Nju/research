@@ -1,0 +1,3 @@
+Fix typo in improper_ctypes suggestion
+
+closes #52345

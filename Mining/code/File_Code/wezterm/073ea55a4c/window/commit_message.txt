@@ -1,0 +1,3 @@
+Fix transparent title bar on macOS with `window_decorations = "RESIZE|MACOS_FORCE_DISABLE_SHADOW"` (#3330)
+
+Fix transparent title bar

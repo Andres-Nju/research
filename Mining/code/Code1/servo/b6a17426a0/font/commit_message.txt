@@ -1,0 +1,7 @@
+style: Fix font-stretch animation.
+
+This is a regression from #20506 which Gecko tests caught while trying to import
+this.style: Fix font-stretch animation.
+
+This is a regression from #20506 which Gecko tests caught while trying to import
+this.

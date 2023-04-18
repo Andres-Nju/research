@@ -1,0 +1,6 @@
+Fix logic error in test guarding prototype MIR borrowck code.
+
+(This crept in during the shift from a transform to a query; I didn't
+notice because my muscle memory was still always passing `-Z
+mir-borrowck`, while my test cases *also* had the
+`#[rustc_mir_borrowck]` attribute attached to them.)

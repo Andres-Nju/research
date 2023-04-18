@@ -1,0 +1,3 @@
+globset: fix compilation when serde is enabled
+
+PR #1903

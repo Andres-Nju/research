@@ -1,0 +1,3 @@
+Fix release mode tests
+
+Fixes #5041.

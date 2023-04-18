@@ -1,0 +1,8 @@
+fix: improve http client builder error message (#9380)
+
+Include the lower-level error message in the generic error message.
+
+No test because I can't actually make it fail by passing it bad PEM.
+I checked and `reqwest::Certificate::from_pem()` always returns `Ok()`.
+
+Fixes #9364.

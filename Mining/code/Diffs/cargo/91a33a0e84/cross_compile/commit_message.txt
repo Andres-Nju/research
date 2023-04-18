@@ -1,0 +1,3 @@
+Fix test failure on nightly due to `codemap::Span` change.
+
+Update due to rust-lang/rust#52953.

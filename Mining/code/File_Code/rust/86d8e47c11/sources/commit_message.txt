@@ -1,0 +1,1 @@
+Fix broken grammar in iter::from_fn() docs

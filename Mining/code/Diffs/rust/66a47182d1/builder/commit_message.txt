@@ -1,0 +1,7 @@
+rustbuild: fix local_rebuild
+
+If we detect a local rebuild (e.g. bootstrap compiler is the same version as target compiler), we set stage to 1.
+When trying to build e.g. UnstableBook, we use Mode::ToolBootstrap and stage is 1.
+Just allow Mode::ToolBootstrap and stagge != 0 if we are in a local_rebuild
+
+Signed-off-by: Marc-Antoine Perennou <Marc-Antoine@Perennou.com>

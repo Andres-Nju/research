@@ -1,0 +1,3 @@
+docs(updater): fix configure missing required key (#5058)
+
+Co-authored-by: Lucas Fernandes Nogueira <lucas@tauri.studio>

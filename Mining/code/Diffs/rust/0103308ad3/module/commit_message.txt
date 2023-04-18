@@ -1,0 +1,1 @@
+Account for raw idents in module file finding

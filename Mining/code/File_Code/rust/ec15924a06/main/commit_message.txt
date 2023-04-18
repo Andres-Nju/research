@@ -1,0 +1,5 @@
+compiletest: Fix a couple of test re-run issues
+
+* Re-run rustdoc tests if rustdoc or htmldocck.py was updated.
+* Put stamp files in the correct subdirectories to avoid clashes when
+the file names match but the subdirectory doesn't.

@@ -1,0 +1,13 @@
+Fix build
+
+Last two PRs crossed in flight. A keypair is now required for all
+types of FullNode, not just validators.Fix build
+
+Last two PRs crossed in flight. A keypair is now required for all
+types of FullNode, not just validators.Fix build
+
+Last two PRs crossed in flight. A keypair is now required for all
+types of FullNode, not just validators.Fix build
+
+Last two PRs crossed in flight. A keypair is now required for all
+types of FullNode, not just validators.

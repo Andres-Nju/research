@@ -1,0 +1,3 @@
+Fix a typo in rustc help menu
+
+Change from native-static-deps to native-static-libs.

@@ -1,0 +1,19 @@
+Fixes error when trying to delete a FIFO (#3235)
+
+* Output error when ls into a file without permission
+
+* added test to check fails when ls into prohibited dir
+
+* fix lint
+
+* trigger wasm build
+
+* be able to remove fifos
+
+* Update filesystem_shell.rs
+
+* I thought windows had fifos
+
+* fixed unix and windows conditional compilation
+
+Co-authored-by: Jonathan Turner <jonathandturner@users.noreply.github.com>

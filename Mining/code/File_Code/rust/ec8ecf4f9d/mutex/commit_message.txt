@@ -1,0 +1,3 @@
+Fix typo in mutex.rs docs
+
+This seems to match other uses of "be accessed" in the document.

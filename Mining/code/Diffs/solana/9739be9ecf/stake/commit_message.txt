@@ -1,0 +1,3 @@
+CLI: Fix stake-account auth withdrawer output (#8071)
+
+automerge

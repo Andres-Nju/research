@@ -1,0 +1,3 @@
+User_defaults now contains serialization for is_first_launch parameter; (#6068)
+
+Solved the "TraceDB resync required" issue when trying to use "--tracing on" option just after a DB kill operation;

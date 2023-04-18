@@ -1,0 +1,3 @@
+sdk: fix typo in lib.rs (#24240)
+
+recieved -> received

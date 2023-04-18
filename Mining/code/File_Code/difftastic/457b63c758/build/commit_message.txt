@@ -1,0 +1,6 @@
+Fix building of e.g., vendor/tree-sitter-haskell-src/scanner.cc
+
+At least this parser uses C++11 (lambda expressions) and C++14 features
+(lambda `auto` parameter types). Since the default C++ standard of
+compilers can vary, this patch explicitly sets C++14 mode when building
+any vendored C++ files.

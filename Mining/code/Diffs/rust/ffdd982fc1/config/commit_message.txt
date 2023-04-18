@@ -1,0 +1,7 @@
+Fix documentation with 'soft-float' codegen option
+
+This option doesn't cause software FP routines
+to be called it only changes the float ABI.
+
+Additionally, this option is ignored by all targets,
+except the ARM eabihf ones.

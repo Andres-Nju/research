@@ -1,0 +1,4 @@
+Fix toolstate history format
+
+We were inserting *before* the existing newline, so we should prepend it
+not append it to our inserted string.

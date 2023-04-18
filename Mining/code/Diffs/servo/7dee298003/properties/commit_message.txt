@@ -1,0 +1,1 @@
+Rewrite a line in geckolib's properties.mako.rs to fix the build on windows.

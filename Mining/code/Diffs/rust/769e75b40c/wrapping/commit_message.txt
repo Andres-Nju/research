@@ -1,0 +1,4 @@
+Fix left/right shift typo in wrapping rotate docs
+
+This makes the note similar to the one found on rotate functions for
+primitive types like i32/u32.

@@ -1,0 +1,4 @@
+Fix for CRM example compile error. (#1902)
+
+Following up from:
+https://github.com/yewstack/yew/issues/1898#issuecomment-854920672

@@ -1,0 +1,5 @@
+Fix various build warnings
+
+This should remove six separate warnings when building servo. One of
+the warnings was an unused mut, and the other were various dead code
+warnings

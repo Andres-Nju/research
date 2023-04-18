@@ -1,0 +1,3 @@
+Fix new_warning_with_corrupt_ws missing "USER".
+
+Also removed USER in all invocations to avoid this in the future.

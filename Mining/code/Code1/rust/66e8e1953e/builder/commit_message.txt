@@ -1,0 +1,1 @@
+Fix an AMDGPU related load bit range metadata assertion.

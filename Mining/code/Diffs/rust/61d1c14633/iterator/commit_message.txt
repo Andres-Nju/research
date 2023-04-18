@@ -1,0 +1,3 @@
+Fix incorrect statement about return value for Iterator::zip.
+
+Fixes https://github.com/rust-lang/rust/issues/50225.

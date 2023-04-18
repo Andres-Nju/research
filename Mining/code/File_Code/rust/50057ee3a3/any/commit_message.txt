@@ -1,0 +1,1 @@
+bench: libcore: fix build failure of any.rs benchmark (use "dyn Any")

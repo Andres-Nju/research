@@ -1,0 +1,3 @@
+Fix a copy-paste error in `Instant::sub_duration`
+
+Fixes #41514.

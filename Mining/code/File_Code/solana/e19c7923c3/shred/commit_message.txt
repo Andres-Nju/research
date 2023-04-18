@@ -1,0 +1,3 @@
+chore: fix typo in shred.rs (#21890)
+
+begining -> beginning

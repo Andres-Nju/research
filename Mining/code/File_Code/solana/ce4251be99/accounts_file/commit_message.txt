@@ -1,0 +1,3 @@
+Fix the return type of AccountsFile::account_matches_owners() (#30354)
+
+Update AccountsFile::account_matches_owners() to return the matched index

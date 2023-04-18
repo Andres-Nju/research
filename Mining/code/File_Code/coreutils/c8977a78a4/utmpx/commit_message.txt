@@ -1,0 +1,1 @@
+uucore: fix potential use-after-free in utmpx iterator (#1737)

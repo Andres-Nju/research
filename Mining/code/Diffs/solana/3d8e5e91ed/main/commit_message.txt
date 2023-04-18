@@ -1,0 +1,5 @@
+Fix ledger-tool from erroring with unspecified archive_format (#25298)
+
+value_t_or_exit()! will error if the user doesn't specify a value at
+runtime, use value_of() instead which will give either the default value
+or whatever the user specified.

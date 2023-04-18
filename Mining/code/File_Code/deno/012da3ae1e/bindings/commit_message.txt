@@ -1,0 +1,1 @@
+fix(core): fix typo in error message of print function (#10456)

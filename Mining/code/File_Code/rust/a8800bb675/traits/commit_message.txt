@@ -1,0 +1,12 @@
+Fix doc error for ExactSizeIterator
+
+The code example in the trait documentation of ExactSizeIterator
+has an incorrect implementation of the len method that does not return
+the number of times the example iterator 'Counter' will iterate. This
+may confuse readers of the docs as the example code will compile but 
+doesn't uphold the trait's contract.
+
+This is easily fixed by modifying the implementation of len and changing
+the assert statement to actually assert the correct behaviour. I also
+slightly modified a code comment to better reflect what the method 
+returns.

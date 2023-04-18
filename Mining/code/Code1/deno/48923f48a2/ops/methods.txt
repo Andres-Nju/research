@@ -1,0 +1,6 @@
+op_make_temp_dir
+op_make_temp_dir
+op_code_fetch
+op_code_fetch
+op_remove
+op_remove

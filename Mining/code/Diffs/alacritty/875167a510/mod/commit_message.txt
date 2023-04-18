@@ -1,0 +1,4 @@
+Fix bug introduced with save/restore patch
+
+Switching between main and alt grids should no longer clear the main
+grid.

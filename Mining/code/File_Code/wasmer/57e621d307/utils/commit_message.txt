@@ -1,0 +1,1 @@
+Fix emscripten test usage and fix error conditional

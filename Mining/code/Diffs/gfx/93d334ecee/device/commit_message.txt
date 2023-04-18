@@ -1,0 +1,3 @@
+Downgrades error to warning
+
+Signed-off-by: Hal Gentz <zegentzy@protonmail.com>

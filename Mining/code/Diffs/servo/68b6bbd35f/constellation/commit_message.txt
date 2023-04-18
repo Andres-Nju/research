@@ -1,0 +1,1 @@
+Fix private browsing mode preservation when loading URL

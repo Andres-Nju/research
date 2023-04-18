@@ -1,0 +1,12 @@
+Fix failing test with `bench` feature
+
+Using the `bench` feature, `cargo test` was failing since one of the
+benchmarks was running into a debug assertion for attempting to access a
+line with an index beyond the grid length.
+
+Since this issue was caused by the `len` property not being serialized
+and deserialized, the `#[serde(skip)]` attribute has been changed to
+`#[serde(default)]`. The ref-test has been edited to include the correct
+grid length for proper deserialization.
+
+This fixes #1604.

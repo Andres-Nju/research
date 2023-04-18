@@ -1,0 +1,1 @@
+hopefully fixes the coercion error when comparing $nothing to $var (#3133)

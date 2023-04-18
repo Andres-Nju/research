@@ -1,0 +1,1 @@
+Fix invalid variable name in `input` command docs (#6716)

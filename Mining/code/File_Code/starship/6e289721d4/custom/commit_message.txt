@@ -1,0 +1,5 @@
+fix(custom): Fix fallback shell not working on macOS (#1402)
+
+Have switched the fallback shell used when the custom module can't use
+the default to use `/usr/bin/env sh` rather than `/bin/env` since
+`/usr/bin/env` is more commonly available.

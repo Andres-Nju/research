@@ -1,0 +1,3 @@
+Workaround abort(2) on compilation error on FreeBSD.
+
+Same problem as OpenBSD, tracking bug #43575.

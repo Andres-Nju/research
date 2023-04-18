@@ -1,0 +1,9 @@
+Fix crash when selecting last column
+
+This resolves a bug where the selection start would be set to the number
+of columns, causing an out of bounds when trying to index with it.
+Instead of extending the selection beyond the grid when the right side
+of the last column is the start of the selection, the selection will now
+start in the beginning of the next line.
+
+Fixes #3446.

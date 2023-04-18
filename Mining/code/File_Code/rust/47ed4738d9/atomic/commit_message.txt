@@ -1,0 +1,3 @@
+fix core for targets with max-atomic-width = 0
+
+closes #45802

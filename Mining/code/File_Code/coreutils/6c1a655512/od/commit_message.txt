@@ -1,0 +1,11 @@
+This commit removes empty line from USAGE string in src/uu/od/src/od.rs. (#3074)
+
+This change is needed to fix missing USAGE section for `od` in user docs.
+
+With reference to this issue
+https://github.com/uutils/coreutils/issues/2991, and missing USAGE
+section from `od docs` at
+https://uutils.github.io/coreutils-docs/user/utils/od.html, it was
+found that the USAGE for od app was starts with an empty line and uudoc
+only takes 1st line for using in USAGE section in docs.
+This resulted in empty line in usage section for `od`

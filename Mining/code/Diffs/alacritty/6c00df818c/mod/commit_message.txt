@@ -1,0 +1,1 @@
+Fix startup caching of bold glyphs

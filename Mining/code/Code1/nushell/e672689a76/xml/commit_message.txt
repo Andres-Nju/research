@@ -1,0 +1,1 @@
+Fix docs building error caused by missing end tag (#8477)

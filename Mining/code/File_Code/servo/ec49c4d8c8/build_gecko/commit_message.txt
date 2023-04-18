@@ -1,0 +1,7 @@
+Better bindgen error message when files are missing.
+
+This is only slightly more informative because it doesn't give
+the filename, but I think it's an improvement on the simple
+unwrap() panic when we try to read a file which isn't there.
+
+See also [Gecko bug 1368083](https://bugzilla.mozilla.org/show_bug.cgi?id=1368083).

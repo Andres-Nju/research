@@ -1,0 +1,3 @@
+Fix rust-lang/rust#35203 warning/error
+
+rust-lang/rust#35203 made patterns in functions without body into a warn by default lint (which is being `deny`ed here).

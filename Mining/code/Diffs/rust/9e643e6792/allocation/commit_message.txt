@@ -1,0 +1,3 @@
+Improve miri's error reporting in check_in_alloc
+
+Co-Authored-By: Ralf Jung <post@ralfj.de>

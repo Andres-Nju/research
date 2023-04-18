@@ -1,0 +1,3 @@
+Bug 1341372 - Part 7: Rename needs_update_animations.
+
+MozReview-Commit-ID: 2bJlBbdX543

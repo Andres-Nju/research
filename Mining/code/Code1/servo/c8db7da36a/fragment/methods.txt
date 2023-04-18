@@ -1,0 +1,1 @@
+strip_trailing_whitespace_if_necessary

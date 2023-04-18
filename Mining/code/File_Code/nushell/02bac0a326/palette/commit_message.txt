@@ -1,0 +1,1 @@
+fix FlatShape::Garbage's default foreground color (#3634)

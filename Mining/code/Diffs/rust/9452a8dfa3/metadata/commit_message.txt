@@ -1,0 +1,4 @@
+Simplify the version check
+
+Address the review comments by simplifying the version check to
+just "< 8".

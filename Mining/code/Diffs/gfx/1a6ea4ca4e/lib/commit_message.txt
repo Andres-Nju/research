@@ -1,0 +1,5 @@
+Fix #1851: Crash on dx12
+
+If we couldn't initialize debug_controller, we would try to call Release
+on a null ptr. Now only Release the debug_controller if we could get it
+successfully.

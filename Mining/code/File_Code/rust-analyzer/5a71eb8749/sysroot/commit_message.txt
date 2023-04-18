@@ -1,0 +1,1 @@
+More specific error if `rustc --print sysroot` fails

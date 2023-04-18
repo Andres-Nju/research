@@ -1,0 +1,1 @@
+`solana validators`: Fix credits column formatting

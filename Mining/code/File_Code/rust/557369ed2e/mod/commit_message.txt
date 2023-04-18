@@ -1,0 +1,3 @@
+core: Fix example for .map()
+
+Make the example use DoubleEndedIterator for map, like it said it would.

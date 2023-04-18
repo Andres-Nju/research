@@ -1,0 +1,25 @@
+Fix the identity transform of rotatex and rotatey.
+
+Let's see the example: "rotatex(360deg)" to "none".
+
+While we do interpolation between "rotatex" and "none", the original code
+path is:
+1. Build an identity transform for none and always use (0, 0, 1) as the
+   direction vector, i.e. Rotate(0, 0, 1, 0deg).
+2. Do interpolation between rotatex (i.e. Rotate(1, 0, 0, 360deg)) and
+   Rotate(0, 0, 1, 0deg). Because their direction vectors are different,
+   so we do matrix decomposition/interpolation/recomposition on both
+   functions. The problem is, matrix decomposition makes the 360deg
+   disappear, so it looks like "rotatex(0deg)".
+3. Obviously, we are trying to interpolate from rotatex(0deg) to none, so
+   the interpolated matrix is always an identity matrix.
+
+I think rotatex, rotatey, and rotatez are special cases which should
+really rotate according to the angle, so we should build the identity
+transform for them according to the normalized direction vector, and so we do
+interpolation on the angle, instead of converting them into matrix.
+
+Replacing build_identity_transform_list() with
+add_weighted_transform_lists(list, list, 0, 0) might be another solution;
+However, I didn't do that because build_identity_transform_list() is
+much simpler.

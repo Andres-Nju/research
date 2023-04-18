@@ -1,0 +1,5 @@
+Fix fetching arguments on the wasm32-wasi target
+
+Fixes an error introduced in #66750 where wasi executables always think
+they have zero arguments because one of the vectors returned here
+accidentally thought it was length 0.

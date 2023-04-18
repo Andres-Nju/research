@@ -1,0 +1,11 @@
+Fix escaped backslash in windows file not found message
+
+When a module is declared, but no matching file exists, rustc gives
+an error like 'help: name the file either foo.rs or foo/mod.rs inside
+the directory "src/bar"'. However, at on windows, the backslash was
+double-escaped when naming the directory.
+
+It did this because the string was printed in debug mode ( "{:?}" ) to
+surround it with quotes. However, it should just be printed like any
+other directory in an error message and surrounded by escaped quotes,
+rather than relying on the debug print to add quotes ( "\"{}\"" ).

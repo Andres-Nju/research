@@ -1,0 +1,3 @@
+Fix draining of PTY when holding on exit
+
+Fixes #4189.

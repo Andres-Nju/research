@@ -1,0 +1,5 @@
+Fix data types indication
+
+Fix the data types indication in basic examples of the Trait std::fmt::LowerExp and std::fmt::UpperExp.
+Since there aren’t any type annotation on the let statement using the number 42.0, they are of type f64 according to The Book:
+https://doc.rust-lang.org/book/ch03-02-data-types.html#floating-point-types

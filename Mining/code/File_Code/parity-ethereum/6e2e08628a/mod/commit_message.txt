@@ -1,0 +1,3 @@
+Attempt to fix intermittent test failures (#8584)
+
+Occasionally should_return_correct_nonces_when_dropped_because_of_limit fails, possibly because of multiple threads competing to finish. See CI logs here for an example: https://gitlab.parity.io/parity/parity/-/jobs/86738

@@ -1,0 +1,1 @@
+Small grammar fix to docs for String::new().

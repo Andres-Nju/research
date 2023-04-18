@@ -1,0 +1,1 @@
+fix bug where `thin` theme wasn't getting applied correctly (#5905)

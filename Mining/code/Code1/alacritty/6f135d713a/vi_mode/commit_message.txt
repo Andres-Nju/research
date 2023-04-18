@@ -1,0 +1,5 @@
+Fix ScrollHalfPageUp vi cursor motion regression
+
+This regression was introduced in 3bd5ac2.
+
+Co-authored-by: Christian Duerr <contact@christianduerr.com>

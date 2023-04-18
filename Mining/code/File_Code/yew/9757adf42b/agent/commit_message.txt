@@ -1,0 +1,3 @@
+Fix comment-typo in agent (#644)
+
+Closes #628

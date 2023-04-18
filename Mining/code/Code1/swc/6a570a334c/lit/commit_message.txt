@@ -1,0 +1,9 @@
+fix(es/ast): Fix `EqIgnoreSpan` impl of `Number` (#7112)
+
+**Related issue:**
+
+ - Closes https://github.com/swc-project/swc/issues/7111.fix(es/ast): Fix `EqIgnoreSpan` impl of `Number` (#7112)
+
+**Related issue:**
+
+ - Closes https://github.com/swc-project/swc/issues/7111.

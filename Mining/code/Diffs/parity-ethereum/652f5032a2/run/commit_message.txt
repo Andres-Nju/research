@@ -1,0 +1,1 @@
+Fix the JSONRPC API not running with the light client (#8326)

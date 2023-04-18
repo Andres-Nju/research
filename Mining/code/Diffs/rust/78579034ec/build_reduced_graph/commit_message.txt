@@ -1,0 +1,4 @@
+Fix an ICE in BuildReducedGraphVisitor::visit_trait_item.
+
+This ICE occurs in the futures-rs-test-all benchmark in
+rustc-benchmarks.

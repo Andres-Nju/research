@@ -1,0 +1,1 @@
+Fix VTag attribute updates (#698)

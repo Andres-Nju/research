@@ -1,0 +1,6 @@
+Fix crash when resizing during vi mode
+
+Our resize clamping logic for the vi mode cursor did not correctly clamp
+to the viewport after the indexing change. Now it is enforced that the
+vi mode cursor cannot leave the visible area after a font or viewport
+size change.

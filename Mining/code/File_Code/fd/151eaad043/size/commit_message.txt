@@ -1,0 +1,14 @@
+Fix "unnecessary braces" warning
+
+Original warning:
+```
+warning: unnecessary braces around block return value
+ --> src/filter/size.rs:5:39
+  |
+5 |     static ref SIZE_CAPTURES: Regex = { Regex::new(r"(?i)^([+-])(\d+)(b|[kmgt]i?b?)$").unwrap() };
+  |                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: remove these braces
+  |
+  = note: `#[warn(unused_braces)]` on by default
+
+warning: 1 warning emitted
+```

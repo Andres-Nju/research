@@ -1,0 +1,1 @@
+fix(core): Fix incorrect index in Promise.all error reporting (#8913)

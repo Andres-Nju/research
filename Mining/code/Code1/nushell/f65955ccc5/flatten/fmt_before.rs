@@ -1,0 +1,27 @@
+    fn fmt(&self, f: &mut Formatter) -> Result {
+        match self {
+            FlatShape::Garbage => write!(f, "flatshape_garbage"),
+            FlatShape::Nothing => write!(f, "flatshape_nothing"),
+            FlatShape::Bool => write!(f, "flatshape_bool"),
+            FlatShape::Int => write!(f, "flatshape_int"),
+            FlatShape::Float => write!(f, "flatshape_float"),
+            FlatShape::Range => write!(f, "flatshape_range"),
+            FlatShape::InternalCall => write!(f, "flatshape_internalcall"),
+            FlatShape::External => write!(f, "flatshape_external"),
+            FlatShape::ExternalArg => write!(f, "flatshape_externalarg"),
+            FlatShape::Literal => write!(f, "flatshape_literal"),
+            FlatShape::Operator => write!(f, "flatshape_operator"),
+            FlatShape::Signature => write!(f, "flatshape_signature"),
+            FlatShape::String => write!(f, "flatshape_string"),
+            FlatShape::StringInterpolation => write!(f, "flatshape_string_interpolation"),
+            FlatShape::List => write!(f, "flatshape_string_interpolation"),
+            FlatShape::Table => write!(f, "flatshape_table"),
+            FlatShape::Record => write!(f, "flatshape_record"),
+            FlatShape::Block => write!(f, "flatshape_block"),
+            FlatShape::Filepath => write!(f, "flatshape_filepath"),
+            FlatShape::GlobPattern => write!(f, "flatshape_globpattern"),
+            FlatShape::Variable => write!(f, "flatshape_variable"),
+            FlatShape::Flag => write!(f, "flatshape_flag"),
+            FlatShape::Custom(_) => write!(f, "flatshape_custom"),
+        }
+    }

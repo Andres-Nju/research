@@ -1,0 +1,17 @@
+More bug fixes for completions (#2476)
+
+* Use the cursor position for the span when between locations.
+
+This fixes a bug where completing
+
+    ls <TAB>
+
+would result in replacing the entire line.
+
+* Revert to the default update implementation.
+
+Replacing the length of the elected value was intended to do replacement when
+one moves inside a quote. The problem is that a long elected suggestion could
+replace bits of a pipeline that are after the cursor. For example:
+
+    ls <TAB> | get name | str collect

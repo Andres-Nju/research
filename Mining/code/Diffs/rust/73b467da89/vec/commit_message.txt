@@ -1,0 +1,5 @@
+Fix shrink_to panic documentation
+
+While the potential for panicking is already documented for the
+`Vec::shrink_to` method, it is not clearly labeled with the usual
+`# Panics` heading.

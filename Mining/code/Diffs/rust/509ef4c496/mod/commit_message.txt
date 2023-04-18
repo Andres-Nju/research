@@ -1,0 +1,1 @@
+std::thread docs: fix link to current()

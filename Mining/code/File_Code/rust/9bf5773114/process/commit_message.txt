@@ -1,0 +1,15 @@
+Fix `Stdio::piped` example code and lint
+
+Summary:
+Invoking `rev` does not add a trailing newline when none is present in
+the input (at least on my Debian). Nearby examples use `echo` rather
+than `rev`, which probably explains the source of the discrepancy.
+
+Also, a `mut` qualifier is unused.
+
+Test Plan:
+Copy the code block into <https://play.rust-lang.org> with a `fn main`
+wrapper, and run it. Note that it compiles and runs cleanly; prior to
+this commit, it would emit an `unused_mut` warning and then panic.
+
+wchargin-branch: stdio-piped-docs

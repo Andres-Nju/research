@@ -1,0 +1,3 @@
+Fix typo in RawWaker::new documentation
+
+poiner -> pointer

@@ -5,8 +5,8 @@ from pydriller import Repository
 from pydriller import ModificationType
 from urllib.parse import parse_qs, urlparse
 import github3
-root_dir = "Code"
-LINES_THRESH = 6
+root_dir = "File_Code"
+LINES_THRESH = 8
 
 
 
@@ -29,10 +29,26 @@ class MyMethod:
 # 获取改动前后的methods中的同名methods，返回新的method_before和changed_method
 def filter_methods(methods_before, changed_methods):
     res = []
-    for method_before in methods_before:
-        for changed_method in changed_methods:
+    candidate = {}
+    for changed_method in changed_methods:
+        for method_before in methods_before:
             if method_before.name == changed_method.name:
-                res.append(MyMethod(method_before.name, method_before.start_line, method_before.end_line, changed_method.start_line, changed_method.end_line))
+                if changed_method not in candidate.keys():
+                    candidate[changed_method] = [(method_before.start_line, method_before.end_line)]
+                else:
+                    candidate[changed_method].append((method_before.start_line, method_before.end_line))
+    for key in candidate.keys():
+        if len(candidate[key]) == 1:    
+            res.append(MyMethod(key.name, candidate[key][0][0], candidate[key][0][1], key.start_line, key.end_line))
+        else:
+            t = (0, 0)
+            distance = sys.maxsize
+            for tuple in candidate[key]:
+                cur_dis = abs(key.start_line - tuple[0])
+                if cur_dis < distance:
+                    distance = cur_dis
+                    t = tuple
+            res.append(MyMethod(key.name, t[0], t[1], key.start_line, key.end_line))
     return res
 
         
@@ -49,27 +65,28 @@ if __name__ == '__main__':
     repo_file = sys.argv[1]
     with open(repo_file, 'r') as f:
         for repo_full_name in f.readlines():
+            cnt = 0
             repo_name = repo_full_name.split('/')[1].strip()
+            print(f'repo: {repo_name}')
             repo_dir = root_dir + '/' + repo_name
             if not os.path.exists(repo_dir):
                 os.mkdir(repo_dir)
-            repo_url = "https://github.com/" + repo_full_name.strip()  
-
+            repo_path = cur_path + '/Commits/' + repo_name
+            #print(repo_path)
             # 查找之前存储的对应仓库的commit hash
             commit_list.clear()
-            with open (cur_path + '/Commits/' + repo_name + '.txt' ) as hash_file:
+            
+            with open (cur_path + '/Commits/' + repo_name + '.txt', 'r') as hash_file:
                 for commit_hash in hash_file.readlines():
                     commit_list.append(commit_hash.strip())
-            # print(commit_list)
-            for commit in Repository(repo_url, only_modifications_with_file_types=['.rs'], only_commits = commit_list).traverse_commits():
+            #print(commit_list)
+            for commit in Repository(repo_path, only_modifications_with_file_types=['.rs'], only_commits=commit_list).traverse_commits():
                 # 根据msg做过滤
                 message = commit.msg
                 # print(message)
-                '''# 如果改动是clippy的, 也过滤掉
-                if "clippy" in message or "Clippy" in message:
+                # 如果改动是clippy的, 也过滤掉
+                if "clippy" in message.lower():
                     continue
-                if "fix" not in message and "bug" not in message and "Bug" not in message and "Fix" not in message:
-                    continue'''
                 
                 if commit.lines > LINES_THRESH:
                     continue
@@ -97,6 +114,19 @@ if __name__ == '__main__':
                         if os.path.exists(file_dir):
                             continue
                         os.mkdir(file_dir)
+
+                        # 获取改动前的file源代码
+                        with open(file_dir + '/' + modified_file.filename.split('.')[0].strip() + '_before.rs', 'w') as m1:
+                            m1.write(modified_file.content_before.decode())
+                        # 获取改动后的file源代码
+                        with open(file_dir + '/' + modified_file.filename.split('.')[0].strip() + '_after.rs', 'w') as m2:
+                            m2.write(modified_file.content.decode())
+
+                        cnt = cnt + 1
+                        with open(file_dir + "/commit_message.txt", 'a') as method_file:
+                            method_file.write(message)
+                        continue
+
                         # 获取改动前后的文件中都出现的method
                         filtered_methods = filter_methods(modified_file.methods_before, modified_file.changed_methods) # name, start_line, end_line
                         for filtered_method in filtered_methods:
@@ -117,19 +147,9 @@ if __name__ == '__main__':
                             # 记录改动的commit message
                             with open(file_dir + "/commit_message.txt", 'a') as method_file:
                                 method_file.write(message)
-
+                            cnt = cnt + 1
+            print(cnt)
 
 
 
         
-        
-        '''sha_token = "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"
-        repo_full_name = sys.argv[1] 
-        query_url = 'https://api.github.com/search/repositories?q=' + repo_full_name
-        project_url = 'https://github.com/' + repo_full_name
-        repo_info = fetchUrl(query_url, sha_token)["items"][0]
-        time.sleep(1)       
-        print(repo_info) '''
-
-    
-   

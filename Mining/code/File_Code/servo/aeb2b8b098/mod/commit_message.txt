@@ -1,0 +1,1 @@
+stylo: Read mName as a raw nsIAtom* from NodeInfoInner.

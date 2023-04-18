@@ -1,0 +1,8 @@
+Fix selection change after leaving vi-mode
+
+This patch fixes that the right point of the selection range moves to
+another point when leaves vi-mode with a selection by ToggleViMode.
+The cause is that always moves a vi-mode cursor to a search origin
+whether or not the current search is active.
+
+This problem is a regression which is introduced by #5945.

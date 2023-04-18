@@ -1,0 +1,1 @@
+Fix BUFFER_DESC BindFlags for DEVICE_LOCAL memory types on dx11

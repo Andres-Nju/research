@@ -1,0 +1,4 @@
+Fix Query type docs
+
+`give` no longer exists, `compute` is used to generate query results
+now.

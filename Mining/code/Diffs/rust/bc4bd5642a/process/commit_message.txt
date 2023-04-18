@@ -1,0 +1,1 @@
+fixup! std: Child::kill() returns error if process has already exited

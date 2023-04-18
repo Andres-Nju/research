@@ -1,0 +1,3 @@
+add quotes around filename
+
+and make it more concise by using map_err

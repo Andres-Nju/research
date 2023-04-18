@@ -1,0 +1,1 @@
+fix(bundler): Update missing icon error message (#626)

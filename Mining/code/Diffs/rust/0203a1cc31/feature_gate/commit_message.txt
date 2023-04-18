@@ -1,0 +1,1 @@
+exhaustive_integer_patterns slipped 1.32; stabilized in 1.33.

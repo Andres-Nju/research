@@ -1,0 +1,1 @@
+Fix default event stop propagation behaviour

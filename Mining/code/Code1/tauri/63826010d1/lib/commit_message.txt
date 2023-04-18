@@ -1,0 +1,1 @@
+feat(cli.js): show full error message (#3442)

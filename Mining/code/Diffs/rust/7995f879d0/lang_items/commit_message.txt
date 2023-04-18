@@ -1,0 +1,3 @@
+Remove `send` lang item.
+
+It's completely unused.

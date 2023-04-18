@@ -1,0 +1,12 @@
+Fix intermittent validator_exit test failure (#23594)
+
+* run validator_exit_test sequentially
+
+* limit validator exit run to its own serial run subset
+add 10ms delay in the validator exit tests
+
+* fix intermittent validator exit failure
+
+* no sleep
+
+* undo the code move

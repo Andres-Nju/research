@@ -1,0 +1,7 @@
+Fix backtraces on i686-pc-windows-gnu by disabling FPO
+
+This might have performance implications. But do note that MSVC
+disables FPO by default nowadays and it's use is limited in exception
+heavy languages like C++.
+
+Closes: #28218

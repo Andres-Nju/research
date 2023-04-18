@@ -1,0 +1,5 @@
+Fix 'ps -l' output when a process doesn't have a parent process. (#3015)
+
+Before, ps would not insert a value if the process didn't have a parent.
+Now, ps will insert an empty cell. This caused broken tables as some
+rows didn't have all the columns.

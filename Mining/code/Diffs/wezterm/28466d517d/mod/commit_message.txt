@@ -1,0 +1,1 @@
+Fix IME candidate window position

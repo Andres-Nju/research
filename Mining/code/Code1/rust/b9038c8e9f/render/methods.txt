@@ -1,0 +1,2 @@
+item_trait
+trait_item

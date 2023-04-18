@@ -1,0 +1,1 @@
+Fix auto-completion crash (#1366)

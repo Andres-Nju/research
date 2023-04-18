@@ -1,0 +1,1 @@
+Fix filesize "B" regression (#2688)

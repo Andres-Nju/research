@@ -1,0 +1,1 @@
+fix ansi --osc parameter adding extra semi-colon (#7113)

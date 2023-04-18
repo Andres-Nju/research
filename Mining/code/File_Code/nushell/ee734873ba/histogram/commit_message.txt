@@ -1,0 +1,5 @@
+Fix no longer working histogram example (#2271)
+
+* Fix no longer working histogram example
+
+* Oops

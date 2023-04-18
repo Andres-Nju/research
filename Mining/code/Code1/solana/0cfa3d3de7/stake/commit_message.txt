@@ -1,0 +1,1 @@
+Return error if stake history deser fails in cli (#6559)

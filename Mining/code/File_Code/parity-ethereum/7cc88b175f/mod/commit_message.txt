@@ -1,0 +1,3 @@
+Clarify error message to indicate (#3359)
+
+Indicate that Signer *needs* to be re-enabled, not that it *was* re-enabled.

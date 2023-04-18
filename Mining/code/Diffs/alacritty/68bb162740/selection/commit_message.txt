@@ -1,0 +1,3 @@
+Fix single column block selection
+
+Fixes #5039.

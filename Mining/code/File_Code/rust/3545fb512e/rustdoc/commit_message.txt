@@ -1,0 +1,4 @@
+rustbuild: Fix compiler docs again
+
+The docs need to be built with the rustbuild feature so the correct
+stability attributes (rustc_private) get applied.

@@ -1,0 +1,1 @@
+Include the affected slot in blocktree error metrics (#6734)

@@ -1,0 +1,3 @@
+fix(repl): use spaces for tab handler on windows (#14931)
+
+There is a bug in rustyline with tabs on Windows, so we insert spaces for now.

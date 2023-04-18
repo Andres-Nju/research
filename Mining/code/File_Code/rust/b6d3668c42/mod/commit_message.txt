@@ -1,0 +1,1 @@
+Fix a stutter in the docs for slice::exact_chunks

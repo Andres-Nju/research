@@ -1,0 +1,3 @@
+Fix libxkbcommon-devel package name for openSUSE
+
+Fixes #5586.

@@ -1,0 +1,3 @@
+Fix typo in pin documentation
+
+Affect is a verb, effect is a noun

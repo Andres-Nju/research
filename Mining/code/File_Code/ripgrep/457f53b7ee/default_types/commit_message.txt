@@ -1,0 +1,7 @@
+ignore/types: fix futhark type extension
+
+Previously, the 'fut' type only matches files called '.fut', while in
+reality we want to match all files with the '.fut' extension. This
+commit fixes that issue.
+
+PR #2027

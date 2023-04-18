@@ -1,0 +1,1 @@
+Fix camelCase response for RpcPrioritizationFee (#30162)

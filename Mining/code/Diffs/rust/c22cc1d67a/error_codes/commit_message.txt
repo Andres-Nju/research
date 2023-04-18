@@ -1,0 +1,1 @@
+Remove unnecessary features from compiler error code list

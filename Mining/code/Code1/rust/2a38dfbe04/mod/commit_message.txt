@@ -1,0 +1,3 @@
+ErrorKind: Fix a spurious space
+
+Signed-off-by: Ian Jackson <ijackson@chiark.greenend.org.uk>

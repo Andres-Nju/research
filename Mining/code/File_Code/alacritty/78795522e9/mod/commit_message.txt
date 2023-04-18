@@ -1,0 +1,36 @@
+Fix insert mode crash with fullwidth characters
+
+This patch resolves an issue with fullwidth characters, where it is
+possible to crash Alacritty by moving a fullwidth character off the side
+of the terminal using insert mode.
+
+This issue occurs since trying to overwrite a fullwidth spacer in the
+first column leads to an underflow when trying to access its fullwidth
+character cell. During insert mode before the character is inserted into
+the cell, the existing content is rotated to the right, which leads to
+the fullwidth spacer being in the first column even though it is only
+there temporarily to be immediately overwritten.
+
+While it would be possible to clear the flags after rotation, this would
+still leave the opportunity for other ways to trigger this issue and
+cause a separate crash. So instead the column is checked while
+overwriting the spacer to make sure the fullwidth character isn't
+accessed if it would lead to an underflow.
+
+The following is a minimal example for reproducing this crash:
+
+```sh
+printf "漢"
+
+printf "\e[4h"
+
+printf "\r"
+
+for _ in $(seq 3 $(tput cols)); do
+    printf "x"
+done
+
+printf "\r_"
+```
+
+Fixes #5337.

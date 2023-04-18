@@ -1,0 +1,1 @@
+Add a comment on the meaning of Instant t: Duration

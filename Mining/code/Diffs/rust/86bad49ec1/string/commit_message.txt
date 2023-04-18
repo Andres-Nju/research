@@ -1,0 +1,1 @@
+Issue #39688 - Help people find String::as_bytes() for UTF-8 r? @steveklabnik

@@ -1,0 +1,5 @@
+resolve some dead links as mentioned in issue #2379 (#2380)
+
+* resolve some dead links as mentioned in issue #2379
+
+* done the required changes

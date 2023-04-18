@@ -1,0 +1,4 @@
+fix(es/loader): Fix node resolver (#2172)
+
+swc_ecma_module_loader:
+ - Use correct base directory.

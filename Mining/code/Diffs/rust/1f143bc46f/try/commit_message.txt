@@ -1,0 +1,4 @@
+Explicitly mention `Option` in `?` error message.
+
+Save users the time/effort of having to lookup what types implement
+the `Try` trait.

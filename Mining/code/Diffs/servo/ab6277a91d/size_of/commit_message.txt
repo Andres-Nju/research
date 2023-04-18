@@ -1,0 +1,1 @@
+script: Update expected size of elements now we have bigger state flags.

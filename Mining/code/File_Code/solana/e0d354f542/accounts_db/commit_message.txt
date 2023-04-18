@@ -1,0 +1,14 @@
+fix bug in test fn compare_all_accounts (#30217)
+
+#### Problem
+test code compares sets of accounts after clean/shrink operations.
+The indexing was off and new tests were giving false positives.
+The test code was equivalent as long as everything was in the same
+order.
+
+#### Summary of Changes
+Fix test code comparison indexes.
+
+Fixes #
+<!-- OPTIONAL: Feature Gate Issue: # -->
+<!-- Don't forget to add the "feature-gate" label -->

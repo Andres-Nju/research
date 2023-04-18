@@ -1,0 +1,6 @@
+Don't allow any ReScope in impl trait types
+
+This shouldn't be possible any more, but if it does happen, emit an
+error rather than maybe panicking later when NLL finds a the ReScope.
+Impl trait in bindings is sufficiently broken that I don't think this
+breaks anything that works for it.

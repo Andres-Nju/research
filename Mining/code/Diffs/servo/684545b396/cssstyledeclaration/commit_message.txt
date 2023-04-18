@@ -1,0 +1,1 @@
+script: Also do so for element owners.

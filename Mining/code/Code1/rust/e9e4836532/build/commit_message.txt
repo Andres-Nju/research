@@ -1,0 +1,6 @@
+Fix libunwind build: Define __LITTLE_ENDIAN__ for LE targets
+
+If __LITTLE_ENDIAN__ is missing, libunwind assumes big endian
+and reads unwinding instructions wrong on ARM EHABI.
+
+Fix #65765

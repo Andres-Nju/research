@@ -1,0 +1,5 @@
+Fix Bloom migration (#9992)
+
+* Fix wrong block number in blooms migration
+
+* Fix wrong `const` type (usize -> u64) 😬

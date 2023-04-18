@@ -1,0 +1,3 @@
+Panic when stringifying an primitive fails.
+
+This should not happen.

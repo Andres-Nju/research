@@ -1,0 +1,4 @@
+append_ptrs_locked
+sanitize_layout_and_length
+reset
+len

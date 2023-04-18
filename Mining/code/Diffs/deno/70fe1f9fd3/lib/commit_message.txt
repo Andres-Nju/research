@@ -1,0 +1,3 @@
+Fix inlining of lib.dom.iterable.d.ts. (#4242)
+
+Fixes #4234

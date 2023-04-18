@@ -1,0 +1,5 @@
+Fix the build after #7204 (#7857)
+
+Fix the build after merging
+https://github.com/nushell/nushell/pull/7204. It sat for a bit too long
+and I should have rerun CI before merging it, my bad.

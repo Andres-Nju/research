@@ -1,0 +1,5 @@
+Fix bug with alias handling when searching for matching brackets (#6931)
+
+* [4325] - fix slicing
+
+* [4325] - fix style

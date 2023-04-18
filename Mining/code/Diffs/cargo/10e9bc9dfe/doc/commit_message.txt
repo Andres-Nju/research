@@ -1,0 +1,1 @@
+Fix doc_target test which no longer works on stable/beta.

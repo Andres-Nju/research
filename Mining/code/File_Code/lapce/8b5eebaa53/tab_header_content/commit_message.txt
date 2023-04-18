@@ -1,0 +1,10 @@
+Fix overflow crash when editor is sluggish (#1575)
+
+When running the editor in debug mode like `cargo run`, the editor will become sluggish
+and this crash will happen. A lot.
+
+Visually, it looks like some details are not loaded at the same time (like file paths).
+
+Signed-off-by: Hanif Bin Ariffin <hanif.ariffin.4326@gmail.com>
+
+Signed-off-by: Hanif Bin Ariffin <hanif.ariffin.4326@gmail.com>

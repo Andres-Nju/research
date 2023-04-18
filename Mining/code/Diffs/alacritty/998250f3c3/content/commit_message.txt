@@ -1,0 +1,5 @@
+Fix renderable_cursor method documentation
+
+This method no longer returns an `Option` since #5773.
+
+Co-authored-by: Kirill Chibisov <contact@kchibisov.com>

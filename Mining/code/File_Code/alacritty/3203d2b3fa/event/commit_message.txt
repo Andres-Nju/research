@@ -1,0 +1,5 @@
+Fix reset CLI parameters on config reload (#3216)
+
+Fix reset CLI parameters on config reload
+
+Fixes #3197.

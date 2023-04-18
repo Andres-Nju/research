@@ -1,0 +1,4 @@
+Fix typo in explanation of `E0080`
+
+Handling issue #66105 in Rust repo.
+`evaluate an constant expression` to `evaluate a constant expression`

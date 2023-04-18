@@ -1,0 +1,1 @@
+encode_info_for_impl_item

@@ -1,0 +1,7 @@
+Fix full path being output with `rustdoc -h`
+
+rustdoc would output the full path to the binary when calling it with
+the `-h` or `--help` flags. This is undesired behavior. It has been
+replaced with a hardcoded string `rustdoc` to fix the issue.
+
+Fixes #39310

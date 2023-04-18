@@ -1,0 +1,3 @@
+Fix building without backtrace feature, which was broken in ca8b754
+
+Fixes #42139

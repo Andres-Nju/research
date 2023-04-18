@@ -1,0 +1,7 @@
+std: use more portable error number in from_raw_os_error docs
+
+On MIPS, error number 98 is not EADDRINUSE (it is EPROTOTYPE). To fix the
+resulting test failure this causes, use a more portable error number in
+the example documentation. EINVAL shold be more reliable because it was
+defined in the original Unix as 22 so hopefully most derivatives have
+defined it the same way.

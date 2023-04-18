@@ -1,0 +1,5 @@
+doc: use XDG_CONFIG_HOME in comments
+
+XDG_CONFIG_DIR does not actually exist.
+
+PR #1347

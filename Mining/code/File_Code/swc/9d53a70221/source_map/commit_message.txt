@@ -1,0 +1,3 @@
+fix(common): Fix column positions in generated sourcemaps (#1470)
+
+Co-authored-by: 강동윤 <kdy1@dudy.kr>

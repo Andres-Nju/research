@@ -1,0 +1,6 @@
+Fix unexpected panic with the -Z treat-err-as-bug option
+
+This fix an issue where the compiler panics even if there is no
+error when passed with the `-Z treat-err-as-bug` option.
+
+Fixes #35886.

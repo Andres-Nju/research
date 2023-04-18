@@ -1,0 +1,28 @@
+std: Fix a failing `fs` test on Windows
+
+In testing 4-core machines on Azure the `realpath_works_tricky` test in
+the standard library is failing with "The directory name is invalid". In
+attempting to debug this test I was able to reproduce the failure
+locally on my machine, and after inspecing the test it I believe is
+exploiting Unix-specific behavior that seems to only sometimes work on
+Windows. Specifically the test basically executes:
+
+    mkdir -p a/b
+    mkdir -p a/d
+    touch a/f
+    ln -s a/b/c ../d/e
+    ln -s a/d/e ../f
+
+and then asserts that `canonicalize("a/b/c")` and
+`canonicalize("a/d/e")` are equivalent to `a/f`. On Windows however the
+first symlink is a "directory symlink" and the second is a file symlink.
+In both cases, though, they're pointing to files. This means that for
+whatever reason locally and on the 4-core environment the call to
+`canonicalize` is failing. On Azure today it seems to be passing, and
+I'm not entirely sure why. I'm sort of presuming that there's some sort
+of internals going on here where there's some global Windows setting
+which makes symlinks behavior more unix-like and ignore the directory
+hint.
+
+In any case this should keep the test working and also fixes the test
+locally for me.

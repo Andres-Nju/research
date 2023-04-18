@@ -1,0 +1,1 @@
+Fix quadratic time complexity with large strides (#6727)

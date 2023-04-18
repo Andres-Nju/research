@@ -1,0 +1,1 @@
+Fix bad function arguments (#1682)

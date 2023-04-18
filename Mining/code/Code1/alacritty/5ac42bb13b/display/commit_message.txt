@@ -1,0 +1,9 @@
+Fix render issues on macOS (#845)
+
+Parts of neighboring glyphs in the atlas were being rendered
+incorrectly. The issue is resolved by aligning cells to the pixel grid.
+
+This behavior was achieved previously by first applying integer
+truncation before casting to a float.
+
+Fixes #844.

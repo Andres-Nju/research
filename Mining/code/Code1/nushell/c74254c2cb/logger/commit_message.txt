@@ -1,0 +1,3 @@
+Fix color settings for logger (#6285)
+
+Signed-off-by: nibon7 <nibon7@163.com>

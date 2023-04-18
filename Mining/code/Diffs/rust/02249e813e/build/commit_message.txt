@@ -1,0 +1,5 @@
+Define VISIBILITY_HIDDEN when compiling compiler-rt
+
+This is cherry-picked from #37817 which seems to be stalled and currently needs to be rebased anyway.
+
+r? @alexcrichton (who authored this change)

@@ -1,0 +1,1 @@
+Fix HashMap's values_mut example to use println!

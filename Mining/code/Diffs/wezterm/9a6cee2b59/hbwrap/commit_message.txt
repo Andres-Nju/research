@@ -1,0 +1,3 @@
+font: fix the function signature for log_buffer_message ...
+
+... this will fix the build on non-x86 architectures

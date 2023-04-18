@@ -1,0 +1,2 @@
+add `MSYSTEM=1` to shell_quoting test
+- this should make it use unix escaping on windows

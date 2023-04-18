@@ -1,0 +1,3 @@
+rustbuild: fix dist in debug mode
+
+Signed-off-by: Marc-Antoine Perennou <Marc-Antoine@Perennou.com>

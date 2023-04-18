@@ -1,0 +1,1 @@
+view_image_as_shader_resource

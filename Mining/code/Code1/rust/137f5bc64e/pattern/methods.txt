@@ -1,0 +1,2 @@
+is_prefix_of
+next_match

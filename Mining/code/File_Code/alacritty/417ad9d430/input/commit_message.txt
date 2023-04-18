@@ -1,0 +1,4 @@
+Fix Bracketed Paste Mode when input contains end sequence. (#1243)
+
+* Fix Bracketed Paste Mode when input contains end sequence.
+* Remove \x1b instead of just the paste end sequence.

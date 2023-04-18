@@ -1,0 +1,1 @@
+[libcollections] [doc] Fix typo in documentation

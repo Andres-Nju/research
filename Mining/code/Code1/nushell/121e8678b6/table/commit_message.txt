@@ -1,0 +1,3 @@
+nu-table: Fix a term_width value (#5997)
+
+Signed-off-by: Maxim Zhiburt <zhiburt@gmail.com>

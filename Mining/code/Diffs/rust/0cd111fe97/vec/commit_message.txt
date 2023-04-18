@@ -1,0 +1,1 @@
+Doc: Fix link to Exten in Vec::set_len
