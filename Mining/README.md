@@ -67,6 +67,45 @@ keywords = ["fix", "defect", "error", "bug", "issue", "mistake", "incorrect","fa
 
 - 使用code/difftastic
   - 进行diff
+  
+  - 讲diff的结果处理成每个节点的vector形式：每个节点对应一条
+  
+    ```
+    [repo, commit_hash, change type, parent node type, grand parent type]
+    ```
+  
+    写入指定的文件
+  
+    ```
+    python3 process.py vector.csv
+    ```
+
+
+
+### code/cluster_vectors.py
+
+- 对于process.py生成的内容进行预处理，为每个commit生成对应的vector
+
+  - 每个commit对应多个节点，即多个
+
+    ```
+    [change type, parent node type, grand parent type]
+    ```
+
+  - 每个commit对应的特征向量具有的维度数：
+    $$
+    \rm len(Change\ Type) \times len(Parent\ Node\ Type) \times len(Grandparent\ Node\ Type)
+    $$
+
+  - 每个维度上的值为commit拥有的对应的节点个数 
+
+- 对所有预处理后的vector进行聚类
+
+  - ​	使用HAC
+
+
+
+
 
 ### code/gen_ast.py 
 
