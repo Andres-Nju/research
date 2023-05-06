@@ -68,9 +68,62 @@ if __name__ == '__main__':
 
     offset = len(parent_dic) * len(grandparent_dic)
 
- 
+    for i in sorted(parent_dic.items(), key = lambda x:x[1], reverse=True):
+        for j in sorted(grandparent_dic.items(), key = lambda x:x[1], reverse=True):
+            index_dic[("Added", i[0], j[0])] = feature_cnt
+            index_dic[("Deleted", i[0], j[0])] = feature_cnt + offset
+            feature_cnt = feature_cnt + 1
 
-    ''' # 构建空列表，用于保存不同参数组合下的结果
+
+    vecs = np.empty(0)
+
+    with open(vec_file, "r", encoding="utf-8") as f:
+        reader = csv.reader(f)
+        cur_commit = 0
+        cur_list = [] 
+        for row in reader: # repo, commit, added/deleted, parent, grandparent
+            if cur_commit == commit_hash[(row[0], row[1])]:
+                cur_list.append(row)
+            else:
+                vecs = np.append(vecs, process_commit_vector(cur_list))
+                cur_list.clear()
+                cur_commit = cur_commit + 1
+                cur_list.append(row)
+
+        vecs = np.append(vecs, process_commit_vector(cur_list))
+
+    vecs = vecs.reshape(len(commit_hash), -1)
+
+
+    res = []
+    for dis in range(2, 20):
+        hac = clusters.AgglomerativeClustering(n_clusters=None, distance_threshold=dis)
+        # 模型拟合
+        hac.fit(vecs)
+        # 统计各参数组合下的聚类个数（-1表示异常点）
+        n_clusters = len([i for i in set(hac.labels_) if i != -1])
+        # 异常点的个数
+        outliners = np.sum(np.where(hac.labels_ == -1, 1,0))
+        # 统计每个簇的样本个数
+        stats = str(pd.Series([i for i in hac.labels_ if i != -1]).value_counts().values)
+
+        res.append({'dis_thresh':dis,'n_clusters':n_clusters,'outliners':outliners,'stats':stats})
+
+        '''cluster_results = get_clusters(hac.labels_, commits)
+        with open ("cluster_results/hac1.txt", 'a') as f:
+            f.write("dis_thresh = " + str(dis) + ":\n")
+            for i in sorted(cluster_results.items(), key=lambda x: len(x[1]), reverse=True):
+                for repo_commit in i[1]:
+                    f.write(str(repo_commit))
+                    f.write("\n")
+                f.write("-----------------------------------------------------------------------------------------------------------\n")'''
+    # 将迭代后的结果存储到数据框中        
+    df = pd.DataFrame(res)
+
+    # 根据条件筛选合理的参数组合
+    print(df)
+
+    # 构建空列表，用于保存不同参数组合下的结果
     # DB-SCAN
     res = []
     # 迭代不同的eps值
@@ -91,7 +144,7 @@ if __name__ == '__main__':
     df = pd.DataFrame(res)
 
     # 根据条件筛选合理的参数组合
-    print(df)'''
+    print(df)
 
 
 

@@ -1,19 +1,31 @@
 import json
-
-
+import sys
+import csv
 if __name__ == '__main__':
-    with open("./difftastic/vendored_parsers/tree-sitter-rust/src/node-types.json", 'r', encoding="utf-8") as f:
-        content  = json.load(f)
-        print(len(content))
-        dic = {}
-        subtypes = {}
-        for item in content:
-            if "subtypes" in item.keys():
-                for i in item["subtypes"]:
-                    subtypes[i['type']] = 1
-            if "fields" in item.keys() or "children" in item.keys():
-                dic[item["type"]] = 1
-        for key in dic.keys():
-            print(key)
-        print(len(dic.keys()))
-        print(len(subtypes.keys()))
+    parent_dic = {}
+    grandparent_dic = {}
+    vec_file = sys.argv[1]
+    # 第一遍读，获取所有的commit数以及出现的节点类型
+    with open(vec_file, "r", encoding="utf-8") as f:
+        reader = csv.reader(f)
+        for row in reader: # repo, commit, added/deleted, parent, grandparent
+            if row[3] not in parent_dic.keys():
+                parent_dic[row[3]] = 1
+            else:
+                parent_dic[row[3]] = parent_dic[row[3]] + 1 
+
+            if row[4] not in grandparent_dic.keys():
+                grandparent_dic[row[4]] = 1
+            else:
+                grandparent_dic[row[4]] = grandparent_dic[row[4]] + 1 
+
+
+    # set the feature's index
+    print(f'parent node number = {len(parent_dic)}')
+    print(f'grandparent node number = {len(grandparent_dic)}')
+
+    for i in sorted(parent_dic.items(), key=lambda x: x[1], reverse=True):
+        print(i)
+
+    for i in sorted(grandparent_dic.items(), key=lambda x: x[1], reverse=True):
+        print(i)
