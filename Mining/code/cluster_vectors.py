@@ -4,7 +4,7 @@ import sys
 import numpy as np
 import sklearn.cluster as clusters
 import matplotlib
-matplotlib.use("webagg")
+#matplotlib.use("webagg")
 import matplotlib.pyplot as plt
 import pandas as pd
 
@@ -95,7 +95,7 @@ if __name__ == '__main__':
     vecs = vecs.reshape(len(commit_hash), -1)
 
 
-    res = []
+    '''res = []
     for dis in range(2, 20):
         hac = clusters.AgglomerativeClustering(n_clusters=None, distance_threshold=dis)
         # 模型拟合
@@ -105,11 +105,27 @@ if __name__ == '__main__':
         # 异常点的个数
         outliners = np.sum(np.where(hac.labels_ == -1, 1,0))
         # 统计每个簇的样本个数
-        stats = str(pd.Series([i for i in hac.labels_ if i != -1]).value_counts().values)
+        stats = pd.Series([i for i in hac.labels_ if i != -1]).value_counts().values
+        stats_str = str(stats)
+        stats = list(stats)
+        stats.insert(0, outliners)
+        # 绘制柱状图
+        y = stats[:11]
+        plt.tick_params(axis='x', labelsize=8) 
+        plt.xticks(rotation=-15)
+        x = ["outliners", "cluster1", "cluster2", "cluster3", "cluster4", "cluster5", "cluster6", "cluster7", "cluster8", "cluster9", "cluster10"]
+        plt.bar(x, y)
 
-        res.append({'dis_thresh':dis,'n_clusters':n_clusters,'outliners':outliners,'stats':stats})
+        # 添加标题和标签
+        plt.title('')
+        plt.xlabel('clusters')
+        plt.ylabel('sum')
 
-        '''cluster_results = get_clusters(hac.labels_, commits)
+        # 保存图像为 png 文件
+        plt.savefig('images/dis_' + str(dis) + '.png')
+        res.append({'dis_thresh':dis,'n_clusters':n_clusters,'outliners':outliners,'stats':stats_str})'''
+
+    '''cluster_results = get_clusters(hac.labels_, commits)
         with open ("cluster_results/hac1.txt", 'a') as f:
             f.write("dis_thresh = " + str(dis) + ":\n")
             for i in sorted(cluster_results.items(), key=lambda x: len(x[1]), reverse=True):
@@ -117,19 +133,19 @@ if __name__ == '__main__':
                     f.write(str(repo_commit))
                     f.write("\n")
                 f.write("-----------------------------------------------------------------------------------------------------------\n")'''
-    # 将迭代后的结果存储到数据框中        
+    '''# 将迭代后的结果存储到数据框中        
     df = pd.DataFrame(res)
 
     # 根据条件筛选合理的参数组合
-    print(df)
+    print(df)'''
 
     # 构建空列表，用于保存不同参数组合下的结果
     # DB-SCAN
     res = []
     # 迭代不同的eps值
-    for eps in np.arange(1,30,1):
+    for eps in np.arange(1,11):
         # 迭代不同的min_samples值
-        for min_samples in range(1,3):
+        for min_samples in range(5,11):
             dbscan = clusters.DBSCAN(eps=eps, min_samples=min_samples, metric="manhattan")
             # 模型拟合
             dbscan.fit(vecs)
@@ -138,8 +154,27 @@ if __name__ == '__main__':
             # 异常点的个数
             outliners = np.sum(np.where(dbscan.labels_ == -1, 1,0))
             # 统计每个簇的样本个数
-            stats = str(pd.Series([i for i in dbscan.labels_ if i != -1]).value_counts().values)
-            res.append({'eps':eps,'min_samples':min_samples,'n_clusters':n_clusters,'outliners':outliners,'stats':stats})
+            stats = pd.Series([i for i in dbscan.labels_ if i != -1]).value_counts().values
+            stats_str = str(stats)
+            stats = list(stats)
+            stats.insert(0, outliners)
+            # 绘制柱状图
+            y = stats[:11]
+            plt.tick_params(axis='x', labelsize=8) 
+            plt.ylim(0, 1200)
+            plt.xticks(rotation=-15)
+            x = ["outliners", "cluster1", "cluster2", "cluster3", "cluster4", "cluster5", "cluster6", "cluster7", "cluster8", "cluster9", "cluster10"]
+            x = x[:len(stats)]
+            plt.bar(x, y)
+
+            # 添加标题和标签
+            plt.title('')
+            plt.xlabel('clusters')
+            plt.ylabel('sum')
+
+            # 保存图像为 png 文件
+            plt.savefig('images/eps_' + str(eps) + '_MinPts_' + str(min_samples) + '.png')
+            res.append({'eps':eps, 'min_samples': min_samples, 'n_clusters':n_clusters,'outliners':outliners,'stats':stats_str})
     # 将迭代后的结果存储到数据框中        
     df = pd.DataFrame(res)
 

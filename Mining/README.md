@@ -1,13 +1,3 @@
-### Lexing and Parsing
-
-- **rustc_lexer**
-  - source text $\rightarrow$ tokens
-- **rustc_parse**
-  - input : token stream (还无法进行parse) $(\rm rust\_parse::lexer)\rightarrow$ 可以被parse的token
-  - **StringReader**
-    - a set of validations
-    - string interning
-
 ## Coding
 
 ### code/get_commit_hash.py 爬取仓库的pull request，从而获取对应的commit hash
