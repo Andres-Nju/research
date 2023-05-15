@@ -119,7 +119,7 @@ match serde_json::from_reader(client) {
 
 运算优先级：先取field再解引用
 
-
+Transition_mut()是一个unsafe函数，将一个类型T1的&mut转为另一个类型T2的&mut，对这个&mut做解引用，若T2实现了Copy trait，那么就会按位拷贝一份；若没有实现Copy trait，则会报错。这边是实现了Copy trait，但是本意并不是用新的一份，而是旧的那份
 
 2、solana 2f5102587c
 
@@ -160,7 +160,7 @@ impl ReadableAccount for Account {
 
 Intermittent lifetime issue with compiler likely introduced with owner() refactoring.
 
-
+https://zhuanlan.zhihu.com/p/447710476?utm_id=0
 
 3、solana f2ee01ace3 （去掉了一个引用&，等于加上了一层解引用）
 
@@ -168,7 +168,7 @@ Intermittent lifetime issue with compiler likely introduced with owner() refacto
 -&entries,                                                                                                                       +entries,
 ```
 
-
+这是一个函数参数中的内容，形参就是不带引用的
 
 4、wezterm 81d5a92b66（先解引用后引用）
 
@@ -201,9 +201,13 @@ error: aborting due to previous error
 
 ```rust
 -pub type pthread_t = usize;                                                                                                     +pub type pthread_t = u32;
+
+libc::pthread_kill(self.thread.as_pthread_t(), libc::SIGUSR1);
 ```
 
 Fix the Solaris pthread_t raw type in std to match what's in libc
+
+有两个pthread_t（libc和std库），这里改的是std里的。在libc::pthread_kill()中第一个参数是libc::pthread_t，而as_pthread_t()方法是std的，返回一个RawPthread类型，RawPthread是 std::os::linux::raw::pthread_t类型，那么就要看libc的pthread_t和std的pthread_t都分别是什么类型的重名。libc::pthread_t是c_uint/u32，而std中的pthread_t原本是usize，所以需要将std中的pthread_t类型重名改为u32
 
 
 
@@ -217,7 +221,13 @@ fix the build on non-x86 architectures
 
 where `c_char` is an `u8` instead of an `i8`
 
+Rust中的c_char相当于C语言中的char，而Rust的char不同于C中的char，Rust中的char是unicode scalar value，而C的char本质上就是一个整型数。所以Rust中的c_char是整型数的别名，在不同的架构中c_char相当于u8或i8。
 
+在有些体系架构下，char是unsigned的，比如aarch64，所以设置为i8会出现问题。
+
+
+
+**portability**https://github.com/rust-lang/rust/issues/79089
 
 3、nushell 2fe14a7a5a
 
@@ -227,9 +237,15 @@ where `c_char` is an `u8` instead of an `i8`
 
 fix timestamp parsing on 32-bit platforms
 
+https://github.com/nushell/nushell/issues/5191
+
+32位设备上usize是u32，但是时间戳输入的会爆u32，要用64位存时间戳
+
+
+
 ##### 类型转换的改动
 
-1、alacritty 02953c2812
+1、**alacritty 02953c2812**
 
 ```rust
 -libc::ioctl(fd, TIOCSCTTY as u64, 0)                                                                                           +libc::ioctl(fd, TIOCSCTTY as _, 0)
@@ -251,9 +267,16 @@ Type inference regression推断类型回归，给编译器自己推断类型
 -fn to_fixedpoint_16_6(f: f64) -> i64 {                                                                                         +fn to_fixedpoint_16_6(f: f64) -> c_long {
 
 -(f * 65536.0) as i64                                                                                                           +(f * 65536.0) as c_long
+    let xx = to_fixedpoint_16_6(matrix.xx);
+    let xy = to_fixedpoint_16_6(matrix.xy);
+    let yx = to_fixedpoint_16_6(matrix.yx);
+    let yy = to_fixedpoint_16_6(matrix.yy);
+    Matrix { xx, xy, yx, yy }
 ```
 
 Fix compilation on 32bit targets
+
+用到这个方法的是freetype-rs::Matrix，其中的元素类型是libc::c_long，而不是i64，c_long在不同的架构上可能代表i32也可能代表i64
 
 
 
@@ -261,9 +284,11 @@ Fix compilation on 32bit targets
 
 ```rust
 -let mut nonblocking = nonblocking as libc::c_ulong;                                                                             +let mut nonblocking = nonblocking as libc::c_int;
+
+cvt(unsafe { libc::ioctl(*self.as_inner(), libc::FIONBIO, &mut nonblocking) }).map(|_| ())
 ```
 
-一个函数需要一个int型的指针，这里的nonblocking原本作为c_ulong的指针传入，在all 32-bit platforms and on all litte-endian platforms都没事，但会break on big-endian 64-bit platforms.
+一个函数需要一个指向int的指针（且该值只可能为0或1），这里的nonblocking原本作为c_ulong的指针传入，在all 32-bit platforms and on all litte-endian platforms都没事，但会break on big-endian 64-bit platforms.
 
 
 
@@ -279,9 +304,9 @@ libc::lseek源码：
 pub fn lseek(fd: ::c_int, offset: off_t, whence: ::c_int) -> off_t;
 ```
 
-Fixed lseek error in Windows
+Fixed lseek error in Windows todo
 
-后面ret要作为参数传给别的函数，所以应该需要是直接转为i64
+result_ptr是&Cell\<i64\>，调用.set()方法的参数要是i64的
 
 #### 3、内存安全相关
 
