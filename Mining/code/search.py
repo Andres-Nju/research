@@ -106,23 +106,24 @@ if __name__ == '__main__':
                 deleted_lines: number of lines removed
                 '''
                 print(message)
-
+                counter = 0
                 for modified_file in commit.modified_files:
                     # changed_methods && methods_before
                     if '.rs' in modified_file.filename and (modified_file.change_type == ModificationType.RENAME or modified_file.change_type == ModificationType.MODIFY):
-                        file_dir = commit_dir + '/' + modified_file.filename.split('.')[0].strip()
+                        file_dir = commit_dir + '/' + modified_file.filename.split('.')[0].strip() + '_' + str(counter)
                         if os.path.exists(file_dir):
                             continue
                         os.mkdir(file_dir)
 
                         # 获取改动前的file源代码
-                        with open(file_dir + '/' + modified_file.filename.split('.')[0].strip() + '_before.rs', 'w') as m1:
+                        with open(file_dir + '/' + modified_file.filename.split('.')[0].strip()  + '_before.rs', 'w') as m1:
                             m1.write(modified_file.content_before.decode())
                         # 获取改动后的file源代码
                         with open(file_dir + '/' + modified_file.filename.split('.')[0].strip() + '_after.rs', 'w') as m2:
                             m2.write(modified_file.content.decode())
 
                         cnt = cnt + 1
+                        counter = counter + 1
                         with open(file_dir + "/commit_message.txt", 'a') as method_file:
                             method_file.write(message)
                         continue
@@ -148,7 +149,7 @@ if __name__ == '__main__':
                             with open(file_dir + "/commit_message.txt", 'a') as method_file:
                                 method_file.write(message)
                             cnt = cnt + 1
-            print(cnt)
+            #print(cnt)
 
 
 

@@ -114,6 +114,8 @@ fn main () {
     如果在第五行后面再使用一次vptr，即lifetime 'b超出了'a的范围，那么就出现之前例子中一样的错误
 
   - **shared references**：不可变引用
+  
+  - **raw pointer**：裸指针
 
 
 
@@ -162,3 +164,91 @@ fn main () {
 
 
 #### 2、Make the model more operational
+
+ ${\rm Pointer}(l,t)$代表指向内存地址$l$，标签为$t$的指针（raw pointer或reference都可以），每个指针都有一个unique的标签ID，记为$t$
+
+${\rm Unique}(t)$代表stack中的一个$item$，对应标签为$t$的指针
+
+$Scalar$：primitive values（整数、指针）
+
+$Memory$：$Location$，由$Scalar$和同名指针的$Stack$构成 
+
+![](ref/5.png)
+
+##### Rule(USE-1)
+
+当一个${\rm Pointer}(l,t)$被使用时，在stack中必须找到一个${\rm Unique}(t)$，如果当前栈顶并不是它，不停pop直到栈顶的元素为${\rm Unique}(t)$；如果没找到，那么程序就是有未定义行为
+
+##### Rule(NEW-MUTABLE-REF)
+
+每当通过某个现有的指针${\rm Pointer}(l,t)$创建一个新的可变引用时(&mut T)，首先要考虑该指针被使用了，根据Rule(USE-1)进行处理。随后为该引用创建一个unique的标签$t^{'}$，并新建一个指针${\rm Pointer}(l,t^{'})$，再将${\rm Unique}(t)$ push进stack 
+
+
+
+![](ref/7.png)
+
+
+
+#### 3、考虑raw pointers
+
+和borrow checker不会对raw pointer做检查一样，stacked borrow模型也不会对互为别名的裸指针进行区分，即每个裸指针的标签都是$untagged$，即使用$\perp$表示。
+
+
+
+对于前面的例子，若x和y都是裸指针，那么xyxy这个使用序列就变得合法了。但是，如果**其中任意一个是可变引用**时， 我们希望这xyxy的序列会违背stack principle。这样就在后续的优化中，可以保证这样的序列中不会出现可变引用。
+
+为了能够把裸指针添加进borrow stack，添加了另一种模型来代表stack中的item：$\rm SharedRW$（shared read-write），来表示这块内存被share给了所有的裸指针来进行读和写。
+
+![](ref/6.png)
+
+##### Rule(USE-2)
+
+当一个${\rm Pointer}(l,t)$被使用时，如果$t$是$\perp$，在stack中必须找到一个$\rm SharedRW$；如果不是$\perp$，在stack中必须找到一个${\rm Unique}(t)$。如果当前栈顶并不是它，不停pop直到栈顶的元素是想要的；如果没找到，那么程序就是有未定义行为
+
+##### Rule(NEW-MUTABLE-REF)
+
+每当通过一个可变引用(&mut T)创建一个新的裸指针时，该可变引用的值为${\rm Pointer}(l,t)$，首先要考虑该可变引用被使用了，根据Rule(USE-2)进行处理。随后为该裸指针新建一个指针${\rm Pointer}(l,\perp)$，再将$\rm SharedRW$ push进stack 
+
+![](ref/8.png) 
+
+
+
+#### 4、再进一步：retag
+
+上面的例子还有个问题：当给example1传如的两个指针都有相同的标签时（unsafe代码里可以随便copy数据，所以能够搞出两个相同标签的可变引用），就无法分辨了。所以对于example1中的两个参数，我们需要他俩有不同的标签，并且都是unique的。——unsafe代码可以复制标签，但是没法伪造一个出来。
+
+所以，添加一个$retag$指令，用于保证一个引用有一个全新的标签，这条指令将应用于函数开始执行时，对所有的引用类型参数进行retag
+
+![](ref/9.png)
+
+其实retag的功能就是做了个reborrow
+
+todo：上述代码的推导过程
+
+甚至不需要考虑x和y是否互为别名！
+
+只需要看用到了x的地方
+
+![](ref/10.png)
+
+
+
+那么x就变成了一个unique pointer！换句话说，没有使用x的代码是绝对不可能影响到x指向的内存的。
+
+这样，从外面传入了一个指针x，这个x就从外面“消失”了，只是当前作用域内的一个unique pointer，并且在代码中调用别的方法时，只要不把x作为该方法的参数传入，我们就可以认为 这个外部方法是一定不会对x造成影响的。
+
+
+
+那么，到底什么时候需要进行retag？
+
+- any time a reference gets passed in as an argument
+- returned from a function
+- read from a pointer
+
+简单来说，当一个引用进入我们目前正在分析的作用域时，就要进行一个retag
+
+![](ref/11.png)
+
+
+
+#### 再加上不可变引用shared references

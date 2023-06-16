@@ -1,3 +1,5 @@
+[TOC]
+
 #### 1、变量可变性改动
 
 ##### 方法参数声明中的可变性
@@ -18,6 +20,22 @@ tap_mut用于在数据处理的管道中能够修改对应的值（可变）
 
 所以对于tap，其参数self应该是不可变的，tap_mut的self参数是可变的
 
+> 有静态提示且无法编译，应该归为版本相关：在https://github.com/rust-lang/rust/issues/35203之后，编译器不再允许函数声明中出现pattern
+>
+> ```error: patterns aren't allowed in functions without bodies
+> error: patterns aren't allowed in functions without bodies
+> --> src/main.rs:2:34
+> |
+> 2 |     fn tap<F: FnOnce(&mut Self)>(mut self, callback: F) -> Self;
+> |                                  ^^^^^^^^ help: remove `mut` from the parameter: `self`
+> |
+> = warning: this was previously accepted by the compiler but is being phased out; it will become a hard error in a future release!
+> = note: for more information, see issue #35203 <https://github.com/rust-lang/rust/issues/35203>
+> = note: `#[deny(patterns_in_fns_without_body)]` on by default
+> ```
+
+
+
 2、rust 80f7db63b6    对vector，获取其可变切片，显然需要其本身是可变的
 
 ```rust
@@ -27,6 +45,28 @@ tap_mut用于在数据处理的管道中能够修改对应的值（可变）
 参数声明中添加一个mut
 
 This was intended to require `&mut self`, not `&self`, otherwise it's unsound!
+
+> 有静态提示（clippy）但是能编译：在https://rust-lang.github.io/rust-clippy/master/index.html#mut_from_ref提到，这可能允许从一个变量的不可变引用生成多个可变引用，是unsound的
+>
+> 这个bug是从错误https://github.com/rust-lang/rust/issues/39465中发现的，修复后导致Rust版本从1.15.0升级至1.15.1
+>
+> ```error: mutable borrow from immutable input(s)
+> error: mutable borrow from immutable input(s)
+> --> src/main.rs:59:35
+> |
+> 59 |     pub fn as_mut_slice(&self) -> &mut [T] {
+> |                                   ^^^^^^^^
+> |
+> note: immutable borrow here
+> --> src/main.rs:59:25
+> |
+> 59 |     pub fn as_mut_slice(&self) -> &mut [T] {
+> |                         ^^^^^
+> = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#mut_from_ref
+> = note: `#[deny(clippy::mut_from_ref)]` on by default
+> ```
+
+
 
 3、solana edf5bc242c
 
@@ -45,7 +85,7 @@ This was intended to require `&mut self`, not `&self`, otherwise it's unsound!
 
 需要用到self.data.borrow_mut()，其中self.data是RefCell的形式，所以self本身并不需要是可变的
 
-
+而且如果设置为&mut self的话，无法对不可变的实例调用该方法，因为需要&mut，只能对可变实例调用
 
 4、rust c3d6ee9e7b
 
@@ -68,6 +108,12 @@ This was intended to require `&mut self`, not `&self`, otherwise it's unsound!
 
 参数声明中删除mut，下文中不需要修改参数的值
 
+**没有静态提示**
+
+
+
+
+
 ##### 获取变量的引用方法的改动
 
 1、rust 46a683111d 
@@ -77,6 +123,8 @@ This was intended to require `&mut self`, not `&self`, otherwise it's unsound!
 ```
 
 将pointer::as_mut()获取可变引用改为使用pointer::as_ref()获取不可变引用，因为前面已经有一个不可变引用了，违背了stacked borrow原则
+
+
 
 ##### 删去变量unused mut
 
@@ -107,11 +155,13 @@ match serde_json::from_reader(client) {
 
  
 
-#### 2、类型改动
+#### 2、指针与类型改动
 
 ##### 删除解引用符*
 
-1、gfx a999cb37a7
+
+
+**1、gfx a999cb37a7**
 
 ```rust
 -let mut transition = *bar.u.Transition_mut();                                                                                   +let mut transition = bar.u.Transition_mut();
@@ -119,7 +169,9 @@ match serde_json::from_reader(client) {
 
 运算优先级：先取field再解引用
 
-Transition_mut()是一个unsafe函数，将一个类型T1的&mut转为另一个类型T2的&mut，对这个&mut做解引用，若T2实现了Copy trait，那么就会按位拷贝一份；若没有实现Copy trait，则会报错。这边是实现了Copy trait，但是本意并不是用新的一份，而是旧的那份
+Transition_mut()是一个unsafe函数，将一个类型T1的&mut转为另一个类型T2的&mut，对这个&mut做解引用以进行赋值，若T2实现了Copy trait，那么就会按位拷贝一份；若没有实现Copy trait，则会报错。这边是实现了Copy trait，但是本意并不是用新的一份，而是旧的那份
+
+
 
 2、solana 2f5102587c
 
@@ -162,6 +214,8 @@ Intermittent lifetime issue with compiler likely introduced with owner() refacto
 
 https://zhuanlan.zhihu.com/p/447710476?utm_id=0
 
+
+
 3、solana f2ee01ace3 （去掉了一个引用&，等于加上了一层解引用）
 
 ```rust
@@ -169,6 +223,8 @@ https://zhuanlan.zhihu.com/p/447710476?utm_id=0
 ```
 
 这是一个函数参数中的内容，形参就是不带引用的
+
+
 
 4、wezterm 81d5a92b66（先解引用后引用）
 
@@ -195,7 +251,7 @@ error: aborting due to previous error
 
 
 
-##### 类型定义的改动
+##### 类型别名/声明的改动
 
 1、rust bdb53e55b0
 
@@ -215,6 +271,8 @@ Fix the Solaris pthread_t raw type in std to match what's in libc
 
 ```rust
 -message: *const i8,                                                                                                             +message: *const c_char,
+
+let message = CStr::from_ptr(message);
 ```
 
 fix the build on non-x86 architectures
@@ -225,9 +283,11 @@ Rust中的c_char相当于C语言中的char，而Rust的char不同于C中的char�
 
 在有些体系架构下，char是unsigned的，比如aarch64，所以设置为i8会出现问题。
 
-
+后面的CStr::from_ptr接受的也是\*const c_char而不是\*const i8
 
 **portability**https://github.com/rust-lang/rust/issues/79089
+
+
 
 3、nushell 2fe14a7a5a
 
@@ -245,7 +305,7 @@ https://github.com/nushell/nushell/issues/5191
 
 ##### 类型转换的改动
 
-1、**alacritty 02953c2812**
+1、alacritty 02953c2812
 
 ```rust
 -libc::ioctl(fd, TIOCSCTTY as u64, 0)                                                                                           +libc::ioctl(fd, TIOCSCTTY as _, 0)
@@ -304,13 +364,17 @@ libc::lseek源码：
 pub fn lseek(fd: ::c_int, offset: off_t, whence: ::c_int) -> off_t;
 ```
 
-Fixed lseek error in Windows todo
+Fixed lseek error in Windows 
+
+todo
 
 result_ptr是&Cell\<i64\>，调用.set()方法的参数要是i64的
 
+
+
 #### 3、内存安全相关
 
-1、rust 928efca151 通过修改 `get_mut` 为 `as_mut_ptr` 来避免未定义行为
+**1、rust 928efca151 通过修改 `get_mut` 为 `as_mut_ptr` 来避免未定义行为**
 
 获取可变引用改为获取裸指针
 
@@ -328,7 +392,7 @@ let mut report = MaybeUninit::uninitialized();
 
 
 
-2、rust 763392cb8c 添加手动释放内存解决原生指针内存泄漏问题
+**2、rust 763392cb8c 添加手动释放内存解决原生指针内存泄漏问题**
 
 ```rust
 +drop(Box::from_raw(p));
@@ -336,7 +400,7 @@ let mut report = MaybeUninit::uninitialized();
 
 
 
-3、rust 8341f6451b
+**3、rust 8341f6451b**
 
 ```rust
 -unsafe { *(0 as *mut isize) = 0; }                                                                                             +unsafe { *(1 as *mut isize) = 0; }
@@ -411,7 +475,7 @@ Fix deprecated trait object without an explicit dyn warning (#17231)
 
 #### 5、无锁编程中的Memory ordering
 
-1、solana 04d23a1597
+**1、solana 04d23a1597**
 
 ```rust
 -self.current_len.store(0, Ordering::Relaxed);                                                                                   +self.current_len.store(0, Ordering::Release);
@@ -425,7 +489,7 @@ Fix deprecated trait object without an explicit dyn warning (#17231)
 
 
 
-2、solana 38cd29810f
+**2、solana 38cd29810f**
 
 ```rust
 -self.ref_count.load(Ordering::Relaxed)                                                                                         +self.ref_count.load(Ordering::Acquire)
@@ -437,7 +501,7 @@ Fix deprecated trait object without an explicit dyn warning (#17231)
 
 
 
-3、solana ddd0ed0af1
+**3、solana ddd0ed0af1**
 
 ```rust
 -self.last_age_flushed.store(age, Ordering::Relaxed);                                                                           +self.last_age_flushed.store(age, Ordering::Release);
@@ -448,10 +512,19 @@ Fix deprecated trait object without an explicit dyn warning (#17231)
 
 
 
-4、rust af047d9c10
+**4、rust af047d9c10**
 
 ```rust
 +cur = this.inner().weak.load(Relaxed);
 ```
 
 Fix infinite loop in Arc::downgrade
+
+
+
+聚类指标
+
+node type频率
+
+**具体有哪些pattern**、pattern中和Rust特性相关的、lessons learned
+
