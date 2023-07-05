@@ -1,0 +1,2 @@
+Fix span of await token in for/for-in/for-of stmts. (#551)
+

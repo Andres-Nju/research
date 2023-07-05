@@ -1,0 +1,2 @@
+persist: fix handling of empty batches in compaction (#15105)
+

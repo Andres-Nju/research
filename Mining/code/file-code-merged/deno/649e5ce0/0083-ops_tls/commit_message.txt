@@ -1,0 +1,4 @@
+fix: finish TLS handshake before shutting down (#14547)
+
+This commit ensures that the TLS handshake completes before
+attempting to close the connection.

@@ -1,0 +1,1 @@
+core: Fix bitmapdata.floodFill() replacing X with X + test. Fixes #10642

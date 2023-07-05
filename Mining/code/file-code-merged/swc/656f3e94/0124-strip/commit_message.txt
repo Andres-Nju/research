@@ -1,0 +1,4 @@
+fix(swc): Fix `swc` as a crate (#2376)
+
+swc_ecma_transforms_typescript:
+ - Don't drop imports from `react`.

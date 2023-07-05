@@ -1,0 +1,8 @@
+adapter: drop linked cluster if sink fails to create
+
+If a sink fails to create in the external system (e.g., because the
+Kafka broker rejects the topic configuration), we need to remove both
+the sink *and* the linked cluster associated with the sink. Teach the
+sink cleanup code path to handle this.
+
+Fix #17061.

@@ -1,0 +1,2 @@
+fix: join array items correctly (#2720)
+

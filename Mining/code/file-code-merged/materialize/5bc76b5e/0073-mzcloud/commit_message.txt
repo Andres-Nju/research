@@ -1,0 +1,3 @@
+Merge pull request #9927 from MaterializeInc/fix_passing_extra_args_to_mzcloud_cli
+
+fix passing materialized extra args in mzcloud-cli

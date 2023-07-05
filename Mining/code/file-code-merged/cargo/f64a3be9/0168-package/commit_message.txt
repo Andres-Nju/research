@@ -1,0 +1,14 @@
+Fix download summary overlapping progress.
+
+The following two lines:
+
+```
+ Downloading 0 crates, extracting cargo-modules ...
+  Downloaded 1 crates (541.8 KB) in 1.64s
+```
+
+Were being combined resulting in:
+
+```
+  Downloaded 1 crates (541.8 KB) in 1.64sodules ...
+```

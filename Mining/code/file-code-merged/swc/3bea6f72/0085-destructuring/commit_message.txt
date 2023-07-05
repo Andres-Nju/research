@@ -1,0 +1,2 @@
+fix(es/compat): Fix destructuring of an empty array (#6314)
+

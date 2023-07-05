@@ -1,0 +1,9 @@
+resolved_ts: fix shutdown panic (#12244) (#12245)
+
+close tikv/tikv#12231, ref tikv/tikv#12244
+
+resolved_ts: fix shutdown panic
+
+Signed-off-by: ti-srebot <ti-srebot@pingcap.com>
+
+Co-authored-by: NingLin-P <linningde25@gmail.com>

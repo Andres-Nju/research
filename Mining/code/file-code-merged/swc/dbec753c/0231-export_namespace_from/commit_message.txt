@@ -1,0 +1,7 @@
+fix(swc): Fix bugs (#1591)
+
+swc_ecma_parser:
+ - Support optional async class methods. (#1454)
+
+swc_ecma_transforms_compat:
+ - Hoist import statements. (#1457)

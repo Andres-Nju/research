@@ -1,0 +1,3 @@
+net: fix function name in UdpSocket recv documentation (#5150)
+
+In the "cancellation safety" section of the UdpSocket recv function, "recv_from" is referenced when it should be "recv"

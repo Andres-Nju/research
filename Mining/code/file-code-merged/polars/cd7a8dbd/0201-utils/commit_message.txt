@@ -1,0 +1,2 @@
+fix(rust): Fix a bug in floating regex handling used in CSV type inference (#5695)
+

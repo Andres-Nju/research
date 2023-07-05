@@ -1,0 +1,5 @@
+Fix open on multiline selection (#2161)
+
+Select multiple line and open should be based on the whole selection
+and not just the line of the cursor, which causes weird behavior like
+opening in the middle of the selection which user might not expect.

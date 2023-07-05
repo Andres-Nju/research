@@ -1,0 +1,2 @@
+use default context for col upstream col expression type (#4219)
+

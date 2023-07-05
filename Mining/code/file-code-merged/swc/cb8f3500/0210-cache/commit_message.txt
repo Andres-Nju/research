@@ -1,0 +1,2 @@
+fix(es/plugin): Fix plugin on non `x86_64` (#6178)
+

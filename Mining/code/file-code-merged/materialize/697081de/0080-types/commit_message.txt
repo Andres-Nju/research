@@ -1,0 +1,16 @@
+dataflow-types: make `metadata_columns` and `metadata_column_types` agree
+
+These two functions are tightly coupled and need to make the same
+decision about which metadata columns exist given the same input.  Prior
+to this commit, `metadata_columns` would elide Kafka's default metadata
+if an offset was explicitly specified, but `metadata_column_types` would
+not. This disparity caused #12005.
+
+`metadata_columns` was making the right decision here (i.e., the ones
+that our tests expect), so change `metadata_column_types` to match.
+
+On a meta level, the way this code is structured is a recipe for bugs of
+this form. I'm sure there are more lurking. We need to get on #11957
+ASAP.
+
+Fix #12005.

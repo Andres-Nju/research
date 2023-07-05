@@ -1,0 +1,7 @@
+Add simple Windows CI workflow check (#2663)
+
+* Add simple Windows CI workflow check
+
+* Fix Windows build in CI
+
+* Windows fix

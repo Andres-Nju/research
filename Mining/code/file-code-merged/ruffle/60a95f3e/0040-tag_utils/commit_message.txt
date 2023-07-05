@@ -1,0 +1,1 @@
+core: Gracefully handle tag length past EOF

@@ -1,0 +1,5 @@
+Support UTF-8 character in tab name and pane name (#2102)
+
+* Support UTF-8 character in tab name and pane name
+
+* Support UTF-8 character in tab name and pane name

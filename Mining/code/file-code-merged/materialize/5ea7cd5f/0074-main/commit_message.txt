@@ -1,0 +1,3 @@
+peeker: Fix --run-duration handling (#5625)
+
+0 is supposed to mean "run infinitely", but it actually meant "exit immediately".

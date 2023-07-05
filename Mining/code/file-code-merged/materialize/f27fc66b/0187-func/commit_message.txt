@@ -1,0 +1,3 @@
+Merge pull request #7231 from sploiselle/apd-munge-more
+
+sql/apd: avoid -0 when rescaling values

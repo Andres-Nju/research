@@ -1,0 +1,3 @@
+Fix warning in a future compiler version.
+
+(Do not upgrade yet because of https://github.com/rust-lang/rust/issues/42101)

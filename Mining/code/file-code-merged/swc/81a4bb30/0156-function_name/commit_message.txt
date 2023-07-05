@@ -1,0 +1,5 @@
+fix(es/compat): Fix span hygiene of function naming pass (#6345)
+
+**Related issue:**
+
+ - Closes https://github.com/swc-project/swc/issues/6344.

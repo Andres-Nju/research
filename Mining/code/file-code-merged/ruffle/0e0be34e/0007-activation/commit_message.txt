@@ -1,0 +1,1 @@
+avm1: Fix compile error when using avm_debug flag

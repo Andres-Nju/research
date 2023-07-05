@@ -1,0 +1,4 @@
+fix(cli): add hygiene pass to transpile pipeline (#8586)
+
+
+Co-authored-by: Bartek Iwańczuk <biwanczuk@gmail.com>

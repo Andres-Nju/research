@@ -1,0 +1,5 @@
+fix(common): Don't use `None` as source while generating source maps (#4007)
+
+**Description:**
+
+I used https://pastcompute.github.io/ScriptMapper/ to dump source map, and found that line/column becomes null if file is `None`. Seems like the rust crate `sourcemap` is mature enough to handle sourcemaps with those entries, but many other sourcemap libraries, including the one used by `@swc/cli` expects non-null value for the line and the column.

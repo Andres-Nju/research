@@ -1,0 +1,2 @@
+fix(compatibility): don't crash on invalid state when padding line (#1285)
+

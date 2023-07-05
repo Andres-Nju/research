@@ -1,0 +1,16 @@
+fix: terminal freezing on `shell_insert_output`
+
+This bug occurs on `shell_insert_output` and `shell_append_output`
+commands.
+
+The previous implementation would create a child process using the Rust
+stdlib's `Command` builder. However, when nothing should be piped in
+from the editor, the default value for `stdin` would be used. According
+to the Rust stdlib documentation that is `Stdio::inherit` which will
+make the child process inherit the parent process' stdin. This would
+cause the terminal to freeze.
+
+This change will set the child process' stdin to `Stdio::null` whenever
+it doesn't pipe it. In the `if` statement where this change was made
+there was an extra condition for windows that I am not sure if would
+require some special treatment.

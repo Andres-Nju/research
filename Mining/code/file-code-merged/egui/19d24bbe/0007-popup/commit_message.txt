@@ -1,0 +1,3 @@
+Don't clip popups to the parent cliprect (#885)
+
+Closes https://github.com/emilk/egui/issues/825

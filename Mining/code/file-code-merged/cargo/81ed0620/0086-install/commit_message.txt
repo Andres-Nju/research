@@ -1,0 +1,8 @@
+Assert that Dependency::name is never empty, prevent 'install ""' from crashing
+
+An explicit `cargo install ""` would cause clap to pass an empty crate-name,
+leading to a panic(). We now assert() that Dependency::name is never the
+empty string and prevent the situation in the first place by not allowing
+the crate-name to be empty for `install`.
+
+Fixes #5229

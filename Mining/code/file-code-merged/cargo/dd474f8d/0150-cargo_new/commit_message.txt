@@ -1,0 +1,5 @@
+Auto merge of #9796 - hi-rustin:rustin-patch-clippy, r=ehuss
+
+Make library created with `cargo new` clippy happy
+
+close https://github.com/rust-lang/cargo/issues/9759

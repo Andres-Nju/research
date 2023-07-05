@@ -1,0 +1,7 @@
+raftstore-v2: not update modification index for delete range (#14905)
+
+close tikv/tikv#14904
+
+not update modification index for delete range
+
+Signed-off-by: Spade A <u6748471@anu.edu.au>

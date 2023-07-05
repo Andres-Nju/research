@@ -1,0 +1,2 @@
+fix bug causing results buffer to be sorted repeatedly (#10890)
+

@@ -1,0 +1,2 @@
+Fix selection remove doc comment (#1122)
+

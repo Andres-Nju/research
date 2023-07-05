@@ -1,0 +1,3 @@
+Fix incorrect last modified behavior (#1621)
+
+Looks like it checked the wrong doc id when setting last modified doc.

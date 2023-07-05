@@ -1,0 +1,5 @@
+Fix calculation of base styles to drop animation rules
+
+It seems that changeset 97ce9ed5b08f7b1c7c6cd71a9499068b8bd2ae4e
+mistakenly changed the check that a cascade level to keep is *not* an
+animation level to a check that it *is* an animation level.

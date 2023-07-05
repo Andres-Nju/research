@@ -1,0 +1,2 @@
+fix(fmt): unexpected error exit code without --check (#2182)
+

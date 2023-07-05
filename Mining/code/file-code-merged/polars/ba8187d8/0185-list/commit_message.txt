@@ -1,0 +1,2 @@
+fix(python): don't underflow on list.tail (#9089)
+

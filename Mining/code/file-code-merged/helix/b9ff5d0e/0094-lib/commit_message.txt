@@ -1,0 +1,7 @@
+[lsp-restart]: call the force_shutdown method for the old_client (#3972)
+
+* [lsp-restart]: call the shutdown_and_exit method for the old_client
+
+* change shutdown_and_exit to force_shutdown
+
+* remove extra log

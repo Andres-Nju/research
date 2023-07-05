@@ -1,0 +1,4 @@
+fix(swc): Fix `try_with_handler` (#2315)
+
+swc:
+ - `try_with_handler`: Return `Err` on errors.

@@ -1,0 +1,2 @@
+fix(es/fixer): Preserve parens for optional chaining expressions (#5388)
+

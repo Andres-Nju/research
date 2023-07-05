@@ -1,0 +1,5 @@
+Auto merge of #10701 - danilhendrasr:master, r=weihanglo
+
+Emit warning upon encountering multiple packages with the same name
+
+Fixes: #10669

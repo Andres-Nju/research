@@ -1,0 +1,5 @@
+Auto merge of #26126 - dralley:fix-motionmark, r=jdm
+
+Fix misspelled "get_suported_extensions" function
+
+closes #21122

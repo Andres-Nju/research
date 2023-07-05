@@ -1,0 +1,2 @@
+fix(es/codegen): Fix codegen of TypeScript mapped types (#6621)
+

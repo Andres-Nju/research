@@ -1,0 +1,1 @@
+Made http_redirect_fetch error for non-HTTPS. #14069

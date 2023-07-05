@@ -1,0 +1,2 @@
+Fix typo "the close" -> "this close" in style.rs (#887)
+

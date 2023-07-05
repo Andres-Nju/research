@@ -1,0 +1,2 @@
+Fix screen reset not clearing cell flags
+

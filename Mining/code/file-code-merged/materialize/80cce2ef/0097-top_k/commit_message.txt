@@ -1,0 +1,3 @@
+Merge pull request #18635 from tokenrove/julian/#18608-do-not-swallow-errors
+
+Fix #18608: Do not swallow errors before basic TopK

@@ -1,0 +1,2 @@
+fix(python): correct sign-reversed scale on DecimalChunked to Python Decimal conversion (fixes #8423) (#8508)
+

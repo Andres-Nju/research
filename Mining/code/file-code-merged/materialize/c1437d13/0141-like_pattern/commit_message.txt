@@ -1,0 +1,3 @@
+Merge pull request #12210 from wangandi/fix_like_pattern_test
+
+Fix intermittent test failure caused by UnterminatedLikeEscapeSequence.

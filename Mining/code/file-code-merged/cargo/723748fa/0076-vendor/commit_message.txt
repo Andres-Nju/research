@@ -1,0 +1,1 @@
+vendor: support alt registries

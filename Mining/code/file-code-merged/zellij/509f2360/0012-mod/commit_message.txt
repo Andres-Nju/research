@@ -1,0 +1,2 @@
+fix(tab): do not crash when only floating panes are left (#1266)
+

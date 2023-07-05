@@ -1,0 +1,2 @@
+fix(sql): allow proper aliasing when joining (#9572)
+

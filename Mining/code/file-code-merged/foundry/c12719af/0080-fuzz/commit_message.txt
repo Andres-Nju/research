@@ -1,0 +1,2 @@
+fix(fuzz): reset state to pre-test state (#737)
+

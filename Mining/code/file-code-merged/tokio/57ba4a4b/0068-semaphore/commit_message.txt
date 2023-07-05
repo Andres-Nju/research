@@ -1,0 +1,2 @@
+sync: fix typo in `Semaphore::MAX_PERMITS` (#5645)
+

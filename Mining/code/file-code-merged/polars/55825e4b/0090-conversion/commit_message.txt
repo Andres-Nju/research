@@ -1,0 +1,2 @@
+fix(python): add special numpy float branch in anyvalue conversion (#8259)
+

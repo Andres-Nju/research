@@ -1,0 +1,5 @@
+Backup: Do not fill cache when backup rawkv (#13022)
+
+close tikv/tikv#13020
+
+Signed-off-by: haojinming <jinming.hao@pingcap.com>

@@ -1,0 +1,2 @@
+Picker: Don't panick at move_up/move_down when matches is empty (#818)
+

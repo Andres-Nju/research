@@ -1,0 +1,11 @@
+Fix `delete_char_backward` for paired characters (#4558)
+
+When backward-deleting a character, if this character and the following
+character form a Pair, we want to delete both. However, there is a bug
+that deletes both characters also if both characters are closers of some
+Pair.
+
+This commit fixes that by adding an additional check that the deleted
+character should be an opener in a Pair.
+
+Closes https://github.com/helix-editor/helix/issues/4544.

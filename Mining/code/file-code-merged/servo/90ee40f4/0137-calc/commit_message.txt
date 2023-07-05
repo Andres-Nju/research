@@ -1,0 +1,1 @@
+style: Fix ex computation with more than one operand.

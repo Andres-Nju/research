@@ -1,0 +1,20 @@
+Auto merge of #26641 - dylni:fix-undefined-behavior, r=SimonSapin
+
+Fix undefined behavior in `energymon::init`
+
+<!-- Please describe your changes on the following line: -->
+The layout of [`Box`](https://doc.rust-lang.org/std/boxed/struct.Box.html) is implicitly [`#[repr(Rust)]`](https://doc.rust-lang.org/nomicon/repr-rust.html), so it is undefined behavior to transmute it to another type. [`Box::into_raw`](https://doc.rust-lang.org/std/boxed/struct.Box.html#method.into_raw) can safely convert it to a pointer.
+
+I did not run the test suite locally. I thought it would be better to let CI run than to set up the development environment for such a simple change. I did test that the file works individually with this change.
+
+---
+<!-- Thank you for contributing to Servo! Please replace each `[ ]` by `[X]` when the step is complete, and replace `___` with appropriate data: -->
+- [ ] `./mach build -d` does not report any errors
+- [ ] `./mach test-tidy` does not report any errors
+
+<!-- Either: -->
+- [X] These changes do not require tests because the undefined behavior is not visible
+
+<!-- Also, please make sure that "Allow edits from maintainers" checkbox is checked, so that we can help you if you get stuck somewhere along the way.-->
+
+<!-- Pull requests that do not address these steps are welcome, but they will require additional verification as part of the review process. -->

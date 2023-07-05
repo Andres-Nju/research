@@ -1,0 +1,3 @@
+docs: fix typo in `#[tokio::test]` docs (#5636)
+
+Both current- and multi-thread runtime claimed to be the default, but only current thread actually is.

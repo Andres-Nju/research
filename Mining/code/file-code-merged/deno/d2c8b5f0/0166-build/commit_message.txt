@@ -1,0 +1,27 @@
+fix(build) fix linux symbols export list format (#16313)
+
+Fixes the error reported in #16304.
+
+> = note:
+/usr/bin/ld:/home/abotella/Projects/deno/cli/generated_symbol_exports_list_linux.def:1:
+syntax error in dynamic list
+          collect2: error: ld returned 1 exit status
+
+This was caused by the format of the symbols list on Linux being
+malformed (as the error implies).
+The format is documented in ld's
+[VERSION](https://sourceware.org/binutils/docs/ld/VERSION.html) as well
+as:
+
+>  --export-dynamic-symbol-list=file
+           Specify a --export-dynamic-symbol for each pattern in the
+           file.  The format of the file is the same as the version node
+           without scope and node name.  See VERSION for more
+           information.
+
+Previously, the format for the Linux symbols list was simply a list of
+symbols, now it follows the format:
+
+```
+{ symbol_name_a;  ...; symbol_name_z };
+```

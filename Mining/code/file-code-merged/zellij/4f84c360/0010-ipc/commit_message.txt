@@ -1,0 +1,2 @@
+fix: typo in error message (#1151)
+

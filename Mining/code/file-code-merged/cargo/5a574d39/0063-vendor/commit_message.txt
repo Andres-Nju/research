@@ -1,0 +1,10 @@
+Auto merge of #10690 - AtkinsChang:vendor, r=hi-rustin
+
+Support vendoring with different revs from same git repo
+
+### What does this PR try to resolve?
+
+Fixes #10667
+
+### How should we test and review this PR?
+test case is included

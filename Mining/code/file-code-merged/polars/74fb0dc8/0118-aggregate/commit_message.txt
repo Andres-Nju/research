@@ -1,0 +1,1 @@
+fix bug in ChunkedArray::mean_as_series, did not account null values

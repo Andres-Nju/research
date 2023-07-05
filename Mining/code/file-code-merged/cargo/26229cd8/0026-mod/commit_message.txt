@@ -1,0 +1,4 @@
+Uncapitalize "Could not compile" error message
+
+"could not compile ..." matches other Cargo and rustc errors and
+warnings better.

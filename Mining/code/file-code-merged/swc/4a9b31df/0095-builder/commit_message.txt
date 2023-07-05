@@ -1,0 +1,4 @@
+fix(swc): Fix order of passes (#1931)
+
+swc:
+ - Run `import_analyzer` after  `regenerator`.

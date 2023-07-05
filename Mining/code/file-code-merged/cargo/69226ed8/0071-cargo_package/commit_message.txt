@@ -1,0 +1,8 @@
+improve uncommitted changes cargo-package message
+
+fixes #7003
+
+Explicitly state what the suggested flag `--allow-dirty`
+actually does when packaging/publishing the crate. Primarily,
+that the uncommited changes are included within the resulting
+package.

@@ -1,0 +1,2 @@
+sync::Mutex: Fix typo in documentation (#1934)
+

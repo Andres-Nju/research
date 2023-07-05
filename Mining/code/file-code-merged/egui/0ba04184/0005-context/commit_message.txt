@@ -1,0 +1,9 @@
+Improve mouse selection accuracy  (#2304)
+
+* updated
+
+* Update crates/egui/src/context.rs
+
+Co-authored-by: Emil Ernerfeldt <emil.ernerfeldt@gmail.com>
+
+Co-authored-by: Emil Ernerfeldt <emil.ernerfeldt@gmail.com>

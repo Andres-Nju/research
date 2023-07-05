@@ -1,0 +1,3 @@
+don't lock the package cache when cleaning target dir.
+
+Fixes #7490

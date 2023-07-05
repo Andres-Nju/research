@@ -1,0 +1,3 @@
+Symlink windows assets for cargo install
+
+Fixes #5114.

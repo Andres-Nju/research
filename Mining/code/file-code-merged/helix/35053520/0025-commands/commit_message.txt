@@ -1,0 +1,2 @@
+always commit to history when pasting (#5790)
+

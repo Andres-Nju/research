@@ -1,0 +1,3 @@
+Fix useless log level (#4046)
+
+Signed-off-by: Breezewish <breezewish@pingcap.com>

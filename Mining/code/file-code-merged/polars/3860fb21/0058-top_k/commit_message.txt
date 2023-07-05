@@ -1,0 +1,2 @@
+fix(rust, python): fix top_k on empty (#5865)
+

@@ -1,0 +1,1 @@
+Allow crate_type=bin examples to run

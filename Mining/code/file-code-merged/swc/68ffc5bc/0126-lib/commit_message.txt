@@ -1,0 +1,2 @@
+fix(es/utils): Verify the name of an alias (#6423)
+

@@ -1,0 +1,3 @@
+fix build.rs: replace "%I" with "%H". (#2836)
+
+"%I" lose the information about am or pm, replace it with "%H".

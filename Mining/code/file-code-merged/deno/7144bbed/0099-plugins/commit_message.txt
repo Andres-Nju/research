@@ -1,0 +1,3 @@
+fix: plugin ops should change op count metrics  (#3455)
+
+

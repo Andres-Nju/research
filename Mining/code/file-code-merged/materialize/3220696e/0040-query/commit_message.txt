@@ -1,0 +1,14 @@
+planner: Fix function column name invention (#19874)
+
+Previously, in the planner when inventing a column name for the result
+of certain functions we would check if the schema id of the function
+matched the schema id of the mz_internal schema. When looking up the
+schema id of the mz_internal schema, we would mistakenly look for it in
+the materialize database. If someone deleted the materialize database,
+this code path would cause a panic.
+
+This commit fixes this logic to look for the mz_internal schema in the
+ambient database which avoids the panic when the materialize database
+doesn't exist.
+
+Fixes #19871

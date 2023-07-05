@@ -1,0 +1,15 @@
+cdc: fix panic caused by insert (#9872)
+
+* cdc: fix panic caused by insert
+
+Signed-off-by: 5kbpers <tangminghua@pingcap.com>
+
+* fix comment
+
+Signed-off-by: 5kbpers <tangminghua@pingcap.com>
+
+* make clippy happy
+
+Signed-off-by: 5kbpers <tangminghua@pingcap.com>
+
+Co-authored-by: Ti Chi Robot <71242396+ti-chi-bot@users.noreply.github.com>

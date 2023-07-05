@@ -1,0 +1,3 @@
+Merge pull request #7326 from danhhz/ore
+
+ore: fix rustdoc link

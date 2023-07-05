@@ -1,0 +1,2 @@
+Enable WebAssembly.instantiateStreaming (#7043)
+

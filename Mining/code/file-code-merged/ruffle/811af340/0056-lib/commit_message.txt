@@ -1,0 +1,4 @@
+render: Fix swapped 'width' and 'height' in wgpu `register_bitmap_raw`
+
+These arguments were being passed in the wrong order, leading to a crash
+when the width and height are not equal.

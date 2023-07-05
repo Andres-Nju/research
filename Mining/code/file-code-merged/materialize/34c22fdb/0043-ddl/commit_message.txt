@@ -1,0 +1,3 @@
+Merge pull request #19709 from benesch/cluster-replica-normalization
+
+sql: fix normalization of cluster names in CREATE CLUSTER REPLICA

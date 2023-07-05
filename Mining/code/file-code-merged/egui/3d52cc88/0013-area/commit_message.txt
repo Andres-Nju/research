@@ -1,0 +1,2 @@
+Fix docstring in area.rs (#1620)
+

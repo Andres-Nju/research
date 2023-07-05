@@ -1,0 +1,8 @@
+make sure tabs are updated when closing panes (#757)
+
+* call update_tabs on closing panes
+
+* screen: avoid explit render after update_tabs
+
+update_tabs causes a render anyway, by updating plugins, and after that
+a render is requested.

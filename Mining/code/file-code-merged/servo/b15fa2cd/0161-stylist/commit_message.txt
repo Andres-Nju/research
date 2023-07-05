@@ -1,0 +1,1 @@
+style: fix alignment in call to get_all_matching_rules.

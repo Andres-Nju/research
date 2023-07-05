@@ -1,0 +1,2 @@
+core: Ignore SetBackgroundColor in child movie clips
+

@@ -1,0 +1,5 @@
+fix(compatibility): fix grid glitch edge-case when resizing (#149)
+
+* fix(compatibility): fix grid glitch edge-case when resizing a grid with a scroll region
+
+* style(fmt): rustfmt

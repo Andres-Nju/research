@@ -1,0 +1,2 @@
+Fix read_parquet with list having nested struct (#2991)
+

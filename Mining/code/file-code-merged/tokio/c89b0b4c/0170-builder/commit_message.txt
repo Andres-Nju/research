@@ -1,0 +1,3 @@
+Fix num CPUs in threadpool::builder::Builder::new (#530)
+
+Closes #400 

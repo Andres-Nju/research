@@ -1,0 +1,3 @@
+diagnose: fix disk used percent information (#7487)
+
+Signed-off-by: crazycs520 <crazycs520@gmail.com>

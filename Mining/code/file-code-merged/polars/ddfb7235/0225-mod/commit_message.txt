@@ -1,0 +1,2 @@
+fix(rust, python): don't error on cast if column is not projected (#8495)
+

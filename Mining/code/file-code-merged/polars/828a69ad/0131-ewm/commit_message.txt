@@ -1,0 +1,2 @@
+fix[rust]: ewm_mean leading nulls function (#4465)
+

@@ -1,0 +1,2 @@
+fix(rust): microsecond noise on `date` >> `time` cast (add `00:00:00` fast-path) (#5149)
+

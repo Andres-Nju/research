@@ -1,0 +1,4 @@
+fix(es/minifier): Fix optimization of assignment expressions (#3231)
+
+swc_ecma_minifier:
+ - Check if the operator is `=` before optimizing assignment with a binary expression.

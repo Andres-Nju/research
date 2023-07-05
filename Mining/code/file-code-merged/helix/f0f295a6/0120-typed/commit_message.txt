@@ -1,0 +1,2 @@
+reload-all: Only update viewport when view focuses on the doc (#4901)
+

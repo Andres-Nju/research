@@ -1,0 +1,2 @@
+Fix underflow when repeating a completion that has a negative shift position (#7322)
+

@@ -1,0 +1,4 @@
+doc: fix TcpListener example to compile (#1911)
+
+The `process_socket` is hidden from the user which makes the example
+fail to compile if copied by the reader.

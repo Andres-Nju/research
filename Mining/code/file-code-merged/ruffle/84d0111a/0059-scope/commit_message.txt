@@ -1,0 +1,1 @@
+avm1: Add test for with scope nesting

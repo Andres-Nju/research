@@ -1,0 +1,5 @@
+tidb_query_datatype: Fix Geometry FieldType support (#13652)
+
+close tikv/tikv#13651
+
+Signed-off-by: Daniël van Eeden <git@myname.nl>

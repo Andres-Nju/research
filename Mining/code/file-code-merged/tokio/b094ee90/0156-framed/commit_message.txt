@@ -1,0 +1,3 @@
+chore: fix new manual_non_exhaustive clippy lint (#2669)
+
+Our minimum supported Rust version does not allow switching to `#[non_exhaustive]`.

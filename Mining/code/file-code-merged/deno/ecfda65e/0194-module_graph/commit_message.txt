@@ -1,0 +1,3 @@
+fix(cli): correctly determine emit state with redirects (#9287)
+
+Fixes #9129

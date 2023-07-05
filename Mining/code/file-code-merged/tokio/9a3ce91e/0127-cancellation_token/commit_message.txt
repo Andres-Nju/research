@@ -1,0 +1,4 @@
+util: fix waker update condition in `CancellationToken` (#4497)
+
+There was a missing exclamation mark in the condition we used to test
+whether we need a waker update in `check_for_cancellation`.

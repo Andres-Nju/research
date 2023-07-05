@@ -1,0 +1,2 @@
+docs(rust): fix doc comment in ParallelStrategy (#6444)
+

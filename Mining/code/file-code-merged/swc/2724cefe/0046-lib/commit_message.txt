@@ -1,0 +1,5 @@
+fix(es/transforms/react): Expose `RefreshOptions` (#1635)
+
+swc_ecma_transforms_react:
+ - Expose `RefreshOptions`. (#1634)
+ - Expose `Runtime`.

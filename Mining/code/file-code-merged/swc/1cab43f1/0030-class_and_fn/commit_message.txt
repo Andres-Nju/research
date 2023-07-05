@@ -1,0 +1,5 @@
+fix(es/parser): Reset class context (#7433)
+
+**Related issue:**
+
+ - Closes #7428.

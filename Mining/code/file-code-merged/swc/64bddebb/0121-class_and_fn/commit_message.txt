@@ -1,0 +1,4 @@
+Fix parsing class properties as readonly (#547)
+
+swc_ecma_parser
+ - parse readonly property correctly

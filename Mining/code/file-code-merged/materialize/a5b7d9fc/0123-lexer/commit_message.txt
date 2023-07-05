@@ -1,0 +1,3 @@
+Merge pull request #7200 from benesch/dollar-literals
+
+sql-parser: fix parsing of dollar-quoted strings

@@ -1,0 +1,3 @@
+Merge pull request #2067 from ruchirK/rk-2052
+
+pgwire: bump max frame size to 64 mb

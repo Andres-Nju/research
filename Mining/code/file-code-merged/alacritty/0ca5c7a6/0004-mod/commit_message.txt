@@ -1,0 +1,9 @@
+Fix trailing colors when leaving vim after resize
+
+There is an issue where the terminal would use the template cell to fill
+new space after resizing the terminal. However this leads to issues
+since the template cell is not always empty and thus can create some
+blocks of color appearing out of nowhere.
+
+This should fix this problem by always initializing cells with the
+default cell after resizing.

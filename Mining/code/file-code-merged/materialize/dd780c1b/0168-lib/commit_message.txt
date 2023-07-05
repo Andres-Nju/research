@@ -1,0 +1,2 @@
+Better error message when sqlogictest fails due to no running postgres instance (#1723)
+

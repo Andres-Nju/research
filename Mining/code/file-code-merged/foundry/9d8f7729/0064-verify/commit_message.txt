@@ -1,0 +1,5 @@
+fix(verify): update ethers & fix contract url UX  (#1832)
+
+* upd ethers
+
+* minor ux fix

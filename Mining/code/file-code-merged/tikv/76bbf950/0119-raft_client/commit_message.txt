@@ -1,0 +1,9 @@
+raft_client: report SnapshotStatus for witness (#14267)
+
+close tikv/tikv#14228
+
+raft_client: report SnapshotStatus for witness
+
+Signed-off-by: Wenbo Zhang <ethercflow@gmail.com>
+
+Co-authored-by: Ti Chi Robot <ti-community-prow-bot@tidb.io>

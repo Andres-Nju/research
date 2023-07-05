@@ -1,0 +1,1 @@
+avm1: Correctly send onUnload events for movies unloaded with GetURL2 - fixes #2422

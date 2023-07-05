@@ -1,0 +1,1 @@
+Remove assert statement from window.

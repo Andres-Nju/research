@@ -1,0 +1,2 @@
+fix: fix compilation with battery feature disabled (#1509)
+

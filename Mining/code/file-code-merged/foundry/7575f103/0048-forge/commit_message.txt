@@ -1,0 +1,3 @@
+fix(forge): use rm as alias for forge remove (#653)
+
+Closes #651

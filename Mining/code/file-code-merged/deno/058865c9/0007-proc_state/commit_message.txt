@@ -1,0 +1,7 @@
+fix(cli): preserve blob store when resetting file watcher (#18253)
+
+Fixes https://github.com/denoland/deno/issues/17733
+
+---------
+
+Co-authored-by: Matt Mastracci <matthew@mastracci.com>

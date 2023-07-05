@@ -1,0 +1,1 @@
+render: Workaround wgpu write-only stencil testing issue - fixes #1062

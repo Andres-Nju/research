@@ -1,0 +1,13 @@
+Fix range offsets in multi-selection paste (#4608)
+
+* Fix range offsets in multi-selection paste
+
+d6323b7cbc21a9d3ba29738c76581dad93f9f415 introduced a regression with
+multi-selection paste where pasting would not adjust the ranges
+correctly. To fix it, we need to track the total number of characters
+inserted in each changed selection and use that offset to slide each
+new range forwards.
+
+* Inherit selection directions on paste
+
+* Add an integration-test for multi-selection pasting

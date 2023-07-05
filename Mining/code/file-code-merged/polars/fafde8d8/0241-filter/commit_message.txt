@@ -1,0 +1,1 @@
+Lazy: fix bug in filter after a list groupby in aggregation context

@@ -1,0 +1,3 @@
+fix tikv-ctl region size command (#5195)
+
+Signed-off-by: Connor1996 <zbk602423539@gmail.com>

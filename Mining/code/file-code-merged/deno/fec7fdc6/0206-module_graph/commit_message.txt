@@ -1,0 +1,5 @@
+tests(cli): add test for improper unicode encoding (#8162)
+
+and updates swc_ecma_codegen
+
+Closes #8161

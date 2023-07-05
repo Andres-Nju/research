@@ -1,0 +1,2 @@
+Fix style overwriting in table rows with multiple cells (#7281)
+

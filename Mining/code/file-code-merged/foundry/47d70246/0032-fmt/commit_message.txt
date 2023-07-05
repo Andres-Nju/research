@@ -1,0 +1,2 @@
+fix(fmt): fix extra empty line on --raw (#2179)
+

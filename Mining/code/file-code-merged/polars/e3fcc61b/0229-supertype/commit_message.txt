@@ -1,0 +1,2 @@
+fix(rust, python): let lhs determine struct order in supertype (#6572)
+

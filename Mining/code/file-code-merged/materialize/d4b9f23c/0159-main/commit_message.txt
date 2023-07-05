@@ -1,0 +1,3 @@
+Merge pull request #12927 from benesch/fix-unsafe-mode
+
+materialized: fix --unsafe-mode environment variable

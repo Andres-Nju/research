@@ -1,0 +1,4 @@
+fix(bundler): Fix inlining pass (#1495)
+
+swc_bundler:
+ - Fix inlining pass. (denoland/deno#9868)

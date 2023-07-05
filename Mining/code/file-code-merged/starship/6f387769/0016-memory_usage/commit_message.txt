@@ -1,0 +1,2 @@
+fix(memory_usage): prevent used swap underflow on windows (#2689)
+

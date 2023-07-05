@@ -1,0 +1,2 @@
+fix(compatibility): fix bash linewrap (#109)
+

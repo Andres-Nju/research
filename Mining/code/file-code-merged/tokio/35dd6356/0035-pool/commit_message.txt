@@ -1,0 +1,15 @@
+tracing: fix `spawn_blocking` location fields (#5573)
+
+In a previous PR (#4128), the `spawn.location` field on task spans was
+structured into 3 separate fields for the `file`, `line`, and `col`.
+There is a separately created span for blocking tasks which was missed.
+
+This caused tasks created with `spawn_blocking` to appear in
+`tokio-console` without a location, but with an additional "free form"
+field containing the formatted source code location.
+
+This change modifies this span to use the same format. The span creation
+needs to be separate from the other task spans because it records the
+function name. This information is useful in the `spawn_blocking` case,
+but can be "catastrophically long" in the `async fn` case and was
+removed in #3074.

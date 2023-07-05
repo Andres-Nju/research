@@ -1,0 +1,2 @@
+Fix tagged template span to include tag. (#677)
+

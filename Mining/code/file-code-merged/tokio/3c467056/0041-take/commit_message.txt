@@ -1,0 +1,2 @@
+io: fix take pointer check (#4437)
+

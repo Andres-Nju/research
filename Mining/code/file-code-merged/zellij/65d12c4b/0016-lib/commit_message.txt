@@ -1,0 +1,5 @@
+Don't send the server an exit signal when client panics (#1731)
+
+* Don't send the server an exit signal when client crashes
+
+* Update changelog

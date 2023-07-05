@@ -1,0 +1,5 @@
+Auto merge of #26975 - servo:jdm-patch-44, r=gterzian
+
+Fix refcell_backtrace feature.
+
+This makes the output of a borrow error contain the expected list of conflicting borrows. Fixes #26971.

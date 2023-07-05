@@ -1,0 +1,3 @@
+fix(cli): re-enable allowSyntheticDefaultImports for tsc (#12435)
+
+Fixes #12434

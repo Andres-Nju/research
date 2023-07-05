@@ -1,0 +1,11 @@
+Fix backwards character deletion on other whitespaces (#2855)
+
+* delete_backwards_char accepts any type of whitespace
+
+* Fix inconsistency, where unicode whitespaces are treated as normal whitespaces
+
+* Changed back to direct whitespace match
+
+* Only accept explicit whitespace / tabs
+
+Co-authored-by: s0LA1337 <dreamer@neoncity.dev>

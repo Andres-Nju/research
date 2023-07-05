@@ -1,0 +1,9 @@
+test(forge): ensure tests are only run once if version changes (#1635)
+
+* test(forge): add test to ensure tests are only run once if version changes
+
+* bump ethers
+
+* Update cli/tests/it/test_cmd.rs
+
+* fix: breaking change

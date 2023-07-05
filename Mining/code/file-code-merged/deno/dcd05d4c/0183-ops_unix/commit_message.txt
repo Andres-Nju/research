@@ -1,0 +1,6 @@
+fix(net): don't panic on failed UDS removal (#15157)
+
+If a Unix Domain Socket cannot be removed, throw instead of
+panicing.
+
+Fixes: https://github.com/denoland/deno/issues/14213

@@ -1,0 +1,3 @@
+fix a tikv-ctl help tips error (#5347)
+
+Signed-off-by: mahjonp <junpeng.man@gmail.com>

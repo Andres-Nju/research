@@ -1,0 +1,3 @@
+chore: fix typo in display_object.rs
+
+defualt -> default

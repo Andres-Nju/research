@@ -1,0 +1,5 @@
+tikv_util: fix test-cgroup feature compile error (#11176)
+
+* close #11188
+
+Signed-off-by: wuaoxiang <wuaoxiang@stargraph.cn>

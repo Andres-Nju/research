@@ -1,0 +1,3 @@
+Merge pull request #16132 from aljoscha/storage-persist-critical-follow-ups
+
+persist: fix rustdoc of `compare_and_downgrace_since`

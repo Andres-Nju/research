@@ -1,0 +1,3 @@
+Fix multiplicity error. (#7359)
+
+The multiplicity of the rows from outer query was not preserved there is an EXISTS subquery involving only constants/mpf/flatmaps.

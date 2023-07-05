@@ -1,0 +1,6 @@
+sql: Fix row size calculation (#14753)
+
+Previously, when calculating the size of a row that has spilled to
+heap, we would incorrecly subtracted the inline size from the total
+length or the row. This commit fixes that issue, so that when the row
+spills to the head, the entire length is added to the size.

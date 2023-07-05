@@ -1,0 +1,2 @@
+chore(rust): fix feature (#6942)
+

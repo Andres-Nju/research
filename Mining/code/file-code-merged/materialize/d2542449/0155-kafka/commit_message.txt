@@ -1,0 +1,5 @@
+Merge pull request #3483 from nacrooks/partitionfix
+
+Fixing off-by-one error in partition creation count
+
+Upon receiving a real-time update of N partitions from the timestamped, a real-time source must ensure that it has created all partitions up to N-1, as Kafka assigns partitions IDs contiguously, starting from 0.

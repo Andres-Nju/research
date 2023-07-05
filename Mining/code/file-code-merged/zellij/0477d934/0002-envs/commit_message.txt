@@ -1,0 +1,14 @@
+Do not advertise 24 bit color support unchecked (#1900)
+
+* Fix bat syntax colors when using mosh
+
+Original reason for this line according to Aram:
+I set this variable as part of the Sixel support to get notcurses to
+work properly. I tried communicating with the notcurses maintainers
+about a workaround for this, but to no avail.
+
+* Changelog
+
+* Improve changelog message
+
+* Remove empty function

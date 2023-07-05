@@ -1,0 +1,14 @@
+Harmonize error message while waiting for storage connection. (#11719)
+
+This makes the form of the error message match the one for the
+coordinator connection. E.g.
+
+```
+listening for coordinator connection on 0.0.0.0:2100...
+```
+
+vs.
+
+```
+listening for storage connection on 0.0.0.0:2101...
+```

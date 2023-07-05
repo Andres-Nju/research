@@ -1,0 +1,2 @@
+feat(core): enable wasm threading support (#10116)
+

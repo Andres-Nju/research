@@ -1,0 +1,2 @@
+chore: fix typo in lint.rs (#9281)
+

@@ -1,0 +1,7 @@
+sync: fix fuzz_oneshot test by using instrumented `loom::sync::Arc` (#1464)
+
+Since `tokio_sync::oneshot` makes a `CausalCell::with_mut()` mutable
+access in the `Inner::drop()`, we must use the instrumented
+`loom::sync::Arc`.
+
+Uncovered by carllerche/loom#42

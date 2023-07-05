@@ -1,0 +1,1 @@
+core: Focus EditText fields only if editable

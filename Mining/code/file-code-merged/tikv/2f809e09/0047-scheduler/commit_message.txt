@@ -1,0 +1,2 @@
+scheduler: fix resolve locks bug. (#1530)
+

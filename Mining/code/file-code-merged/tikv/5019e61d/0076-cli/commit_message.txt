@@ -1,0 +1,3 @@
+Make fuzzing work. (#6626)
+
+Signed-off-by: Nick Cameron <nrc@ncameron.org>

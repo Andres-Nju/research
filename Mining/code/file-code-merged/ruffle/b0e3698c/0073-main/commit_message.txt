@@ -1,0 +1,3 @@
+desktop: correct error when passing an invalid absolute windows filepath
+
+

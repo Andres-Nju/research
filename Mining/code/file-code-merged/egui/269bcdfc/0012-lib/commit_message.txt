@@ -1,0 +1,3 @@
+Replace clipboard with copypasta (#221)
+
+- Fixes #146

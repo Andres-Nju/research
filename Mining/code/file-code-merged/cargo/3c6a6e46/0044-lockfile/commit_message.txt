@@ -1,0 +1,15 @@
+Auto merge of #10512 - hi-rustin:rustin-patch-offline, r=epage
+
+Use the correct flag in --locked --offline error message
+
+### What does this PR try to resolve?
+
+close https://github.com/rust-lang/cargo/issues/10504
+
+[Use the correct the flag in --locked --offline error message](https://github.com/rust-lang/cargo/commit/17ec41515e4908aae0d4848423e0605aafe21196)
+
+[Add offline_and_locked_and_no_frozen test](https://github.com/rust-lang/cargo/commit/7363f43d02bb4144ed78a7361e0c97b02f228da8)
+
+### How should we test and review this PR?
+
+- unit test

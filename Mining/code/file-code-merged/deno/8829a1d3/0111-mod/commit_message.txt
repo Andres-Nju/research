@@ -1,0 +1,3 @@
+fix: upgrade to deno_ast 0.27 (#19375)
+
+Closes #19148

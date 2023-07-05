@@ -1,0 +1,5 @@
+fix struct name output by only returning last name segment (#4646)
+
+* fix struct name output by only returning last name segment
+
+* Address feedback

@@ -1,0 +1,2 @@
+sync: fix spelling mistake in mpsc::Sender docs (#3828)
+

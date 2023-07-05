@@ -1,0 +1,2 @@
+fix: respect offline mode when checking for missing solc (#2414)
+

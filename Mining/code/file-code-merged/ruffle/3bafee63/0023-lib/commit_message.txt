@@ -1,0 +1,1 @@
+web: Fix spurious keyUp events (fix #1886)

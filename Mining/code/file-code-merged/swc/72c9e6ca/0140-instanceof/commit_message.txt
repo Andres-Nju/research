@@ -1,0 +1,3 @@
+fix(es/helpers): Cast the result of the `instanceof` helper to boolean (#3728)
+
+Co-authored-by: Donny/강동윤 <kdy1997.dev@gmail.com>

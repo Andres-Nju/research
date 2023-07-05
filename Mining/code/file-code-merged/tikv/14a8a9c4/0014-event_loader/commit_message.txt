@@ -1,0 +1,7 @@
+log-backup: fixed pessimistic lock in initial scanning (#13354)
+
+close tikv/tikv#13304
+
+Signed-off-by: Yu Juncen <yujuncen@pingcap.com>
+
+Co-authored-by: Ti Chi Robot <ti-community-prow-bot@tidb.io>

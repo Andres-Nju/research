@@ -1,0 +1,3 @@
+fix(cli): correct libs sent to tsc for unstable worker (#8260)
+
+Fixes #8257

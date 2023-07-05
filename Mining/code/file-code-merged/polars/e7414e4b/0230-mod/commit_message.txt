@@ -1,0 +1,2 @@
+dot: use apply instead of map (#3051)
+

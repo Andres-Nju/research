@@ -1,0 +1,3 @@
+Merge pull request #2756 from justinj/error-cat
+
+Refer to issue re: CREATE TABLE persistence

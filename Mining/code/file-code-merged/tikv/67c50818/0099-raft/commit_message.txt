@@ -1,0 +1,2 @@
+raft: fix read index request handling for new leader (#1634)
+

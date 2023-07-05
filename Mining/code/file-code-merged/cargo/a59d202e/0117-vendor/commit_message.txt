@@ -1,0 +1,5 @@
+Auto merge of #10348 - epage:vendor, r=alexcrichton
+
+fix(vendor): Use tables for sample config
+
+Fixes #10345

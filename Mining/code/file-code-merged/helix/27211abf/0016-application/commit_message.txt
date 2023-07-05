@@ -1,0 +1,5 @@
+Ignore key-release keyboard events (#6139)
+
+Since crossterm 0.26.x, we receive press/release keyboard events on
+Windows always. We can ignore the release events though to emulate
+the behavior of keyboard input on Windows on crossterm 0.25.x.

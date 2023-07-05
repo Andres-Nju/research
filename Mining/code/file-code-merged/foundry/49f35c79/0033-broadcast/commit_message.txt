@@ -1,0 +1,5 @@
+chore(script): remove gas limit entirely (#2155)
+
+* chore(script): remove gas limit entirely
+
+* bump ethers

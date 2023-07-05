@@ -1,0 +1,12 @@
+Fix: issue 1734 (#1749)
+
+* server/tab: Check suppressed panes
+
+when writing to a pane by ID. Previously only the tiled and floating
+panes would be searched for a pane of a given ID.
+
+Fixes: #1734
+
+* server/tab/unit: Test writing to suppressed panes
+
+* docs: fix server panics when writing to suppressed panes

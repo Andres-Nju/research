@@ -1,0 +1,2 @@
+Fix optional chaining in argument position (#1104)
+

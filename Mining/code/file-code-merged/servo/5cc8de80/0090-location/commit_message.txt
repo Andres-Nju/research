@@ -1,0 +1,1 @@
+Ensure that a navigation to the same URL is aborted. Fixes #10952.

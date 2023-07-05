@@ -1,0 +1,4 @@
+fix:(es/compat): Change order of passes (#2949)
+
+swc_ecma_transforms_compat:
+ - Run `shorthand` before `function_name` so we can infer name for method properties. (Closes #2150)

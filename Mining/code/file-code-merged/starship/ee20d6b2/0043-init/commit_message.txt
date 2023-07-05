@@ -1,0 +1,3 @@
+fix: Prepend to PROMPT_COMMAND in Bash init (#336)
+
+Bash init: do not overwrite PROMPT_COMMAND but prepend to it.

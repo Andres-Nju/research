@@ -1,0 +1,5 @@
+copr: fix wrong function cast double to double (#10370) (#10387)
+
+Signed-off-by: ti-srebot <ti-srebot@pingcap.com>
+
+Co-authored-by: Zhuomin Liu <lzmhhh123@gmail.com>

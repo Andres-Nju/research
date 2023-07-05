@@ -1,0 +1,2 @@
+fix(rust, python): expose sort expressions to stack-optimizer (#7148)
+

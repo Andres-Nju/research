@@ -1,0 +1,9 @@
+resource_control: pass missing resource group name to request header (#14192)
+
+close tikv/tikv#14191
+
+pass missing resource group name to request header
+
+Signed-off-by: Connor1996 <zbk602423539@gmail.com>
+
+Co-authored-by: Xinye Tao <xy.tao@outlook.com>

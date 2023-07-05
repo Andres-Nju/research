@@ -1,0 +1,7 @@
+Report fix bugs to Rust instead of Cargo
+
+I originally opted to report bugs to Cargo instead of Rust because I was
+afraid of the implementation of `cargo fix` itself. These seem to all be
+weeded out now (largely at least), and the overwhelming majority of bugs
+are now rust-lang/rust suggestion bugs. Let's suggest reporting bugs
+directly there!

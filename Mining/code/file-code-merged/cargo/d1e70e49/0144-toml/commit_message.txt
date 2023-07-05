@@ -1,0 +1,6 @@
+Fix a serialization error on publish
+
+In TOML we have to emit all keys before we emit all sub-tables, so to handle
+that for dependencies just transform everything to an elaborated version.
+
+Closes #4081

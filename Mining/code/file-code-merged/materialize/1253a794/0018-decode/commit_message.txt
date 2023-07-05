@@ -1,0 +1,7 @@
+avro-decoder: Fix incorrect return from fn push_coords (#7917)
+
+The two branches of the if statement at the very bottom of the function
+were reversed which was causing a bogus "Record with unrecognized source coordinates"
+error to be printed in the log.
+
+Fixes #6552

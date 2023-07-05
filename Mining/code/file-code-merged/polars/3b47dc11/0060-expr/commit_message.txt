@@ -1,0 +1,2 @@
+feat(rust, python): error on invalid sortby expr (#8986)
+

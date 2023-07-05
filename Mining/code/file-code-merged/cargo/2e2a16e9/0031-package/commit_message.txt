@@ -1,0 +1,9 @@
+Auto merge of #10048 - ehuss:curl-progress-panic, r=alexcrichton
+
+Fix debug panic on download with redirect body.
+
+With a debug build of cargo, downloading crates can panic if the download host issues a redirect with a body. From what I can see, the curl progress function gets called with the original size of the redirect body (such as total=154 cur=154, indicating that it has read 154 bytes of the redirect message). Then it calls the progress function again with cur=0 to start again from the beginning.  The next line in this patch, `cur - dl.current.get()` would panic since it is a `u64` and a 0 value of `cur` is less than the old `current`.
+
+This was never really an issue with crates.io because it emits a redirect body of 0 bytes.
+
+I think it is fine to skip this block in that situation, as it is only for resetting the timeout counter.  Though, I guess it could use `saturating_sub` instead.

@@ -1,0 +1,6 @@
+fix(terraform): Improve module triggers (#3113)
+
+Have updated which extentions trigger the terraform module, to remove
+the `hcl` since this gives false positives as it is used by other
+Hashicorp products and add the `tfstate` and `tfplan` which are more
+accurate indicators.

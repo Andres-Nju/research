@@ -1,0 +1,3 @@
+chore(rust): propagate error in date_range with invalid time zone (#6759)
+
+Co-authored-by: MarcoGorelli <>

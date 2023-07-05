@@ -1,0 +1,17 @@
+fix(git): upgrade `gitoxide` to v0.21 (#4277)
+
+* upgrade `gitoxide` to v0.21
+
+This release comes with lenient configuration handling by default,
+allowing to open repositories even their configuration values are
+invalid (even for git), as long as there are viable defaults.
+
+Furthermore this release adds the ability to open submodule repsitories.
+
+Fixes https://github.com/starship/starship/issues/4266 and
+fixes https://github.com/starship/starship/issues/4272
+
+* Assure an object cache is set to speed up `commit.describe()`
+
+Related to https://github.com/starship/starship/issues/4275 bringing
+performance to spitting distance compared to git.

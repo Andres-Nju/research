@@ -1,0 +1,4 @@
+Fix unreachable panic in INSERT code (#4100)
+
+Calls transform_query from handle_insert to fix the following
+panic: "entered unreachable code: Expr::Nested not desugared".

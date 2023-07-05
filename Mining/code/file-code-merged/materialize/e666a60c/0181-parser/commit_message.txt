@@ -1,0 +1,3 @@
+sql: Fix parse create error message (#18278)
+
+`CREATE USER` is no longer valid.

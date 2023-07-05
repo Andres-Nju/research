@@ -1,0 +1,3 @@
+avm1: Add version gate for `{MovieClip, Button}.blendMode`
+
+Theses properties are only available on SWF >= 8

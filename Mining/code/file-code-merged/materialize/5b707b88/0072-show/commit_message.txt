@@ -1,0 +1,3 @@
+Fix clippy lint, use write instead appending
+
+Signed-off-by: Moritz Hoffmann <mh@materialize.com>

@@ -1,0 +1,2 @@
+raftstore: fix a stale read bug in follower read (#6340) (#6343)
+

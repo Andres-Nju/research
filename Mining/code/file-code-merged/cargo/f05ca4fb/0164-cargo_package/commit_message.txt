@@ -1,0 +1,11 @@
+Auto merge of #12135 - eval-exec:fix-check_for_file_and_add, r=weihanglo
+
+Fix `check_for_file_and_add`'s check for conflict file
+
+### What does this PR try to resolve?
+
+Fixes #12127
+
+### How should we test and review this PR?
+
+- [x] two unit tests

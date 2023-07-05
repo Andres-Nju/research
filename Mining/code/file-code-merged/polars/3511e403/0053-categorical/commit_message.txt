@@ -1,0 +1,5 @@
+fix test[rust]: test_cat_lexical_sort occasionally fails (#4975)
+
+The string cache was set up in test_categorical_builder and
+filled in test_fast_unique with the same values in a different order.
+By first reseting the cache in the test the problem does not occur any more.

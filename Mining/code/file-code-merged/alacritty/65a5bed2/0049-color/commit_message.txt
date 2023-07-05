@@ -1,0 +1,6 @@
+Fix 216-color cube generation
+
+This fixes a regression introduced in cb7ad5b which swapped the green
+and blue values when constructing the 216-color RGB cube.
+
+Fixes #6951.

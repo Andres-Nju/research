@@ -1,0 +1,3 @@
+fix broken error display (#9953)
+
+Signed-off-by: Greg Weber <greg@pingcap.com>

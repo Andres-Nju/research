@@ -1,0 +1,2 @@
+fix oob panic on expand_at_index and series from pyarrow chunkedarray (#3938)
+

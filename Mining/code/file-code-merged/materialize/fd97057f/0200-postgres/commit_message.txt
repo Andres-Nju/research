@@ -1,0 +1,3 @@
+Merge pull request #14127 from mjibson/stash-pg-comment
+
+stash: fix postgres comment

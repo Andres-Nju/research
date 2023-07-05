@@ -1,0 +1,5 @@
+Fix selection not inverting terminal background
+
+Fixes a regression introduced in
+9a0555bbba30c264f617ec9260ca00e0eab70870 where the terminal background
+would not get inverted when selected.

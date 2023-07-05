@@ -1,0 +1,2 @@
+prevent rendering visible whitespace on trailing cursor (#2331)
+

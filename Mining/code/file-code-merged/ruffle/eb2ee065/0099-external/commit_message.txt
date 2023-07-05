@@ -1,0 +1,1 @@
+avm1: Fix `ExternalInterface.call` with blank strings in SWFv8

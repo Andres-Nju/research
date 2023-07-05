@@ -1,0 +1,1 @@
+core: Fix issue where unloaded buttons can still trigger mouse rollout events (close #1603)

@@ -1,0 +1,2 @@
+fix(rust, python): check for object type in csv writer (#8894)
+

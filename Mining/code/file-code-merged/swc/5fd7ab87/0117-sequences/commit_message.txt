@@ -1,0 +1,8 @@
+fix(es/minifier): Preserve op of the op-assignments in seq inliner (#6428)
+
+**Description:**
+
+
+**Related issue:**
+
+ - Closes https://github.com/swc-project/swc/issues/6407.

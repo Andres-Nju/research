@@ -1,0 +1,12 @@
+doc: remove incorrect panic section for Builder::worker_threads (#4849)
+
+The documentation for the runtime `Builder::worker_threads` function
+incorrectly stated that it would panic if used when constructing a
+`current_thread` runtime. In truth, the call to the function has no
+effect.
+
+Since adding the described panic to the code could cause new panics in
+existing code using tokio, the documentation has been modified to
+describe the existing behavior.
+
+Refs: #4773

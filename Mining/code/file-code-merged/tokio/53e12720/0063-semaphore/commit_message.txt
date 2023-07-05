@@ -1,0 +1,2 @@
+sync: remove unused lifetime on SemaphorePermit impl (#4896)
+

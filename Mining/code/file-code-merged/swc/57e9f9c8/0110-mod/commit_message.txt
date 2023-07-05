@@ -1,0 +1,2 @@
+fix(html/parser): Reflect the fix for a bug in spec (#5779)
+

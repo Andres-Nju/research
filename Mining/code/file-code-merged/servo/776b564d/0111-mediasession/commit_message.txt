@@ -1,0 +1,8 @@
+Auto merge of #27530 - jdm:media, r=Manishearth
+
+Fix crashes on video playback in UWP
+
+- [x] `./mach build -d` does not report any errors
+- [x] `./mach test-tidy` does not report any errors
+- [x] These changes fix #27529 and fix #27526
+- [x] These changes do not require tests because there's no way to test UWP right now.

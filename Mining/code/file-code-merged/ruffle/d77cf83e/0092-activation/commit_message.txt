@@ -1,0 +1,1 @@
+avm2: Fix si8/si16 opcodes

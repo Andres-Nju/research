@@ -1,0 +1,1 @@
+text: Fix masking of text area (fix #1496, #1554)

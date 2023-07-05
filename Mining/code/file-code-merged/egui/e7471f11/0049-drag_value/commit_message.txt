@@ -1,0 +1,9 @@
+Fix drag_value.edit_string unexpected reset (#2421)
+
+* Fix drag_value.edit_string unexpected reset
+
+  solve issue #2418 #2370
+
+* Also reset drag_value.edit_string on click
+
+* Fix for clippy check

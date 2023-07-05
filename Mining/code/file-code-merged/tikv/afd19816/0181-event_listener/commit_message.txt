@@ -1,0 +1,7 @@
+[cherry-pick-2.0] Fix event listener issue (#4131)
+
+* Fix event listener issue (#4126)
+
+* Check status of CompactionJobInfo
+
+Signed-off-by: DorianZheng <xingzhengde72@gmail.com>

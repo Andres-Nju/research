@@ -1,0 +1,2 @@
+feat(git): honor `GIT_DIR` environment variable (#1348)
+

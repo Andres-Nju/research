@@ -1,0 +1,3 @@
+runtime: fix typo in runtime builder docs (#5218)
+
+Signed-off-by: Loong <loong.dai@intel.com>

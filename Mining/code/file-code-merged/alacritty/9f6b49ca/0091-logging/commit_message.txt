@@ -1,0 +1,2 @@
+Fix logfile overwriting existing files
+

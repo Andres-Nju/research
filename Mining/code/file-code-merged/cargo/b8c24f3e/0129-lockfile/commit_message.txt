@@ -1,0 +1,1 @@
+Specify lockfile path in --locked error msg

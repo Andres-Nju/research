@@ -1,0 +1,6 @@
+fix(es/parser): Fix parsing of `module` identifier (#7400)
+
+**Related issue:**
+
+ - Closes #4176.
+ - Closes #7372.

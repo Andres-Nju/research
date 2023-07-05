@@ -1,0 +1,9 @@
+Fix start-position of next search (#1904)
+
+The search implementation would start searching at the next grapheme
+boundary after the previous selection. In case the next occurence of the
+needle is immediately after the current selection, this occurence would
+not be found (without wraparound) because the first grapheme is skipped.
+
+The correct approach is to use the ensure_grapheme_boundary functions instead
+of using the functions that skip unconditionally to the next grapheme.

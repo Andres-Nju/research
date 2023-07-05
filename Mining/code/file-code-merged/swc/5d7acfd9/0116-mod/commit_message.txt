@@ -1,0 +1,5 @@
+fix(es/react): Respect `import_source` in new jsx (#7128)
+
+**Related issue:**
+
+ - Closes https://github.com/swc-project/swc/issues/6987.

@@ -1,0 +1,3 @@
+Fix double-click selecting trailing tab
+
+Fixes #2639.

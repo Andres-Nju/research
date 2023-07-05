@@ -1,0 +1,2 @@
+feat(rust, python): raise if period is negative in groupby_rolling (#9445)
+

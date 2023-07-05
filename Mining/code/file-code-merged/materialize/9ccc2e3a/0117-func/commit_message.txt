@@ -1,0 +1,6 @@
+sql: Fix NULL handling for contains privilege fn (#19572)
+
+This commit fixes NULL handling for the mz_internal
+mz_acl_item_contains_privilege function.
+
+Fixes #19568

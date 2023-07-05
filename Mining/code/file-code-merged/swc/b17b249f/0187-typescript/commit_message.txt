@@ -1,0 +1,2 @@
+Fix union and intersection type start (#725)
+

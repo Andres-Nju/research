@@ -1,0 +1,10 @@
+eframe: add call to save_and_destroy in Exit event of run_return (#2895)
+
+`EventResult::Exit` is hit before `Event::LoopDestroyed` is, and due to
+possibly some order of operations or drops the window is never destroyed
+on Linux. Adding a call to `winit_app.save_and_destroy();` where
+`EventResult::Exit` is checked solves this.
+
+Closes #2892
+
+Signed-off-by: Luke D. Jones <luke@ljones.dev>

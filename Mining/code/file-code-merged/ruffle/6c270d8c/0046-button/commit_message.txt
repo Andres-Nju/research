@@ -1,0 +1,1 @@
+core: Fix double borrow in button post_init - fixes #1450 and #1190

@@ -1,0 +1,5 @@
+Fix forced repaint on image load
+
+After #10021, `LayoutThread::repaint` no longer forced a repaint because of
+the `restyle_damage` check.  This patch adds the correct restyle damage and
+fixes #10163.

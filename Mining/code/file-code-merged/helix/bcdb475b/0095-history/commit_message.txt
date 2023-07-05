@@ -1,0 +1,11 @@
+Fix transaction composition order in History::changes_since (#4981)
+
+* Add a undo/redo split test case for crossing branches
+
+* history: Switch up/down transaction chaining order
+
+The old code tends to work in practice because, usually, either up_txns
+or down_txns are empty. When both have contents though, we can run into
+a panic trying to compose them all since they will disagree on the
+length of the text. This fixes the panic test case in the parent
+commit.

@@ -1,0 +1,8 @@
+FIX: don't use the associative path for single arguments
+
+The existing implementation was essentially a passthrough.  This is fine
+in all cases except for `concat`, which converts nulls to empty strings.
+
+There's no benefit in using this opimization for short argument lists, and
+clearly it has some cost. Punt single-argument arg lists to the general
+version.

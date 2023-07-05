@@ -1,0 +1,2 @@
+fix(rust, python): fix coalesce schema (#8324)
+

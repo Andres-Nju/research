@@ -1,0 +1,1 @@
+Fix serialisation of computed circle() shapes

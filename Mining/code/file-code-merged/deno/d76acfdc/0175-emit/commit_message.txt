@@ -1,0 +1,8 @@
+fix: base64 encoding of source maps with emojis (#14607)
+
+This commit fixes source maps for files that contain emojis.
+
+This is done by updating "deno_ast" to "0.14.1" for the case
+of "--no-check" flag (ie using SWC emit) and by overriding
+TSC's default base64 encoder (which turned out to be buggy)
+for the type checking case.

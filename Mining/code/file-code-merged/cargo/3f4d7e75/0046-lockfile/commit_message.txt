@@ -1,0 +1,1 @@
+fix error message when --locked is passed but lockfile is outdated

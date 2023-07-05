@@ -1,0 +1,1 @@
+Fix crop_area_byte_length calculation in crop_image and add tests

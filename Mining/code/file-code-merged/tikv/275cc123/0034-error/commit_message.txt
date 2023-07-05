@@ -1,0 +1,3 @@
+More friendly error messages (#4478)
+
+Signed-off-by: Breezewish <breezewish@pingcap.com>

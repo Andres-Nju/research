@@ -1,0 +1,9 @@
+sql: fix DROP CASCADE bug (#5375)
+
+A user found that DROP ... CASCADE of multiple objects--where those
+objects have dependent objects in common--failed. This was reported
+in #5316.
+
+The fix is to deduplicate the internal drop operations created by a
+single DROP statement, ensuring that we only attempt to drop the common
+dependent objects once.

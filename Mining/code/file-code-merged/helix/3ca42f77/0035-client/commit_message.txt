@@ -1,0 +1,2 @@
+Fix name of channel endpoints in DAP client (#5366)
+

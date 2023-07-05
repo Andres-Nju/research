@@ -1,0 +1,3 @@
+Fix error when JS is executed with --recompile (#2007)
+
+test case from @afinch7

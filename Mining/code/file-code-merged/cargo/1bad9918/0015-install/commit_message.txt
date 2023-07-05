@@ -1,0 +1,3 @@
+`cargo install` will ignore the target triple specified in a project directory
+
+Fixes #5441

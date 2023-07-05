@@ -1,0 +1,3 @@
+Merge pull request #10682 from mjibson/errors
+
+pgtest: error and docs improvements

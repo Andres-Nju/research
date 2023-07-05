@@ -1,0 +1,2 @@
+chore: update config link (#1398)
+

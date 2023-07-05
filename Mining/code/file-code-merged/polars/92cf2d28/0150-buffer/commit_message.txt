@@ -1,0 +1,1 @@
+first check ascii before we check utf8 in lossy encoding

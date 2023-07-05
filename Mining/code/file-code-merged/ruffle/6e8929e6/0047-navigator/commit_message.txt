@@ -1,0 +1,3 @@
+desktop: Handle relative URLs in navigate_to_url
+
+Fixes #10773

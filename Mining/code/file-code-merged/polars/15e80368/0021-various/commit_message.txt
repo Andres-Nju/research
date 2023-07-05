@@ -1,0 +1,2 @@
+fix[rust]: maintain logical type in value counts (#4460)
+

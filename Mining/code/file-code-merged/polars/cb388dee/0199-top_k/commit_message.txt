@@ -1,0 +1,2 @@
+fix(rust, python): always sort in `top_k` fast path (#8275)
+

@@ -1,0 +1,2 @@
+fix(es/lints): Ignore TS module declare blocks (#5363)
+

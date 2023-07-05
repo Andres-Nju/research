@@ -1,0 +1,2 @@
+Fix automatic scrolling on resize
+

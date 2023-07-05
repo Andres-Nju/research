@@ -1,0 +1,3 @@
+fix(ext/node): json encode binary command name (#18596)
+
+Fixes https://github.com/denoland/deno/issues/18588

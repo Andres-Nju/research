@@ -1,0 +1,7 @@
+sql: fix logic error in cluster drop check (#13366)
+
+This commit fixes a bug in the logic that decides whether a cluster has
+active items. Prior to this change, as cluster could be dropped when it
+had no exports (even if it had replicas) or when it had no replicas
+(even if it had exports), leaving catalog items that referred to a
+non-existing cluster.

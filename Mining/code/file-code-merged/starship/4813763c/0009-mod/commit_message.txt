@@ -1,0 +1,3 @@
+fix(init): Quote path for elvish init (#2294)
+
+Fixes starship/starship#2293

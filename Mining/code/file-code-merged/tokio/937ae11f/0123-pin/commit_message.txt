@@ -1,0 +1,2 @@
+macros: fix unresolved import in pin! (#2281)
+

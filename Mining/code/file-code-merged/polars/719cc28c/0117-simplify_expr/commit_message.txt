@@ -1,0 +1,2 @@
+fix[rust]: don't unwrap if lp has no input (#4909)
+

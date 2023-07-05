@@ -1,0 +1,5 @@
+Threshold should only produce positive updates (#2466)
+
+Threshold would set negative diffs to zero, but that confused other parts of the system. Specifically (for future ref) differential's consolidate method, which we used, doesn't seem to expect zero diffs and does not proactively filter out those that it does not create.
+
+Fixes #2464

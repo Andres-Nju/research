@@ -1,0 +1,11 @@
+Auto merge of #26005 - jdm:hubs-csp, r=nox
+
+Update content-security-policy.
+
+This allows hubs.mozilla.org to load instead of panicking due to unimplemented CSP features.
+
+---
+- [x] `./mach build -d` does not report any errors
+- [x] `./mach test-tidy` does not report any errors
+- [x] These changes fix #24702
+- [x] These changes do not require tests because we never enabled the CSP testsuite

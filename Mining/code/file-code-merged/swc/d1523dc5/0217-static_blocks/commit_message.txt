@@ -1,0 +1,4 @@
+fix(es/transforms/compat): Fix static blocks (#2652)
+
+swc_ecma_transforms_compat:
+ - `static_blocks`: Use correct name for generated private properties.

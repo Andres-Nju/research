@@ -1,0 +1,3 @@
+tests: fix race in test_batch (#5546)
+
+Signed-off-by: Jay Lee <busyjaylee@gmail.com>

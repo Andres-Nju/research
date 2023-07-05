@@ -1,0 +1,4 @@
+fix(es/transforms/optimization): Fix `dead_branch_remover` (#2373)
+
+swc_ecma_transforms_optimization:
+ - `dead_branch_remover`: Fix handling of `switch(boolean)`.

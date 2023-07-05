@@ -1,0 +1,2 @@
+chore: fix new clippy complaint (#3915)
+

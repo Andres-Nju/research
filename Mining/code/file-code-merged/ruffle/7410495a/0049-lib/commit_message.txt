@@ -1,0 +1,1 @@
+web: Fix repeating bitmap textures rendering

@@ -1,0 +1,3 @@
+Clear selection on grid swap
+
+Fixes #3290.

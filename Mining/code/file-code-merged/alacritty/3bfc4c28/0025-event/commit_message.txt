@@ -1,0 +1,3 @@
+Don't inherit `--command` for `SpawnNewInstance`
+
+Fixes #6060.

@@ -1,0 +1,5 @@
+fix(es/parser): Fix lexing of template literals. (#1450)
+
+swc_ecma_parser:
+ - Fix lexing of template literals. (denoland/deno#9620)
+ - Ensure that denoland/deno#9650 is not a bug of parser. 

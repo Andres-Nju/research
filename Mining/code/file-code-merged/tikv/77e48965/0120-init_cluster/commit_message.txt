@@ -1,0 +1,7 @@
+br: enlarge the raft client backoff in recovery mode since ebs restore volume very poor during restore (#13954)
+
+close tikv/tikv#13955
+
+fix: enlarge the raft client backoff in recovery mode since ebs restore volume very poor during restor
+
+Signed-off-by: fengou1 <feng.ou@pingcap.com>

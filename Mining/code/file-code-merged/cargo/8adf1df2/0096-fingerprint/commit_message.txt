@@ -1,0 +1,21 @@
+Auto merge of #11281 - smheidrich:fix-stale-mtime-log-ineq, r=ehuss
+
+Fix inequality in "stale mtime" log messages
+
+### What does this PR try to resolve?
+
+If `CARGO_LOG=cargo::core::compiler::fingerprint=info` is set, cargo will print log messages that are useful for finding out why something is being recompiled. E.g. if the modification time (mtime) of a source file is newer than the cached build result, it will print something like:
+
+```
+stale: changed "/host//home/runner/.cargo/registry/src/github.com-1285ae84e5963aae/proc-macro2-1.0.47/build.rs"
+          (vs) "/host/home/runner/target/release/build/proc-macro2-45f04ea9067a46ed/output"
+               FileTime { seconds: 1666559031, nanos: 16426033 } != FileTime { seconds: 1666559080, nanos: 324117075 }
+```
+
+However, the `!=` in the log message is misleading, as equality is not the [criterion that's actually used](https://github.com/rust-lang/cargo/blob/071eeaf210708219a5a1b2c4728ca2f97df7f2ae/src/cargo/core/compiler/fingerprint.rs#L1761) to determine when to rebuild.
+
+This PR fixes that by changing `!=` to `<`, corresponding to the actual criterion.
+
+### How should we test and review this PR?
+
+Look at the [criterion](https://github.com/rust-lang/cargo/blob/071eeaf210708219a5a1b2c4728ca2f97df7f2ae/src/cargo/core/compiler/fingerprint.rs#L1761) I linked and trace `stale_mtime` in the log message back to `path_mtime` in said criterion to see why it has to be `<`.

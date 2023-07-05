@@ -1,0 +1,7 @@
+Fix panic when reloading a shrunk file (#2506)
+
+* fix panic when reloading a shrunk file
+
+* linting
+
+* use scrolloff

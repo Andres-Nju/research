@@ -1,0 +1,8 @@
+avm1: Use `set_html_text` when initializing textfield from a variable binding
+
+If a textfield was created with a variable binding, and the variable
+already existed, the initial text of the textfield is set to the
+variable value. However, this was not obeying the HTML setting of
+the text field, so HTML tags were mistakenly shown in some content.
+
+Fixes #3522.

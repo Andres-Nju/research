@@ -1,0 +1,1 @@
+chore: Ignore new 'unnested_or_patterns' clippy lint as we the suggested behaviour doesn't exist outside of nightly

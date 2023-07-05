@@ -1,0 +1,1 @@
+Fix serialisation of 'image-orientation: <angle> flip'

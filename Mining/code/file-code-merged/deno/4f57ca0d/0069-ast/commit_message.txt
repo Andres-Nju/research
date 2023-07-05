@@ -1,0 +1,4 @@
+fix: panic in bundler (#8168)
+
+This commit fixes panic in bundler which was caused
+by not setting thread-local slots.

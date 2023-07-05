@@ -1,0 +1,3 @@
+Update cssparser to fix CSS.escape test failures
+
+Fixed failing tests #10685

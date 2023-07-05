@@ -1,0 +1,2 @@
+fix: improve forge install error message (#2543)
+

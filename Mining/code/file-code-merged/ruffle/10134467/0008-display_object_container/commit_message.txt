@@ -1,0 +1,1 @@
+avm2: Don't error on removeChildren() for empty containers - fixes #11382

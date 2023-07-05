@@ -1,0 +1,2 @@
+reload_all: Ensure view is synced with doc history before reload (#4965)
+

@@ -1,0 +1,1 @@
+kvserver: return more specific error to ticlient (#530)

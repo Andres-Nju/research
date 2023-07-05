@@ -1,0 +1,3 @@
+Makefile: fix test failure issue (#8102)
+
+Signed-off-by: Xintao <hunterlxt@live.com>

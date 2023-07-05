@@ -1,0 +1,3 @@
+Fix picker item width overflow
+
+Fixes #352

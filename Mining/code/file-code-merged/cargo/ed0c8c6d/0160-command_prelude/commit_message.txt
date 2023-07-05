@@ -1,0 +1,3 @@
+Auto merge of #9552 - taiki-e:typo, r=alexcrichton
+
+Fix typos in command_prelude.rs

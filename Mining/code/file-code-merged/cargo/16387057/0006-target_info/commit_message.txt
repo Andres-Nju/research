@@ -1,0 +1,9 @@
+Auto merge of #8123 - ehuss:fix-windows-pdb-dash, r=alexcrichton
+
+Fix pdb uplift when executable has dashes.
+
+Windows `.pdb` files were not being uplifted for executables with dashes in their name. `rustc` calls the linker with the crate name (with underscores), which creates a pdb with underscores. Cargo renames the executable (`foo_bar.exe` to `foo-bar.exe`), and it was expecting the pdb to have the same form, but it doesn't.
+
+Note: There shouldn't be any effect for using a debugger. Because the pdb path is embedded in the executable, the debugger was already looking in the `deps/` folder.  Uplifting is only useful if you want to copy the exe/pdb pair to some other machine.  In that case, it looks in the same directory as the `exe` for the pdb file.
+
+Fixes #8117

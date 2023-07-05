@@ -1,0 +1,3 @@
+panic: fix panic location message (#5710)
+
+This was meant to be the format of the PR, git failed me or I failed git.

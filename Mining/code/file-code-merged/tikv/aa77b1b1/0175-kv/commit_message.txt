@@ -1,0 +1,3 @@
+kv_service: fix the wrong metric name of handling batch batch_rollback (#7098)
+
+Signed-off-by: youjiali1995 <zlwgx1023@gmail.com>

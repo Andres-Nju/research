@@ -1,0 +1,3 @@
+Use JSautoCompartment in devtools handle_evaluate_js to avoid segfault
+
+fixes #11457

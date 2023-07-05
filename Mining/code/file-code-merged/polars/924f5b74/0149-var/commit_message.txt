@@ -1,0 +1,2 @@
+fix(rust, python): fix return value of std for single-element sequence with ddof=1 (#8730)
+

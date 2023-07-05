@@ -1,0 +1,2 @@
+service/kv.rs: reset conflict error to retryable for compatibility with older versions. (#3102)
+

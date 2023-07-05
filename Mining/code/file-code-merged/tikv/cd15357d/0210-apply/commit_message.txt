@@ -1,0 +1,3 @@
+raftstore/store: fix duplicated plus assign (#5038)
+
+Signed-off-by: Lonng <heng@lonng.org>

@@ -1,0 +1,15 @@
+copr: return memory locks correctly in replica read (#12388)
+
+close tikv/tikv#12341
+
+The memory lock returned from the leader in replica read is a
+tikv_kv::ErrorInner::KeyIsLocked. The conversion from this error to
+coprocessor::Error is not implemented, so this error is finally turned
+to an other error, which cannot be correctly handled in TiDB.
+
+This commit implements the missing conversion. Now, the memory
+lock will be correctly set in the `locked` field in the response.
+
+Signed-off-by: Yilin Chen <sticnarf@gmail.com>
+
+Co-authored-by: Ti Chi Robot <ti-community-prow-bot@tidb.io>

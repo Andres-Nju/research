@@ -1,0 +1,3 @@
+Typo fix in new doc-comment
+
+Co-Authored-By: SimonSapin <simon.sapin@exyr.org>

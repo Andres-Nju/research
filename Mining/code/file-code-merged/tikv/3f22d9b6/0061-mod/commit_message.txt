@@ -1,0 +1,1 @@
+*: display detailed error message (#496)

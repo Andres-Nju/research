@@ -1,0 +1,3 @@
+Merge pull request #7225 from philip-stoev/philip-stoev-explain-CastFloat64ToAPD
+
+apd: Fix the EXPLAIN output for the CastFloat64ToAPD

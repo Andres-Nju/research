@@ -1,0 +1,4 @@
+fix(css/parser): Fix error recovery logic of property values (#2331)
+
+swc_css_parser:
+ - Fix `state` used for error recovery.

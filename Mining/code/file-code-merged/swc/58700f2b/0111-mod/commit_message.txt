@@ -1,0 +1,5 @@
+fix(es): Preserve license comments by default (#6703)
+
+**Related issue:**
+
+ - Closes https://github.com/swc-project/swc/issues/6677.

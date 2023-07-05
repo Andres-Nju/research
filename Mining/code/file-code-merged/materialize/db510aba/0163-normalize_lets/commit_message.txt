@@ -1,0 +1,9 @@
+optimizer: hoist type knowledge into transform::normalize_lets
+
+Our type system has an unexpected corner in that the Eq
+implementation is derived but has no type knowledge, which
+necessitates using something other than `==` when determining
+type interoperability, i.e. a function named `base_eq`.
+
+This patch fixes an instance of this in the optimizer, but probably
+warrants a more thorough investigation into where else it's used.

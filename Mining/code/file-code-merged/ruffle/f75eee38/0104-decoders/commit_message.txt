@@ -1,0 +1,1 @@
+core/mp3: More lenient MP3 buffer underrun detection

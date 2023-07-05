@@ -1,0 +1,4 @@
+Fix minor bug/typo in `action_get_url_2`
+
+The current version just doesn't make any sense.
+The fixed version is akin to the `target.starts_with("_level") && target.len() > 6` line a bit earlier in this file.

@@ -1,0 +1,10 @@
+Auto merge of #11930 - arlosi:sparse-warning, r=epage
+
+Fix Cargo warning about unused sparse configuration key
+
+When doing a credential lookup, Cargo deserializes the registry configuration and detects the `registries.crates-io.protocol` key as unused and issues a warning:
+```
+warning: unused config key `registries.crates-io.protocol` in [..]
+```
+
+This fixes the issue by adding the field to the `RegistryConfig` struct.

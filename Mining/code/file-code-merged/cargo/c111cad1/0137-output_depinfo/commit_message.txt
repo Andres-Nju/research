@@ -1,0 +1,7 @@
+Auto merge of #9596 - ehuss:fix-dep-info-local, r=alexcrichton
+
+Fix dep-info files including non-local build script paths.
+
+I derped in #8177 and accidentally used the wrong unit when iterating over the dependencies when writing the `.d` file.  The consequence here is that all the `rerun-if-changed` paths from a unit's dependencies are included in the `.d` file. This fixes it so that it does not include non-local dependencies.
+
+Fixes #9445

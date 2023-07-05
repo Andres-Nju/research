@@ -1,0 +1,2 @@
+Prevent leak in progress tracking state (#15885)
+

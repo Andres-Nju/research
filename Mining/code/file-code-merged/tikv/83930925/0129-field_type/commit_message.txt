@@ -1,0 +1,3 @@
+collation: fix incorrect utf8_unicode_ci collation id (#9357)
+
+Signed-off-by: jwxiong <xiongjiwei1996@outlook.com>

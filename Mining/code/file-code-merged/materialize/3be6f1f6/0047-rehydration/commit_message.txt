@@ -1,0 +1,3 @@
+Merge pull request #15666 from aljoscha/storage-fix-slow-reconnect
+
+storage: when rehydrating, retry connecting much more eagerly

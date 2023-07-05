@@ -1,0 +1,3 @@
+Merge pull request #15699 from aljoscha/storage-downgrade-potential-red-herring-logs
+
+storage: downgrade potentially alarming error logs to trace logs

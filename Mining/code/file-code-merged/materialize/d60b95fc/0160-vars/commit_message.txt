@@ -1,0 +1,6 @@
+adapter: fix merge skew in vars declaration (#18004)
+
+
+---------
+
+Co-authored-by: Parker Timmerman <parker.timmerman@materialize.com>

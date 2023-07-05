@@ -1,0 +1,5 @@
+Auto merge of #9727 - ehuss:fix-version, r=alexcrichton
+
+Fix version string.
+
+The version string for `cargo version` was inadvertently changed in #9657 so that it does not include the leading `cargo` as in `cargo 1.53.0 (4369396ce 2021-04-27)`.

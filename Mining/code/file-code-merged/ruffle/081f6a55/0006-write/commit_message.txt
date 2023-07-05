@@ -1,0 +1,1 @@
+swf: Avoid undefined behavior in write_fbits

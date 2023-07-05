@@ -1,0 +1,3 @@
+Merge pull request #2615 from justinj/update-view
+
+Make mz_perf_arrangement_records use a left join

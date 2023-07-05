@@ -1,0 +1,2 @@
+runtime: better error message in block_on_all on panics (#1166)
+

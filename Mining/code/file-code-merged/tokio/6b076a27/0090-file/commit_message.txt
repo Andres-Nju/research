@@ -1,0 +1,8 @@
+fs: wait for in-flight ops before cloning `File` (#5803)
+
+If there is an ongoing operation on a file, wait for that to complete
+before performing the clone in `File::try_clone`. This avoids a race
+between the ongoing operation and any subsequent operations performed on
+the clone.
+
+Fixes: #5759

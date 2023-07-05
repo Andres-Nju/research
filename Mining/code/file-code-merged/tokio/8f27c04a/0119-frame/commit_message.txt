@@ -1,0 +1,2 @@
+codec: remove unnecessary doc(cfg(...)) (#3989)
+

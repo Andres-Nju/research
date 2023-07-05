@@ -1,0 +1,2 @@
+try getting key from config on verifybundle (#4233)
+

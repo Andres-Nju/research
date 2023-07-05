@@ -1,0 +1,5 @@
+fix(java): Improved regex for Java version (starship#4610) (#4616)
+
+* fix(java): Improved regex for Java version (starship#4610)
+
+* fix(java): Fixed tests and tweaked regex to accomodate Eclipse OpenJ9 (starship#4610)

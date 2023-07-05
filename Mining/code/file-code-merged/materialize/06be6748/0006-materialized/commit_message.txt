@@ -1,0 +1,3 @@
+Merge pull request #2723 from benesch/bugs
+
+materialized: don't ask for emailed bug reports

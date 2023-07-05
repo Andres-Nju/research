@@ -1,0 +1,1 @@
+Issue #13350 Report tidy error for space after (

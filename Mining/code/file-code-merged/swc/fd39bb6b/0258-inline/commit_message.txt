@@ -1,0 +1,2 @@
+fix(es/minifier): Don't inline variables declared multiple times (#5667)
+

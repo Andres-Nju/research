@@ -1,0 +1,3 @@
+fix: panicked at 'attempt to subtract with overflow' 
+helix-term/src/ui/editor.rs:275:29
+This would happen when the window-size was to small to display the entire width and one would start jumping forwards with f<some_char> and the beginning of the highlighted area would end up outside of the window

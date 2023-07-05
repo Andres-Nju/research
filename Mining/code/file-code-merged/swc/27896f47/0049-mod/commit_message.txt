@@ -1,0 +1,5 @@
+perf(es/transforms): Exclude old inlining pass (#6203)
+
+**Related issue:**
+
+ - Closes https://github.com/swc-project/swc/issues/6194.

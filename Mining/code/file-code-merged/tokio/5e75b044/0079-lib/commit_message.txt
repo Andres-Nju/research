@@ -1,0 +1,2 @@
+Fix doc comment spelling in lib.rs (#2233)
+

@@ -1,0 +1,2 @@
+io: fix `take` when using evil reader (#4428)
+

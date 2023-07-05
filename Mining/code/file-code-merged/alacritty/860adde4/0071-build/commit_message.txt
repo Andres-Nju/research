@@ -1,0 +1,5 @@
+Fix feature checking in cross builds
+
+Checking for target os in build.rs doesn't work, since build.rs
+is running for host, so checking should be done in src. Thus moving
+'compile_error!' check from build.rs to main.rs.

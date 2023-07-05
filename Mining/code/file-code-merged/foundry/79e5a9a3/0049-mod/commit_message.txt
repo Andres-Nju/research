@@ -1,0 +1,11 @@
+fix: strip 0x prefix when parsing private key (#856)
+
+* :gear: strip 0x prefix for cast wallet address
+
+* Revert "add notes on verbosity levels for viewing logs in stdout (#851)"
+
+This reverts commit 2316100329115fefbac2f1962f368c0107ed9cb7.
+
+* Revert "Revert "add notes on verbosity levels for viewing logs in stdout (#851)""
+
+This reverts commit b0c53257c8bacb27bf97616febd1c72567116986.

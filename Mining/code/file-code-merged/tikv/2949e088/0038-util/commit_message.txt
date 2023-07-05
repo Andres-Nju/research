@@ -1,0 +1,9 @@
+Cherry pick several bug fixes (#2688)
+
+* Cargo: update prometheus to v0.3.7 (#2684)
+
+* Cargo: update hyper to v0.9.18 (#2686)
+
+* pd: cancel call when refreshing client (#2669)
+
+* ci-build/test.sh: add execute permission (#2472)

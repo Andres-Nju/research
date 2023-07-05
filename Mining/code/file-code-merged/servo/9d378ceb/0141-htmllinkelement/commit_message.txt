@@ -1,0 +1,3 @@
+use .set_tokenlist_attribute to set rel content attribute in SetRel
+
+Removed .ini files expecting crashes

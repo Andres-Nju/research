@@ -1,0 +1,1 @@
+Fix the two-value form of text-overflow to work in stylo

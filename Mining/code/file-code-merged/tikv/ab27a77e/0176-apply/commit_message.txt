@@ -1,0 +1,30 @@
+Fix redundant closure warning (#9619)
+
+### What problem does this PR solve?
+
+```
+warning: try not to call a closure in the expression where it is declared
+    --> components/raftstore/src/store/fsm/apply.rs:3220:9
+     |
+3220 |         (|| fail_point!("apply_on_handle_snapshot_sync", |_| { need_sync = true }))();
+     |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try doing something like: `{}`
+     |
+     = note: `#[warn(clippy::redundant_closure_call)]` on by default
+     = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#redundant_closure_call
+```
+
+### What is changed and how it works?
+
+remove redundant closure
+
+
+### Check List
+
+Tests
+
+Compile after change and warning does not occur.
+
+
+### Release note
+
+* None

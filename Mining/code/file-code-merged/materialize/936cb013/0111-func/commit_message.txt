@@ -1,0 +1,3 @@
+Merge pull request #18195 from mjibson/array-in
+
+sql: correct array_in argument usage

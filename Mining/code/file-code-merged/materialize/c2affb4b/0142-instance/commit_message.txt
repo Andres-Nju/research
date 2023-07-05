@@ -1,0 +1,1 @@
+compute-controller: Fix race between replica crash and drop

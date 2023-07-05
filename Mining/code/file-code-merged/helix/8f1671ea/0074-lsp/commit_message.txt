@@ -1,0 +1,2 @@
+fix panic in inlay hint computation when view anchor is out of bounds (#6883)
+

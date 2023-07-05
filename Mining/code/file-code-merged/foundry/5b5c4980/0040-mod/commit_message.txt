@@ -1,0 +1,5 @@
+chore(cast): add 0x prefix to `cast wallet new` output (#3637)
+
+* chore(cast): remove 0x prefix from vanity private key output
+
+* fix

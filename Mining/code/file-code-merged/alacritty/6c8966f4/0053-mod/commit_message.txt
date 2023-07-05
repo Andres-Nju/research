@@ -1,0 +1,17 @@
+Fix scroll down escape pulling lines from history
+
+This works around a bug where the optimized version of the
+`Grid::scroll_down` function would just rotate the entire grid down if
+the scrolling region starts at the top of the screen, even if there is
+history available.
+
+Since rotations of scrolling regions should not affect the scrollback
+history, this optimized version is now only called when the max
+scrollback size is 0, making it impossible for the grid to have any
+history while it is used.
+
+Since the main usecase of this is the alternate screen buffer, which
+never has any history, the performance should not be affected negatively
+by this change.
+
+Fixes #3582.

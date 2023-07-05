@@ -1,0 +1,2 @@
+deletion of lines affecting popup scrolling (#2497)
+

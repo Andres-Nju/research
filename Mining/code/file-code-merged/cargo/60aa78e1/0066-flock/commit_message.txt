@@ -1,0 +1,9 @@
+Ignore file lock errors if unsupported, on Windows
+
+Not all file systems support file locking; WSL’s network file system
+doesn’t seem to, and I don’t think other network file systems will,
+either (though I haven’t checked them). ERROR_INVALID_FUNCTION is
+Windows’ equivalent to Unix’s ENOTSUP and Linux’s ENOSYS which are
+checked just above.
+
+Fixes #7511.

@@ -1,0 +1,2 @@
+fix(rust, python): ensure perfect hash table processes the nulls (#8668)
+

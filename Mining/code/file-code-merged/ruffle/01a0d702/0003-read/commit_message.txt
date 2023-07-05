@@ -1,0 +1,3 @@
+avm2: Fix parsing of methods with more than 127 arguments
+
+this change follows section 4.5 of https://www.adobe.com/content/dam/acom/en/devnet/pdf/avm2overview.pdf (dead link, use an archive)

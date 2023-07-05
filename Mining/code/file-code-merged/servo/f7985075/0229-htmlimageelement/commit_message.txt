@@ -1,0 +1,1 @@
+Avoid marking image element as complete before its image data is available.

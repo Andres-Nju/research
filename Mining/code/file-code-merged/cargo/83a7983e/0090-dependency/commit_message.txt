@@ -1,0 +1,13 @@
+Auto merge of #10685 - Muscraft:cargo-add-workspace-source, r=epage
+
+fix bugs with `workspace` key and `update_toml`
+
+### Motivations and Context
+
+When working on an external subcommand to help with the switch to workspace inheritance, I found issues with the output `Cargo.toml` it was creating. When a `cargo_add::Dependency` would change its source to a `WorkspsaceSource`, `workspace = true` would not show up. This lead me to discover that the `default-features` key was not being removed when the `workspace` key was set.
+
+This fixes those issues but brought up questions about how to deal with removing keys and clearing conflicting fields in a `Dependency`. After talking with `@epage,` it was decided that this was the minimal set of changes to make while the changes to fix the other issues is workshopped.
+
+### Changes
+- add `default-features` to the list of keys to remove when the source is a `WorkspaceSource`
+- insert a `workspace` key when the source is a `WorkspaceSource`

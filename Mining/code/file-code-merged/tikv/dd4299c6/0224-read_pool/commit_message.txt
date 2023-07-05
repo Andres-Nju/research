@@ -1,0 +1,10 @@
+fix typo (#13699)
+
+close tikv/tikv#13706
+
+fix-typo: replace `threahold` with `threshold `.
+
+Signed-off-by: goldwind-ting <63939636+goldwind-ting@users.noreply.github.com>
+
+Co-authored-by: Yilin Chen <sticnarf@gmail.com>
+Co-authored-by: Ti Chi Robot <ti-community-prow-bot@tidb.io>

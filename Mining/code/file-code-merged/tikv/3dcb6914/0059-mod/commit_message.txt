@@ -1,0 +1,2 @@
+dag/expr: return other error instead of panic when expression is illegal (#2347)
+

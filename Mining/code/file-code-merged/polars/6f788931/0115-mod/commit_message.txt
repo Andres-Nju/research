@@ -1,0 +1,2 @@
+fix[rust]: argsort argument expansion fixed (#4434)
+

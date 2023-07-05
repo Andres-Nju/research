@@ -1,0 +1,9 @@
+sql: Fix statement timeout error code (#15816)
+
+Previously, when a statement timed out, we were setting the error code
+to IDLE_IN_TRANSACTION_SESSION_TIMEOUT. PostgreSQL however uses the
+error code QUERY_CANCELED for statement timeouts:
+https://github.com/postgres/postgres/blob/6e10631d1e6e350ba3f82b0bd3a29678f9f5badd/src/backend/tcop/postgres.c#L3298-L3304
+
+This commit updates the error code we use for statement timeouts to
+QUERY_CANCELED to match PostgreSQL.

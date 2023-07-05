@@ -1,0 +1,2 @@
+propagate initial errors in linear joins (#5664)
+

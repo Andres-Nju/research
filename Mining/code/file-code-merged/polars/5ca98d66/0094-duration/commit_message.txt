@@ -1,0 +1,3 @@
+fix(rust): improve error message in date_range with invalid units (#6671)
+
+Co-authored-by: MarcoGorelli <>

@@ -1,0 +1,2 @@
+fix(swc): Don't print same error twice (#2692)
+

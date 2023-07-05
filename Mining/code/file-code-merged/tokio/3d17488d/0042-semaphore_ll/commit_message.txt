@@ -1,0 +1,4 @@
+sync: fix mpsc bug related to closing the channel (#3215)
+
+When closing a channel, it is possible to get into an invalid state when
+outstanding permits release capacity back to the channel.

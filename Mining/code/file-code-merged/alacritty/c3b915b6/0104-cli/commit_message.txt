@@ -1,0 +1,6 @@
+Fix `--help` output for `--class` to match man pages
+
+The output of --help did not match the man pages with regards to the
+ordering of arguments for the --class flag. This has now been fixed.
+
+Fixes #6413.

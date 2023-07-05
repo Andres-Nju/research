@@ -1,0 +1,5 @@
+Use actual size for old allocation in ft_realloc.
+
+Prevents crashes from improperly freed memory.
+
+Fixes #19008, fixes #18950, fixes #18949.

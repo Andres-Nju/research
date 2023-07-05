@@ -1,0 +1,11 @@
+Show hollow cursor for windows starting unfocused
+
+Alacritty made the assumption that every window started as focused and
+because of that the hollow cursor wouldn't show up for windows which are
+launched without focus.
+
+Since even the initial focus should be reported as a focus event by
+winit, this could be easily fixed just setting the default window state
+to unfocused instead of focused.
+
+This fixes #1563.

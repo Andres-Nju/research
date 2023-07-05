@@ -1,0 +1,3 @@
+Merge pull request #10960 from MaterializeInc/benesch-patch-1
+
+coord: make `version()` match `server_version` session var

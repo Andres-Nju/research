@@ -1,0 +1,2 @@
+fix(rust, python): fix ternary with list output on empty frame (#5595)
+

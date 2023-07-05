@@ -1,0 +1,5 @@
+Fix dead-lock in TextEdit on touch-screens (#1118)
+
+Introduced in https://github.com/emilk/egui/pull/1035
+
+Fixes https://github.com/emilk/egui/issues/1116

@@ -1,0 +1,2 @@
+fix(rust, python): Fix lazy encode schema (#7912)
+

@@ -1,0 +1,2 @@
+Remove stupid assertion (#914)
+

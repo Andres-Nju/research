@@ -1,0 +1,9 @@
+Auto merge of #9275 - ehuss:features-non-member, r=alexcrichton
+
+Fix --feature pkg/feat for V1 resolver for non-member.
+
+#8997 had an unintended regression where `-p foo --feature foo/feat` syntax where `foo` is an **optional non-member** fails with an error that `foo` did not match any packages.  The issue is that the member/feature selection routine needed to slot this into the features for the package in the current working directory (it was incorrectly treating `foo` as a workspace member).
+
+V2 outright does not allow specifying features for non-workspace members.
+
+Fixes #9265

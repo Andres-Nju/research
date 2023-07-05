@@ -1,0 +1,2 @@
+Fix bug when launching hx file.rs:10 (#1676)
+

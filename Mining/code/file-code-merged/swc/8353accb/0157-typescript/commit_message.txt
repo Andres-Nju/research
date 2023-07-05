@@ -1,0 +1,5 @@
+fix(es/codegen): Emit `type_params` for `TsConstructSignatureDecl` (#7080)
+
+**Related issue:**
+
+ - Closes https://github.com/swc-project/swc/issues/7079.

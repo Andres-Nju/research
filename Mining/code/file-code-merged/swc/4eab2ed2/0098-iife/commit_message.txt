@@ -1,0 +1,7 @@
+fix(es/minifier): Don't inline regex for IIFEs (#6283)
+
+**Related issue:**
+
+ - Closes https://github.com/swc-project/swc/issues/6279.
+
+Co-authored-by: Justin Ridgewell <justin@ridgewell.name>

@@ -1,0 +1,2 @@
+Set `connect.name=io.debezium.data.Json` for JSON fields in sink output (#4744)
+

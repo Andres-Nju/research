@@ -1,0 +1,2 @@
+docs: fix link to ThreadPool (#830)
+

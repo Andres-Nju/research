@@ -1,0 +1,3 @@
+tidb_query: fix analyze column inconsistent behavior betwen TiDB and TiKV (#6055)
+
+Signed-off-by: Lonng <heng@lonng.org>

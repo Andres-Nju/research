@@ -1,0 +1,3 @@
+Merge pull request #7011 from aljoscha/improve-upsert-error-message
+
+sink: improve error message for violated UPSERT assumption

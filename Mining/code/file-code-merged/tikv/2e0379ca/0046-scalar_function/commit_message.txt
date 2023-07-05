@@ -1,0 +1,3 @@
+Report better error message when PbCode is unspecified (#5855)
+
+Signed-off-by: Breezewish <breezewish@pingcap.com>

@@ -1,0 +1,2 @@
+Fix LSP completions ignoring auto-completion option (#5042)
+

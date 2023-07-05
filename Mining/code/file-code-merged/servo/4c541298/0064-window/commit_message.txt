@@ -1,0 +1,1 @@
+Avoid panic when postMessage targets closed window.

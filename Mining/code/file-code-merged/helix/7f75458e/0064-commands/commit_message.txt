@@ -1,0 +1,2 @@
+Fix some commands not showing names in palette (#4223)
+

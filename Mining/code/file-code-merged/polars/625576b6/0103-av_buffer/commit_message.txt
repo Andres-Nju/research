@@ -1,0 +1,2 @@
+feat(rust, python): improve error message on row-wise overflow (#9021)
+

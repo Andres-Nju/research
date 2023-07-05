@@ -1,0 +1,2 @@
+fix(python): fix dtype of diff for uint8 (#7010)
+

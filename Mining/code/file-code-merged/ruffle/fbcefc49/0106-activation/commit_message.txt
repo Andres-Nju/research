@@ -1,0 +1,4 @@
+avm2: Fix "Property does not exist" error message
+
+The `multiname` is now a `Gc`, so we need to dereference it
+to get a useful Debug impl.

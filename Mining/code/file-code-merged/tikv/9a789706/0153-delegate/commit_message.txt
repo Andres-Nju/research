@@ -1,0 +1,5 @@
+*: fix issue that some components depend on protobuf-codec unconditionally (#9968)
+
+Signed-off-by: kennytm <kennytm@gmail.com>
+
+Co-authored-by: Ti Chi Robot <ti-community-prow-bot@tidb.io>

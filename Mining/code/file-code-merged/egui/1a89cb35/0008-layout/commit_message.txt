@@ -1,0 +1,7 @@
+Fix uneven table striping (#1680)
+
+* Fix uneven table striping
+
+* simplify the code
+
+Co-authored-by: Emil Ernerfeldt <emil.ernerfeldt@gmail.com>

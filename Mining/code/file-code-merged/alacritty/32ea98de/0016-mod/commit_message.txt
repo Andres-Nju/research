@@ -1,0 +1,4 @@
+Fix hyperlink preview for 2 lines terminal (#6953)
+
+The intention was to show it, however it was hidden due to wrong
+comparisson check.

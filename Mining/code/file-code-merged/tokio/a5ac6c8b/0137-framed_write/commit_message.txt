@@ -1,0 +1,2 @@
+Fix undesired multi-line error message (#605)
+

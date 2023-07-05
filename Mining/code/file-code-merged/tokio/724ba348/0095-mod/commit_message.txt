@@ -1,0 +1,2 @@
+chore: fix warning from new Rust version (#3647)
+

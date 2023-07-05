@@ -1,0 +1,2 @@
+fix(rust,python): sql `BETWEEN` bounds should be inclusive (#8818)
+

@@ -1,0 +1,3 @@
+Fix tests with `url` crate update
+
+Works around servo/rust-url#577

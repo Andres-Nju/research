@@ -1,0 +1,2 @@
+time: document maximum sleep duration (#3126)
+

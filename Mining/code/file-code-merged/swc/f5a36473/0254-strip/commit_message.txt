@@ -1,0 +1,3 @@
+fix(es/typescript): Allow empty nested namespaces (#3754)
+
+Co-authored-by: Donny/강동윤 <kdy1997.dev@gmail.com>

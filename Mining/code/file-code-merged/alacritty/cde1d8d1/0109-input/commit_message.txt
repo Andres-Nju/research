@@ -1,0 +1,19 @@
+Fix incorrect cell side in selection
+
+Previously the cell side of a selection with the mouse outside of the
+grid has been calculated by setting the `Side` to `Right` whenever the
+`X` of the mouse is bigger or equal to `window_width - padding_x`.
+However since the grid doesn't perfectly fit the window in most cases,
+there was an additional few pixels where the `Side` would be `Left`,
+resulting in the selection jumping around.
+
+To fix this the additional padding due to not perfectly fitting window
+size has been included in the calculation. The `X` position is now
+checked to be bigger or equal to `width - padding_x - extra_padding_x`.
+
+An important note is that this will need changing when the grid is
+centered inside the window, so extra padding is split up evenly. Once
+that change is merged the calculation required will be
+`width - padding_x - extra_padding_x / 2.`.
+
+This fixes #1412.

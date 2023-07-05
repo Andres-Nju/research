@@ -8,10 +8,16 @@ if __name__ == '__main__':
     code_dir = cur_path + '/' + code_repo
     with os.scandir(code_dir) as Codes:
         for repo in Codes: # repo level
+            if "DS_Store" in repo.name:
+                continue
             with os.scandir(repo.path) as Commmits:
                 for commit in Commmits:
+                    if "DS_Store" in commit.name:
+                        continue
                     with os.scandir(commit.path) as files:
                         for file in files:
+                            if "DS_Store" in file.name:
+                                continue
                             with os.scandir(file.path) as methods:
                                 for method in methods:
                                     if ".txt" == method.name[-4:]:

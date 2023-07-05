@@ -1,0 +1,10 @@
+fix(git_status): Fix file rename inconsistency compared to git (#1411)
+
+* Remove renames_index_to_workdir() option from git status
+
+This option causes advanced files rename detection which causes inconsistency between `git status` and Starship reports.
+Closes #1371
+
+* add test for manually remaned and deleted files in git_state module
+
+* fix tests

@@ -1,0 +1,2 @@
+throw error on empty keyed groupby (#3049)
+

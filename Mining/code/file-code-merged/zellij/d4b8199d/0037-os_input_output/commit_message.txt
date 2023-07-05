@@ -1,0 +1,8 @@
+fix(pty): send SIGHUP instead of SIGTERM when closing a pane (#1320)
+
+SIGHUP correctly states the intention behind sending a signal when a
+pane is closed: The controlling terminal is "hung up".
+Also, SIGHUP is better suited than SIGTERM since bash ignores the
+latter. This led to the zombie processes observed by some users.
+Furthermore, SIGHUP has a special meaning in bash's job control, namely
+re-sending the signal to all owned jobs before exiting.

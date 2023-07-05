@@ -1,0 +1,5 @@
+Slider, by default clamp to range (#789)
+
+* Slider, by default clamp to range
+
+* Update change log.

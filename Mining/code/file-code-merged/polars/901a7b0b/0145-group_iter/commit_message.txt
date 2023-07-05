@@ -1,0 +1,2 @@
+fix(rust, python): fix chunked literals in expression engine (#7973)
+

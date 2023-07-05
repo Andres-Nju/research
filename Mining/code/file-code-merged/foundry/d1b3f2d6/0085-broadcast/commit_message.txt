@@ -1,0 +1,2 @@
+add better error message if chain is legacy (#3853)
+

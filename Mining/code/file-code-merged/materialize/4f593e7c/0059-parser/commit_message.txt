@@ -1,0 +1,3 @@
+Merge pull request #10176 from benesch/sql-empty-select
+
+sql-parser: permit nested empty SELECTs

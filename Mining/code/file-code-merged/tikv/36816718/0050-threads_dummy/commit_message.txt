@@ -1,0 +1,3 @@
+build: fix building under macos (#9211)
+
+Signed-off-by: longfangsong <longfangsong@icloud.com>

@@ -1,0 +1,2 @@
+feat(compat): add .code to dyn import error (#12633)
+

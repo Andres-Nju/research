@@ -1,0 +1,1 @@
+avm2: Fix panic in regexp when a wide empty string is used

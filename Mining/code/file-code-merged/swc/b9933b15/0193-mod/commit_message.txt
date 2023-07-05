@@ -1,0 +1,2 @@
+feat(es/compat): Fix syntax context of transpiled class methods (#5498)
+

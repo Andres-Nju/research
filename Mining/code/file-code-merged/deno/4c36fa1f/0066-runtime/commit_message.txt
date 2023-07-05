@@ -1,0 +1,2 @@
+chore: Fix typo in no-pending-ops error message (#12948)
+

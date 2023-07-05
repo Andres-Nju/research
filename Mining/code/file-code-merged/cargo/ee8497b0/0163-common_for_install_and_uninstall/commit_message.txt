@@ -1,0 +1,8 @@
+Auto merge of #9582 - hi-rustin:rustin-patch-errors, r=ehuss
+
+Add more details for installing git repository errors
+
+close https://github.com/rust-lang/cargo/issues/9422
+close https://github.com/rust-lang/cargo/issues/9011
+
+r? `@ehuss`

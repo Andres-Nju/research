@@ -1,0 +1,4 @@
+fix(es/ast): Compilation (#1357)
+
+swc_ecma_ast:
+ - Fix compilation.

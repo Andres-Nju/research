@@ -1,0 +1,7 @@
+Ignore SendErrors when handling grammars (#2641)
+
+When handling grammars, fetching and building is done in a thread
+pool.  Results are communicated over channels and the receiving
+channel is closed on first error. This causes subsequent sends to
+fail causing a mess in stderr. This ignores all SendErrors causing
+only the first error to be printed.

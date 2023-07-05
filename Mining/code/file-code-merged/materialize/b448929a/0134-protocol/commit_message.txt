@@ -1,0 +1,3 @@
+Merge pull request #11005 from lluki/fix6305
+
+Fix timeout on FETCH 0, fixes #6305

@@ -1,0 +1,2 @@
+`error!` on unknown `CompletionItemKind` (#4658)
+

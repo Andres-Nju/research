@@ -1,0 +1,5 @@
+Fix panic on paste from blackhole register (#4497)
+
+The sequence "_y"_p panics because the blackhole register contains an
+empty values vec. This causes a panic when pasting since it unwraps
+a `slice::last`.

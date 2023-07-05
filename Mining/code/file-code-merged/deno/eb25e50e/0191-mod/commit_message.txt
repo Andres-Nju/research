@@ -1,0 +1,9 @@
+fix(cli): restore `deno run -` to handle stdin as typescript (#18391)
+
+Bug reported here shortly after merging `--ext` changes
+https://github.com/denoland/deno/pull/17172#issuecomment-1480898098
+
+Also found a missing `--check` in integration tests for `--ext` that
+would have missed a bug if there was one.
+
+Fixes #18392

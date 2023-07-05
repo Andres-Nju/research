@@ -1,0 +1,5 @@
+Auto merge of #9746 - ehuss:beta-cargo-util-version, r=alexcrichton
+
+[beta] Backport cargo-util version fix
+
+Backport of #9745 to fix the version for cargo-util.  This should help if someone does `cargo update -p cargo` to ensure they get the correct version of cargo-util.

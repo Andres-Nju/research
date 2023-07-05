@@ -1,0 +1,7 @@
+engine: update raft-engine (#14495)
+
+close tikv/tikv#14468
+
+Update the dependency to `raft-engine` lib, to fix the bug that the size of `prefill-for-recycle` is not adaptive to dynamic regions.
+
+Signed-off-by: Lucasliang <nkcs_lykx@hotmail.com>

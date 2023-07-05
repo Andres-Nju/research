@@ -1,0 +1,55 @@
+Fix test: test_region_heartbeat_report_approximate_size (#10328)
+
+* fix unstable test
+
+Signed-off-by: Little-Wallace <bupt2013211450@gmail.com>
+
+* increase batch size
+
+Signed-off-by: Little-Wallace <bupt2013211450@gmail.com>
+
+* fix fmt
+
+Signed-off-by: Little-Wallace <bupt2013211450@gmail.com>
+
+* fix fmt
+
+Signed-off-by: Little-Wallace <bupt2013211450@gmail.com>
+
+* reduce send message
+
+Signed-off-by: Little-Wallace <bupt2013211450@gmail.com>
+
+* reduce election timeout
+
+Signed-off-by: Little-Wallace <bupt2013211450@gmail.com>
+
+* fix split check diff size
+
+Signed-off-by: Little-Wallace <bupt2013211450@gmail.com>
+
+* reduce election timeout
+
+Signed-off-by: Little-Wallace <bupt2013211450@gmail.com>
+
+* reduce send message
+
+Signed-off-by: Little-Wallace <bupt2013211450@gmail.com>
+
+* remove fail point
+
+Signed-off-by: Little-Wallace <bupt2013211450@gmail.com>
+
+* increase channel size
+
+Signed-off-by: Little-Wallace <bupt2013211450@gmail.com>
+
+* fix tests fmt
+
+Signed-off-by: Little-Wallace <bupt2013211450@gmail.com>
+
+* add some comment
+
+Signed-off-by: Little-Wallace <bupt2013211450@gmail.com>
+
+Co-authored-by: Jay <BusyJay@users.noreply.github.com>

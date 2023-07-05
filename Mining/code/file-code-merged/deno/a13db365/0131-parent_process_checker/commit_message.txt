@@ -1,0 +1,2 @@
+fix(lsp): do not output to stderr before exiting the process (#11562)
+

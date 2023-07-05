@@ -1,0 +1,8 @@
+Fix division by zero in gradient stop calculation
+
+Check if total_length is zero and return 0.0 instead
+of NaN in this case.
+
+Closes #18435
+
+Regression test for crash.

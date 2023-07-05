@@ -1,0 +1,6 @@
+Improve "dirty" error message
+
+Improve the error message stating the working directory has dirty
+files (files not yet committed).
+
+Fix #3876.

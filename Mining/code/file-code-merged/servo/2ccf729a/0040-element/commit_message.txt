@@ -1,0 +1,1 @@
+Fix crash when id attribute is set via SetAttributeNode

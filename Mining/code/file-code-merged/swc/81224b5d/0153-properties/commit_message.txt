@@ -1,0 +1,5 @@
+fix(es/minifier): Don't convert a signed integer literal key to a numeric literal (#6529)
+
+**Related issue:**
+
+ - Closes https://github.com/swc-project/swc/issues/6528.

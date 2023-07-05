@@ -1,0 +1,2 @@
+fix(rust, python): Fix erroneous warning in `hist` (#8982)
+

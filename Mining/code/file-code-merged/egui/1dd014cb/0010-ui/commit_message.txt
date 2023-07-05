@@ -1,0 +1,2 @@
+mark the response of a toggle_value as changed on click (#1573)
+

@@ -1,0 +1,23 @@
+Issue 13363 - Step 1.2 of compiling event handler
+
+When compiling event handlers, check whether scripting is enabled
+and early return None/null if not.
+
+https://html.spec.whatwg.org/multipage/
+webappapis.html#getting-the-current-value-of-the-event-handler
+
+Issue 13363 - Fix spec for disabled scripting
+
+The original spec for this PR was bad because it depended on the
+DOM without scripting enabled to use Javascript to signal the test's
+failure, so it could never fail.
+
+Use an onerror handler on `window` where scripting is enabled, and
+use an invalid string of JavaScript for the handler, to detect
+whether or not the event handler is *really* being compiled or not.
+
+Condense tests into a single HTML file
+
+Yup, didn't even realize I could do that at the time.
+
+Remove an unnecessary test

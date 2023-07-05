@@ -1,0 +1,5 @@
+fix(es/parser): Fix handling of `in` and `out` of typescript (#7308)
+
+**Related issue:**
+
+ - Closes #7305.

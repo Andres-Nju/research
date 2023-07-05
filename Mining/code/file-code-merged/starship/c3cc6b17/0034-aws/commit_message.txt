@@ -1,0 +1,8 @@
+test(aws): Ignore tests that check .aws files (#1775)
+
+When running the AWS module it will parse the AWS config found in
+`~/.aws/config` to get the region. This means that tests that expect no
+region to be set will fail if there exists a default profile with a
+region set, which is probably true for most AWS users. To avoid this
+have set the AWS tests that depend on the non-existance of a
+`.aws/config` to be ignored.

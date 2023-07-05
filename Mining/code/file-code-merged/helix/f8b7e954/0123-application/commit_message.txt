@@ -1,0 +1,2 @@
+LSP: Gracefully handle 'workspace/configuration' from a stopped server (#6693)
+

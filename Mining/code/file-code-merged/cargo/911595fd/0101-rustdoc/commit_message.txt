@@ -1,0 +1,5 @@
+Auto merge of #8911 - ehuss:rustdoc-warnings, r=alexcrichton
+
+Fix some rustdoc warnings.
+
+Silences some warnings from rustdoc.  `SourceKind` is private and can't be linked from a public type.

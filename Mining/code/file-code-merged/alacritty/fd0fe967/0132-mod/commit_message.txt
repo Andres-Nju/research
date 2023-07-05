@@ -1,0 +1,3 @@
+Fix fullwidth character crash on resize
+
+Fixes #5383.

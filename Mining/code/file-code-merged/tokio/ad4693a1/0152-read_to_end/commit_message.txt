@@ -1,0 +1,2 @@
+Fix the doc of read_to_end method (#482)
+

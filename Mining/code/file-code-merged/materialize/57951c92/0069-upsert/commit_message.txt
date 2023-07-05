@@ -1,0 +1,2 @@
+Error out upsert sources on key decoding errors (#6807)
+

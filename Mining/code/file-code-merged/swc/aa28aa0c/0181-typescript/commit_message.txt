@@ -1,0 +1,5 @@
+fix(es/parser): Fix `typeof` in `TSCallSignatureDeclaration` (#6553)
+
+**Related issue:**
+
+ - Closes https://github.com/swc-project/swc/issues/6430

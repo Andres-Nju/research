@@ -1,0 +1,7 @@
+fix(swc): Fix order of passes (#2427)
+
+swc_ecam_transforms_typescript:
+ - Preserve more jsx-related imports.
+
+swc:
+ - Change pass ordering.

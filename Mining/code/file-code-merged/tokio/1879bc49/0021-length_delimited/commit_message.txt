@@ -1,0 +1,22 @@
+codec: Fix panic in `LengthDelimitedCodec::encode` (#682)
+
+Fixes: #681 
+
+## Motivation
+
+Currently, a potential panic exists in `LengthDelimitedCodec::encode`.
+Writing the length field to the `dst` buffer can exceed the buffer
+capacity, as `BufMut::put_uint_{le,be}` doesn't reserve more capacity. 
+
+## Solution
+
+This branch adds a call to `dst.reserve` to ensure that there's 
+sufficient remaining buffer capacity to hold the length field and
+the frame, prior to writing the length field. Previously, capacity
+was only reserved later in the function, when writing the frame
+to the buffer, and we never reserved capacity for the length field.
+
+I've also added a test that reproduces the issue. The test panics on
+master, but passes after making this change.
+
+Signed-off-by: Eliza Weisman <eliza@buoyant.io>

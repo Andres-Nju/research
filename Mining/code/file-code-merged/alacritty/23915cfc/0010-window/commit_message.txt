@@ -1,0 +1,4 @@
+Fix general and instance class set on window (#6276)
+
+This fixes a regression introduced in 7d708d5, which caused the general
+and instance class to be swapped.

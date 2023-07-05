@@ -1,0 +1,2 @@
+fix(css/minifier): Fix a bug with a modern hash (#6664)
+

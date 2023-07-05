@@ -1,0 +1,3 @@
+Fix example doc comment (#124)
+
+Fixes #123

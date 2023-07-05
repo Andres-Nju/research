@@ -1,0 +1,3 @@
+fix(scroll): scroll page up/down by actual amount of rows (#1025)
+
+use pane content_rows to take account of frame enabled/disabled

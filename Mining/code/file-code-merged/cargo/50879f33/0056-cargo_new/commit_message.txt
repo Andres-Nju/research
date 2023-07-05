@@ -1,0 +1,1 @@
+Fix #4370 - init panic in C:\ or /

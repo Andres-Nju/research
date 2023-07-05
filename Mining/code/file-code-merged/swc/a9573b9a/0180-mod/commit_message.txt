@@ -1,0 +1,4 @@
+fix(css/parser): Fix parsing of selectors (#2221)
+
+swc_css_parser:
+ - Allow parsing `foo` as selector.

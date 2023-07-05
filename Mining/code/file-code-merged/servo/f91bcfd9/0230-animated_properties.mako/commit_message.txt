@@ -1,0 +1,1 @@
+Fix the computation of the interpolation of FontWeight.

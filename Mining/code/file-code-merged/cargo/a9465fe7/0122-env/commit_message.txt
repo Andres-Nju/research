@@ -1,0 +1,17 @@
+Auto merge of #12015 - tedinski:fix-11999-recursive-deps, r=weihanglo
+
+Build by PackageIdSpec, not name, to avoid ambiguity
+
+### What does this PR try to resolve?
+
+Fixes #11999
+
+I previously added this code to ensure `cargo install` will build the intended package, but it turns out to cause ambiguity in the case where a package depends on prior versions of itself.
+
+This ambiguity can be resolved by identifying the package to build by its pkg-spec, not name.
+
+### How should we test and review this PR?
+
+A test case is included.
+
+I have additionally manually tested that, with this patch, the issue in #11999 is fixed and now installs correctly.

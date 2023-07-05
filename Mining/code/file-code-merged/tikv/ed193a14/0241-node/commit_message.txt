@@ -1,0 +1,11 @@
+resolved_ts: fix check_leader to tiflash proxy (#13312) (#13361)
+
+ref tikv/tikv#12092, close tikv/tikv#13310, ref tikv/tikv#13312
+
+For TiFlash proxy, should use store.peer_address instead of store.address.
+For TiKV, always use the same peer_address and address, so the change won't affect.
+
+Signed-off-by: ti-srebot <ti-srebot@pingcap.com>
+
+Co-authored-by: hehechen <awd123456sss@gmail.com>
+Co-authored-by: Ti Chi Robot <ti-community-prow-bot@tidb.io>

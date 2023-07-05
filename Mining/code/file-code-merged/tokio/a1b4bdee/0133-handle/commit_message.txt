@@ -1,0 +1,2 @@
+runtime: mark EnterGuard with must_use (#3609)
+

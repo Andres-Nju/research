@@ -1,0 +1,2 @@
+fix(es/decorator): Remove `noop_fold_type` (#4022)
+

@@ -1,0 +1,2 @@
+Add an error message if partition metrics do not exist (#5716)
+

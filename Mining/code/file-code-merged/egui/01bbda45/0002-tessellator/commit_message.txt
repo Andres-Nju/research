@@ -1,0 +1,2 @@
+check point count before tessellating bezier (#2506)
+

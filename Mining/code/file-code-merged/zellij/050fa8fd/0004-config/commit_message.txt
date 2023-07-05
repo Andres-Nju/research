@@ -1,0 +1,8 @@
+fix(config): unbind keys correctly (#925)
+
+* turn off the merging of key bindings of layout and configuration
+  files for now.
+
+  In certain situations the keybindings would be overwritten.
+
+  Fix #923

@@ -1,0 +1,3 @@
+Use correct padding values for outer joins (#3048)
+
+fixes #3047

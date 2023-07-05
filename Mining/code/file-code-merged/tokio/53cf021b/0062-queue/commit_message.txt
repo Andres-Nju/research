@@ -1,0 +1,5 @@
+chore: fix word conjugations (#4894)
+
+* chore: fix word tenses
+
+* hyphenate

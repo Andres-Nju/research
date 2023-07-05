@@ -1,0 +1,6 @@
+Bug 1352067 - Initialize StyleAnimationValue with zeros.
+
+AnimationValue::mGecko and AnimationValue::mServo are mutually
+exclusive, so we have to make sure mGecko.IsNull() returns reasonable
+value, or we will got assertions. Hence, we should initialize it during
+constructing StyleAnimationValue from Servo side.

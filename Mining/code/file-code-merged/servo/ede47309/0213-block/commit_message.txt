@@ -1,0 +1,3 @@
+Fix root flow's size at the browser window's size
+
+Fixes #12802

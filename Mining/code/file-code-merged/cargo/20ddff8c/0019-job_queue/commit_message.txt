@@ -1,0 +1,3 @@
+Swap std::sync::mpsc channel with crossbeam_channel
+
+Switching this hoping it closes #7840

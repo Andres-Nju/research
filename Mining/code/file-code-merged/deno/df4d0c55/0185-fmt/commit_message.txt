@@ -1,0 +1,2 @@
+fix(cli/fmt): show filepath for InvalidData error (#17361)
+

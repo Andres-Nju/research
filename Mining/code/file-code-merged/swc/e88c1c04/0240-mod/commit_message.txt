@@ -1,0 +1,5 @@
+perf(es/minifier): Remove double-visit of DCE (#6069)
+
+**Related issue:**
+
+ - Closes https://github.com/swc-project/swc/issues/6066.

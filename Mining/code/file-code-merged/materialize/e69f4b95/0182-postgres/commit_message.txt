@@ -1,0 +1,3 @@
+Merge pull request #6900 from petrosagg/pg-error-fix
+
+pg-cdc: recover on too many connections error

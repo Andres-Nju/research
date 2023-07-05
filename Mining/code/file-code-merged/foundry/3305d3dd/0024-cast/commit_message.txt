@@ -1,0 +1,2 @@
+docs(cast): fix --to-bytes32 padding description (#782)
+

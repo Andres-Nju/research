@@ -1,0 +1,5 @@
+Fix bug with restore cursor
+
+The saved cursor position could previously end up outside of the grid if
+the terminal was resized to be smaller and then calling a restore.
+Restore now ensures the cursor line and column are within grid bounds.

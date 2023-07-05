@@ -1,0 +1,5 @@
+fix(es/typescript): Don't panic of `@jsxFrag null` (#7540)
+
+**Related issue:**
+
+ - Closes #7539.

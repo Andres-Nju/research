@@ -1,0 +1,3 @@
+Fix usage text for cargo install
+
+The current text was accidentally copied from `cargo init`.

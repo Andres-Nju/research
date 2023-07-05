@@ -1,0 +1,2 @@
+block equality/ordering based predicates on null producing joins (#3939)
+

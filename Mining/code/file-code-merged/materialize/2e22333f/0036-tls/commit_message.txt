@@ -1,0 +1,3 @@
+Merge pull request #2867 from benesch/ccsr-doc-bug
+
+ccsr: fix broken documentation comment

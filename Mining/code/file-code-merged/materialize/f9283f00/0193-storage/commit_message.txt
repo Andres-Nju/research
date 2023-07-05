@@ -1,0 +1,26 @@
+test: Deflake storage usage test (#18387)
+
+This commit de- flakes the
+test_old_storage_usage_records_are_reaped_on_restart test. Previously,
+the test would
+
+  1. Start Materialize.
+  2. Wait for some storage usage collection to happen.
+  3. Stop Materialize.
+  4. Sleep for the retention period.
+  5. Start Materialize.
+  6. Assert that there are no storage usage metrics.
+
+There was a race condition between steps (5) and (6) where Materialize
+could generate new storage usage metrics after the restart and the
+assert would fail.
+
+This commit alters the logic to assert that the maximum timestamp from
+all storage usage metrics before the restart is less than the minimum
+timestamp from all storage usage metrics after the restart, which
+avoids the race condition.
+
+This commit also switches from using sleeps to using deterministic
+timestamps in order to be more deterministic and consistent.
+
+Fixes #18108

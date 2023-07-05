@@ -1,0 +1,3 @@
+Merge pull request #454 from MaterializeInc/typo-oops
+
+comm: fix inexplicable typo in copyright header

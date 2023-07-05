@@ -1,0 +1,2 @@
+Use null count to check for contiguous slices (#2849)
+

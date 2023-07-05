@@ -1,0 +1,5 @@
+fix(chisel): include evm version on solc compiler input (#5073)
+
+* fix(chisel): include evm version on solc compiler input
+
+* chore: clippy happy

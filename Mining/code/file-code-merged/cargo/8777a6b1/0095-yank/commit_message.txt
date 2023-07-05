@@ -1,0 +1,5 @@
+Auto merge of #8697 - Mikastiv:pr-8695, r=ehuss
+
+updated yank error message
+
+Fixes #8695

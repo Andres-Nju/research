@@ -1,0 +1,5 @@
+Demote duplicate build target error to a warning
+
+Added in #2847 this ended up unfortunately breaking the `regex` crate on
+nightly, so let's just issue a warning for awhile first. Eventually we can
+promote this to an error if it becomes a problem.

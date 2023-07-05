@@ -1,0 +1,5 @@
+TickAnimations should create a display list
+
+This is a regression from the removal of ReflowQueryType.
+
+Fixes #18701.

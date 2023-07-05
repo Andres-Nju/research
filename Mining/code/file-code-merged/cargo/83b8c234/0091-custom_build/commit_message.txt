@@ -1,0 +1,3 @@
+Fix "DEBUG" env var in build.rs for debug=0.
+
+Fixes #5370

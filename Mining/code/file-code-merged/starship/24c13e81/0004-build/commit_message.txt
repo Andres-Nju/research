@@ -1,0 +1,5 @@
+chore: support rust 1.59 again (#4278)
+
+* chore: support rust 1.60 again
+
+* bump shadow-rs

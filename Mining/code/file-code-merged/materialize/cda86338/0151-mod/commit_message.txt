@@ -1,0 +1,2 @@
+correct permutation detection (#5641)
+

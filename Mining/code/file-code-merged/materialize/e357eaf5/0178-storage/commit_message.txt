@@ -1,0 +1,3 @@
+reuse_topic: Add index to timestamp bindings table (#9379)
+
+We want `compact_timestamp_bindings` to use only indexed lookups.  We can accumulate a large number of uncompacted timestamps if the sink enters into an errored state or the frontier stops moving forward for some reason.  Because of this, we want the queries in `compact_timestamp_bindings` to be completed in near constant-time.  Therefor, we add a `(sid, timestamp)` index so that we can do these lookups much more quickly.

@@ -1,0 +1,2 @@
+Add hyperlinks to fix `cargo doc` warn (#931)
+

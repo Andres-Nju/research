@@ -1,0 +1,3 @@
+fix(rust, python): reflect time zone conversion in lazy dataframe schema (#7022)
+
+Co-authored-by: MarcoGorelli <>

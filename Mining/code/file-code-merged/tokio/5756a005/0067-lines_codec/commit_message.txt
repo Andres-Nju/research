@@ -1,0 +1,2 @@
+codec: LinesCodec should only return MaxLineLengthExceeded once per line (#3556)
+

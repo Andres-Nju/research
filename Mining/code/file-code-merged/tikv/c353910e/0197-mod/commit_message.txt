@@ -1,0 +1,5 @@
+config: allow starting TiKV nodes with <1 CPU (#14084)
+
+close tikv/tikv#13586, close tikv/tikv#13752, ref tikv/tikv#14017
+
+Signed-off-by: Andrei Dragus <andrei.dragus@databricks.com>

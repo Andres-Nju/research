@@ -1,0 +1,5 @@
+fix(es/compat): Don't modify private fields from `reserved_words` pass (#7113)
+
+**Related issue:**
+
+ - Closes https://github.com/swc-project/swc/issues/7106.

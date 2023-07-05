@@ -1,0 +1,5 @@
+fix(es/compat): Visit arrow body from optional chaining pass (#7549)
+
+**Related issue:**
+
+ - Closes #7547.

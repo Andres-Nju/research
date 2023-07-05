@@ -1,0 +1,2 @@
+feat(rust, python): supported nested fixedsizebinary conversion (#6923)
+

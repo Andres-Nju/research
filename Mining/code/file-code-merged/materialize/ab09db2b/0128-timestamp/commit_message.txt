@@ -1,0 +1,3 @@
+Merge pull request #6359 from danhhz/kafka_decrease_partitions_log
+
+coord: fix swapped log message args

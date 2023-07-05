@@ -1,0 +1,4 @@
+rust-rocksdb: rocksdb: table_cache: Generate unique ID based on db instance, file number (#9013)
+
+Signed-off-by: ti-srebot <ti-srebot@pingcap.com>
+Signed-off-by: Connor <zbk602423539@gmail.com>

@@ -1,0 +1,3 @@
+storage: fix wrong context in batch_get_commands (#8470)
+
+Signed-off-by: Yilin Chen <sticnarf@gmail.com>

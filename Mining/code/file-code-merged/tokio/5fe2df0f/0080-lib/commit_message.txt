@@ -1,0 +1,3 @@
+docs: fix link to website (#2103)
+
+replace website link, because previous one was broken

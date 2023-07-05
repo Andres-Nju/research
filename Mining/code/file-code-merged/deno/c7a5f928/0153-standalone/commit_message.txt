@@ -1,0 +1,2 @@
+chore(cli): fix outdated comment (#18106)
+

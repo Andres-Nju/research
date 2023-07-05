@@ -1,0 +1,5 @@
+fix(compatibility): properly paste multilines (#653)
+
+* fix(compatibility): properly paste multilines
+
+* test(input): fix bracketed paste assertion

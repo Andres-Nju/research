@@ -1,0 +1,2 @@
+timer: fix double newline in module docs (#3617)
+

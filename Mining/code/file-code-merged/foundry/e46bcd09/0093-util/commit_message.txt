@@ -1,0 +1,2 @@
+fix: use >= instead of > for private key checks (#3041)
+

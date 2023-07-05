@@ -1,0 +1,3 @@
+raftstore: learners should be considered when check progresses before merge (#4559)
+
+Signed-off-by: qupeng <qupeng@pingcap.com>

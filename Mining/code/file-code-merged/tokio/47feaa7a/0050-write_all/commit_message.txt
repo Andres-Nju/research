@@ -1,0 +1,2 @@
+io: fix clippy lint in `write_all` (#4358)
+

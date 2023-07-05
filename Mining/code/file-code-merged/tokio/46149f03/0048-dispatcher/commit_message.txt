@@ -1,0 +1,14 @@
+trace-core: Fix `NoSubscriber` causing panics (#975)
+
+PR #973 changed the `tokio_trace_core::span::Id::from_u64` function to
+require that the provided `u64` be greater than zero. However, I had
+forgotten that the implementation of `Subscriber` for the `NoSubscriber`
+type (which is used when no default subscriber is set) always returned
+`span::Id::from_u64(0)` from its `new_span` method. In combination with
+the assert added in #973, this means that every time a span is hit when
+no subscriber is set, `tokio-trace-core` will panic.
+
+This branch fixes the panics by having `NoSubscriber` construct span IDs
+using a different (arbitrarily chosen) non-zero constant.
+
+Signed-off-by: Eliza Weisman <eliza@buoyant.io>

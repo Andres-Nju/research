@@ -1,0 +1,2 @@
+Fix toggle_comments command on multiple selections (#1882)
+

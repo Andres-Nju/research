@@ -1,0 +1,2 @@
+fix(fish): Emit clear-screen escape sequence only in left prompt (#3588)
+

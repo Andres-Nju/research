@@ -1,0 +1,2 @@
+eframe: fix android app quit on resume with glow backend (#3080)
+

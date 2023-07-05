@@ -1,0 +1,1 @@
+render: Give a useful error message if running without a compatible graphics device (#588)

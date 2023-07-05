@@ -1,0 +1,4 @@
+task: make LocalSet non-Send (#2398)
+
+This does not count as a breaking change as it fixes a
+regression and a soundness bug. 

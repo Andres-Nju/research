@@ -1,0 +1,4 @@
+fix crash in CanonicalizeMfp transform (#8236)
+
+Filters canonicalized in CanonicalizedMfp may refer to intermediate
+expressions not present in the input relation.

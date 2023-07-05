@@ -1,0 +1,8 @@
+Fix Stylist::lazily_compute_pseudo_element_style to return None when it should.
+
+We have a fast path to return None if we have no rules for the pseudo-element at
+all, but we should also return None if we have no _matching_ rules for it for
+the given originating element.  This is relied on by consumers like
+Servo_ResolvePseudoStyle, which needs to be able to detect the "no styles for
+this pseudo-element for this originating element case", to support probing for
+whether work for a specific pseudo-element should be done at all.

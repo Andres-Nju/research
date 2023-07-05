@@ -1,0 +1,5 @@
+fix(theme): add gray to theme (#914)
+
+fix #912
+
+* Add `gray` to theme

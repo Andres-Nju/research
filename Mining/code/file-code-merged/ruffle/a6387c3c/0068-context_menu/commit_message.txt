@@ -1,0 +1,6 @@
+core: Fix build without serde feature
+
+Previously `cargo build --no-default-features` failed because then
+`serde` was not found.
+Fix that by not implementing serde's traits in that case, similarly
+to `config.rs`.

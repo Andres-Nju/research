@@ -1,0 +1,3 @@
+avm1: fix array unshift
+
+update array_trivial test for it

@@ -1,0 +1,5 @@
+Solarized theme: fix popup colors, adjust menu (#1124)
+
+* fix popup colors, adjust menu
+
+* fix hardcoded horizontal rule color

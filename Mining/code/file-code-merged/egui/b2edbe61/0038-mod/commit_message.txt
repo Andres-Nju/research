@@ -1,0 +1,5 @@
+Fixed Plot `Line::fill` does not fill last segment correctly (#2275)
+
+* Fix missing vertex to fill the triangle
+
+Co-authored-by: Emil Ernerfeldt <emil.ernerfeldt@gmail.com>

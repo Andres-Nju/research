@@ -1,0 +1,2 @@
+fix: add condition for existence of `current_dir` (#995)
+

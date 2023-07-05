@@ -1,0 +1,3 @@
+Merge pull request #17431 from mjibson/err-func-typ
+
+expr: don't panic on internal func type error

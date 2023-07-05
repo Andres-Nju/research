@@ -1,0 +1,1 @@
+avm2: nit: Fix warning message in Avm2::peek

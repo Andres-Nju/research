@@ -1,0 +1,7 @@
+raftstore-v2: fix wrong peer cache (#14212)
+
+close tikv/tikv#14211
+
+Signed-off-by: Jay Lee <BusyJayLee@gmail.com>
+
+Co-authored-by: Ti Chi Robot <ti-community-prow-bot@tidb.io>

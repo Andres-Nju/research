@@ -1,0 +1,1 @@
+wgpu: Fix argument order when calling `BitmapSamplers.get_sampler`

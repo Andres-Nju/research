@@ -1,0 +1,2 @@
+fix(es/minifier): Preserve fuction parameters used for template literals in `evaluate` and `reduce_vars` (#3949)
+

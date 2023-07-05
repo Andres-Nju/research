@@ -1,0 +1,5 @@
+fix(es/minifier): Track reassign in parent scope (#6865)
+
+**Related issue:**
+
+ - Closes https://github.com/swc-project/swc/issues/6864.

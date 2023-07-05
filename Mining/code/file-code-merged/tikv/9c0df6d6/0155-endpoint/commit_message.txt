@@ -1,0 +1,5 @@
+cop: handle unset scan details in store batch (#14102)
+
+close tikv/tikv#14109
+
+Signed-off-by: you06 <you1474600@gmail.com>

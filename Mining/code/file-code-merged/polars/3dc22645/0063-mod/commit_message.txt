@@ -1,0 +1,3 @@
+Tweak to fix combination of lazy+ipc features (#2099)
+
+Previously SerReader trait would be missing unless parquet was also active

@@ -1,0 +1,3 @@
+Display error detail (#5078)
+
+Signed-off-by: Breezewish <breezewish@pingcap.com>

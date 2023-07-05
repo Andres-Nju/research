@@ -1,0 +1,15 @@
+sync: fix Notify to clone the waker before locking its waiter list (#4129)
+
+Since a waker can trigger arbitrary code, such as with a custom waker,
+and even more so now that it can emit a tracing event that could do
+respond, we must be careful about the internal state when that code is
+triggered. The clone method of a waker is one of those instances.
+
+This changes the internals of `Notify` so that the waker is cloned
+*before* locking the waiter list. While this does mean that in some
+contended cases, we'll have made an optimistic clone, it makes `Notify`
+more robust and correct.
+
+Note that the included test case is built from an instance that did
+happen naturally in another project, see
+https://github.com/tokio-rs/console/issues/133.

@@ -1,0 +1,4 @@
+fix(es/transforms/base): Fix fixer (#1496)
+
+swc_ecma_transforms_base:
+ - Fix `('a' ?? 'b') || c`.

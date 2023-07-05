@@ -1,0 +1,1 @@
+web: Avoid panic on fetching invalid URLs

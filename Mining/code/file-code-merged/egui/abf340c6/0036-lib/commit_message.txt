@@ -1,0 +1,3 @@
+egui_web: Fix misplaced resize and other event handlers (#1503)
+
+Fix copy-paste error introduced in #1306

@@ -1,0 +1,2 @@
+time: change 300ms to 1s in documentation (#3685)
+

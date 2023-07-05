@@ -1,0 +1,2 @@
+fix(es/typescript): Handle typescript enums with string values (#3339)
+

@@ -1,0 +1,3 @@
+fix(cli/ops/net): add write permissions for unixpackets datagrams & unix socket (#8511)
+
+Fixes #7781

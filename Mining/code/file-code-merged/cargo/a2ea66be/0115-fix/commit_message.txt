@@ -1,0 +1,22 @@
+Auto merge of #11400 - hi-rustin:rustin-patch-fix-error, r=epage
+
+Add error message when `cargo fix` on an empty repo
+
+### What does this PR try to resolve?
+
+close https://github.com/rust-lang/cargo/issues/11380
+
+Add error message when `cargo fix` on an empty repo.
+
+### How should we test and review this PR?
+
+- [x] unit test
+
+```sh
+set -eux
+
+cargo +nightly new repro
+cd repro
+echo "fn main() { let _ = 0.clone(); }" > src/main.rs
+cargo fix
+```

@@ -1,0 +1,7 @@
+Auto merge of #8358 - ehuss:fix-target-host-doctest, r=alexcrichton
+
+Fix doctests not running with --target=HOST.
+
+There was a regression in #8167 where `cargo test --target=$HOST` stopped running doctests. This caused doctests to silently stop running in rust-lang/rust (https://github.com/rust-lang/rust/issues/73286).  This PR restores the original behavior where `--target=$HOST` behaves as-if it is a normal host test.
+
+There was a discussion about this at https://github.com/rust-lang/cargo/pull/8167#pullrequestreview-402196323, but I think I let it slip through the cracks.

@@ -1,0 +1,3 @@
+fix(#10695): deps diagnostics include data property (#10696)
+
+Fixes #10695

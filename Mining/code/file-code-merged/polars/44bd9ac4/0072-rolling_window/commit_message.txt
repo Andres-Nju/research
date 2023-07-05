@@ -1,0 +1,2 @@
+fix(rust, python): no early escape when window is equal to len in rolling_float (#6408)
+

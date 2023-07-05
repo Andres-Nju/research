@@ -1,0 +1,6 @@
+coord: Drop instance drops client
+
+Dropping instances needs to remove the catalog state, but also remove the
+actual compute instance, which it did not in the past.
+
+Signed-off-by: Moritz Hoffmann <mh@materialize.com>

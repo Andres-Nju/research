@@ -1,0 +1,4 @@
+Fix parsing of integer font sizes
+
+Config file conversion broke parsing of the font size value if it's
+written as an integer, since TOML integers are always signed.

@@ -1,0 +1,4 @@
+fix(es/block-scoping): Pop scope correctly on early returns (#3360)
+
+swc_ecma_transforms_compat:
+ - `block_scoping`: Pop scope even on fast-path.

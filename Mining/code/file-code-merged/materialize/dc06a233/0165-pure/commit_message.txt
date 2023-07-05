@@ -1,0 +1,1 @@
+sql: error instead of panic when Kafka connection does not have topic

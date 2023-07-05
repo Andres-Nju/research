@@ -1,0 +1,3 @@
+Merge pull request #1452 from nacrooks/parserissues
+
+Support for optional ROW statement in OFFSET

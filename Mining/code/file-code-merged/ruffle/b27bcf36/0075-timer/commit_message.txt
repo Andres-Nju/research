@@ -1,0 +1,12 @@
+avm2: Fix handling of completed timers
+
+It's possible to call 'start()' on a timer
+that has currentCount >= repeatCount. This will
+cause the timer to tick exactly once, and then stop agian.
+
+We were incorrectly reporting 'timer.running' in such a scenario:
+'running' should be reported as 'true' up until just before the
+'TimerEvent.TIMER_COMPLETE' is fired.
+
+This fixes gaining money from bloon popping / level completion
+in BTD5.

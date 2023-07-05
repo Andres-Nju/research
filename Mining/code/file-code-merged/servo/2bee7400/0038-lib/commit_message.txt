@@ -1,0 +1,3 @@
+Fix new failure in Nightly 2017-11-01.
+
+The rustc::declare_lints! macro started using a :vis fragment specifier.

@@ -1,0 +1,5 @@
+import: fix #4257, restrict memory usage by RocksDB (#4350)
+
+* import: put index and filter in block cache to restrict memory usage
+
+Signed-off-by: Lonng <chris@lonng.org>

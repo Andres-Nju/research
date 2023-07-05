@@ -1,0 +1,2 @@
+fix: use utf8 lossy when fmt  byte slices (#2276)
+

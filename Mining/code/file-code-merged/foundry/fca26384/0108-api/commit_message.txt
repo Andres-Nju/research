@@ -1,0 +1,2 @@
+fix(anvil): `anvil_setNextBlockBaseFeePerGas` return error old hardfork (#4354)
+

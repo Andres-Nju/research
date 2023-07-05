@@ -1,0 +1,7 @@
+Auto merge of #8986 - ehuss:fix-git-http-proxy, r=alexcrichton
+
+Fix git http.proxy config setting.
+
+The `http.proxy` setting in `~/.gitconfig` was never being used. This is because the `get_str` method of `git2::Config` requires a "snapshot" config. Otherwise, it aways returns an error of "get_string called on a live config object".
+
+I'm not 100% positive it makes sense to fix this, since I'm uncertain this might introduce problems for people, but it seems to be the intent here.

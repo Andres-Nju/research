@@ -1,0 +1,3 @@
+chore: Oops, I meant to clamp to total frames.
+
+Pointed out by @n0samu

@@ -1,0 +1,3 @@
+Fix off-by-one error in erase_chars
+
+

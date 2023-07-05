@@ -1,0 +1,1 @@
+avm1: Fire `onReleaseOutside` event even when the button is invisible

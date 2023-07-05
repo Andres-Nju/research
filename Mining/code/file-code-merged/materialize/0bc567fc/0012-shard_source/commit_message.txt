@@ -1,0 +1,3 @@
+Merge pull request #19591 from danhhz/persist_mfp_audit_soft
+
+persist: remove soft-assertions-based audit

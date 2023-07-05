@@ -1,0 +1,7 @@
+Fix opening new files (#5278)
+
+Commit 1b89d3e5350f83b2ffb86a86326bd2714308ee53 introduced a regression
+where opening a new file would no longer work, because attempting to
+canonicalize its path would lead to a "No such file or directory"
+error. Fall back to opening a new file when encountering an error to
+fix this case.

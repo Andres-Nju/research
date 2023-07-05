@@ -1,0 +1,9 @@
+Fix conditional setting of stdin handle on Windows (#3379)
+
+* Revert 3121353c6ab2fbc5fced28f075c7fc45b53b661e
+
+* Switch to conditional compilation
+
+* Run formatter
+
+* Switch from conditional compilation to compile-time bool

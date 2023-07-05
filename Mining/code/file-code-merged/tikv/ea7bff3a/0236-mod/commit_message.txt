@@ -1,0 +1,3 @@
+tikv_util: fix build error on macos (#8894)
+
+Signed-off-by: 5kbpers <tangminghua@pingcap.com>

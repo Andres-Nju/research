@@ -1,0 +1,2 @@
+fix: canonicalize script contract path (attempted) (#2097)
+

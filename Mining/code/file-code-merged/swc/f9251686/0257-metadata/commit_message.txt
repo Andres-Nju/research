@@ -1,0 +1,3 @@
+Fix parameters decorator metadata (#946)
+
+Co-authored-by: 강동윤 <kdy1997.dev@gmail.com>

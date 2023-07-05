@@ -1,0 +1,6 @@
+Fix bug with tab rendering
+
+Closes #494.
+Resolves #529.
+Resolves #512.
+Resolves #493.

@@ -1,0 +1,5 @@
+fix(es/minifier): Fix handling of optional chaining when `hoist_props` is enabled (#7246)
+
+**Related issue:**
+
+ - Closes https://github.com/swc-project/swc/issues/7228.

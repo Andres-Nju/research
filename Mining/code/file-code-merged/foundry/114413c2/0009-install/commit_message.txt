@@ -1,0 +1,2 @@
+Nit: fix doc comment in "forge/install.rs" (#2373)
+

@@ -1,0 +1,3 @@
+Merge pull request #5788 from benesch/fix-5765
+
+sql: don't mishandle reflexive equality conditions

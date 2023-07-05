@@ -1,0 +1,5 @@
+Improve file open error when packaging crates
+
+Be sure to point to the file in question.
+
+Closes #2914

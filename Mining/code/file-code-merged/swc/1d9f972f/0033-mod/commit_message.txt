@@ -1,0 +1,5 @@
+fix(es/resolver): Resolve the super class before registering a class name (#7550)
+
+**Related issue:**
+
+ - Closes #7546.

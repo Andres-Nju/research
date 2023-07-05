@@ -1,0 +1,2 @@
+signal: Fix deprecated use of `Handle::current` (#981)
+

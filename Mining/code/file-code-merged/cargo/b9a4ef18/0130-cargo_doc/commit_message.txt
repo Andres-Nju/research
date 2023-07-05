@@ -1,0 +1,5 @@
+Fix `cargo doc --open` on Windows
+
+This fixes #2446. Note that I have not built cargo with this change, but I have tested the functionality in isolation (on Windows 10).
+
+As to the issue itself, I don't know why the previous version didn't work, but `start` is redundant when `cmd /C` is used.

@@ -1,0 +1,1 @@
+core: Fix get_text_format bullet return value

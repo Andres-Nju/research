@@ -1,0 +1,5 @@
+copr: fix wrong function cast double to double (#10370)
+
+Signed-off-by: lzmhhh123 <lzmhhh123@gmail.com>
+
+Co-authored-by: Ti Chi Robot <ti-community-prow-bot@tidb.io>

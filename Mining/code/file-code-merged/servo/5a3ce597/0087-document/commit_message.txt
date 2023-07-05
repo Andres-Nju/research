@@ -1,0 +1,1 @@
+Fix Document#elementsFromPoint no viewport available test

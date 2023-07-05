@@ -1,0 +1,5 @@
+fix(es/parser): Fix parsing of static accessors (#7108)
+
+**Related issue:**
+
+ - Closes https://github.com/swc-project/swc/issues/7107.

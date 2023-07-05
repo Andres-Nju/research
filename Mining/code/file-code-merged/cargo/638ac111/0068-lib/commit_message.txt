@@ -1,0 +1,1 @@
+Update error-chain dep for crates-io as well

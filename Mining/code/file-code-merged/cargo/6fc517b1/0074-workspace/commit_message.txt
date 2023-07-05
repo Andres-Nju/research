@@ -1,0 +1,3 @@
+Auto merge of #10784 - tedinski:fix-10783, r=epage
+
+Allow '.' in workspace.default-members in non-virtual workspaces.

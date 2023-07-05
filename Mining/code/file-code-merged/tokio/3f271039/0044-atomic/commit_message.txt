@@ -1,0 +1,2 @@
+Fix tokio-timer on 32bit systems (#274)
+

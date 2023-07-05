@@ -1,0 +1,2 @@
+chore(python): only trigger build.rs file if that file itself has cha… (#5618)
+

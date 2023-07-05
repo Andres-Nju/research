@@ -1,0 +1,6 @@
+Fix documentation for TextureId::Managed(0) (#2998)
+
+TextureId::Epaint was renamed to TextureId::Managed during the
+development of #1110.  Update the documentation to match.
+
+Signed-off-by: Anders Kaseorg <andersk@mit.edu>

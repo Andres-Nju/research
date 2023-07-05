@@ -1,0 +1,8 @@
+Auto merge of #10579 - arlosi:git-length, r=ehuss
+
+Set cargo --version git hash length to 9
+
+#10323 changed how cargo captures the current git commit hash, which resulted in platform-dependent commit hash lengths.
+This change sets the length to 9, which is consistent with rustc and previous releases of cargo.
+
+Fixes #10547

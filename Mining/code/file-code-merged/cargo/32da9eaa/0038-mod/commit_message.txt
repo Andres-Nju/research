@@ -1,0 +1,14 @@
+Auto merge of #9252 - ehuss:prefer-dynamic-ws, r=alexcrichton
+
+Fix logic for determining prefer-dynamic for a dylib.
+
+The logic for determining if a dylib should use `prefer-dynamic` used to be something like "do not use prefer-dynamic if it is the current package".
+
+The current logic has a strange behavior where it works as intended if there is only one package in the workspace, but a workspace with multiple packages will always use `prefer-dynamic`.
+
+Instead of using `current_opt`, which isn't a good concept to use in a workspace, I switched this to be "primary" (a package selected on the command-line).
+
+**History**
+* 9879a0a5f621a4ae44b2d9dc62a0175404c05f8f Initial prefer-dynamic behavior.
+* #3221 changed to the faulty logic (see comments at https://github.com/rust-lang/cargo/pull/3221#discussion_r88535221). I think there was some confusion there.
+* #3478 fixed the logic for one of the changed conditions, but not the one for prefer-dynamic

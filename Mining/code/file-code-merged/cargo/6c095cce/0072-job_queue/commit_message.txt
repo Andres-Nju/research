@@ -1,0 +1,9 @@
+Auto merge of #11558 - Muscraft:stabilize-cargo-fix-message, r=epage
+
+feat: stabilize auto fix note
+
+A note that some warnings could be fixed by running a `cargo fix` command was added in #10989 and made to work with `clippy` in #11399. It has only been turned on for `nightly` builds so far; this PR would make it show on `stable`.
+
+The original motivation for making this note `nightly` only, was to [allow for iteration](https://github.com/rust-lang/cargo/issues/10976#issuecomment-1289297978) on the message output. There has yet to be any feedback on the message format in the time that it has been on `nightly`. This was brought up in a recent cargo team meeting and it was thought that we should move forward with showing this on `stable`.
+
+close #10976

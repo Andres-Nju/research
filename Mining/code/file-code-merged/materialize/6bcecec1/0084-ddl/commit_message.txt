@@ -1,0 +1,1 @@
+sql: add hint to invalid broker string error

@@ -1,0 +1,5 @@
+fix(evm): uninitialize fuzz backend on inspect (#4588)
+
+* fix(evm): clone fuzz backend as not initialized
+
+* fix(evm): uninitialize fuzz backend on inspect

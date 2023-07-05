@@ -1,0 +1,2 @@
+fix(es/minifier): Preserve order of side-effects in sequences pass (#5283)
+

@@ -1,0 +1,5 @@
+chore(es/parser): Reduce pre-allocation to reduce memory usage (#6979)
+
+**Related issue:**
+
+ - Closes https://github.com/swc-project/swc/issues/6966.

@@ -1,0 +1,7 @@
+Fix multi-line bracket selection
+
+This fixes a bug where semantic selection for bracket characters wasn't
+working properly over multiple lines since start and end of the
+selection were swapped.
+
+Closes #6567.

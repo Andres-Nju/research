@@ -1,0 +1,6 @@
+cdc: fix panic caused by insert (#9872) (#9878)
+
+Signed-off-by: ti-srebot <ti-srebot@pingcap.com>
+
+Co-authored-by: 5kbpers <tangminghua@pingcap.com>
+Co-authored-by: Ti Chi Robot <71242396+ti-chi-bot@users.noreply.github.com>

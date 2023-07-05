@@ -1,0 +1,2 @@
+Fix typo: 'Viewport width' -> 'Viewport height' (#2615)
+

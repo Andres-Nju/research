@@ -1,0 +1,3 @@
+Fix debug message.
+
+The [path] field of [Fingerprint] contains the "Hash of the path to the base source file".

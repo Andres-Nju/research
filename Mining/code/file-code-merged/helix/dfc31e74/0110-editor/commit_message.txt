@@ -1,0 +1,3 @@
+Fix different document panic (#3160)
+
+Would panic when given the view for the current document for a different document.

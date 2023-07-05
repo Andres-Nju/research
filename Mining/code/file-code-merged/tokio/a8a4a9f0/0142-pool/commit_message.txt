@@ -1,0 +1,5 @@
+blocking: fix `spawn_blocking` after shutdown (#1875)
+
+The task handle needs to be shutdown explicitly and not dropped.
+
+Closes #1853

@@ -1,0 +1,3 @@
+Fix clippy issues (#6466)
+
+Signed-off-by: Breezewish <breezewish@pingcap.com>

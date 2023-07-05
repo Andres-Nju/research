@@ -1,0 +1,3 @@
+stylo: Fix has_author_specified_rules() for rules in XBL stylesheets (bug 1372062)
+
+MozReview-Commit-ID: GBFgr5pqROk

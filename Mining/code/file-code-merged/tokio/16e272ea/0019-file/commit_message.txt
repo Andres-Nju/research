@@ -1,0 +1,3 @@
+fs: flush on shutdown (#3009)
+
+Fixes: #2950

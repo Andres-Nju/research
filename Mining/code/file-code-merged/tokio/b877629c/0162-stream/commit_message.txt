@@ -1,0 +1,3 @@
+net: handle HUP event with UnixStream (#3898)
+
+Fixes: #3879

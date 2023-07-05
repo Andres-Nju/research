@@ -1,0 +1,2 @@
+feat(python): improve error message in struct apply (#5291)
+

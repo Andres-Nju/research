@@ -1,0 +1,3 @@
+bench: fix benchmarks with extensions (#19059)
+
+They broke in f34fcd16ea4d504c8a87c0873c65598d70bb1d07

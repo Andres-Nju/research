@@ -1,0 +1,9 @@
+Auto merge of #8090 - mbStavola:invalid-dep-naming, r=alexcrichton
+
+Disallow invalid dependency names through crate renaming
+
+resolves #6656
+
+As suggested in the issue, I simply checked the dep names by calling `validate_package_name` on the dependencies during the TOML deserialization process.
+
+It might be a bit too strict (and sudden) to error out in this case, so it might be best to convert this into a warning instead. However, this _is_ pretty invalid behavior so I'm not too sure really.

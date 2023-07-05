@@ -1,0 +1,1 @@
+core: Support `maxlength` attribute in EditText

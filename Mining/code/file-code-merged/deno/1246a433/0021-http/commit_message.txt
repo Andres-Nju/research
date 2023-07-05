@@ -1,0 +1,8 @@
+fix: poll connection after writing response chunk in Deno.serveHttp() (#10961)
+
+This commit changes "op_http_response_write" to first send response chunk
+and then poll the underlying HTTP connection.
+
+Previously after writing a chunk of response HTTP connection wasn't polled
+and thus data wasn't written to the socket until after next op interacting 
+with the connection.

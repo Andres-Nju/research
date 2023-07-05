@@ -1,0 +1,2 @@
+fix(es/compat): Fix for synthesized template literals (#2994)
+

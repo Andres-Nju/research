@@ -1,0 +1,3 @@
+Show version of package to be installed (before potential overwrite errors)
+
+Fixes #3587

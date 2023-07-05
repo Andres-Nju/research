@@ -1,0 +1,4 @@
+fix: loading built-in Node modules embedded in the binary (#17777)
+
+Fixes bug introduced in ed3a7ce2f719e64e59cfebb3d131a05a1694523b that
+caused errors when loading built-in Node modules, when using "deno_graph".

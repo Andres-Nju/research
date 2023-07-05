@@ -1,0 +1,3 @@
+tidb_query_codegen: fix doc tests (#5505)
+
+Signed-off-by: Brian Anderson <andersrb@gmail.com>

@@ -1,0 +1,2 @@
+performance[rust]: improve predicate pushdown + with_columns (#5029)
+

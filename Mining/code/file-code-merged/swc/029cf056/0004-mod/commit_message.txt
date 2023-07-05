@@ -1,0 +1,4 @@
+fix(es/transforms/react): Fix escape of quote in HTML entities (#2419)
+
+swc_ecma_transforms_react:
+ - Handle escape of `"` correctly.

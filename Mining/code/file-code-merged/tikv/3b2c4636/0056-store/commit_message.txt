@@ -1,0 +1,3 @@
+store: fix panic. (#524)
+
+We should drop the invalid message.

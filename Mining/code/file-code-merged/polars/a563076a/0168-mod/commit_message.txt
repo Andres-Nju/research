@@ -1,0 +1,2 @@
+fix(rust, python): check null data before take (#8812)
+

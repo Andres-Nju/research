@@ -1,0 +1,4 @@
+pgcompat: fix array_lower bug (#4534)
+
+Fixes #4517 by inspecting an array's dimensions instead of its
+individual elements.

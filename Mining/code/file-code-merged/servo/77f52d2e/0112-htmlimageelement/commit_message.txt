@@ -1,0 +1,3 @@
+Issue #10574 Use the document base url in img
+
+add a test with base path set to the resources path and an img with a cat and the reference directly to the image

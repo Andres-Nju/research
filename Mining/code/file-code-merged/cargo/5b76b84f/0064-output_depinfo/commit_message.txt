@@ -1,0 +1,22 @@
+Auto merge of #9421 - lf-:meowwwwww, r=alexcrichton
+
+Fix dep-info files emitting paths relative to deps' roots
+
+Sample `shoo.d` file prior to this change is below, note the `build.rs`
+at the end, which was not from my package.
+
+From booping the debugger, I found this was coming from
+`compiler_builtins`.  This is not really their bug though: if a build.rs
+asks for rerun-if-changed on some crate relative path, this will happen
+in general. So I've fixed it in Cargo and added a test to prevent it
+regressing.
+
+```
+target/riscv64imac-mu-shoo-elf/release/shoo: /home/jade/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/../../stdarch/crates/core_arch/src/core_arch_docs.md /home/jade/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/../../stdarch/crates/core_arch/src/macros.rs /home/jade/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/../../stdarch/crates/core_arch/src/mod.rs /home/jade/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/../../stdarch/crates/core_arch/src/simd.rs /home/jade/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/../../stdarch/crates/core_arch/src/simd_llvm.rs crates/build_bits/src/lib.rs shoo/src/main.rs shoo/src/task.rs shoo/src/vectors.s build.rs
+```
+
+This change fixes it so it's like:
+
+```
+target/riscv64imac-mu-shoo-elf/release/shoo: /home/jade/.cargo/registry/src/github.com-1ecc6299db9ec823/compiler_builtins-0.1.39/build.rs /home/jade/.cargo/registry/src/github.com-1ecc6299db9ec823/log-0.4.14/build.rs /home/jade/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/../../stdarch/crates/core_arch/src/core_arch_docs.md /home/jade/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/../../stdarch/crates/core_arch/src/macros.rs /home/jade/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/../../stdarch/crates/core_arch/src/mod.rs /home/jade/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/../../stdarch/crates/core_arch/src/simd.rs /home/jade/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/../../stdarch/crates/core_arch/src/simd_llvm.rs crates/build_bits/src/lib.rs shoo/src/main.rs shoo/src/task.rs shoo/src/vectors.s
+```

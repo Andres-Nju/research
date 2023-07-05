@@ -1,0 +1,11 @@
+raftstore: fix not register split when apply busy (#10253)
+
+* fix not register split when apply busy
+
+Signed-off-by: Little-Wallace <bupt2013211450@gmail.com>
+
+* do not regster if not leader
+
+Signed-off-by: Little-Wallace <bupt2013211450@gmail.com>
+
+Co-authored-by: Ti Chi Robot <ti-community-prow-bot@tidb.io>

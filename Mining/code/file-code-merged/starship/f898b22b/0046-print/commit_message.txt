@@ -1,0 +1,3 @@
+fix: Clear before printing prompt  (#739)
+
+This clears any leftover text when the prompt updates in-place (e.g. Alt + Left/Right in fish shell)

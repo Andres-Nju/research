@@ -1,0 +1,7 @@
+Fix the crash when shrinking scrolled terminal
+
+display_offset was adjusted unconditionally, thus it could go
+beyound the history limits, so clamp it to history like we do
+in grow_colums.
+
+Fixes #6862.

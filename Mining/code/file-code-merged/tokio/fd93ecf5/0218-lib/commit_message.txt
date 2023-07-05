@@ -1,0 +1,2 @@
+stream: remove duplicate doc_cfg declaration (#3561)
+

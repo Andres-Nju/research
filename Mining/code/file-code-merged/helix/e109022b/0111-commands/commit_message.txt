@@ -1,0 +1,5 @@
+fix: error that caused usize to overflow (#3024)
+
+* fix: error that caused usize to overflow
+
+* update: changed check_sub to saturating_sub

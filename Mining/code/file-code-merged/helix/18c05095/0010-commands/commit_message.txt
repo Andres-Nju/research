@@ -1,0 +1,3 @@
+Exit select mode after toggle_comment. Fixes #597 (#598)
+
+Consistent with yanking, exit select mode after toggling comment. Fixes #597

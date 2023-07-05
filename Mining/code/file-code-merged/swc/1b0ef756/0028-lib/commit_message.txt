@@ -1,0 +1,4 @@
+fix(es/parser): Allow using parser with stable rustc (#2084)
+
+swc_ecma_parser:
+ - Don't use `#![feature]` for non-test builds. (#2083)

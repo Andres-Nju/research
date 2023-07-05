@@ -1,0 +1,3 @@
+Merge pull request #17423 from danhhz/persist_bug_rtt
+
+persist: fix hot loop error path in {blob,consensus}_rtt_latency

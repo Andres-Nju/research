@@ -1,0 +1,11 @@
+Auto merge of #26163 - dralley:remove-assertion, r=jdm
+
+Remove assertion for negative value from get_uniform_location
+
+closes #26150
+
+- [x] `./mach build -d` does not report any errors
+- [x] `./mach test-tidy` does not report any errors
+- [x] These changes fix #26150 (GitHub issue number if applicable)
+- [ ] There are tests for these changes OR
+- [ ] These changes do not require tests because ___

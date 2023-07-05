@@ -1,0 +1,2 @@
+fix(es/codegen): Emit type parameters of class super expression (#5338)
+

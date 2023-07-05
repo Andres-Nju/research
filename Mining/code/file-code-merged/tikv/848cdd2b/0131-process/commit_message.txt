@@ -1,0 +1,3 @@
+storage: fix wrong write size of resolve lock (#7590)
+
+Signed-off-by: youjiali1995 <zlwgx1023@gmail.com>

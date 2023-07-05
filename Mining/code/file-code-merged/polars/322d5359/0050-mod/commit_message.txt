@@ -1,0 +1,1 @@
+fix over-allocation in Utf8Chunked new_from_slice

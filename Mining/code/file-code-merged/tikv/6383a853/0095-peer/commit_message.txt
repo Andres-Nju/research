@@ -1,0 +1,11 @@
+raftstore: fix the wrong assign commit group (#10818)
+
+* raftstore: fix the wrong assign commit group
+
+Signed-off-by: nolouch <nolouch@gmail.com>
+
+* address
+
+Signed-off-by: nolouch <nolouch@gmail.com>
+
+Co-authored-by: Ti Chi Robot <ti-community-prow-bot@tidb.io>

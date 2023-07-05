@@ -1,0 +1,4 @@
+Make stop-color, flood-color, lighting-color animatable.
+
+Use IntermediateRGBA as the animation value type, just like 'color'
+attribute.

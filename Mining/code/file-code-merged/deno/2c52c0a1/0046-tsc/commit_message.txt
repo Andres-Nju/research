@@ -1,0 +1,3 @@
+fix(lsp): folding range adjustment panic (#10030)
+
+Fixes #10029

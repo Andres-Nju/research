@@ -1,0 +1,5 @@
+Fixes crash on empty rust file. (#592)
+
+Fixes #591
+
+Co-authored-by: Cor Peters <luctius@gmail.com>

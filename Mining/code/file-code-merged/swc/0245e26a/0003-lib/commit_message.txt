@@ -1,0 +1,2 @@
+fix(es/codegen): Fix overflow of numeric literals (#4321)
+

@@ -1,0 +1,12 @@
+Fix compile error in status server on MacOS (#11280)
+
+* Fix compile error in status server on MacOS
+close #11279
+
+Signed-off-by: yuqi1129 <yuqi4733@gmail.com>
+
+* fix format problem
+
+Signed-off-by: yuqi1129 <yuqi4733@gmail.com>
+
+Co-authored-by: Ti Chi Robot <ti-community-prow-bot@tidb.io>

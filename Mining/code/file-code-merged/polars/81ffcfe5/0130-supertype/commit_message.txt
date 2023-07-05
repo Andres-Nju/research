@@ -1,0 +1,3 @@
+fix(rust, python): fix determining of supertype for tz-aware and tz-naive datetimes (#8585)
+
+Co-authored-by: MarcoGorelli <>

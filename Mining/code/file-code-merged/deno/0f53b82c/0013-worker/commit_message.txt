@@ -1,0 +1,7 @@
+fix(test): wait for inspector session in side modules (#13065)
+
+This commit fixes inspector integration with "deno test" subcommand
+by waiting for inspector sessions to connect if "--inspect-brk" flag
+is passed.
+
+Co-authored-by: Bartek Iwańczuk <biwanczuk@gmail.com>

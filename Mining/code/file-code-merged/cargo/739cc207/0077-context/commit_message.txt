@@ -1,0 +1,5 @@
+FIx false positive warning
+
+We warn if a feature was specified corresponding to a dependency which
+is not optional. However, a dependency can be both optional and
+required, and we shouldn't warn in that case.

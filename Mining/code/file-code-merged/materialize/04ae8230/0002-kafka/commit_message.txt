@@ -1,0 +1,3 @@
+Merge pull request #17805 from aljoscha/storage-report-kafka-sink-errors
+
+storage: report actual error for Kafka sink errors

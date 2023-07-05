@@ -1,0 +1,5 @@
+Fix: Remove shell.exists() check from get_default_terminal (#2013)
+
+* Fix: Make sure to get full path from SHELL env
+
+* Feat: Revert to previous get_default_terminal and just remove shell exists check

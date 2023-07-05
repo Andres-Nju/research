@@ -1,0 +1,6 @@
+fix(nodejs): remove line break from version (#1464)
+
+A recent refactor of modules to use format strings accidentally got rid
+of the `trim()` on the NodeJS version string. This just adds it back so
+that the prompt doesn't include an unnecessary line break when showing
+that module.

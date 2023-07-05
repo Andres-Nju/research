@@ -1,0 +1,2 @@
+Fix :reflow panic by enusring cursor in view (#3733)
+

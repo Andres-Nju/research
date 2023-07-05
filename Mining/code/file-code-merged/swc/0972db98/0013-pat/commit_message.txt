@@ -1,0 +1,2 @@
+parser: Parse member expression is object patterns (#1068)
+

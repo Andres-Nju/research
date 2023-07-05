@@ -1,0 +1,2 @@
+fix(config): make broadcast path canonic (#2718)
+

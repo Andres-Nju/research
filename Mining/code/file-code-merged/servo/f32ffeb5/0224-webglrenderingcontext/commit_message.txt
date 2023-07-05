@@ -1,0 +1,1 @@
+Issue #20623: Check the input to WebGLRenderingContext's clear().

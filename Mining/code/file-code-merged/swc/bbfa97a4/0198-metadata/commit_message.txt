@@ -1,0 +1,5 @@
+fix(es/decorator): Fix type detection for template literal types (#6786)
+
+**Related issue:**
+
+ - Closes https://github.com/swc-project/swc/issues/6682.

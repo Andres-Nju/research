@@ -1,0 +1,6 @@
+chore: update crates (#9251)
+
+Updates SWC, dprint, deno_lint, deno_doc, serde, and Tokio (to 1.1.0).
+
+Co-authored-by: Kitson Kelly <me@kitsonkelly.com>
+Co-authored-by: Bartek Iwańczuk <biwanczuk@gmail.com>

@@ -1,0 +1,5 @@
+fix: update switch to tab bug in multiple users (#959)
+
+* fix: update switch to tab for multiple user
+
+* chore: remove unnecessary comments

@@ -1,0 +1,3 @@
+sync: show correct permits in fmt::Debug (#2750)
+
+Fixes: #2744

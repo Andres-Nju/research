@@ -1,0 +1,9 @@
+expr: fix tikv crash when conv empty string (#12672)
+
+close tikv/tikv#12673
+
+Fix tikv crash when conv empty string
+
+Signed-off-by: wshwsh12 <793703860@qq.com>
+
+Co-authored-by: Ti Chi Robot <ti-community-prow-bot@tidb.io>

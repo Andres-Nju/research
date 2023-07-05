@@ -1,0 +1,2 @@
+Only update pixels_per_point when it has changed (#2352)
+

@@ -1,0 +1,2 @@
+chore: use exact git error (#1560)
+

@@ -1,0 +1,2 @@
+Fix align_selection behaviour with tabs (#3276)
+

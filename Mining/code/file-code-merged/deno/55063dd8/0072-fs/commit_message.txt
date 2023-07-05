@@ -1,0 +1,8 @@
+fix: Deno.remove() to properly remove dangling symlinks (#3860)
+
+For some reason, the unit tests for Deno.remove() were not being imported to 
+unit_tests.ts and, consequently, not being executed. Thus, I imported them, 
+refactored some existent ones and wrote new ones for the symlink removal case.
+
+Since the creation of a symlink is not implemented for Windows yet, assertions
+that consider this state were added when the tests are executed in this OS.

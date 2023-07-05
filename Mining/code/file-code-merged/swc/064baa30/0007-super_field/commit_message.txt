@@ -1,0 +1,2 @@
+fix(es/compat): Fix chained op-assignment of super properties  (#6319)
+

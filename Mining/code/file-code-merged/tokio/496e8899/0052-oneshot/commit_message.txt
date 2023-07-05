@@ -1,0 +1,2 @@
+Fix new clippy warning (#2899)
+

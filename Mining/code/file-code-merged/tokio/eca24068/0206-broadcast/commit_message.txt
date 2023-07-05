@@ -1,0 +1,2 @@
+sync: fix docs for Send/Sync bounds in broadcast (#5480)
+

@@ -1,0 +1,3 @@
+Fix histogram name for unsafe_destroy_range (#8660)
+
+Signed-off-by: Xintao <hunterlxt@live.com>

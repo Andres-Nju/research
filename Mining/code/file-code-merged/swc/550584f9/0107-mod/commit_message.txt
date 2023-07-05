@@ -1,0 +1,4 @@
+fix(es/compat): Fix order of transforms (#2629)
+
+swc_ecma_transforms_compat:
+ - Change order of `regenerator` and `destructring`. (https://github.com/vercel/next.js/issues/30683, Closes https://github.com/swc-project/swc/issues/2413)

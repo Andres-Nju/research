@@ -1,0 +1,11 @@
+cdc: fix missing ResolvedTs import in prost-codec (#10285)
+
+* cdc: fix missing ResolvedTs import in prost-codec
+
+Signed-off-by: kennytm <kennytm@gmail.com>
+
+* cdc: fix lint
+
+Signed-off-by: kennytm <kennytm@gmail.com>
+
+Co-authored-by: Ti Chi Robot <ti-community-prow-bot@tidb.io>

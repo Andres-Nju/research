@@ -1,0 +1,2 @@
+sync: make `Notify` panic safe (#5154)
+

@@ -1,0 +1,7 @@
+resource_control: condition compile failpoint test (#14944)
+
+close tikv/tikv#14943
+
+condition compile failpoint test
+
+Co-authored-by: ti-chi-bot[bot] <108142056+ti-chi-bot[bot]@users.noreply.github.com>

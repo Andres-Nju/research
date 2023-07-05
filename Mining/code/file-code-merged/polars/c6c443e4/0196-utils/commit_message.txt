@@ -1,0 +1,2 @@
+csv; fix edge case of single line, no eol and no header (#2779)
+

@@ -1,0 +1,3 @@
+Fix peeker init infinite recursion (#2938)
+
+This wasn't a hot loop, but max retries never went down.

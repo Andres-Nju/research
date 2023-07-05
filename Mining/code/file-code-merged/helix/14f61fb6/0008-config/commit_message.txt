@@ -1,0 +1,3 @@
+Fix lsp config deserialization case
+
+It should have been in kebab-case, but it was the default snake_case.

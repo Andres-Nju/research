@@ -1,0 +1,3 @@
+Deny warnings in stylo crates.
+
+MozReview-Commit-ID: 3lQNUzX77PX

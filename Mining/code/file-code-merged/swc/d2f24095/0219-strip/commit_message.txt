@@ -1,0 +1,4 @@
+fix(es/transforms/strip): Strip types for typescript export equals (#2623)
+
+swc_ecma_transforms_typescript:
+ - `strip`: Visit the RHS of typescript export equals.

@@ -1,0 +1,2 @@
+Remove TsIndexSignature from typescript::strip (#922)
+

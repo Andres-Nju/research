@@ -1,0 +1,12 @@
+Use cargo cranky instead of cargo clippy (#1820)
+
+* Use cargo cranky instead of cargo clippy
+
+cargo cranky (https://github.com/ericseppanen/cargo-cranky)
+is a new tool that passes lints specified in a Cranky.toml
+to cargo clippy.
+
+This is a possible solution to
+https://github.com/rust-lang/cargo/issues/5034
+
+* Remove `-W clippy::all` from `check.sh` (rely on `Cranky.toml` instead)

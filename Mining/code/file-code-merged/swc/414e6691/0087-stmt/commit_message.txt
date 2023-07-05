@@ -1,0 +1,2 @@
+fix(es/parser): Fix infinite loop on jsx in js (#7191)
+

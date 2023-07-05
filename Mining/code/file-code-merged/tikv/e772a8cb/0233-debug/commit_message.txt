@@ -1,0 +1,3 @@
+A quick fix for tombstone command's bad error message. (#3850)
+
+Signed-off-by: qupeng <qupeng@pingcap.com>

@@ -1,0 +1,6 @@
+Fix scrollbar length proportional to total menu items (#2860)
+
+The scrollbar length used to increase with more entries in the menu,
+which was counter-intuitive to how scrollbars worked in most
+applications. Turns out there was a typo in the floor division
+implementation :)

@@ -1,0 +1,5 @@
+fix(debugger): Large memory usage from trying to draw unseen lines (#3814)
+
+* fix draw_memory memory usage
+
+* remove cache file

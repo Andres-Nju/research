@@ -1,0 +1,2 @@
+Fix combo box misalignment on rtl layout (#1304)
+

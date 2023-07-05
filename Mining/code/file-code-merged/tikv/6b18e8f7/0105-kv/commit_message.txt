@@ -1,0 +1,7 @@
+metrics: add missing `check_leader` gRPC metrics (#14662)
+
+close tikv/tikv#14658
+
+Record the missing check_leader gRPC metrics.
+
+Signed-off-by: you06 <you1474600@gmail.com>

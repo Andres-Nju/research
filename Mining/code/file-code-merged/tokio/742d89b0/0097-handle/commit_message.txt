@@ -1,0 +1,3 @@
+Fix delay construction from non-lazy Handles (#1720)
+
+Closes #1719.

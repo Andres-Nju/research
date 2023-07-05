@@ -1,0 +1,5 @@
+More reductions in `ColumnKnowledge`
+
+Nowadays, `MirScalarExpr::reduce` has many reductions that kick in
+even when just some of the arguments to a function call are
+literals.

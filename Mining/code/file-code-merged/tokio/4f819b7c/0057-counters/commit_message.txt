@@ -1,0 +1,7 @@
+trace: fix counters example, Span IDs must be greater than zero (#1037)
+
+## Motivation
+tokio-trace counter example was panicking due to returning 0 as the first Span Id
+
+## Solution
+start ID's with 1 instead

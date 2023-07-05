@@ -1,0 +1,2 @@
+io: fix unsoundness in read_to_end (#3428)
+

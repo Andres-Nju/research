@@ -1,0 +1,3 @@
+fix: finish stabilizing Deno.osRelease() (#16447)
+
+Fixes: https://github.com/denoland/deno/issues/16446

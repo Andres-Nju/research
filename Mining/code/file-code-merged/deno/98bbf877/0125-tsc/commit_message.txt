@@ -1,0 +1,4 @@
+fix(lsp): less agressive completion triggers (#17225)
+
+Closes https://github.com/denoland/deno/issues/17056
+Closes https://github.com/denoland/deno/issues/17055

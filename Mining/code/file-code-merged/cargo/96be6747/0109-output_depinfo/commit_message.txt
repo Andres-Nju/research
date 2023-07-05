@@ -1,0 +1,9 @@
+Auto merge of #9434 - ehuss:collision-doc-j1, r=Eh2406
+
+Fix collision doc tests randomly failing.
+
+This fixes some tests that were randomly failing on CI. The cause is that #9419 added a remove_dir_all on the `doc` directory. However, if two jobs are trying to write to that directory at the same time, this can cause errors.  The failure rate is low (a little over 1%), and I was unable to reproduce locally (only on GitHub's CI and only on the Windows job).
+
+The solution is to run the jobs with -j1 so they run serially.
+
+ I only saw errors for `collision_doc_sources`, but to be on the safe side I added j1 to similar tests.

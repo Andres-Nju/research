@@ -1,0 +1,5 @@
+fix: WebAssembly runtime error propagation (#6137)
+
+Currently WebAssembly runtime errors don't propagate up to the user as
+they use urls to denote where the error occurred which get caught by the source-map
+pipeline which doesn't support the wasm scheme.

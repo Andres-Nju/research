@@ -1,0 +1,16 @@
+task: fix missing doc(cfg(...)) attributes for `JoinSet` (#4531)
+
+## Motivation
+
+The `JoinSet` type is currently missing the `tokio_unstable` and
+`feature = "rt"` `doc(cfg(...))` attributes, making it erroneously
+appear to be available without the required feature and without unstable
+features enabled. This is incorrect.
+
+I believe this is because `doc(cfg(...))` on a re-export doesn't
+actually add the required cfgs to the type itself, and the
+`cfg_unstable!` is currently only guarding a re-export and module.
+
+## Solution
+
+This PR fixes the missing attributes.

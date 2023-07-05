@@ -1,0 +1,2 @@
+macros: fix diagnostics of last statement (#5762)
+

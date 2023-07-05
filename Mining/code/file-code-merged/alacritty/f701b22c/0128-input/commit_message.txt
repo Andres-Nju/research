@@ -1,0 +1,11 @@
+Fix cursor reports with mouse outside of window
+
+Previously Alacritty would not report cursor escapes to the application
+when a mouse button was held down and the mouse was moved. This prevents
+applications like tmux from updating their selection.
+
+Similarly to how windowing libraries keep reporting mouse events when
+the left mouse button is held down over the window, the escape sequences
+are now clamped to within the grid and reported to applications.
+
+Fixes #4566.

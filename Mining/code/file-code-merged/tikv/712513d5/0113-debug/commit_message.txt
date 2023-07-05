@@ -1,0 +1,3 @@
+fix little typos about manual compact log (#4110)
+
+Signed-off-by: fredchenbj <cfworking@163.com>

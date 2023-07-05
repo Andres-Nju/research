@@ -1,0 +1,2 @@
+fix(rust): fix Struct `not_equal` comparator/operator (#8547)
+

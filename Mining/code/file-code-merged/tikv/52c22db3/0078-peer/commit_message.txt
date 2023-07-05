@@ -1,0 +1,9 @@
+raftstore: fix a stale read bug in follower read (#6340)
+
+* raftstore: fix a stale read bug in follower read
+
+When a new leader has not committed to it's current term, it can not
+response ReadIndex requests. In raft-rs the check is ok, but in
+raftstore it's not. This PR adds the check in raftstore.
+
+Signed-off-by: qupeng <qupeng@pingcap.com>

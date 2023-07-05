@@ -1,0 +1,2 @@
+fix(python): fix from_dict schema_inference=0 (#5948)
+

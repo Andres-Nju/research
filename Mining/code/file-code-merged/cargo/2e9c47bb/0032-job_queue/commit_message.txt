@@ -1,0 +1,4 @@
+Fix integration tests waiting for binaries to finish.
+
+Integration tests were waiting for binaries to finish building due to a minor
+logic error.

@@ -1,0 +1,2 @@
+Fix CircleShape::visual_bounding_rect() (#1575)
+

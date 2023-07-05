@@ -1,0 +1,5 @@
+Fix readiness future eagerly consuming entire socket readiness (#2887)
+
+In the `readiness` future, before inserting a waiter into the list, the current socket readiness is eagerly checked. However, it would return as a `ReadyEvent` the entire socket readiness, instead of just the interest desired from `readiness(interest)`. This would result in the later call to `clear_readiness(event)` removing all of it.
+
+Closes #2886 

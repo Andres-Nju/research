@@ -1,0 +1,3 @@
+chore(core): improve error message in module loader example (#17654)
+
+Just a small tweak to the error message to avoid confusion.

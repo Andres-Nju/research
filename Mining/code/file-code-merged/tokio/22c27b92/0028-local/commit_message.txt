@@ -1,0 +1,2 @@
+task: wake LocalSet on spawn_local (#3369)
+

@@ -1,0 +1,6 @@
+Fix startup failure on macOS with dash as /bin/sh
+
+The dash's exec doesn't have `-a` argument we rely on when running
+login shell, so use zsh instead.
+
+Fixes #6426.

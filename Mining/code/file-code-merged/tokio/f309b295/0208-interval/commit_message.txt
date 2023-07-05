@@ -1,0 +1,2 @@
+doc: fix misleading comment in interval.rs
+

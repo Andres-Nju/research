@@ -1,0 +1,1 @@
+Fix return types of Owned<T>::into_box Gecko sugar types.

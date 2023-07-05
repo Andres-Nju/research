@@ -1,0 +1,11 @@
+fix(es/minifier): Fix analysis of parameters (#5954)
+
+**Description:**
+
+Although the author of the issue talked about `@react-pdf/renderer`, it's a bug related to `brotli`, not react pdf renderer.
+
+After investigation, I found that the bug is caused by not marking parameters as initialized. So I fixed the analyzer.
+
+**Related issue:**
+
+ - https://github.com/vercel/next.js/issues/40803.

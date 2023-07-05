@@ -1,0 +1,1 @@
+Fix .gitignore of Cargo.lock in a subdirectory.

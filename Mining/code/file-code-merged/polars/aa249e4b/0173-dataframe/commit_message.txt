@@ -1,0 +1,2 @@
+python fix lazy self join (#2733)
+

@@ -1,0 +1,3 @@
+Merge pull request #322 from MaterializeInc/set-operation-errors
+
+sql: improve error messages about unsupported set operations

@@ -1,0 +1,2 @@
+fix(es/parser): Fix binary operator parsed as an instantiation expression (#4992)
+

@@ -1,0 +1,3 @@
+fix(rust): correct error message in cast_time_zone (#6411)
+
+Co-authored-by: MarcoGorelli <>

@@ -1,0 +1,3 @@
+macros: fix select macro to process 64 branches (#4519)
+
+Co-authored-by: DevSabb <devsabb@local>

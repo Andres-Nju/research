@@ -1,0 +1,2 @@
+endpoint: fix a divide zero bug (#2219)
+

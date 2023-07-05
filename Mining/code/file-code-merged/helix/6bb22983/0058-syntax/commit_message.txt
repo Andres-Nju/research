@@ -1,0 +1,3 @@
+Fix an issue that caused an empty indentation query to be used instead of using the fallback method of copying the indentation from the current line. (#1908)
+
+Co-authored-by: Triton171 <triton0171@gmail.com>

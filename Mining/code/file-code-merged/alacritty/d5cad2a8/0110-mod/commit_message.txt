@@ -1,0 +1,2 @@
+Fix cell_height of impl From<SizeInfo<f32>> for WindowSize
+

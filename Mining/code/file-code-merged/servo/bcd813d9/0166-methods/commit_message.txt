@@ -1,0 +1,9 @@
+Fix fetching about:blank
+
+When fetching about:blank, response body should be the empty byte
+sequence.
+Spec: https://fetch.spec.whatwg.org/#concept-basic-fetch
+
+Before this change, response body would be set to `ResponseBody::Empty`,
+and then fetching would result in an infinite loop at step 19 in fn
+`main_fetch` (methods.rs).

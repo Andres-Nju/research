@@ -1,0 +1,2 @@
+fix(python): validate `window_size` user input in rolling_expr (#8318)
+

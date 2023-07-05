@@ -1,0 +1,2 @@
+fix(rust, python): fix oob in arr.get by expressions (#6519)
+

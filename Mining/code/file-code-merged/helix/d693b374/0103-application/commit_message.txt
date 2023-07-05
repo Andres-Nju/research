@@ -1,0 +1,2 @@
+Modified restore_term fn in application.rs. Changed '\x1B[2 q' to '\x1B[0 q' to restore cursor to user default after exiting helix (#3289)
+

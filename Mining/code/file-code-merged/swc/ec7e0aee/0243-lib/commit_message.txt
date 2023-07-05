@@ -1,0 +1,4 @@
+fix(es/utils): Fix `is_valid_ident` (#3133)
+
+swc_ecma_utils:
+ - Fix `is_valid_ident`. (Closes #2118)

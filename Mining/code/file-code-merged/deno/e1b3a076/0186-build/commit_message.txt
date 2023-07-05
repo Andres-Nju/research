@@ -1,0 +1,2 @@
+Try to fix docs.rs for cli crate (#3823)
+

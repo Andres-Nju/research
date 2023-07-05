@@ -1,0 +1,6 @@
+Fix covariance of arrays with null values
+
+The covariance formula divides by 'n'. In
+case of arrays with null values, 'n' should
+not be set to the length but the number of
+non null outputs.

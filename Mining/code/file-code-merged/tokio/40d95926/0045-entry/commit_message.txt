@@ -1,0 +1,2 @@
+macros: fix unused_braces in generated code (#3404)
+

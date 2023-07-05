@@ -1,0 +1,2 @@
+fix(panes): ensure ejected pane always has a frame (#1950)
+

@@ -1,0 +1,7 @@
+Fix panic when enable titan (#13051)
+
+close tikv/tikv#13038
+
+Signed-off-by: Wenbo Zhang <ethercflow@gmail.com>
+
+Co-authored-by: Xinye Tao <xy.tao@outlook.com>

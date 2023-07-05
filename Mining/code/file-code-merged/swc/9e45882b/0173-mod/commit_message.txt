@@ -1,0 +1,2 @@
+fix(es/compat): Fix the position of inserted statements in `class_properties` (#4511)
+

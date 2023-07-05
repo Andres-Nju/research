@@ -1,0 +1,2 @@
+fix(es/compat): Fix handling of deep array pattern of object rest pass (#6035)
+

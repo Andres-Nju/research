@@ -1,0 +1,3 @@
+Fix typo in syntax.rs (#7114)
+
+seperator -> separator

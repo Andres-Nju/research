@@ -1,0 +1,1 @@
+desktop: Fix loading relative URLs when movie URL ends in empty path segment

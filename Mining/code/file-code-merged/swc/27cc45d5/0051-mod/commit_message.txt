@@ -1,0 +1,2 @@
+fix(es): Fix resolving of symlinks (#5222)
+

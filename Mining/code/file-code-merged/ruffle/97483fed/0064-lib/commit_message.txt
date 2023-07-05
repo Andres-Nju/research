@@ -1,0 +1,19 @@
+web: Fix "Unable to lock Ruffle core" console spam after panic
+
+Upon panic, `Ruffle::destroy()` attempts to mutably borrow the
+thread-local `instances`. However, when a panic occurs, `instances`
+is already immutably borrowed by `Ruffle::with_core_mut()`. This
+causes the cleanup logic in `Ruffle::destroy()` to be skipped
+altogether, and as a consequence the animation handler continues
+to be fired, ultimately failing to borrow `instances` repeatedly.
+Each time a borrow fails, a console error is logged.
+
+Fortunately the fix is extremely easy - `Ruffle::with_core{,_mut}`
+used to `drop(instance)` before running any potentially-panicking
+logic, exactly for the reason explained above. But those functions
+don't `drop(instances)`, which is subject to the same double-borrow
+risk. So as a fix simply add `drop(instances)` in both functions.
+
+With this fix, "Unable to lock Ruffle core" is logged on panic only
+twice. These logs require further research, and will be avoided in
+a future PR.

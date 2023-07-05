@@ -1,0 +1,1 @@
+avm1: Fix panic with [].unshift(x)

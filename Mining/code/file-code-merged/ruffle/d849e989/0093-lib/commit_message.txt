@@ -1,0 +1,1 @@
+Fix web/src/lib.rs typo (plaver_version)

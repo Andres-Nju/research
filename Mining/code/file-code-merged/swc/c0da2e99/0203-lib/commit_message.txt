@@ -1,0 +1,2 @@
+fix(swc_core): Fix reexport of `testing` (#5848)
+

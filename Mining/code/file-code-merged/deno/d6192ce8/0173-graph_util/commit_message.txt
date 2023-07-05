@@ -1,0 +1,5 @@
+fix: regression remapping remote specifier to local file (#17935)
+
+Tests added to deno_graph, which were previously not there.
+
+Closes #17932

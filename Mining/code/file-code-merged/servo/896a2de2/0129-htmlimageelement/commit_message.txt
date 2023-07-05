@@ -1,0 +1,1 @@
+Ensure that any image tasks queued before a cached image is available are ignored.

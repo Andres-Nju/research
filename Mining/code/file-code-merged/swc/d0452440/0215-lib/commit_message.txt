@@ -1,0 +1,4 @@
+fix(es/codegen): Fix codegen of synthesized template literals. (#2440)
+
+swc_ecma_codegen:
+ - Don't handle synthesized backtick specially.

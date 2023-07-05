@@ -1,0 +1,1 @@
+Ensure that removed contexts are made active before removal.

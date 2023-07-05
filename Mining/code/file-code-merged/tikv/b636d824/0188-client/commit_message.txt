@@ -1,0 +1,3 @@
+pd: fix a stat bug caused by typo. (#4452)
+
+Signed-off-by: qupeng <qupeng@pingcap.com>

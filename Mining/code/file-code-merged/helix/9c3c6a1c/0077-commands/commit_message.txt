@@ -1,0 +1,27 @@
+Fix off-by-one in extend_line_above (#3689)
+
+`extend_line_above` (and `extend_line` when facing backwards) skip
+a line when the current range does not fully cover a line.
+
+Before this change:
+
+    foo
+    b#[|a]#r
+    baz
+
+With `extend_line_above` or `extend_line` selected the line above.
+
+    #[|foo
+    bar]#
+    baz
+
+Which is inconsistent with `extend_line_below`. This commit changes
+the behavior to select the current line when it is not already
+selected.
+
+    foo
+    #[|bar]#
+    baz
+
+Then further calls of `extend_line_above` extend the selection up
+line-wise.

@@ -1,0 +1,8 @@
+Remove seemingly dubious logic from `Partitioned::recv`. (#12269)
+
+Returning `Ok(None)` here signals end of stream; clients might never
+poll the stream again, and thus might never be notified of an error.
+
+Instead we should mirror the logic in the `Ok` branch -- continue
+processing messages until we have enough information to return an
+error.

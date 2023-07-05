@@ -1,0 +1,2 @@
+Use filename completer on run-shell-command (#5729)
+

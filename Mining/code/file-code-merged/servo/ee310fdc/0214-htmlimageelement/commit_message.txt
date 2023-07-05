@@ -1,0 +1,1 @@
+Avoid panics for empty or multibyte image usemap

@@ -1,0 +1,3 @@
+fix(rust, python): fix error message of offset_by if offsetting by negative number of months (#8464)
+
+Co-authored-by: MarcoGorelli <>

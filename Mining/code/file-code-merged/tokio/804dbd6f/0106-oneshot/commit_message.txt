@@ -1,0 +1,9 @@
+sync: fix mem leak in oneshot on task migration (#1648)
+
+When polling the task, the current waker is saved to the oneshot state.
+When the handle is migrated to a new task and polled again, the waker
+must be swaped from the old waker to the new waker. In some cases, there
+is a potential for the old waker to leak.
+
+This bug was caught by loom with the recently added memory leak
+detection.

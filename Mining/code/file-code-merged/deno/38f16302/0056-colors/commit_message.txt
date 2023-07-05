@@ -1,0 +1,2 @@
+fix(cli): don't add colors for non-tty outputs (#13031)
+

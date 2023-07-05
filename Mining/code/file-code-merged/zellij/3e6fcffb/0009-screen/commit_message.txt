@@ -1,0 +1,5 @@
+fix(ui): render correctly after tab closing (#670)
+
+* fix(ui): render correctly after tab closing
+
+* That was a silly bug...

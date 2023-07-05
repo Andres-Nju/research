@@ -1,0 +1,50 @@
+Auto merge of #11062 - epage:wait, r=weihanglo
+
+fix(publish): Block until it is in index
+
+Originally, crates.io would block on publish requests until the publish
+was complete, giving `cargo publish` this behavior by extension.  When
+crates.io switched to asynchronous publishing, this intermittently broke
+people's workflows when publishing multiple crates.  I say interittent
+because it usually works until it doesn't and it is unclear why to the
+end user because it will be published by the time they check.  In the
+end, callers tend to either put in timeouts (and pray), poll the
+server's API, or use `crates-index` crate to poll the index.
+
+This isn't sufficient because
+- For any new interested party, this is a pit of failure they'll fall
+  into
+- crates-index has re-implemented index support incorrectly in the past,
+  currently doesn't handle auth, doesn't support `git-cli`, etc.
+- None of these previous options work if we were to implement
+  workspace-publish support (#1169)
+- The new sparse registry might increase the publish times, making the
+  delay easier to hit manually
+- The new sparse registry goes through CDNs so checking the server's API
+  might not be sufficient
+- Once the sparse registry is available, crates-index users will find
+  out when the package is ready in git but it might not be ready through
+  the sparse registry because of CDNs
+
+So now `cargo` will block until it sees the package in the index.
+- This is checking via the index instead of server APIs in case there
+  are propagation delays.  This has the side effect of being noisy
+  because of all of the "Updating index" messages.
+- This blocks by default but there is an unstable `publish.timeout` config field that will disable blocking when set to 0.  See #11222 for stablization
+
+Blocking is opt-out as that is the less error prone case for casual users while those doing larger integrations are also likely to do the testing needed to make more complicated scenarios work where blocking is disabled.
+
+Right now we block after the publish.  An alternative would be to block until all dependencies are in the index which makes the blocking only happen when needed
+- Blocking on dependencies can be imprecise to detect when to block vs propagate an error up
+- This is the less error prone case for users.  For example I recently publish a crate in one tab and immediately switched to another tab to use it and this only worked because `cargo-release` blocked until it was ready to use
+
+In reviewing this change, be sure to look at the individual commits
+- The first makes it possible to write the tests for this
+- The second adds a test that shows the current behavior
+- The third updates the test to the expected behavior, showing all of this works
+
+In addition to the publish tests:
+- We want to maximize the nightly-to-stable time to collect feedback
+- We will put this in TWiR's testing section to raise visibility
+
+Fixes #9507

@@ -1,0 +1,12 @@
+Handle `rev` being a `tag`
+
+Previously if a rev was specified as a tag then we'd trip an assertion because
+resetting to that tag would reset to the tag that the commit pointed to, which
+would then cause the head id of the repo to be different than what we thought it
+was.
+
+Instead, we handle the case where a `rev` specification is a tag explicitly by
+using the tag's target id as the revision that we're going to check out, not the
+id of the tag itself.
+
+Closes #3580

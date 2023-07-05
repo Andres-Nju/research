@@ -1,0 +1,2 @@
+perf(rust, python): remove O^2 behavior in melt (#7003)
+

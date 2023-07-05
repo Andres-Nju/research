@@ -1,0 +1,2 @@
+fix[rust]: fix panic in csv globbing arguments (#4874)
+

@@ -1,0 +1,7 @@
+Auto merge of #9789 - ehuss:fix-value-after-table-profile, r=alexcrichton
+
+Fix value-after-table error with profiles.
+
+If the `strip`, `dir-name`, or `inherits` fields were included along with a profile override, then `cargo publish` would fail with a `ValueAfterTable` error because the fields were listed in the wrong order in the struct definition.
+
+Fixes #9787

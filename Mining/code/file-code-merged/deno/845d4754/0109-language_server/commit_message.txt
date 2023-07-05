@@ -1,0 +1,2 @@
+fix(check): use "moduleDetection": "force" (#14875)
+

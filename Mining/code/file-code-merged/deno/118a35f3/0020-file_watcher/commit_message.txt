@@ -1,0 +1,2 @@
+fix(cli): do not clear screen for non-TTY environments in watch mode (#17129)
+

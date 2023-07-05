@@ -1,0 +1,2 @@
+fix(plugins): register correct client id (#984)
+

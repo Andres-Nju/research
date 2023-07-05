@@ -1,0 +1,13 @@
+feat(pwsh): Set STARSHIP_SHELL to pwsh on PS >5 (#3443)
+
+* feat(pwsh): Set STARSHIP_SHELL to pwsh ON PS >5
+
+This is needed for the custom module to use the correct shell.
+
+Closes #3376
+
+* Update src/context.rs
+
+Co-authored-by: David Knaack <davidkna@users.noreply.github.com>
+
+Co-authored-by: David Knaack <davidkna@users.noreply.github.com>

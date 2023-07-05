@@ -1,0 +1,2 @@
+fix(invariant): only considere contracts with at least 1 function (#2657)
+

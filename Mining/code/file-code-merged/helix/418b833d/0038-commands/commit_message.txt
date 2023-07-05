@@ -1,0 +1,2 @@
+fix goto_window index crash (#1207)
+

@@ -1,0 +1,7 @@
+Fix panic when scrolling through completion popup (#1260)
+
+* fix(completion_popup): Fixes #1256
+
+* Update helix-term/src/ui/completion.rs
+
+Co-authored-by: Blaž Hrastnik <blaz@mxxn.io>

@@ -1,0 +1,2 @@
+Fix writing an avro file when a filename is passed to pl.to_avro(): fixes #2689 (#2692)
+

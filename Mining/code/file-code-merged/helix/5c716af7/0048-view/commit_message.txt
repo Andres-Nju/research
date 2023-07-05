@@ -1,0 +1,7 @@
+Fix scrolloff at view bottom (#6142)
+
+Fixes a regression introduced in #5420 where a scrolloff of `x - 1`
+was used instead if `x` at the bottom of the screen. This was
+especially problematic if the scrolloff was set to `0` in that case
+the scrolloff behaved as tough set to `-1` and the cursor disappeared
+from the view if scrolled to the botoom.

@@ -1,0 +1,2 @@
+fix(rust, python): fix empty case str.replace (#7662)
+

@@ -1,0 +1,2 @@
+Fix create connection so that it errors on item already exists, unless command contains 'if not exists' (#15509)
+

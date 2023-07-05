@@ -1,0 +1,3 @@
+*: fix issue that some components depend on protobuf-codec unconditionally (#9969)
+
+Signed-off-by: kennytm <kennytm@gmail.com>

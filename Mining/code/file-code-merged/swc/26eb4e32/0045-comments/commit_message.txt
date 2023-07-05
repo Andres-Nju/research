@@ -1,0 +1,4 @@
+Collect all comments (#633)
+
+ - Comments are now appended
+ - pin dashmap's version

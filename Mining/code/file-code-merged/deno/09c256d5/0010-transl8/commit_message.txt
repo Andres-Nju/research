@@ -1,0 +1,2 @@
+serde_v8: fix pointer size assumptions (#15613)
+

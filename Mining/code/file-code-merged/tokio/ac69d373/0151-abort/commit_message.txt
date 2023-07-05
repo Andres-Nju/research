@@ -1,0 +1,16 @@
+task: fix broken link in `AbortHandle` RustDoc (#4545)
+
+## Motivation
+
+There's a broken docs link in the docs for `AbortHandle`. Somehow this
+managed to slip past CI yesterday when #4530 was merged
+(https://github.com/tokio-rs/tokio/runs/5325278596?check_suite_focus=true)
+but it's breaking the build now
+(https://github.com/tokio-rs/tokio/runs/5337182732?check_suite_focus=true)
+which seems really weird to me, but...whatever...
+
+## Solution
+
+This branch fixes the broken link lol.
+
+Signed-off-by: Eliza Weisman <eliza@buoyant.io>

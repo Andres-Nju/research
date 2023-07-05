@@ -1,0 +1,7 @@
+rawkv: Fix unstable test-region-merge (#13580)
+
+close tikv/tikv#13582
+
+Fix unstable test `test_rawkv::test_region_merge`.
+
+Signed-off-by: pingyu <yuping@pingcap.com>

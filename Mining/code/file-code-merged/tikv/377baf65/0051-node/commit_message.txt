@@ -1,0 +1,3 @@
+Fix box error name in bootstrap_cluster (#8245) (#8279)
+
+Signed-off-by: ti-srebot <ti-srebot@pingcap.com>

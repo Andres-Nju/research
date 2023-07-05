@@ -1,0 +1,2 @@
+fix(rust): date_range with unit microseconds was producing incorrect results (#9413)
+

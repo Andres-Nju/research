@@ -1,0 +1,2 @@
+Fix description of BlockingError as io::Error (#384)
+

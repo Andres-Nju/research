@@ -1,0 +1,8 @@
+Fix HgRepo::discover
+
+Replace the duplicate .cwd call with an invocation taken from
+https://stackoverflow.com/a/3138925/463761
+
+Match the semantics of the other vcs calls, which is invoke from 'cwd'
+targeting 'path'. Looks a little confusing because hg takes a '--cwd'
+argument.

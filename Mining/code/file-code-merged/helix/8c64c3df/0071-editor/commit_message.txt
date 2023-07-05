@@ -1,0 +1,2 @@
+mouse selection now uses character indexing (#2839)
+

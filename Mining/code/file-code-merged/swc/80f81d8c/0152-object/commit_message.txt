@@ -1,0 +1,2 @@
+Fix parsing async generator method in object expression (#749)
+

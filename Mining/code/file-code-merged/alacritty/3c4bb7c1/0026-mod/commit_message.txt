@@ -1,0 +1,13 @@
+Fix scrollback live reloading
+
+This fixes two issues with live reloading the `scrolling.history`
+property.
+
+It is now possible to increase the scrollback history without restarting
+Alacritty.
+
+When decreasing the scrollback history while scrolled beyond the new
+history limit, Alacritty will reset the viewport position to the new
+limit instead of crashing.
+
+This fixes #2147.

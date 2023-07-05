@@ -1,0 +1,2 @@
+chore: fix the outdated example in README (#1930)
+

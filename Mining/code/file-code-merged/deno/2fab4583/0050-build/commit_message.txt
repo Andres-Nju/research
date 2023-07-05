@@ -1,0 +1,3 @@
+fix(test): improve how `--fail-fast` shuts down when hitting limit (#16956)
+
+Closes #15650

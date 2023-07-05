@@ -1,0 +1,5 @@
+fix(utils): reduce log level of errors in utils. (#1730)
+
+Have reduced the log level when we fail to execute a command since this
+is happening a lot more that expected, for example if a user checks out
+a repo that contains a `.js` file but they don't have node installed.

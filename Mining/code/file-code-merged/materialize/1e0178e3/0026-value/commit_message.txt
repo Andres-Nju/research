@@ -1,0 +1,5 @@
+Fix ScalarType::Oid panic (#4347)
+
+Materialize currently panics for any query that returns a ScalarType::Oid column.
+This change adds support for converting Materialize Datums with an oid type to
+Postgres' Int4 type.

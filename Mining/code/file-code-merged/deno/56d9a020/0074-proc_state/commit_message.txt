@@ -1,0 +1,3 @@
+fix(cli): do not cache emit when diagnostics present (#12541)
+
+Fixes #12471

@@ -1,0 +1,10 @@
+pd_client_v2: fix version race (#14310)
+
+close tikv/tikv#14309
+
+Version should be updated before broadcast updates, otherwise the
+update will be just ignore.
+
+Signed-off-by: Jay Lee <BusyJayLee@gmail.com>
+
+Co-authored-by: Ti Chi Robot <ti-community-prow-bot@tidb.io>

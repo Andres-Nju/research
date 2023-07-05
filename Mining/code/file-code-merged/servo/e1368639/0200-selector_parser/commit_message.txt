@@ -1,0 +1,4 @@
+stylo: Fix a serialization bug for string pseudos.
+
+The string is null-terminated, so we need to avoid passing that last null
+character.

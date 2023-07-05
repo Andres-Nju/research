@@ -1,0 +1,1 @@
+hashglobe: Inline error constructor so we don't pay a function call even when there's no error.

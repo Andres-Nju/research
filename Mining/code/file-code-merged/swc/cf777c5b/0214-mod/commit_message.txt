@@ -1,0 +1,2 @@
+fix(es/lexer): Fix lexing of hexadecimal escape sequences (#2838)
+

@@ -1,0 +1,2 @@
+fix(es/compat): Handle nested for loops with `break`/`continue` (#4777)
+

@@ -1,0 +1,7 @@
+wstr: Revert incorrect optimization in hash calculation
+
+Calling `Hash::write_bytes` isn't guaranteed to be equivalent to a
+sequence of `Hash::write_u8`.
+
+Additionally, make sure the hash is truly prefix-free by hashing the
+length first.

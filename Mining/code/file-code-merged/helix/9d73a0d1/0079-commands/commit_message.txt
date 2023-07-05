@@ -1,0 +1,11 @@
+Fix the infinite loop when copying the cursor to the top of the file (#5888)
+
+Example:
+```
+test
+testitem
+```
+
+Select line 2 with x, then type Alt-C; Helix will go into an infinite
+loop. The saturating_sub keeps the head_row and anchor_row pinned at 0,
+and a selection is never made since the first line is too short.

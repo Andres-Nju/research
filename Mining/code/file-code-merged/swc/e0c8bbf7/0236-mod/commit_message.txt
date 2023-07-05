@@ -1,0 +1,4 @@
+fix(css/parser): Fix lexing of value starting with `-` (#3011)
+
+swc_css_parser:
+ - Lex `-` as an identifier start.

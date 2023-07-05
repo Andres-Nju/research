@@ -1,0 +1,2 @@
+fix compile error with old nightly rustc (#1310)
+

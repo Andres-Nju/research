@@ -1,0 +1,2 @@
+fix[rust]: strptime should not panic on invalid dates (#4914)
+

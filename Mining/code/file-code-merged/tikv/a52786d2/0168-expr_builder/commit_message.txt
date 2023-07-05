@@ -1,0 +1,9 @@
+copr: fix error when cast const Enum to any type (#14149) (#14175)
+
+ref tikv/tikv#14149, close tikv/tikv#14156, close pingcap/tidb#40341
+
+copr: fix error when cast const Enum to any type
+
+Signed-off-by: wshwsh12 <793703860@qq.com>
+
+Co-authored-by: wshwsh12 <793703860@qq.com>

@@ -1,0 +1,5 @@
+Auto merge of #9568 - hi-rustin:rustin-patch-error, r=alexcrichton
+
+More information for links conflicting
+
+close https://github.com/rust-lang/cargo/issues/9294

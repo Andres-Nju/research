@@ -1,0 +1,6 @@
+test: make try_merge reliable (#8559)
+
+Fix unstable test test_node_mutiple_rollback_merge.
+Because of #8441, the admin request will be rejected if this peer hasn't applied to current term.
+
+Signed-off-by: gengliqi <gengliqiii@gmail.com>

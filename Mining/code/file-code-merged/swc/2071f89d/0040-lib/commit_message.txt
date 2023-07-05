@@ -1,0 +1,6 @@
+fix(es/preset-env): Fix pass ordering (#7434)
+
+**Related issue:**
+
+ - Closes #6898.
+ - Closes #7432.

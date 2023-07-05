@@ -1,0 +1,2 @@
+fix(rust, python): ensure window function succeeds on empty frame (#8492)
+

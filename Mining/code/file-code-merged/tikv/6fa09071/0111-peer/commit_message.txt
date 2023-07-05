@@ -1,0 +1,5 @@
+tests/raftstore: return Timout error when FilterDropPacket drop packet (#439)
+
+* tests/raftstore: return Timout error when FilterDropPacket drop packet
+
+change trait Transport send to mutable

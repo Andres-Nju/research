@@ -1,0 +1,11 @@
+Slider event fixes (#1270)
+
+* Slider: return drag_started,dragged,drag_released if value was dragged
+
+Closes https://github.com/emilk/egui/issues/1269
+
+* Fix: DragValue correctly reports gained_focus
+
+* Make `Slider` report gained_focus,has_focus,lost_focus from DragValue
+
+Closes https://github.com/emilk/egui/issues/1268

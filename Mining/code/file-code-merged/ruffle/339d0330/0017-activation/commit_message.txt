@@ -1,0 +1,3 @@
+avm1: Fix seeking
+
+The problem was most likely with negative relative offsets

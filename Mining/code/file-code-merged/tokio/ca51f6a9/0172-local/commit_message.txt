@@ -1,0 +1,16 @@
+task: fix missing `#[track_caller]` in `spawn_local` (#4483)
+
+PR #3881 factored out the spawning of local tasks on a `LocalSet` into a
+function `spawn_local_inner`, so that the implementation could be shared
+with the `task::Builder` API. But, that PR neglected to add a
+`#[track_caller]` attribute to `spawn_local_inner`, so the `tracing`
+spans for local tasks are all generated with `spawn_local_inner` as
+their spawn location, rather than forwarding the actual spawn location
+from the calling function.
+
+This causes pretty useless results when using `tokio-console` with code
+that spawns a number of local tasks, such as Actix
+(https://reddit.com/r/rust/comments/snt5fq/can_tokioconsole_profile_actixrt/)
+
+This commit fixes the issue by adding the missing `#[track_caller]`
+attribute.

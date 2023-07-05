@@ -1,0 +1,2 @@
+sync: fix typo in `tokio::sync::watch::Sender` docs (#5587)
+

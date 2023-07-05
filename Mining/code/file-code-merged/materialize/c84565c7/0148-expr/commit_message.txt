@@ -1,0 +1,3 @@
+Merge pull request #15943 from mjibson/nullif
+
+parser: fix NULLIF printing

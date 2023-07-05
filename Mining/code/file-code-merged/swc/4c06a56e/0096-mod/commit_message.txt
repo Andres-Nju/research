@@ -1,0 +1,5 @@
+fix(es/minifier): Use UTF16 length for `str.length` (#7275)
+
+**Related issue:**
+
+ - Closes #7274.

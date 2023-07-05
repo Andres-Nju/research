@@ -1,0 +1,14 @@
+compute-client: remove a misleading error log
+
+It is entirely possible for the compute controller to receive
+`FrontierUppers` responses for collections it already has stopped
+tracking.
+
+For example, the following sequence is valid:
+  1. `computed` sends `FrontierUppers([(id, frontier)])`.
+  2. Adapter calls `controller.drop_indexes([id]).
+  3. Controller stops tracking `id`.
+  4. Controller sends `AllowCompaction([(id, [])])`.
+  5. Controller receives the `FrontierUppers` from (1).
+
+This is fine, so logging an error in that case is wrong.

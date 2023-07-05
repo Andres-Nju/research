@@ -1,0 +1,9 @@
+channel: early break when fetch nothing (#13516)
+
+close tikv/tikv#13394
+
+Otherwise it will waste CPU on loop.
+
+Signed-off-by: Jay Lee <BusyJayLee@gmail.com>
+
+Co-authored-by: Ti Chi Robot <ti-community-prow-bot@tidb.io>

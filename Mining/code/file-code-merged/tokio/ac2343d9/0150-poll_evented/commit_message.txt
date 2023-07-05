@@ -1,0 +1,2 @@
+net: add `UnwindSafe` impl to `PollEvented` (#4384)
+

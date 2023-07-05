@@ -1,0 +1,2 @@
+Fix invalid --working-dir string ptr for ConPTY
+

@@ -1,0 +1,2 @@
+fixer: Handle binary expression in callee of new (#1030)
+

@@ -1,0 +1,5 @@
+Fix event listener issue (#4132)
+
+* Check status of CompactionJobInfo
+
+Signed-off-by: DorianZheng <xingzhengde72@gmail.com>

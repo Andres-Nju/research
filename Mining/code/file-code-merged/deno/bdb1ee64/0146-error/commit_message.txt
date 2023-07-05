@@ -1,0 +1,3 @@
+fix(core): Handle prepareStackTrace() throws (#9211)
+
+Fixes #9206

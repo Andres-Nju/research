@@ -1,0 +1,2 @@
+fix negative offset in groupby_rolling (#3918)
+

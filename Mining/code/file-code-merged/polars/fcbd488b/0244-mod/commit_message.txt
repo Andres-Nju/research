@@ -1,0 +1,2 @@
+fix stackoverflow in unique of empty series (#4389)
+

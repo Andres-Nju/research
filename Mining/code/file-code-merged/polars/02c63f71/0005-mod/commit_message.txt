@@ -1,0 +1,2 @@
+feat(python): .to_physical() for List(Categorical) (#8499)
+

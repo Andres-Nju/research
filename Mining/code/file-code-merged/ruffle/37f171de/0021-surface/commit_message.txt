@@ -1,0 +1,7 @@
+wgpu: Use `Depth32FloatStencil8` over `Depth24PlusStencil8`
+
+Credit to @crumblingstatue.
+
+Per `wgpu` documentation, the latter has wider support than the former.
+
+Fixes #8295, #8296.

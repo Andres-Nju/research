@@ -1,0 +1,3 @@
+server/node: add cluster id mismatch reason in error (#1825)
+
+* server/node: add cluster id mismatch reason in error

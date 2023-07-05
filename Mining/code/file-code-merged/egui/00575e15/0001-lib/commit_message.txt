@@ -1,0 +1,9 @@
+Fix an issue where losing focus could prevent the event loop from receiving events for releasing modifier keys (#479)
+
+- This issue was made apparent on macOS since 67c6002578b73aa01872a3378cc5b7debe93a0a7
+- Repro:
+  1. Cmd+Tab away from the window (this will keep the Cmd modifier state `true` until it is pressed again)
+  2. Cmd+Tab back to the window
+  3. Try to scroll with the trackpad or mouse wheel ... it won't work until you press and release the Cmd key!
+  4. Also the plot widget will be stuck in "zoom mode" while the Cmd modifier state is true.
+- I was not able to reproduce the issue with `egui_web`

@@ -1,0 +1,2 @@
+Fix crash on changing from empty scratch buffer to itself (#975)
+

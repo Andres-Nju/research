@@ -1,0 +1,2 @@
+only expand function inputs if wildcard expansion allows it (#3039)
+

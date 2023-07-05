@@ -1,0 +1,4 @@
+Fix incorrect display offset after rotation
+
+Regression was introduced in 4cc6421daa4ff5976ab43c67110a7a80a36541e5,
+however it was working before only due to grid.len() bug.

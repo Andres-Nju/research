@@ -1,0 +1,5 @@
+fix: Fix the spacing around the AWS default symbol (#529)
+
+This updates the default AWS default symbol to include a space after the
+symbol to make it a little bit more readable. Have also updated the
+README to include the AWS module.

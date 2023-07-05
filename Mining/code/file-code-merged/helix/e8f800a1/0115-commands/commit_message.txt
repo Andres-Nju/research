@@ -1,0 +1,10 @@
+Do not crash when run goto command without line number (#1160)
+
+* Do not crash when run goto command without line number
+
+Report an error when running goto command without entering a
+line number.
+
+Fixes #1159
+
+* Use is_empty() instead check len zero

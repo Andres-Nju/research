@@ -1,0 +1,2 @@
+fix(rust, python): deal with empty structs (#6039)
+

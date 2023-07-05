@@ -1,0 +1,2 @@
+fix(es/modules): Use correct `StrKind` after rewriting import path (#3489)
+

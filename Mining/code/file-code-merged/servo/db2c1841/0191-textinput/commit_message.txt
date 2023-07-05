@@ -1,0 +1,4 @@
+Fix delete_char when selection range is empty
+
+An empty selection range should be treated the same as no selection.
+Fixes browserhtml/browserhtml#930.

@@ -1,0 +1,2 @@
+Fix class declaration with decorators start. (#711)
+

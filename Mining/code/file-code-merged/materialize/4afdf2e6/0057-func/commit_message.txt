@@ -1,0 +1,3 @@
+Merge pull request #20083 from def-/pr-type-info-interval-addition
+
+sql: Fix return types for Interval + Time/Timestamp/Timestamptz

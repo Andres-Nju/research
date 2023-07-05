@@ -1,0 +1,8 @@
+chore: Fix swf doctests working directory
+
+Rust 12-09 nightly changed the working dir of doctests to be the
+workspace root instead of the subcrate root. This broke the
+doctests for swf. Now do some setup to ensure the same working
+directory on both stable and nightly.
+
+cc https://github.com/rust-lang/cargo/pull/8954

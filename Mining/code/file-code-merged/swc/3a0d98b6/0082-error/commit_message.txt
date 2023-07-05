@@ -1,0 +1,2 @@
+fix(xml/parser): Fix parsing of comments (#6449)
+

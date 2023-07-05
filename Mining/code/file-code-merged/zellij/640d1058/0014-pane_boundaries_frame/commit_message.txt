@@ -1,0 +1,5 @@
+Fix title widechar overflow (#1361)
+
+* fix(ui): make sure wide characters don't cause a title overflow
+
+* style(fmt): rustfmt

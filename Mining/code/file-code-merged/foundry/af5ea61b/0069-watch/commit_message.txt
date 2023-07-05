@@ -1,0 +1,2 @@
+fix(watch): only watch dirs that exists (#1710)
+

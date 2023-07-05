@@ -1,0 +1,4 @@
+fix(es/codegen): Fix codegen of template literals (#1936)
+
+swc_ecma_codegen:
+ - Fix codegen of template literals. (Closes #1791)

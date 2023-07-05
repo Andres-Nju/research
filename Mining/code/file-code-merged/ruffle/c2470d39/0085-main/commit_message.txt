@@ -1,0 +1,5 @@
+desktop: Increase window maximum size to 32767x32767
+
+By default, winit limits the window size to the screen resolution.
+Since some flashes are larger than this, increase the limit to an
+arbitrarily-chosen larger constant.

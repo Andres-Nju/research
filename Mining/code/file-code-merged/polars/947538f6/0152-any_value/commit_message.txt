@@ -1,0 +1,2 @@
+fix(rust): Do not panic when failing to extract numeric value (#6848)
+

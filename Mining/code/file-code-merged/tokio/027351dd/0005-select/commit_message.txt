@@ -1,0 +1,6 @@
+macros: silence unreachable_code warning in select! (#2678)
+
+Solves #2665 by adding #[allow(unreachable_code)] inside a branch
+matching arm.
+
+Co-authored-by: Alice Ryhl <alice@ryhl.io>

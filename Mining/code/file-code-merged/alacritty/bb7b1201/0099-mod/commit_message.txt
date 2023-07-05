@@ -1,0 +1,3 @@
+Fix crash when damaging off-screen hint
+
+Co-authored-by: Christian Duerr <contact@christianduerr.com>

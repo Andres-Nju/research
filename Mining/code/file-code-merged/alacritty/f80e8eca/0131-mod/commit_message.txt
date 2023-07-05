@@ -1,0 +1,2 @@
+Fix tabstops not being reset with 'reset'
+

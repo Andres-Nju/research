@@ -1,0 +1,2 @@
+feat(es/compat): Use `var` for `_len` and `args` in rest parameters (#3267)
+

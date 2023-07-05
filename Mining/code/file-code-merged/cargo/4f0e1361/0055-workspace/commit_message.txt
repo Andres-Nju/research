@@ -1,0 +1,3 @@
+fix #4746 and add test
+
+Signed-off-by: gibix <gibix@riseup.net>

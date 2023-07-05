@@ -1,0 +1,3 @@
+Fix tagged template start to include tag (#714)
+
+Co-authored-by: 강동윤 <kdy1997.dev@gmail.com>

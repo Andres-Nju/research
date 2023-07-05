@@ -1,0 +1,3 @@
+Fix embarrassing query error in mz_cluster_replica_utilization (#16667)
+
+I somehow didn't realize `/` does integer division, so these will always be zero.

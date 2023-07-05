@@ -1,0 +1,2 @@
+Update the glow example to avoid a white flash when the app starts. (#2345)
+

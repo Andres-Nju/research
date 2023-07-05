@@ -1,0 +1,2 @@
+Fix 'attempt to divide by zero' panic (#6155)
+

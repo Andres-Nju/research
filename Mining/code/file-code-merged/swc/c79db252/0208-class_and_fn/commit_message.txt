@@ -1,0 +1,7 @@
+fix(swc): Fix bugs (#1753)
+
+swc_ecma_parser:
+ - Allow class members to be declared. (#1751)
+
+node-swc:
+ - Fix typescript type definitions. (#1746)

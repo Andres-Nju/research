@@ -1,0 +1,2 @@
+avm1: Avoid panic when setMask called with no arguments (fix #3298)
+

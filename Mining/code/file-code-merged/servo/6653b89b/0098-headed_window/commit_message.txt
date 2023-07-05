@@ -1,0 +1,17 @@
+Auto merge of #26423 - asajeffrey:webxr-glwindow-blit, r=Manishearth
+
+Workarounds for webxr glwindow on macos
+
+<!-- Please describe your changes on the following line: -->
+
+Makes the default glwindow mode one which does blitting rather than using a shader, since that works on macos.
+
+---
+<!-- Thank you for contributing to Servo! Please replace each `[ ]` by `[X]` when the step is complete, and replace `___` with appropriate data: -->
+- [x] `./mach build -d` does not report any errors
+- [x] `./mach test-tidy` does not report any errors
+- [x] These changes fix #26340
+
+<!-- Also, please make sure that "Allow edits from maintainers" checkbox is checked, so that we can help you if you get stuck somewhere along the way.-->
+
+<!-- Pull requests that do not address these steps are welcome, but they will require additional verification as part of the review process. -->

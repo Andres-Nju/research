@@ -1,0 +1,10 @@
+Fix build scripts and panic=abort
+
+Build scripts were apparently always compiled with the "dev" profile rather than
+the standard "match whatever the normal build was" profile, which meant that if
+dev/release disagreed on panic=abort you'd get compile errors. Seems bad!
+
+This commit fixes this by just having build scripts always compile with the same
+profile as libraries (for now), as this was the original intention anyway.
+
+Closes #2726

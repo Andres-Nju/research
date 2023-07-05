@@ -1,0 +1,2 @@
+fix(python): fix ooc sort regression; don't take IO-thread before init (#8607)
+

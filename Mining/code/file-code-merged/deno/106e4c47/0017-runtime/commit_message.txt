@@ -1,0 +1,3 @@
+chore: upgrade rusty_v8 to 0.70.0 (#18844)
+
+Closes https://github.com/denoland/deno/issues/18369

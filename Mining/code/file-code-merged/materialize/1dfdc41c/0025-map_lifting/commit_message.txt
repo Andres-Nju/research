@@ -1,0 +1,3 @@
+Merge pull request #3702 from benesch/map-lifting-bug
+
+transform: fix bug in literal lifting

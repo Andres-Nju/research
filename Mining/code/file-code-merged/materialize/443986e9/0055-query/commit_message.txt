@@ -1,0 +1,3 @@
+Merge pull request #2844 from justinj/fix-timestamp-usage
+
+Fix TAIL's use of TIMESTAMP{,TZ} as timestamps

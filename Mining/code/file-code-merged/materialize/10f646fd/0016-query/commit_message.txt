@@ -1,0 +1,3 @@
+Merge pull request #6146 from benesch/sql-off-by-one
+
+sql: fix off-by-one with DISTINCT and ORDER BY

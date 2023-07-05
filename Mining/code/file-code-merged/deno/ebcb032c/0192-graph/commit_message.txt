@@ -1,0 +1,2 @@
+fix: no check recognizes require (#7720)
+

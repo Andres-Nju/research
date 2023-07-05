@@ -1,0 +1,6 @@
+Add another curl spurious network error
+
+Witnessed in a [recent build][1] looks like this is another error that
+should be safe to retry.
+
+[1]: https://github.com/bytecodealliance/wasmtime/pull/788/checks?check_run_id=383658098#step:7:16

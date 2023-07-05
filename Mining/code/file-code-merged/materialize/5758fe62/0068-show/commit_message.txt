@@ -1,0 +1,5 @@
+sql: Fix SHOW INDEXES in non-active schemas (#15355)
+
+Previously if you ran SHOW INDEXES ON <object-in-non-active-schema>
+then it would not correctly display the existing indexes. This commit
+fixes that issue so the indexes are correctly displayed.

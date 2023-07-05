@@ -1,0 +1,3 @@
+runtime/inspector: pretend to be node (#10115)
+
+Also change frontend URL from inspector.html to js_app.html

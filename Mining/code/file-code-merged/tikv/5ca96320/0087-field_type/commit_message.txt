@@ -1,0 +1,5 @@
+cherry pick #9357 to release-5.0-rc (#9397)
+
+Signed-off-by: ti-srebot <ti-srebot@pingcap.com>
+
+Co-authored-by: xiongjiwei <xiongjiwei1996@outlook.com>

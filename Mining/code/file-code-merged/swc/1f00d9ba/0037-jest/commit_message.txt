@@ -1,0 +1,2 @@
+Fix jest extension (#1106)
+

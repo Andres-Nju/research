@@ -1,0 +1,3 @@
+Fix crash on clear when scrolled up in history
+
+Fixes #3112.

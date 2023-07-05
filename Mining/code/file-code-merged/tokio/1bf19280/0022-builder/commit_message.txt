@@ -1,0 +1,11 @@
+rt: fix default thread number logic (#2457)
+
+Previously, the function picking the default number of threads for the
+threaded runtime did not factor in `max_threads`. Instead, it only used
+the value returned by `num_cpus`. However, if `num_cpus` returns a value
+greater than `max_threads`, then the function would panic.
+
+This patch fixes the function by limiting the default number of threads
+by `max_threads`.
+
+Fixes #2452

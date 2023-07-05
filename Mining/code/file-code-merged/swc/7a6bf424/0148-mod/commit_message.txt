@@ -1,0 +1,4 @@
+fix(es/transforms/base): Fix `ts_resolver` (#2826)
+
+swc_ecma_transforms_base:
+ - `ts_resolver`: Hoist type aliases.

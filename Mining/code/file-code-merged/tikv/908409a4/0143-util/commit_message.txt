@@ -1,0 +1,5 @@
+resolved_ts: fix resolved_ts can't update after merge (#10339) (#10349)
+
+Signed-off-by: ti-srebot <ti-srebot@pingcap.com>
+
+Co-authored-by: NingLin-P <linningde25@gmail.com>

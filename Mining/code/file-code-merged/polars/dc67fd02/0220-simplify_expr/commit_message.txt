@@ -1,0 +1,2 @@
+fix(rust, python): fix invalid boolean simplification (#5976)
+

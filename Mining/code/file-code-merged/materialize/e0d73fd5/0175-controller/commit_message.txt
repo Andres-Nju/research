@@ -1,0 +1,9 @@
+storage: Change error log to warn (#17430)
+
+As part of the builtin migrations, the adapter may ask the storage
+controller to drop a source/sink that may not exist. Previously in
+those cases, the storage controller would log an error even though it
+was expected that the source/sink may not exist. This commit changes
+error log to a warn log.
+
+Fixes #16612

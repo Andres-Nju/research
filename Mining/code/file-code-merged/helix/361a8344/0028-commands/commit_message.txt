@@ -1,0 +1,2 @@
+Fix selecting a changed file in global search (#5639)
+

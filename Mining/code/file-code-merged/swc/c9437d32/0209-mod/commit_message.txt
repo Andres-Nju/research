@@ -1,0 +1,5 @@
+fix(es): Fix bugs (#2469)
+
+swc:
+ - Fix handling of `envs`.
+ - Check for already fixed issues. (#2319)

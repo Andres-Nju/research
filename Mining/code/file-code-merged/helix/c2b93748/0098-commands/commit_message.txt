@@ -1,0 +1,3 @@
+Fix goto line end
+
+Should not goto newline.

@@ -1,0 +1,2 @@
+Fixed backspace repeat with TextEdit (#2416)
+

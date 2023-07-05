@@ -1,0 +1,18 @@
+Auto merge of #11280 - hi-rustin:rustin-patch-error-msg, r=weihanglo
+
+Improve the error message if `publish` is `false` or empty list
+
+### What does this PR try to resolve?
+
+close https://github.com/rust-lang/cargo/issues/11262
+
+Improve the error message if `publish` is the false or empty list.
+
+Say `publish` is set to `false` or an empty list in Cargo.toml and prevents publishing.
+### How should we test and review this PR?
+
+Unit test
+
+### Additional information
+
+If there was a way we could tell `publish` to be empty or `false`, I think it would get better. If you know an easy way to implement it, please feel free to comment.

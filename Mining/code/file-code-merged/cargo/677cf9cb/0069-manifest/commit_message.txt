@@ -1,0 +1,3 @@
+Merge pull request #8535 from alexcrichton/fix-beta-c
+
+[beta] Fix CI on beta to get a green build on Azure

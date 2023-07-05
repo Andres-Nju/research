@@ -1,0 +1,14 @@
+trace: fix level_span macros not propagating parents (#1167)
+
+Currently, when the `trace_span!`, `debug_span!`, `info_span!`,
+`warn_span!`, and `error_span!` macros are invoked with an explicit
+parent, a name, and zero or more fields (no target), the macros don't
+pass along the explicitly provided parent when expanding to the `span!`
+macro. This is likely due to an oversight on my part.
+
+This branch fixes these macros by adding the parent into the `span!`
+macro expansion. I've also added a test to catch regressions
+
+Shoutout to @jonhoo for catching this one!
+
+Signed-off-by: Eliza Weisman <eliza@buoyant.io>

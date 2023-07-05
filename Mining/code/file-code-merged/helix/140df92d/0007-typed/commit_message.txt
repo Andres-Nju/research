@@ -1,0 +1,6 @@
+Fix command-mode completion behavior when input is escaped
+
+If `a\ b.txt` were a local file, `:o a\ <tab>` would fill the prompt
+with `:o aa\ b.txt` because the replacement range was calculated using
+the shellwords-parsed part. Escaping the part before calculating its
+length fixes this edge-case.

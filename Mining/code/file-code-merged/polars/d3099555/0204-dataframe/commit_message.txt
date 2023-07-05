@@ -1,0 +1,2 @@
+fix(python): df.apply first rechunk (#9211)
+

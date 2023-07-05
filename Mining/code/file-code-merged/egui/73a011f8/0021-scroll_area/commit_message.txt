@@ -1,0 +1,2 @@
+fix scroll bars not appearing (#2826) (#2827)
+

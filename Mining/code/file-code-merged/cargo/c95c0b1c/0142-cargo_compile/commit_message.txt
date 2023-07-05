@@ -1,0 +1,7 @@
+Auto merge of #8449 - jyn514:rustdoc, r=ehuss
+
+Don't overwrite existing `rustdoc` args with --document-private-items
+
+Instead, add that flag in addition to any existing flags.
+
+Closes https://github.com/rust-lang/cargo/issues/8445

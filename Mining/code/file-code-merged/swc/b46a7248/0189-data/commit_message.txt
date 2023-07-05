@@ -1,0 +1,2 @@
+fix(es/preset-env): Move `findLast` and `findLastIndex` to finished proposals (#7012)
+

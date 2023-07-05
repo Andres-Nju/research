@@ -1,0 +1,2 @@
+Fix deleting word from end of buffer (#4328)
+

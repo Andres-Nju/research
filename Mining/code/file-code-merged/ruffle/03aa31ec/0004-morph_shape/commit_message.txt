@@ -1,0 +1,7 @@
+core: Fix a bug in `MorphShapeStatic::register_ratio`
+
+The comparsion `start_change.move_to != end_change.move_to` doesn't
+make sense, because even if they are identical, the positions need
+to be updated.
+
+Fix #2886.

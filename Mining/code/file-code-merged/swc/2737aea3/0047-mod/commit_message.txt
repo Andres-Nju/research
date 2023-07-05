@@ -1,0 +1,5 @@
+fix(es/resolver): Change order for switch cases (#6317)
+
+**Related issue:**
+
+ - Closes https://github.com/swc-project/swc/issues/6310.

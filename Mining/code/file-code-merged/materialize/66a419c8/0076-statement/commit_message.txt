@@ -1,0 +1,3 @@
+Don't support INSERT statements that specify columns (#3910)
+
+INSERT statements with column specifications will now raise an unsupported error.

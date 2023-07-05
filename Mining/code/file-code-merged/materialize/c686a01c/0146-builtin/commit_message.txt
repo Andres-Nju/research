@@ -1,0 +1,7 @@
+sql: Fix \d meta command (#18223)
+
+The \d meta command occasionally relies on the "indimmediate" column
+from the pg_index catalog relation. This commit adds that column so \d
+can work properly.
+
+Fixes #18218

@@ -1,0 +1,10 @@
+Add shift-backspace keybind alias for backspace (#4937)
+
+When the Kitty Keyboard Protocol is enabled, S-backspace is
+distinguished from backspace with no modifiers. This is awkward when
+typing because it's very easy to accidentally hold shift and press
+backspace temporarily when typing capital letters.
+
+Kakoune (which is also a Kitty Keyboard Protocol application) treats
+S-backspace as backspace too:
+https://github.com/mawww/kakoune/blob/3150e9b3cd8e61d9bc68245d67822614d4376cf4/src/input_handler.cc#L1275

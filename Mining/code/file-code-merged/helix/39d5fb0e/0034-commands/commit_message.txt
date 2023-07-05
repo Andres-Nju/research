@@ -1,0 +1,3 @@
+Remove centering view from Unimpaired commands (#6193)
+
+Remove `align_view` calls from `goto_*_diag` as per issue #6177

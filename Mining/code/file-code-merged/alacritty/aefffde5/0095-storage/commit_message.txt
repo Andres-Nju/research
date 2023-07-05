@@ -1,0 +1,3 @@
+Fix assertion crash on 32-bit systems
+
+Fixes #4687.

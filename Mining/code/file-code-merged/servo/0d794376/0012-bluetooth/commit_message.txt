@@ -1,0 +1,1 @@
+Fix an incorect behavior, when converting optional services.

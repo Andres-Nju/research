@@ -1,0 +1,2 @@
+fix(rust): fix features serde and dtype-struct not compiling together (#8439)
+

@@ -1,0 +1,3 @@
+core: Fix panic in remove_invalid_jpeg_data
+
+`data` could be shorter than 4 bytes.

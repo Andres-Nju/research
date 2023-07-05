@@ -1,0 +1,3 @@
+Merge pull request #91 from coder543/master
+
+Fix crash when exiting `top`

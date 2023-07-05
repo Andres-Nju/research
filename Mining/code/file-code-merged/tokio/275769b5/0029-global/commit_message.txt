@@ -1,0 +1,11 @@
+rt: fix shutdown deadlock in threaded scheduler (#2082)
+
+Previously, when the threaded scheduler was in the shutdown process, it
+would hold a lock while dropping in-flight tasks. If those tasks
+included a drop handler that attempted to wake a second task, the wake
+operation would attempt to acquire a lock held by the scheduler. This
+results in a deadlock.
+
+Dropping the lock before dropping tasks resolves the problem.
+
+Fixes #2046

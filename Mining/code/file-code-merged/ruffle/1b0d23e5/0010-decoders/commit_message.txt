@@ -1,0 +1,3 @@
+core: Don't desync on frames with no audio blocks.
+
+Fixes regression caused by me in 85cf383c84de574b4517ff250cb9e7904e77f128

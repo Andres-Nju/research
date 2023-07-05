@@ -1,0 +1,2 @@
+Fix focus behavior when pressing Tab with no focus (#1861)
+

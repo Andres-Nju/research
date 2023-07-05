@@ -1,0 +1,7 @@
+Fix test: test_region_heartbeat_report_approximate_size (#10328) (#10398)
+
+Signed-off-by: ti-srebot <ti-srebot@pingcap.com>
+
+Co-authored-by: Wallace <bupt2013211450@gmail.com>
+Co-authored-by: Ti Chi Robot <ti-community-prow-bot@tidb.io>
+Co-authored-by: Jay <BusyJay@users.noreply.github.com>

@@ -1,0 +1,5 @@
+wgpu: Fix some invalid WGSL
+
+naga is currently lenient about some things which are invalid by
+the WGSL spec. The Tint WGSL compiler disagreed, so these shaders
+failed to compile in Chrome.

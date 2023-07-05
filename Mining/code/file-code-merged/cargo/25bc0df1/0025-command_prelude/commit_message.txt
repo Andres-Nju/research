@@ -1,0 +1,9 @@
+Auto merge of #8515 - Spanfile:target-triple-opt-help-fix, r=ehuss
+
+Fix the help display for the target-triple option
+
+The `--target` option (in `cargo build` for example) had its value name and help text flipped, so it looked like;
+```
+--target <Build for the target triple>...    TRIPLE
+```
+This PR swaps the `value_name` and `help` arguments for the `multi_opt` call in `command_prelude.rs`/`fn arg_target_triple()` so the value name and help text are displayed correctly.

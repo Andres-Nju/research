@@ -1,0 +1,5 @@
+docs: fix runtime creation doc in tokio::runtime (#2073)
+
+With the rt-threaded feature flag we create a threaded scheduler by
+default. The documentation had a copy-and-paste error from the section
+about the basic scheduler.

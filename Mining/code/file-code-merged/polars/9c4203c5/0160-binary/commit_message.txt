@@ -1,0 +1,2 @@
+fix(rust, python): fix group order in binary aggregation (#5744)
+

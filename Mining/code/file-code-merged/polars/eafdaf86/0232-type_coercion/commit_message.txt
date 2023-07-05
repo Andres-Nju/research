@@ -1,0 +1,2 @@
+allow compilation with only 'is_in' feature (#4325)
+

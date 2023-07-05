@@ -1,0 +1,2 @@
+fix(npm): ignore the unstable error in the lsp (#15727)
+

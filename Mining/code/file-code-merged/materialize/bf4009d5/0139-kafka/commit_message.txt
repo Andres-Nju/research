@@ -1,0 +1,3 @@
+Merge pull request #18637 from petrosagg/kafka-stalls
+
+storage: exhaust the consumers before entering the wait state

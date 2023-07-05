@@ -1,0 +1,4 @@
+Fix can_run_doc_tests order depends on hash.
+
+The deps are sorted, but the name is the same so the order depends on the metadata hash.
+Fix by sorting by the actual name, too.

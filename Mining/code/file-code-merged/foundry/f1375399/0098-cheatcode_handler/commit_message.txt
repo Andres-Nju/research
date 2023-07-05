@@ -1,0 +1,3 @@
+fix(forge): expectEmit with call (#745)
+
+Co-authored-by: ufukaltinok <wwaxpoetic@yahoo.com>

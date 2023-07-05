@@ -1,0 +1,2 @@
+always enable tracing on forge script (#2602)
+

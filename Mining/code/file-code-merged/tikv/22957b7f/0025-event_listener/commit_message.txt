@@ -1,0 +1,21 @@
+Fix event listener issue (#4126)
+
+* Check status of CompactionJobInfo
+
+Signed-off-by: DorianZheng <xingzhengde72@gmail.com>
+
+* minor fix
+
+Signed-off-by: DorianZheng <xingzhengde72@gmail.com>
+
+* minor fix
+
+Signed-off-by: DorianZheng <xingzhengde72@gmail.com>
+
+* revert cargo
+
+Signed-off-by: DorianZheng <xingzhengde72@gmail.com>
+
+* revert cargo
+
+Signed-off-by: DorianZheng <xingzhengde72@gmail.com>

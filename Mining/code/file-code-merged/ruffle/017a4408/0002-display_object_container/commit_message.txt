@@ -1,0 +1,1 @@
+avm2: nit: Provide error number (2025) in error message for validate_remove_operation

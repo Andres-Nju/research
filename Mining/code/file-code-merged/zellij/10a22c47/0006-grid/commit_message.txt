@@ -1,0 +1,4 @@
+fix(compatibility): resolve fzf crash (#1056)
+
+* grid: add fzf test case
+* revert alternate viewport creation to contain an empty row

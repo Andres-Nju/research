@@ -1,0 +1,3 @@
+Remove HollowBlock/Hidden config cursor styles
+
+Fixes #3367.

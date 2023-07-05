@@ -1,0 +1,2 @@
+docs: Fix typo in directory module description (#163)
+

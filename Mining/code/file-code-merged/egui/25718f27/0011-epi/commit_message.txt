@@ -1,0 +1,2 @@
+fix comment for WebOptions follow_system_theme (#2233)
+

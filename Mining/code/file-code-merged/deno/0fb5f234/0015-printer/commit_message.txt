@@ -1,0 +1,2 @@
+fix(doc): crash on formatting type predicate (#5651)
+

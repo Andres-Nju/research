@@ -1,0 +1,10 @@
+Fix clamping of scroll position in window.scrollBy
+
+For rightward and downward overflow the spec says:
+
+Let x be max(0, min(x, viewport scrolling area width - viewport width)).
+Let y be max(0, min(y, viewport scrolling area height - viewport height)).
+
+Previously, those operations were reversed, which created negative
+overflow even when the overflow direction was downward. This change
+ensures that Servo matches spec behavior.

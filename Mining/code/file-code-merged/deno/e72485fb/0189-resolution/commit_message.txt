@@ -1,0 +1,3 @@
+fix(node): conditional exports edge case (#19082)
+
+Fixes https://github.com/denoland/deno/issues/18743

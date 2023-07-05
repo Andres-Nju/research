@@ -1,0 +1,1 @@
+core: Fix incorrect String.charCodeAt bounds check (close #633)

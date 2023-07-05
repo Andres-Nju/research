@@ -1,0 +1,7 @@
+fix address default values (#427)
+
+there's an issue with Address::zero() being used as a default in clap
+
+❯ forge test
+error: Invalid value for '--tx-origin <TX_ORIGIN>':
+       Invalid character '…' at position 4

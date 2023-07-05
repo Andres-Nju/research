@@ -1,0 +1,3 @@
+storage/engine/rocksdb: Add cfg for ErrorHeader to fix compile warning (#4408)
+
+Signed-off-by: Xuanwo <xuanwo.cn@gmail.com>

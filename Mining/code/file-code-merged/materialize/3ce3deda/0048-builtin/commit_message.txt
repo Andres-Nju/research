@@ -1,0 +1,13 @@
+sql: fix \l meta-command (#11878)
+
+* Add test for `\l` behaving like SHOW DATABASES
+
+* Don't filter `pg_database` catalog view
+
+Remove the filter on this view showing only the current database
+
+* Fix expected test output
+
+* Compensate for testdrive's whitespace sensitivity
+
+Co-authored-by: Nikhil Benesch <nikhil.benesch@gmail.com>

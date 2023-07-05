@@ -1,0 +1,1 @@
+web: Fix #412, incorrect bitmap rendering when cached

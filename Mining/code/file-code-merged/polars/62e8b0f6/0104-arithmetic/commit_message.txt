@@ -1,0 +1,2 @@
+fix(rust, python): fix owned arithmetic schema (#5685)
+

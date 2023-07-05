@@ -1,0 +1,2 @@
+use self.is_point for start_scan and stop_scan (#4119)
+

@@ -1,0 +1,2 @@
+fix cumulative_eval on window expressions (#3421)
+

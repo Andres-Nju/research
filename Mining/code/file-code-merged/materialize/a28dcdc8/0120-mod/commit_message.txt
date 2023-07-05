@@ -1,0 +1,2 @@
+Reenable TimestampBindingBox compaction (#10516)
+

@@ -1,0 +1,2 @@
+csv don't skip delimiter in whitespace trimming (#3796)
+

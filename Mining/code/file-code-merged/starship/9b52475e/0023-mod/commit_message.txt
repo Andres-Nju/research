@@ -1,0 +1,3 @@
+fix(nu): don't use `cygpath` for starship binary path in init (#4001)
+
+nu on windows need not be posix

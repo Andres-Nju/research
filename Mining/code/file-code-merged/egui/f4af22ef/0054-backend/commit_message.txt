@@ -1,0 +1,4 @@
+Allow unnecessary mut (#584)
+
+needed for feature persistence, but an error in release build without
+explicit allow

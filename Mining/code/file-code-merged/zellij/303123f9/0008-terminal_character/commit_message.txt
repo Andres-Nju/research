@@ -1,0 +1,3 @@
+fix(selection): rendering of characters with unset background (#1250)
+
+create cursor with RESET_STYLES instead of empty styles

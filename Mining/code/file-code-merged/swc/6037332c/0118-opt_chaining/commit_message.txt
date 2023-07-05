@@ -1,0 +1,3 @@
+fix(es/transforms/compat): Handle nested optional chaining expression (#1899)
+
+Co-authored-by: 강동윤 <kdy1997.dev@gmail.com>

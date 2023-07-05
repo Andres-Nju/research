@@ -1,0 +1,5 @@
+cdc: fix missing ResolvedTs import in prost-codec (#10285) (#10286)
+
+* cdc: fix missing ResolvedTs import in prost-codec
+
+Signed-off-by: kennytm <kennytm@gmail.com>

@@ -1,0 +1,4 @@
+fix(es/transforms/proposal): Fix type detection (#2431)
+
+swc_ecma_transforms_proposal:
+ - Try the type of the LHS of an assignment pattern. (#2428)

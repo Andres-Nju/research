@@ -1,0 +1,2 @@
+io: fix `futures_io::AsyncSeek` implementaion for `Compat` (#5783)
+

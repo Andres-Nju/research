@@ -1,0 +1,2 @@
+mouse operations respect scrolloff (#5255)
+

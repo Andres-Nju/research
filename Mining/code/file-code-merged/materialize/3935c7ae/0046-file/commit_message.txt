@@ -1,0 +1,2 @@
+Don't crash when a file source is dropped (#1371)
+

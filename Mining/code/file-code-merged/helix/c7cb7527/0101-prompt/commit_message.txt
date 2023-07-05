@@ -1,0 +1,2 @@
+Fix moving with arrow keys in prompt (#1070)
+

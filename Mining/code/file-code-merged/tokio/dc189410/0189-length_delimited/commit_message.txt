@@ -1,0 +1,2 @@
+codec: improve `Builder::max_frame_length` docs (#4352)
+

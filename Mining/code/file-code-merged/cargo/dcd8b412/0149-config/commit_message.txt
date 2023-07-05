@@ -1,0 +1,3 @@
+Fix relative `build.target-dir` configuration
+
+Closes #2700

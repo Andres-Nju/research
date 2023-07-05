@@ -1,0 +1,5 @@
+fix(compatibility): CSI cursor next line fix (#863)
+
+Move cursor to beginning of line after moving it down.
+
+fixes #860.

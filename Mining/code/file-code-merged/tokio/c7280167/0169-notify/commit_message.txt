@@ -1,0 +1,2 @@
+sync: fix `will_wake` usage in `Notify` (#4751)
+

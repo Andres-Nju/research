@@ -1,0 +1,6 @@
+fix(coverage): do not report transpiled files with no lines  (#14699)
+
+This commit omits files from the coverage report that have no
+lines of code to report coverage for.
+
+Fixes: https://github.com/denoland/deno/issues/14683

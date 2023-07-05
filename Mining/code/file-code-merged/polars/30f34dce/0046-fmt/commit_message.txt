@@ -1,0 +1,2 @@
+fix(rust): add type annotation to avoid potential build errors (#7223)
+

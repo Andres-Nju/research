@@ -1,0 +1,2 @@
+Fix goto/view center mismatch (#4135)
+

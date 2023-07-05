@@ -1,0 +1,7 @@
+Support `DAPP_TEST_NUMBER` in fork scenarios (#624)
+
+Adds backwards support to use `DAPP_TEST_NUMBER` to specify
+the block to fork from, but only if `DAPP_FORK_BLOCK` is not
+specified.
+
+Closes #530

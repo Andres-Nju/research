@@ -1,0 +1,1 @@
+avm1: typeof button/text should be object (fix #1110)

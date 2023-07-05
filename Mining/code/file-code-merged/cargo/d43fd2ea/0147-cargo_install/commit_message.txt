@@ -1,0 +1,1 @@
+Fixed `cargo install` performing an empty install when all binaries require at least one feature that's not selected.

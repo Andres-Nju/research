@@ -1,0 +1,2 @@
+fix(rust, python): keep name when sorting categorical in lexial order (#6029)
+

@@ -1,0 +1,6 @@
+avm1: Set init object properties in reverse order
+
+Fixes #7667
+
+This behavior is by setter functions, and some SWFS
+depend on it.

@@ -1,0 +1,2 @@
+test(hostname): fix `trim_at` test with unicode hostname (#3295)
+

@@ -1,0 +1,7 @@
+Auto merge of #10011 - hkratz:disable-failing-test, r=joshtriplett
+
+Fix test: hash value depends on endianness and bitness.
+
+The test fails on 32-bit systems and on big-endian systems since Rust 1.44.
+
+Fixes #10004.

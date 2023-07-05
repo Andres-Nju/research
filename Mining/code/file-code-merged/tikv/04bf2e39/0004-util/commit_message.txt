@@ -1,0 +1,3 @@
+resolved_ts: fix resolved_ts can't update after merge (#10339)
+
+Signed-off-by: linning <linningde25@gmail.com>

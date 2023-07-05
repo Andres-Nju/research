@@ -1,0 +1,3 @@
+fix(es/minifier): Fix infinite loops (#4250)
+
+ - We now don't mark changes due to `negate_cost` as a change.

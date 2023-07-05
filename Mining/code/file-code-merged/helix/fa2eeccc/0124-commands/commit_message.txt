@@ -1,0 +1,2 @@
+Fix unwrap error when undo after `shell_append_output` (#2625)
+

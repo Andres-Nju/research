@@ -1,0 +1,3 @@
+Merge pull request #9370 from asenac/case-then-false
+
+Fix wrong results issue when having a false THEN clause

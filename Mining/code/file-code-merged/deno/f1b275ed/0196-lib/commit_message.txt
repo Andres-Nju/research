@@ -1,0 +1,5 @@
+fix(napi): don't hold on to borrow during iteration (#17461)
+
+I mistakenly held on to a RefCell's borrow for the whole time of
+iteration, but since these counters can be refed/unrefed from any 
+thread that is a mistake.

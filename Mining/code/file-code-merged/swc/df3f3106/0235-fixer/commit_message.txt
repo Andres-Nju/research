@@ -1,0 +1,4 @@
+fix(es/transforms/fixer): Fix await expressions. (#1475)
+
+swc_ecma_transforms_base:
+ - Handle assign expressions in `await` correctly. (denoland/deno#9810)

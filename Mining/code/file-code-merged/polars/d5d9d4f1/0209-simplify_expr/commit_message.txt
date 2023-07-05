@@ -1,0 +1,4 @@
+fix[rust]: fix flawed simplify expression rule (#4396)
+
+'lit(true) | expr' was replaced with 'lit(false)',
+where it should produce 'lit(true)'

@@ -1,0 +1,3 @@
+don't rely on a rustc bug
+
+context: https://github.com/rust-lang/rust/pull/98835

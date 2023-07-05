@@ -1,0 +1,2 @@
+fix(rust,python): fix row-wise init of `UInt64` values that exceed `UInt64` upper bound (#8146)
+

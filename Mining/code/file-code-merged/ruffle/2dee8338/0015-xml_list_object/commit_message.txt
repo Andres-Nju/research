@@ -1,0 +1,1 @@
+avm2: Fix double borrow when setting local XMLList property

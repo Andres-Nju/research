@@ -1,0 +1,5 @@
+Auto merge of #9695 - alexcrichton:flaky, r=ehuss
+
+Flag another curl error as possibly spurious
+
+cc rust-lang/crates.io#3782

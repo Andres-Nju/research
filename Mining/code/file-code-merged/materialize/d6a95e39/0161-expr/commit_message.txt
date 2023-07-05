@@ -1,0 +1,40 @@
+sql: fix an error in splice_parameters in handling nested queries. (#9197)
+
+Fix an error in `splice_parameters` in handling nested queries.
+
+Before this fix to the depth, the following query plan was generated:
+```
+ | | | | | | %3 =                                                                                                                                                                             +
+ | | | | | | | Get mz_catalog.mz_types (s4027)                                                                                                                                                +
+ | | | | | | | Filter (#^3 = "bool")                                                                                                                                                          +
+ | | | | | | | Map oidtoregtype(#^1)                                                                                                                                                          +
+ | | | | | | | Project (#4)  
+```
+
+whereby the correct plan is:
+```
+materialize=> explain raw plan for select 'bool'::regtype::text;
+                                                                                           Raw Plan                                                                                            
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ %0 =                                                                                                                                                                                         +
+ | Constant ()                                                                                                                                                                                +
+ | Map select(%1)                                                                                                                                                                             +
+ | |                                                                                                                                                                                          +
+ | | %1 =                                                                                                                                                                                     +
+ | | | Get mz_catalog.mz_types (s4027)                                                                                                                                                        +
+ | | | Filter (#1 = regtypetooid(select(%2)))                                                                                                                                                 +
+ | | | |                                                                                                                                                                                      +
+ | | | | %2 =                                                                                                                                                                                 +
+ | | | | | Constant ()                                                                                                                                                                        +
+ | | | | | Map if isnull("bool") then {null} els {if ("bool" ~ "^\d+$") then {i32toregtype(strtoi32("bool"))} els {error_if_null(select(%3), (("type \"" || "bool") || "\" does not exist"))}}+
+ | | | | | |                                                                                                                                                                                  +
+ | | | | | | %3 =                                                                                                                                                                             +
+ | | | | | | | Get mz_catalog.mz_types (s4027)                                                                                                                                                +
+ | | | | | | | Filter (#3 = "bool")                                                                                                                                                           +
+ | | | | | | | Map oidtoregtype(#1)                                                                                                                                                           +
+ | | | | | | | Project (#4)                                                                                                                                                                   +
+ | | | | | |                                                                                                                                                                                  +
+ | | | |                                                                                                                                                                                      +
+ | | | Project (#3)                                                                                                                                                                           +
+ | |         
+```

@@ -1,0 +1,4 @@
+fix(es/transforms/base): Fix hygiene of catch clause (#1413)
+
+swc_ecma_transforms_base:
+ - `hygiene`: Apply ops in catch clauses. (#1402)

@@ -1,0 +1,3 @@
+fix(node): export diagnostics_channel module (#19167)
+
+Closes https://github.com/denoland/deno/issues/19166

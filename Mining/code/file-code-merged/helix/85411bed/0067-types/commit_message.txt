@@ -1,0 +1,4 @@
+DAP: Make `cwd` required in RunTerminalArguments
+
+The spec has `cwd` in `RunInTerminalRequestArguments` as non-optional:
+https://microsoft.github.io/debug-adapter-protocol/specification#Reverse_Requests_RunInTerminal

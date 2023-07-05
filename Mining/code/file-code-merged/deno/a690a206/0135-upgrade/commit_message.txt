@@ -1,0 +1,2 @@
+fix(cli/upgrade): upgrade fails on Windows with space in temp path (#6522)
+

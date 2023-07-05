@@ -1,0 +1,2 @@
+fix(rust, python): fix logical type in ListChunked::new_from_index (#8367)
+

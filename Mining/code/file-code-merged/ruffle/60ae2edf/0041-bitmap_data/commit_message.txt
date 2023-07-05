@@ -1,0 +1,1 @@
+avm2: Use AVM error for invalid bitmapdata error

@@ -1,0 +1,2 @@
+sync: make add_permits panic with usize::MAX >> 3 permits (#3188)
+

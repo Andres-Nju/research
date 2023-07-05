@@ -1,0 +1,5 @@
+fix(cast): auto fetch chain id in cast call (#1523)
+
+* auto fetch chain id in cast call
+
+* fallback to chain env var

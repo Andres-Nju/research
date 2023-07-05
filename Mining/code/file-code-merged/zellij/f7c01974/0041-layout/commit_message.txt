@@ -1,0 +1,2 @@
+fix: add checking for missing extensions (#1432)
+

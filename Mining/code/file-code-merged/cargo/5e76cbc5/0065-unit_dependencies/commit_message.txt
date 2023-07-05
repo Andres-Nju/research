@@ -1,0 +1,6 @@
+Fix mode generated in `maybe_lib`
+
+The new `mode` for the library dependency is dependent on the library target
+rather than the target which is the reason for the dependency on the library!
+
+Closes rust-lang/rust#50640

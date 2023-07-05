@@ -1,0 +1,2 @@
+fix: empty session name (#1959)
+

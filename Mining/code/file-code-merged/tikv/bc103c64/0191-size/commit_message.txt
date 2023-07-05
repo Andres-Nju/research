@@ -1,0 +1,3 @@
+tests: fix size split check (#8390) (#8524)
+
+Signed-off-by: ti-srebot <ti-srebot@pingcap.com>

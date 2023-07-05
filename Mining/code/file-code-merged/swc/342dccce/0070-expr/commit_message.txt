@@ -1,0 +1,2 @@
+fix(es/parser): Handle trailing comma and bracket after an arrow function in conditional (#3685)
+

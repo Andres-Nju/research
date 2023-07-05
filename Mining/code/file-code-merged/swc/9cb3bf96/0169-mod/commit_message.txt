@@ -1,0 +1,7 @@
+fix(es/minifier): Fix bugs of the minifier (#2610)
+
+swc_ecma_minifier:
+ - Increase max pass limit. (#2604, #2604)
+
+swc:
+ - Change default value of `compress` and `mangle`. (#2591)

@@ -1,0 +1,2 @@
+fix `:insert-output` doc: inserting output **before** each selection (#4286)
+

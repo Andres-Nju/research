@@ -1,0 +1,3 @@
+Merge pull request #15978 from mjibson/jsonb-path-null
+
+expr: correctly return NULL on jsonb path array

@@ -1,0 +1,1 @@
+Fix dashes in rename dependencies.

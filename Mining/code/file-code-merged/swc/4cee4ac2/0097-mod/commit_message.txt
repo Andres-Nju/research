@@ -1,0 +1,2 @@
+fix(html/parser): Fix error reporting related to `image` (#4720)
+

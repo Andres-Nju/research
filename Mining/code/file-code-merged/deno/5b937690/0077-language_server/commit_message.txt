@@ -1,0 +1,5 @@
+fix(cli/lsp): fix using jsx/tsx when not emitting via tsc (#9407)
+
+Closes #9308
+Closes #9023
+Closes #8993

@@ -1,0 +1,9 @@
+Fix next/prev tree-sitter inconsistency (#7332)
+
+* Fix next/prev tree-sitter inconsistency
+
+Before there where different results going to next or previous due to
+sorting not dealing with multiple captures that start/end at the same
+pos. I chose to prefer longer matches.
+
+* Revert unnecessary change

@@ -1,0 +1,3 @@
+Merge pull request #8830 from antiguru/transform_avoid_clone
+
+transform: Avoid a clone for pretty error messages

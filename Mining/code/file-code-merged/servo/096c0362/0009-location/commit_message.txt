@@ -1,0 +1,1 @@
+Make Assign throw error on invalid url

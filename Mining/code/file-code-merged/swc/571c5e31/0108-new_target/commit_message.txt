@@ -1,0 +1,2 @@
+fix(es/transforms/compat): Fix `new_target` (#2736)
+

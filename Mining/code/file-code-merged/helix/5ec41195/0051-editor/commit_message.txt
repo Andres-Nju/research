@@ -1,0 +1,2 @@
+ensure :toggle soft-wrap.enable works by default (#6742)
+

@@ -1,0 +1,2 @@
+fix(rust, python): fix logical types in arr.get (#7094)
+

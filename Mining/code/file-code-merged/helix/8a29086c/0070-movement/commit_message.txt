@@ -1,0 +1,11 @@
+Fix panic when moving over unicode punctuation
+
+`is_ascii_punctuation` will only work for ASCII punctuations, and when
+we have unicode punctuation (or other) we jump into the `unreachable`.
+This patch fallback into categorizing everything in this branch as
+`Unknown`.
+
+Fixes https://github.com/helix-editor/helix/issues/123
+
+https://github.com/helix-editor/helix/pull/135: add better support for
+unicode categories.

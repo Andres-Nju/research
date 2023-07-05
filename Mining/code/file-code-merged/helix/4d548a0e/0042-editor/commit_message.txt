@@ -1,0 +1,8 @@
+Parse gutter-types as Strings (#5696)
+
+This is necessary for configurations like:
+
+    [editor]
+    gutters = ["diagnostics", "line-numbers"]
+
+after the toml 0.6.0 dependency update.

@@ -1,0 +1,3 @@
+Example: three-d downgrade depth_buffer to 24 bit (#1950)
+
+Closes: #1949

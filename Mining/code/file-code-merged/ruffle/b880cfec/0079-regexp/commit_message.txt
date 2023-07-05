@@ -1,0 +1,1 @@
+core: Update regress to version 0.5

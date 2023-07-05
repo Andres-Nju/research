@@ -1,0 +1,3 @@
+raftstore: set term in read index response (#7372)
+
+Signed-off-by: Liqi Geng <gengliqiii@gmail.com>

@@ -1,0 +1,1 @@
+Support force-pushed repos with git-fetch-with-cli.

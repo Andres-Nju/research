@@ -1,0 +1,2 @@
+fix: don't error if Deno.bench() or Deno.test() are used in run subcommand (#14946)
+

@@ -1,0 +1,1 @@
+avm2: Only store actually-passed arguments to 'arguments'

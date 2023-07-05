@@ -1,0 +1,5 @@
+build: fix compatibility with rustc 1.30.0
+
+Additionally:
+* Rebuild rust crates when the rustc version changes.
+* Fetch all rust ldflags in one exec_script() call instead of two.

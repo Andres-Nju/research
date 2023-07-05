@@ -1,0 +1,3 @@
+Fix Fuzzing using AFL and Honggfuzz (#6046)
+
+Signed-off-by: Breezewish <breezewish@pingcap.com>

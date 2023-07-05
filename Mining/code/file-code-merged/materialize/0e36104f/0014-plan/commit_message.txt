@@ -1,0 +1,3 @@
+Merge pull request #18986 from mjibson/at-least-since
+
+sql: don't advance AS OF AT LEAST to upper

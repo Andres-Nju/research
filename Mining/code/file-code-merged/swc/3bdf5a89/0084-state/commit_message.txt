@@ -1,0 +1,2 @@
+fix(es/lexer): Fix handling of object properties with the name `function` (#4374)
+

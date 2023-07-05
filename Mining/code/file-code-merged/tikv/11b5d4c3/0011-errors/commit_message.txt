@@ -1,0 +1,7 @@
+pd_client: Do not reconnect for pd unknown error (#12827)
+
+close tikv/tikv#12345
+
+do not reconnect for pd unknown error
+
+Signed-off-by: Connor1996 <zbk602423539@gmail.com>

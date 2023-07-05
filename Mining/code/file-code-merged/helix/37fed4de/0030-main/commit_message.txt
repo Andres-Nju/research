@@ -1,0 +1,2 @@
+fix '--grammar' flag in help text (#1784)
+

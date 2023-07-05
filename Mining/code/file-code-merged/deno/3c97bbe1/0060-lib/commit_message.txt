@@ -1,0 +1,2 @@
+fix(ext/websocket): WebSocket dispatch single close event (#13443)
+

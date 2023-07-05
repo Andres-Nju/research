@@ -1,0 +1,5 @@
+Fix tree sitter chunking (#7417)
+
+Call as bytes before slicing, that way you can take bytes that aren't
+aligned to chars. Should technically also be slightly faster since you
+don't have to check alignment...

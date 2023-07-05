@@ -1,0 +1,10 @@
+raftstore: in try_batch, we should use the lastest bucket_meta. (#12577)
+
+close tikv/tikv#12578
+
+Update bucket_meta when the newer apply has.
+
+Signed-off-by: SpadeA-Tang <u6748471@anu.edu.au>
+
+Co-authored-by: 5kbpers <hustmh@gmail.com>
+Co-authored-by: Ti Chi Robot <ti-community-prow-bot@tidb.io>

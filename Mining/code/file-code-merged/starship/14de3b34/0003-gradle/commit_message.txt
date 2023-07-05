@@ -1,0 +1,2 @@
+chore: fix clippy warnings in gradle module (#4736)
+

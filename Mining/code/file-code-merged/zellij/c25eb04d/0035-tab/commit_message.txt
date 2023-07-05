@@ -1,0 +1,2 @@
+fix(tabs): do not crash if closing pane in fullscreen (#259)
+

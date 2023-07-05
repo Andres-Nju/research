@@ -1,0 +1,5 @@
+Fix crash when hovering over message bar
+
+This commit fixes a regression introduced in 9dddf64.
+
+Fixes #2699.

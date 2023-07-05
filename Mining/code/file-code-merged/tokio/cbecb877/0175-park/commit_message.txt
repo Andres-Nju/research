@@ -1,0 +1,4 @@
+executor: fix build (#825)
+
+Two unrelated PRs to the same file resulted in a broken build. This
+patch fixes the build by including `Arc`.

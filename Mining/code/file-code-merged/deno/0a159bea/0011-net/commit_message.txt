@@ -1,0 +1,2 @@
+fix(ops/net): fix panic in op_dns_resolve (#9187)
+

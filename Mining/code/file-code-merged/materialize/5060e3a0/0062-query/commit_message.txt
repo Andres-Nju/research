@@ -1,0 +1,3 @@
+Merge pull request #10011 from benesch/gh10008
+
+sql-parser: correct roundtripping of aliased ROWS FROM clauses

@@ -1,0 +1,4 @@
+fix(es/transforms/resolver): Fix setter properties (#1647)
+
+swc_ecma_transorms_base:
+ - Handle parameters of a setter property correctly.

@@ -1,0 +1,5 @@
+Fix signature help panic when too large (#4030)
+
+When signature help is too large it may cause a panic when it is too
+large, now I just make the hover do an intersection with surface to make
+sure it never overflow.

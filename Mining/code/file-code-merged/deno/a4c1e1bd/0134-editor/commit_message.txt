@@ -1,0 +1,2 @@
+fix: upgrade to swc_ecmascript 0.143 (#14238)
+

@@ -1,0 +1,19 @@
+Fix AWS timeout warnings in console logs (#9642)
+
+Currently we get the following warning tens of times every time an AWS source
+starts up, or re-does anything:
+
+    2021-12-15T16:29:50.908164Z  WARN aws_smithy_client::timeout: One or more timeouts were set but no async_sleep fn was passed. No timeouts will occur.
+    Timeouts:
+    Connect (time to first byte):(unset)
+    TLS negotiation:(unset)
+    HTTP read:(unset)
+    API requests:(unset)
+    HTTP requests:(unset)
+
+In the future (when the upstream issue[1] is fixed) it may be possible to get
+the default behavior by just enabling the `tokio-rt` feature. However, right
+now that doesn't work, and possibly when it is fixed we won't want to tie
+ourselves to that feature.
+
+[1]: https://github.com/awslabs/aws-sdk-rust/issues/317

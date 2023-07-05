@@ -1,0 +1,2 @@
+fix: Deno.setRaw shouldn't panic on ENOTTY (#6630)
+

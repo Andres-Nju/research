@@ -1,0 +1,2 @@
+fix(floating-panes): update tooltip after hiding floating panes with mouse (#1186)
+

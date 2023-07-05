@@ -1,0 +1,2 @@
+fix(anvil): treat 0 basefee as constant (#5163)
+

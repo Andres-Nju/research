@@ -1,0 +1,2 @@
+fix(rust, pyhton): list eval all null array (#6545)
+

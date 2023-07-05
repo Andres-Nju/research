@@ -1,0 +1,1 @@
+Handle erroneously ignored case in RopeGraphemes iterator.

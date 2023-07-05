@@ -1,0 +1,5 @@
+Work around a Mako bug on Windows
+
+http://logs.glob.uno/?c=mozilla%23servo#c403766
+https://i.imgur.com/j5Zv4LX.png
+https://bitbucket.org/zzzeek/mako/issues/150/line-ending-handling-broken-on-win32

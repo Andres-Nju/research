@@ -1,0 +1,2 @@
+fix(cli): deno doc panics on invalid url (#11536)
+

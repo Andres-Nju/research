@@ -1,0 +1,2 @@
+fix(napi): fix is_detached_arraybuffer (#16478)
+

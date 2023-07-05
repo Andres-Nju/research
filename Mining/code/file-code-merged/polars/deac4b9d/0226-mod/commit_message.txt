@@ -1,0 +1,2 @@
+fix count union predicate (#3969)
+

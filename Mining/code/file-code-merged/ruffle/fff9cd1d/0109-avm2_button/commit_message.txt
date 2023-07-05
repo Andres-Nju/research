@@ -1,0 +1,1 @@
+avm1: Change cursor to arrow when the `enabled` property is set to false

@@ -1,0 +1,11 @@
+compute-client: retry connecting to replicas more eagerly
+
+This commit changes the replica connection retry behavior from
+exponential backoff to retrying every second. The rationale is:
+
+ 1. Retrying more eagerly reduces the delay until the replica is
+    functional. This is particularly relevant for tests.
+ 2. Retrying more eagerly should not cause any harm since on request per
+    second is still low traffic.
+ 3. This is the same behavior as the storage client uses to connect to
+    replicas.

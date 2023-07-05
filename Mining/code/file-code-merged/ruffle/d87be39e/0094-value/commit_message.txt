@@ -1,0 +1,1 @@
+avm2: Don't parse "inf" as Infinity

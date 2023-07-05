@@ -1,0 +1,2 @@
+fix(cli/repl): put the thread to sleep when idle (#7804)
+

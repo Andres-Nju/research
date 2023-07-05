@@ -1,0 +1,2 @@
+always error on empty csv (#2797)
+

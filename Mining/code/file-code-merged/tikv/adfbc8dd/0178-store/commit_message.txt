@@ -1,0 +1,7 @@
+raftstore: fix missing workers' stop on shutdown (#11864)
+
+ref #11159
+
+Signed-off-by: Wenbo Zhang <ethercflow@gmail.com>
+
+Co-authored-by: Ti Chi Robot <ti-community-prow-bot@tidb.io>

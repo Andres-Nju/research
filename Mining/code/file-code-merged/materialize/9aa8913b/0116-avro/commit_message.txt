@@ -1,0 +1,2 @@
+Fix wrong logic when printing `magic` (#2131)
+

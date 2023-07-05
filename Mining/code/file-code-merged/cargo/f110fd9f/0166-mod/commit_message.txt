@@ -1,0 +1,7 @@
+Auto merge of #8681 - weihanglo:fix/redundant-messsage-local-crate-install, r=ehuss
+
+Sweep unrelated message from unnecessary workspace infromation
+
+Resolves #8619
+
+Only pass workspace information when the source is from a local crate installation.

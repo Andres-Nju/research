@@ -1,0 +1,2 @@
+docs(rust): fix a typo in csv read example (#6389)
+

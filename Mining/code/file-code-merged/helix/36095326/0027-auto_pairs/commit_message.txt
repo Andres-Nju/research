@@ -1,0 +1,2 @@
+Fix auto pairs return wrong selection (#613)
+

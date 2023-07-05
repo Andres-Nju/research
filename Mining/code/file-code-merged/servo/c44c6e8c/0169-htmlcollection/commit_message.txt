@@ -1,0 +1,16 @@
+Auto merge of #29646 - CYBAI:fix-classname-filter, r=jdm
+
+Fix checking for empty set in getElementsByClassName
+
+Because empty set with `.all(predicate)` will always return `true`, it will result in always filtering wrong elements when the classes is empty set.
+
+Thus, we return earlier with `always_empty` HTMLCollection in the empty classes case so that we can avoid filtering on empty sets.
+
+With adding the checking, we can fix the failures in `/dom/nodes/getElementsByClassName-empty-set.html`.
+
+---
+
+- [x] `./mach build -d` does not report any errors
+- [x] `./mach test-tidy` does not report any errors
+- [ ] These changes fix #___ (GitHub issue number if applicable)
+- [x] There are tests for these changes

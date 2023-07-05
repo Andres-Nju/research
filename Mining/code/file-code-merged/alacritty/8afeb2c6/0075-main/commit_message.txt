@@ -1,0 +1,5 @@
+Fix warnings when building only with Wayland feature
+
+
+This commit also makes our CI fail hard when warning encountered when
+building only for either Wayland or X11.

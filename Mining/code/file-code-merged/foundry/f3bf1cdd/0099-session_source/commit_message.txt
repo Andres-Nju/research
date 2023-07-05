@@ -1,0 +1,2 @@
+chore(chisel): show version result on error (#4193)
+

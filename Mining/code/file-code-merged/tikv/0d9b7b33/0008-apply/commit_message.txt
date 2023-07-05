@@ -1,0 +1,5 @@
+raftstore: reset perf context before each apply write (#12808)
+
+ref tikv/tikv#11044, close tikv/tikv#11044
+
+Signed-off-by: Lucasliang <nkcs_lykx@hotmail.com>

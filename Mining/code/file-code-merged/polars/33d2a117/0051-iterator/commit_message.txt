@@ -1,0 +1,2 @@
+fix(rust, python): don't set fast_explode if null values in list (#5838)
+

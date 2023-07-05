@@ -1,0 +1,4 @@
+tikv_util: fix compatibility issue in tikv rotating log file naming (#7437) (#7561)
+
+Signed-off-by: sre-bot <sre-bot@pingcap.com>
+Signed-off-by: Deardrops <passagesfall@gmail.com>

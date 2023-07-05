@@ -1,0 +1,2 @@
+fix: Correct ZSH init on older ZSH versions (#213)
+

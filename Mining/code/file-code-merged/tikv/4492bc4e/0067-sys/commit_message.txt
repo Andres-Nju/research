@@ -1,0 +1,40 @@
+diagnostics: fix unmatched memory info (#9539) (#9589)
+
+cherry-pick #9539 to release-4.0
+You can switch your code base to this Pull Request by using [git-extras](https://github.com/tj/git-extras):
+```bash
+# In tikv repo:
+git pr https://github.com/tikv/tikv/pull/9589
+```
+
+After apply modifications, you can push your change to this PR via:
+```bash
+git push git@github.com:ti-srebot/tikv.git pr/9589:release-4.0-6cd51f9d07aa
+```
+
+---
+
+Signed-off-by: Zhenchi <zhongzc_arch@outlook.com>
+
+
+### What problem does this PR solve?
+
+Issue Number: close #9532 
+
+Problem Summary:
+
+The value of total memory is from quota, while other memory infos are from system. It is improper to divide the quota memory by other system memory infos.
+
+### What is changed and how it works?
+
+Use the total memory from system. 
+
+### Check List <!--REMOVE the items that are not applicable-->
+
+Tests <!-- At least one of them must be included. -->
+
+- No code
+
+
+### Release note <!-- bugfixes or new feature need a release note -->
+- Fix unmatched memory information

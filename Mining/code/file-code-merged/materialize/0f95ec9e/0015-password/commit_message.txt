@@ -1,0 +1,5 @@
+mz cli: Fix the app-password list command (#16756)
+
+The request was being sent to the wrong API endpoint.
+
+Fixes: #16752

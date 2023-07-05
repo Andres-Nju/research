@@ -1,0 +1,9 @@
+log-backup: added `Debug` output of error to report log (#13686)
+
+close tikv/tikv#13685
+
+`report` would now print the `Debug` version of error.
+
+Signed-off-by: hillium <yujuncen@pingcap.com>
+
+Co-authored-by: Ti Chi Robot <ti-community-prow-bot@tidb.io>

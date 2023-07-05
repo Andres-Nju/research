@@ -1,0 +1,3 @@
+fix the annotation of Let in MirRelationExpr (#9945)
+
+fix the annotation of Let in MirRelationExpr

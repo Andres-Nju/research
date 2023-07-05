@@ -1,0 +1,2 @@
+Fix condition for updating the current date buffer (#230)
+

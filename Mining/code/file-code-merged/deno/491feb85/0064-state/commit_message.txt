@@ -1,0 +1,2 @@
+fix: --inspect flag working like --inspect-brk (#5697)
+

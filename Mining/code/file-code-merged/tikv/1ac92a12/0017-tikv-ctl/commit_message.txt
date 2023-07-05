@@ -1,0 +1,3 @@
+tikv-ctl.rs: fix command help message (#5294)
+
+Signed-off-by: Guangming Wang <guangming.wang@daocloud.io>

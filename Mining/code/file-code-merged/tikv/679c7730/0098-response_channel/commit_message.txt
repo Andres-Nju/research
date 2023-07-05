@@ -1,0 +1,7 @@
+raftstore-v2: fix compilation errors. (#13969)
+
+close tikv/tikv#13970
+
+Fix compilation errors.
+
+Signed-off-by: Lucasliang <nkcs_lykx@hotmail.com>

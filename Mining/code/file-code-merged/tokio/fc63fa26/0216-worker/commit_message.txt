@@ -1,0 +1,8 @@
+rt: allow block_on inside block_in_place inside block_on (#2645)
+
+A fast path in block_on_place was failing to call exit() in the case where we
+were in a block_on call.
+
+Fixes: #2639
+
+Co-authored-by: Bryan Donlan <bdonlan@amazon.com>

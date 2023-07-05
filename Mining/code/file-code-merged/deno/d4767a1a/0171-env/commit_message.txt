@@ -1,0 +1,2 @@
+fix(napi): update node version to lts (#17399)
+

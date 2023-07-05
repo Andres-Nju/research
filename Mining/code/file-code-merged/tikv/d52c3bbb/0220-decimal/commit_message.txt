@@ -1,0 +1,2 @@
+src/coprocessor/codec/mysql/decimal.rs: Fix bad lint fix. (#2693)
+

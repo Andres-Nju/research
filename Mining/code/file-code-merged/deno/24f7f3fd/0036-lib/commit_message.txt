@@ -1,0 +1,9 @@
+fix(ext/fetch): ignore user content-length header (#15555)
+
+Previously if a user specified a content-length header for an POST
+request without a body, the request would contain two `content-length`
+headers. One added by us, and one added by the user.
+
+This commit ignores all content-length headers coming from the user,
+because we need to have the sole authority on the content-length because
+we transmit the body.

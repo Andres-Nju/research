@@ -1,0 +1,7 @@
+build: fix a Mac build issue (#12027)
+
+ref tikv/tikv#10867, ref tikv/tikv#11873
+
+Signed-off-by: tabokie <xy.tao@outlook.com>
+
+Co-authored-by: Ti Chi Robot <ti-community-prow-bot@tidb.io>

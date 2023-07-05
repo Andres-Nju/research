@@ -1,0 +1,2 @@
+also expand rename in filters (#3008)
+

@@ -1,0 +1,3 @@
+*: update bindgen to 0.51.1 to fix grpcio build (#6382)
+
+Signed-off-by: Yilin Chen <sticnarf@gmail.com>

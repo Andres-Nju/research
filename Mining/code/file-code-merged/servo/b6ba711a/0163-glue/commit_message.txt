@@ -1,0 +1,4 @@
+Bug 1364862: Make PostRebuildAllStyleData async. r=heycam
+
+MozReview-Commit-ID: EM3eUP1dWwA
+Signed-off-by: Emilio Cobos Álvarez <emilio@crisal.io>

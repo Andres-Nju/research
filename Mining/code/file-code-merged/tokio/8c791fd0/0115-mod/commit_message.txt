@@ -1,0 +1,2 @@
+Fix Runtime::new's doc link to tokio::run (#371)
+

@@ -1,0 +1,2 @@
+fix(rust, python): allow list<null> -> list<cat> (#8636)
+

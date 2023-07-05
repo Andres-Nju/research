@@ -1,0 +1,3 @@
+Merge pull request #10169 from antifuchs/prometheus-fix-retain-for-metadata
+
+Fix timestamp logic around metadata availability

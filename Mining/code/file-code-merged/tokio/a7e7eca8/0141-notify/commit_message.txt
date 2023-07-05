@@ -1,0 +1,2 @@
+sync: fix panic in `Notified::enable` (#4747)
+

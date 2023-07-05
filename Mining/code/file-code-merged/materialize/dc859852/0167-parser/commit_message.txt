@@ -1,0 +1,6 @@
+sql: Fix reset schema (#19618)
+
+This commit fixes the behavior when running `RESET SCHEMA`, so that
+search path is reset to the default value.
+
+Fixes #19586

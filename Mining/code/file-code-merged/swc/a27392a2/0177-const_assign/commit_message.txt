@@ -1,0 +1,2 @@
+fix(es/lints): Fix `const-assign` in function expressions (#6294)
+

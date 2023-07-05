@@ -1,0 +1,3 @@
+cop: fix typo in tidb_query_common/src/storage/scanner.rs (#9074)
+
+Signed-off-by: mwish <anmmscs_maple@qq.com>

@@ -1,0 +1,3 @@
+Makefile: add a doc test rule and fix a failed doc test case (#6551)
+
+Signed-off-by: mahjonp <junpeng.man@gmail.com>

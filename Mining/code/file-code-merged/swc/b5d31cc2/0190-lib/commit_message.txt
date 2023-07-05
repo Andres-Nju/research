@@ -1,0 +1,2 @@
+fix(es/utils): Fix detection of hoisting (#6738)
+

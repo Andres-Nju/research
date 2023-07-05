@@ -1,0 +1,2 @@
+chore: improve invalid utf8 error message (#1697)
+

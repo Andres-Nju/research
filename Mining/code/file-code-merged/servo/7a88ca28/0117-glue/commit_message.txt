@@ -1,0 +1,1 @@
+Bug 1336863: Ensure we don't restyle with outdated rules.

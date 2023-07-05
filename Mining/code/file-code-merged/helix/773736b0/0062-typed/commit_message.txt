@@ -1,0 +1,2 @@
+Fix paste direction for typed paste commands (#2288)
+

@@ -1,0 +1,9 @@
+compute: fix UpdateNotBeyondLower errors in persist_sink
+
+These errors happened with multiple replicas writing to the same sink.
+Since we used `lower = write.upper()`, it was possible that some times
+we tried to append were below our specified `lower`, when other replicas
+had advanced `write.upper()` since our last append.
+
+This is fixed by setting `lower` to our per-replica sink frontier, which
+is not affected by other replicas writing to the same sink.

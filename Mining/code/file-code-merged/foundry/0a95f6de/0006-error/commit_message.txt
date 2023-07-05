@@ -1,0 +1,2 @@
+chore: make ERROR_PREFIX 4 bytes long (#3765)
+

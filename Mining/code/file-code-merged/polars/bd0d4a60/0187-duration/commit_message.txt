@@ -1,0 +1,2 @@
+allow summing of duration in selection context (#4124)
+

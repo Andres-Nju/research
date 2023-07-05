@@ -1,0 +1,5 @@
+Auto merge of #7927 - ehuss:metadata-docs-clarify, r=alexcrichton
+
+Try to clarify `cargo metadata`'s relationship with the workspace.
+
+Closes #7893

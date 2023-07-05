@@ -1,0 +1,17 @@
+Fix freetype 26.6 format conversion
+
+This resolves a rounding issue when converting to the 26.6 format used
+by freetype for character sizes.
+
+This rounding behavior is taken from cairo:
+https://gitlab.freedesktop.org/cairo/cairo/-/blob/master/src/cairo-ft-font.c#L900-903
+
+There are various different implementations of the F26Dot6 conversion
+online, but the rounding that cairo does seems to be the most common.
+Since cairo is very commonly used, it should produce good results
+compared with the rest of Linux text rendering.
+
+Fixes #2780.
+
+Co-authored-by: Christian Duerr <contact@christianduerr.com>
+Co-authored-by: Kirill Chibisov <contact@kchibisov.com>

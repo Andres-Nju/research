@@ -1,0 +1,7 @@
+fix docker build (#13937)
+
+ref tikv/tikv#11312
+
+Fix `make docker`.
+
+Signed-off-by: tabokie <xy.tao@outlook.com>

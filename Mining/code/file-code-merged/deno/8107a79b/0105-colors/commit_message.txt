@@ -1,0 +1,4 @@
+feat: change shade of "gray" color in eye-catchers (#14309)
+
+This commit changes "gray" color for eye-catchers to use 
+Ansi(245) color.

@@ -1,0 +1,2 @@
+fix(es/parser): Fix top-level await with binary expr (#4426)
+

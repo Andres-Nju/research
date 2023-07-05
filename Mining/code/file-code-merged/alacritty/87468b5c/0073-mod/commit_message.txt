@@ -1,0 +1,10 @@
+Fix newline + scroll region bug (#747)
+
+When a scroll region is active with the cursor below the bottom of the
+region, newlines should not cause the region to scroll.
+
+A ref test was added for this situation to prevent regressions.
+
+Thanks @hiciu for reporting and @nicm for the test case.
+
+Resolves #745.

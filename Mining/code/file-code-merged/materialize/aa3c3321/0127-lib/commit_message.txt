@@ -1,0 +1,5 @@
+Optimization: Fix suboptimal plan in issue #9921. (#9926)
+
+Fix suboptimal plan in issue #9921.
+
+It seems that a select/any/all subquery inside of another scalar expression resulted in a degenerate join not being elided.

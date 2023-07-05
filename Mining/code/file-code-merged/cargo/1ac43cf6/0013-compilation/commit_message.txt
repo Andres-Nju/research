@@ -1,0 +1,6 @@
+Auto merge of #10968 - hi-rustin:rustin-patch-msg, r=ehuss
+
+Improve error msg for get target runner
+
+Actually, we'll get this config from three places. So this msg may be confusing when you set it up in `.cargo/config.toml` or pass it by `--config`.
+We already printed the location of the config, so I think it's OK to change it to `configurations`.

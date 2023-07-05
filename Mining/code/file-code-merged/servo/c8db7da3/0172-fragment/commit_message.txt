@@ -1,0 +1,4 @@
+Fix inline size adjustment when stripping trailing whitespace from fragments
+
+The whitespace range was not properly shifted which caused us to adjust the fragment's inline size by the advance of a different set of characters.
+This was causing justified text lines to be too long or too short.

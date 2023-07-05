@@ -1,0 +1,2 @@
+Fix command in docs (#2353)
+

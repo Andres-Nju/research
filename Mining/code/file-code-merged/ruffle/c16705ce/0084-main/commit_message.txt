@@ -1,0 +1,1 @@
+desktop: Add `.spl` to file dialog filter

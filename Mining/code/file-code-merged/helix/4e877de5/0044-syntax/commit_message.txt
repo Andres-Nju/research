@@ -1,0 +1,39 @@
+Fix Golang textobject queries (#2153)
+
+* log textobject query construction errors
+
+The current behavior is that invalid queries are discarded silently
+which makes it difficult to debug invalid textobjects (either invalid
+syntax or an update may have come through that changed the valid set
+of nodes).
+
+* fix golang textobject query
+
+`method_spec_list` used to be a named node but was removed (I think
+for Helix, it was when updated to pull in the support for generics).
+Instead of a named node for the list of method specs we have a bunch
+of `method_spec` children nodes now. We can match on the set of them
+with a `+` wildcard.
+
+Example go for this query:
+
+    type Shape interface {
+       area() float64
+       perimeter() float64
+    }
+
+Which is parsed as:
+
+    (source_file
+      (type_declaration
+        (type_spec
+          name: (type_identifier)
+          type: (interface_type
+            (method_spec
+              name: (field_identifier)
+              parameters: (parameter_list)
+              result: (type_identifier))
+            (method_spec
+              name: (field_identifier)
+              parameters: (parameter_list)
+              result: (type_identifier))))))

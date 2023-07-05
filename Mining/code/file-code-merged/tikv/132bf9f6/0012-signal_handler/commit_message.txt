@@ -1,0 +1,2 @@
+sinal_handler: fix wrong fn definition (#1979)
+

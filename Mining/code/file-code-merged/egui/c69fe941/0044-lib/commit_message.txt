@@ -1,0 +1,7 @@
+Reverse horizontal scrolling on windows (#966)
+
+* Reverse horizontal scrolling on windows
+
+* Add link to winit issue
+
+Co-authored-by: Emil Ernerfeldt <emil.ernerfeldt@gmail.com>

@@ -1,0 +1,1 @@
+fix #10184, remove backspace-to-navigate.

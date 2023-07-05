@@ -1,0 +1,2 @@
+sync: fix Notify example (#4212)
+

@@ -1,0 +1,2 @@
+fix slash in search selector status message (#1449)
+

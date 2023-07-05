@@ -1,0 +1,5 @@
+tests: fix size split check (#8390)
+
+Flush only flushes default CF, which is incorrect when testing other CFs
+
+Signed-off-by: Jay Lee <BusyJayLee@gmail.com>

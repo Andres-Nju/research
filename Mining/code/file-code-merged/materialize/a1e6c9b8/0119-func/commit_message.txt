@@ -1,0 +1,5 @@
+expr: mark unary date_trunc as nullable (#3403)
+
+Closes #3401
+
+Match the convention from the corresponding binary funcs

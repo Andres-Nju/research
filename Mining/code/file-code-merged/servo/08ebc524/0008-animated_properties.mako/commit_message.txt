@@ -1,0 +1,7 @@
+Round halfway values toward positive infinity for integer type of animation.
+
+From the spec[1];
+
+ `with values halfway between a pair of integers rounded towards positive infinity.`
+
+[1] https://drafts.csswg.org/css-transitions/#animtype-integer

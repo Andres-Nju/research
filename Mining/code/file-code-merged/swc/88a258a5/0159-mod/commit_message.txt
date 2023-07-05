@@ -1,0 +1,4 @@
+fix(es/react): Fix `createElement` (#3277)
+
+swc_ecma_transforms_react:
+ - Fix arguments passed to `_createElement`. (https://github.com/vercel/next.js/issues/33291)

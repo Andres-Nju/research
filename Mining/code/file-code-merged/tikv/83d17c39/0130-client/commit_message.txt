@@ -1,0 +1,9 @@
+server: raise error when bootstrap with a zero store-id (#13010)
+
+close tikv/tikv#13011
+
+raise error when bootstrap with a zero store-id
+
+Signed-off-by: CalvinNeo <calvinneo1995@gmail.com>
+
+Co-authored-by: Ti Chi Robot <ti-community-prow-bot@tidb.io>

@@ -1,0 +1,5 @@
+fix(es/codegen): Fix codegen of a negative number (#5980)
+
+**Related issue:**
+
+ - Closes https://github.com/swc-project/swc/issues/5912.

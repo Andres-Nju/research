@@ -1,0 +1,8 @@
+Auto merge of #11950 - ehuss:stabilize-logout, r=epage
+
+Stabilize `cargo logout`
+
+This stabilizes the `cargo logout` command.
+
+Closes #11910
+Closes #11884

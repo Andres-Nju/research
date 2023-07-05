@@ -1,0 +1,7 @@
+server: fix race during raft data migration (#12701)
+
+close tikv/tikv#12698
+
+Close engine before cleaning up its data during raft engine migration.
+
+Signed-off-by: tabokie <xy.tao@outlook.com>

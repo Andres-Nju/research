@@ -1,0 +1,5 @@
+orchestrator-process: restrict permissions on secrets directory
+
+I accidentally lost the permission restriction code in 7fa63fe.
+
+Fix #13745.

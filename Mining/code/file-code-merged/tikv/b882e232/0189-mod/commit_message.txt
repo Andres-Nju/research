@@ -1,0 +1,4 @@
+ci: fix failed tests (#657)
+
+* util: fix worker test
+* fix addr already in used

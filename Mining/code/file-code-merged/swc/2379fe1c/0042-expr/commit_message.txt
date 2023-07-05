@@ -1,0 +1,2 @@
+fix(es/parser): Allow using `async` as the first one in parameters (#2386)
+

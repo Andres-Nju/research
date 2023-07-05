@@ -1,0 +1,3 @@
+sql: Fix min(int16)
+
+Fixes #17978.

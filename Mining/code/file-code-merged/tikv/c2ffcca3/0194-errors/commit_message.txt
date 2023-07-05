@@ -1,0 +1,5 @@
+raftstore: add the RegionNotInitialized error (#10298)
+
+Signed-off-by: JmPotato <ghzpotato@gmail.com>
+
+Co-authored-by: Ti Chi Robot <ti-community-prow-bot@tidb.io>

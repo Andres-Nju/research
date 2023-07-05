@@ -1,0 +1,4 @@
+fix(bundler): Fix bundler (#2510)
+
+swc_bundler:
+ - Consider usage in named export specifier while analyzing imports.

@@ -1,0 +1,3 @@
+Fix box error name in bootstrap_cluster (#8245)
+
+Signed-off-by: Xintao <hunterlxt@live.com>

@@ -1,0 +1,2 @@
+raftstore: fix possible stale read (#1682)
+

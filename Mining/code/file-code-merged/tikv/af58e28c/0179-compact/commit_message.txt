@@ -1,0 +1,2 @@
+tests: fix unstable test_node_compact_after_delete (#7276)
+

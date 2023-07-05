@@ -1,0 +1,5 @@
+feat(es/minifier): Improve compatibility of `arrows` with `terser` (#6862)
+
+**Related issue:**
+
+ - Closes https://github.com/swc-project/swc/issues/6123.

@@ -1,0 +1,2 @@
+fix append timer metric (#1508)
+

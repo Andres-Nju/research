@@ -1,0 +1,9 @@
+fix io breakdown for foreground write (#14456)
+
+ref tikv/tikv#12842
+
+async io thread's write should be foreground write
+
+Signed-off-by: qi.xu <tonxuqi@outlook.com>
+
+Co-authored-by: qi.xu <tonxuqi@outlook.com>

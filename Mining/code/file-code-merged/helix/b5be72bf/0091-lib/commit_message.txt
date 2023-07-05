@@ -1,0 +1,6 @@
+Canonicalize executable path
+
+When looking up the runtime/ directory relative to the executable path,
+canonicalize the path first in case the executable is a symbolic link.
+
+Fixes #3768

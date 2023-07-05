@@ -1,0 +1,2 @@
+sync: derive PartialEq for error enums (#2137)
+

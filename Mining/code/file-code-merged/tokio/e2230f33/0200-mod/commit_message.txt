@@ -1,0 +1,2 @@
+timer: fix out of bounds error (#2184)
+

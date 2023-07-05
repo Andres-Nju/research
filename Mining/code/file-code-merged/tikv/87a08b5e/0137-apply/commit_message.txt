@@ -1,0 +1,3 @@
+apply: fix compilation errors when running 'make fail_release' (#5115)
+
+Signed-off-by: mahjonp <junpeng.man@gmail.com>

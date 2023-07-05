@@ -1,0 +1,5 @@
+Auto merge of #8216 - ehuss:beta-1.44-clean-p-fix, r=alexcrichton
+
+[beta] Fix `clean -p` with a build dependency.
+
+This is a temporary and simple fix for #8149 where `cargo clean -p foo` would fail if `foo` has a build dependency.  The full fix is in #8210, but I think that PR is way too risky to backport.

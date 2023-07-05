@@ -1,0 +1,3 @@
+Merge pull request #18997 from philip-stoev/sql-feature-flags-format-json-fix
+
+test: Fix the FormatJson scenario in the sql-feature-flags test

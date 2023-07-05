@@ -1,0 +1,3 @@
+Fix the bug that IN() optimization is not taking effect (#6093)
+
+Signed-off-by: Breezewish <breezewish@pingcap.com>

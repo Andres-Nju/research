@@ -1,0 +1,2 @@
+Fix panic for noop selecting join (#5579)
+

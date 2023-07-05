@@ -1,0 +1,2 @@
+Fix off-by-one in select symbol references (#7132)
+

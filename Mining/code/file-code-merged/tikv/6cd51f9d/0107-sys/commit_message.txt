@@ -1,0 +1,26 @@
+diagnostics: fix unmatched memory info (#9539)
+
+Signed-off-by: Zhenchi <zhongzc_arch@outlook.com>
+
+
+### What problem does this PR solve?
+
+Issue Number: close #9532 
+
+Problem Summary:
+
+The value of total memory is from quota, while other memory infos are from system. It is improper to divide the quota memory by other system memory infos.
+
+### What is changed and how it works?
+
+Use the total memory from system. 
+
+### Check List <!--REMOVE the items that are not applicable-->
+
+Tests <!-- At least one of them must be included. -->
+
+- No code
+
+
+### Release note <!-- bugfixes or new feature need a release note -->
+- Fix unmatched memory information

@@ -1,0 +1,2 @@
+DragValue: fix crash for speed==0.0 (#216)
+

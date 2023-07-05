@@ -1,0 +1,2 @@
+fix(es/optimizer/simplifier): Collect idents in init first (#4239)
+

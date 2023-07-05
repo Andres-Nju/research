@@ -1,0 +1,1 @@
+Fix a formatting of a cargo fix message

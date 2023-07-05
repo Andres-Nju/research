@@ -1,0 +1,5 @@
+fix(es/codegen): Fix regression of source maps (#7523)
+
+**Related issue:**
+
+ - Closes #7506.

@@ -1,0 +1,5 @@
+Fix assignment pattern start when there is a type annotation (#693)
+
+- Update dashmap to 3.5.1
+
+Co-authored-by: 강동윤 <kdy1997.dev@gmail.com>

@@ -1,0 +1,3 @@
+fix: properly remove submodule in `.git/modules` (#1468)
+
+Co-authored-by: Georgios Konstantopoulos <me@gakonst.com>

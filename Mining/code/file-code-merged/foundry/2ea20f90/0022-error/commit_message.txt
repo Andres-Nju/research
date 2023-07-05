@@ -1,0 +1,2 @@
+chore: use compat wording in out of gas error (#4391)
+

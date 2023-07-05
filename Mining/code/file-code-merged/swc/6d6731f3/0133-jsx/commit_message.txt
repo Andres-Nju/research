@@ -1,0 +1,2 @@
+fix(es/parser): Fix parsing of an array spread in tsx properties (#7011)
+

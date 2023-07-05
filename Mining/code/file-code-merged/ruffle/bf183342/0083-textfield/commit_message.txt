@@ -1,0 +1,5 @@
+avm2: Fix calling setTextFormat without providing a beginIndex and EndIndex
+
+Previous behaviour defaulted to undefined and applied the format to the
+range [0,0) instead of defaulting to -1 and applying the format to the
+full length of the TextField.

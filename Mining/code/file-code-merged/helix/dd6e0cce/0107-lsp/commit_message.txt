@@ -1,0 +1,4 @@
+Fix line number display for LSP goto pickers (#6559)
+
+Line numbers are 0-indexed in the LSP spec but 1-indexed for display
+and jumping purposes in Helix.

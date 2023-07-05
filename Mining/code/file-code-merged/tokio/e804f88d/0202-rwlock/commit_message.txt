@@ -1,0 +1,11 @@
+sync: add mem::forget to RwLockWriteGuard::downgrade. (#2957)
+
+Currently when `RwLockWriteGuard::downgrade` the `MAX_READS - 1`
+permits are added to the semaphore. When `RwLockWriteGuard::drop`
+gets invoked however another `MAX_READS` permits are added. This
+results in releasing more permits that were actually aquired when
+downgrading a write to a read lock. This is why we need to call
+`mem::forget` on the `RwLockWriteGuard` in order to avoid
+invoking the destructor.
+
+Fixes: #2941

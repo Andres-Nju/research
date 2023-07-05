@@ -1,0 +1,4 @@
+fix(extensions/fetch): Filter out custom HOST headers (#11020)
+
+This commit updates "fetch" API to ignore custom "Host" headers
+and return value provided by "reqwest".

@@ -1,0 +1,3 @@
+Fix inverted condition for cell's extra clearing
+
+Fixes #6215.

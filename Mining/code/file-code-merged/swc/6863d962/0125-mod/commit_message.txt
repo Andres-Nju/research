@@ -1,0 +1,4 @@
+fix(css/parser): Fix parsing of funxtion named `url` (#2350)
+
+swc_css_parser:
+ - Make `url` function calls to not contain space in arguments.

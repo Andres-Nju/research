@@ -1,0 +1,3 @@
+cdc: stop CDC incremental scan from polluting rocksdb block cache (#10299)
+
+Signed-off-by: xuhui-lu <luxuhui12345@126.com>

@@ -1,0 +1,1 @@
+Give attribute-change callbacks a realm so they can to_jsval

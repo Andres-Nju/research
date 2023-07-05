@@ -1,0 +1,3 @@
+Merge pull request #11601 from teskje/consistent-create-rename-errors
+
+sql: Make "item exists" error messages consistent

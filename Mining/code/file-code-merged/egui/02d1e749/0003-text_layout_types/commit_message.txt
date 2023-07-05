@@ -1,0 +1,2 @@
+fix typo in text_layout_types (#2150)
+

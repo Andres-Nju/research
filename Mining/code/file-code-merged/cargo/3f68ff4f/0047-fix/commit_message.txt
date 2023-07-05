@@ -1,0 +1,5 @@
+Auto merge of #9818 - hi-rustin:rustin-patch-fix, r=alexcrichton
+
+unset the FIX_ENV when executing the real rustc
+
+close https://github.com/rust-lang/cargo/issues/9706

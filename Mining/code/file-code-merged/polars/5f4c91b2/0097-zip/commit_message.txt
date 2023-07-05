@@ -1,0 +1,2 @@
+fix offsets in categorical merge (#3242)
+

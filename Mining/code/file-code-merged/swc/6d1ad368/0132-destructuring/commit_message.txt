@@ -1,0 +1,2 @@
+fix(es/compat): Fix regression of `destructuring` (#3326)
+

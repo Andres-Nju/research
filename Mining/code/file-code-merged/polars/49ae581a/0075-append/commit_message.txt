@@ -1,0 +1,2 @@
+fix(rust, python): allow appending categoricals that are all null (#5526)
+

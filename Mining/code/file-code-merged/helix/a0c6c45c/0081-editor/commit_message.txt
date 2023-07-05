@@ -1,0 +1,3 @@
+Fix panic when using set-language on a scratch (#1996)
+
+Skip launching a language server if a document doesn't have a valid URL.

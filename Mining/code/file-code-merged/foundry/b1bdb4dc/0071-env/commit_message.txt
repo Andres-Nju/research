@@ -1,0 +1,5 @@
+fix(forge): correct nonce before vm.getNonce on `script` (#2144)
+
+* correct nonce before vm.getNonce
+
+* update contract name on test

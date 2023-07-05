@@ -1,0 +1,3 @@
+Fix erroneous indent between closers of auto-pairs (#5330)
+
+inserting a newline between 2 closers of an auto-pair.

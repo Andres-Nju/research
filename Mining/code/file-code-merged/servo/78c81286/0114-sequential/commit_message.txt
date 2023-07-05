@@ -1,0 +1,1 @@
+Fix current_dom_depth in sequential traversal. (fixes #14414)

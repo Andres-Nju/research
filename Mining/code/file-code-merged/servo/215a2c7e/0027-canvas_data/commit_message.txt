@@ -1,0 +1,1 @@
+Ensure there's a subpath for the first control point

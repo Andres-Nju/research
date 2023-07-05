@@ -1,0 +1,3 @@
+When tikv is closing, should return retryable error to tidb (#3908)
+
+Signed-off-by: zhangjinpeng1987 <zhangjinpeng@pingcap.com>

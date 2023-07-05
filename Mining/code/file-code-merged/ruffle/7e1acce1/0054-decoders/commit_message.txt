@@ -1,0 +1,5 @@
+core: Fix build without default features
+
+Previously `cargo build --no-default-features` failed because then
+neither implementation of `Mp3Decoder` is chosen.
+Fix that by not handling mp3 sounds at all in that case.

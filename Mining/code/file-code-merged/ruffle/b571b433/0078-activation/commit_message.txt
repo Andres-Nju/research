@@ -1,0 +1,3 @@
+avm2: Fix some `avm_debug!` calls.
+
+These were debug-printing `Gc<Multiname>` instead of `Multiname`

@@ -1,0 +1,2 @@
+fix(repl): avoid panic when assigned to globalThis (#12273)
+

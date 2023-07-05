@@ -1,0 +1,2 @@
+io: move #[cfg(not(loom))] to fix warning (#2864)
+

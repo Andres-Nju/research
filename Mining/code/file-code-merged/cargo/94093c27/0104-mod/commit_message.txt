@@ -1,0 +1,7 @@
+Auto merge of #7935 - cwndrws:revert-removal-of-mtime-preservation, r=ehuss
+
+Revert "Disable preserving mtimes on archives"
+
+This reverts commit 8c92e88765817877f53a9cfb70c3e39853456868.
+
+Fixes #7590

@@ -1,0 +1,2 @@
+docs(cli): fix typo `stanalone` -> `standalone` (#9246)
+

@@ -1,0 +1,6 @@
+Fix span of arrow expression with type params (#1365)
+
+swc_ecma_parser:
+ - Fix span of arrow expression with type params.
+
+Co-authored-by: 강동윤 <kdy1997.dev@gmail.com>

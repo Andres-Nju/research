@@ -1,0 +1,16 @@
+Fix substraction underflow with IL sequence
+
+The IL escape sequence (CSI Ps L) allows inserting blank, uninitialized
+lines. `Ps` is a placeholder for the number of lines that should be
+inserted. Before this change Alacritty would crash when a large number
+of lines was passed as `Ps` parameter.
+
+The issue was caused whenever the current line of the cursor plus the
+lines that should be inserted would leave the bottom of the terminal,
+since this makes indexing impossible.
+
+This patch makes sure that the biggest amount of lines inserted does
+never exceed the end of the visible region minus the current line of the
+curser, which fixes the underflow issue.
+
+This fixes #1515.

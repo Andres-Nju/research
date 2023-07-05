@@ -1,0 +1,5 @@
+fix(es/minifier): Fix `collapse_vars` (#6235)
+
+**Related issue:**
+
+ - Closes https://github.com/swc-project/swc/issues/6217

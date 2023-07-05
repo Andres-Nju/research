@@ -1,0 +1,7 @@
+storage: fix the apply write wal tracking time (#14444)
+
+ref tikv/tikv#12362
+
+Fix the returned apply write wal tracking time.
+
+Signed-off-by: cfzjywxk <lsswxrxr@163.com>

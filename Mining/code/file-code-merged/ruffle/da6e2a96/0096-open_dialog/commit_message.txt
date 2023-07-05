@@ -1,0 +1,3 @@
+desktop: properly populate base and proxy URL fields from option struct
+
+Fixes #11461

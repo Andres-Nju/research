@@ -1,0 +1,3 @@
+Fix cursor visibility with focus change on macOS
+
+Fixes #6452.

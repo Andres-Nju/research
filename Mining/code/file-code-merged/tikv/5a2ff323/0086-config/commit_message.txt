@@ -1,0 +1,7 @@
+config: fix alias name snap-max-write-bytes-per-sec (#14463)
+
+close tikv/tikv#14455
+
+Signed-off-by: Jay Lee <BusyJayLee@gmail.com>
+
+Co-authored-by: Ti Chi Robot <ti-community-prow-bot@tidb.io>

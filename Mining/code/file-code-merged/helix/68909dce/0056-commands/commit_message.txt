@@ -1,0 +1,2 @@
+Fix append cursor location when selection anchor is at end of document (#4147)
+

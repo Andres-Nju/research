@@ -1,0 +1,8 @@
+stylo: Fix causes of non-determinism in gecko_properties.rs.
+
+We should sort out all the different ways we have to get sides and all those
+nasty loops, eventually...
+
+Bug: 1380327
+Reviewed-By: Manishearth
+MozReview-Commit-ID: 4lAPEGeZaik

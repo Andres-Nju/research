@@ -1,0 +1,11 @@
+fix: Handle signals before crossterm events (#6170)
+
+This is a workaround for a freeze when suspending Helix with C-z on
+non-Windows systems. The check for the keyboard enhancement protocol
+locks up crossterm's internal event reading/polling system by trying to
+set up multiple concurrent readers. `input_stream.next()` sets up one
+reader looking for regular crossterm events while the
+`supports_keyboard_enhancement` query sets up another looking for
+internal events. The latter hangs for two seconds or until the former
+yields an event. By handling signals first we don't lock up the mutex
+by trying to read keyboard events.

@@ -1,0 +1,3 @@
+fix(bench): migrate to v8 from rusty_v8 (#12571)
+
+Fixes #12569

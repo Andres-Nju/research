@@ -1,0 +1,2 @@
+fix(rust, python): rolling_apply window_size == len (#9181)
+

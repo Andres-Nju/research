@@ -1,0 +1,2 @@
+feat(forge): `gas_report` satisfies config values (#2515)
+

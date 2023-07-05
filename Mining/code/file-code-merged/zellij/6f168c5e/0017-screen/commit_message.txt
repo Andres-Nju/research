@@ -1,0 +1,11 @@
+fix(ux): disable move focus when in full screen (#49)
+
+* feat: add rustfmt, update action workflow to check for formatting
+
+* wip: Mosaic reacts to "move focus" commands when one pane is maximized
+
+* feat: move focus is blocked when pane is in full screen
+
+* fix: formatting
+
+Co-authored-by: denis <denis@airheadventures.com>

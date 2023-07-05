@@ -1,0 +1,7 @@
+Servo changes for updated Gecko theme constants in bug 1367577.
+
+This is a little bit odd, because I didn't want to do all the work to
+convert the theme constants to an enum class (although that would be
+nice to do in the future).  So this makes them a regular enum, but still
+uses gecko_constant_prefix rather than gecko_enum_prefix because that
+makes it possible to add the NS_THEME_ prefix that's still present.

@@ -1,0 +1,2 @@
+Fix exit handling (#1696)
+

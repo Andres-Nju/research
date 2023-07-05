@@ -1,0 +1,3 @@
+fix: add io ops to worker to fix fetch (#4054)
+
+

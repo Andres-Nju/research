@@ -1,0 +1,2 @@
+fix(es/minifier): Fix calculation of character frequency (#5772)
+

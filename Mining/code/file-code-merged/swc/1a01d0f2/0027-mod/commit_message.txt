@@ -1,0 +1,4 @@
+fix(es/transform/react): Handle TypeScript declare module (#1875)
+
+swc_ecma_transforms_module:
+ - Handle typescirpt declare module. (#1865)

@@ -1,0 +1,3 @@
+coprocessor: fix bug caused by use box_try instead of try (#2130)
+
+

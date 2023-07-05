@@ -1,0 +1,4 @@
+Parquet statistics: don't panic (#3127)
+
+We can always decide to read the parquet file and
+do more work instead of panicking.

@@ -1,0 +1,2 @@
+fix(rust, python): object filter should keep single chunk (#5913)
+

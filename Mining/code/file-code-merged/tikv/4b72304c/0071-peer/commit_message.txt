@@ -1,0 +1,9 @@
+raftstore: force compact with gentleness (#12006)
+
+* force compact with gentleness
+
+Signed-off-by: tabokie <xy.tao@outlook.com>
+
+* address comment
+
+Signed-off-by: tabokie <xy.tao@outlook.com>

@@ -1,0 +1,2 @@
+fix(rust, python): clipy window_size to length in rolling_apply (#9209)
+

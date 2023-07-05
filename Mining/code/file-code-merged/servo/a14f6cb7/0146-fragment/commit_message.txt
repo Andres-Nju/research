@@ -1,0 +1,1 @@
+Fix wrong calculation of inline element's block size

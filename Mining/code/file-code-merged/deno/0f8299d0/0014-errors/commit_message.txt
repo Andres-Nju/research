@@ -1,0 +1,3 @@
+fix(cli): don't panic when mapping unknown errors (#12659)
+
+Instead fallback to generic "Error" class, fixes #12590, also update WPT expectations

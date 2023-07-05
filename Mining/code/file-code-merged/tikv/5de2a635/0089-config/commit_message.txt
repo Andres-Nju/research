@@ -1,0 +1,3 @@
+Check for 0.0.0.0 over 0. in advertise addr. (#5274)
+
+Signed-off-by: Ana Hobden <operator@hoverbear.org>

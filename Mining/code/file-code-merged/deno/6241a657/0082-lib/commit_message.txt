@@ -1,0 +1,3 @@
+fix(ext/websocket): order of ws writes (#19131)
+
+Fixes https://github.com/denoland/deno/issues/19041

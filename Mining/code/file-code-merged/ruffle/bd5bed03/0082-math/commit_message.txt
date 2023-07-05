@@ -1,0 +1,1 @@
+Get rid of constant from atan2 test and remove now unneeded clippy directives

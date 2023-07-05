@@ -1,0 +1,2 @@
+fix capitalization in DROP MATERIALIZED VIEW response (#15928)
+

@@ -1,0 +1,5 @@
+fix(es/parser): Allow using `package` as a parameter name in interface (#7438)
+
+**Related issue:**
+
+ - Closes #7186.

@@ -1,0 +1,2 @@
+fix(rust, python): fix is_duplicated for utf8 dtype (#6997)
+

@@ -1,0 +1,1 @@
+Use chunk.as_ref() instead of &chunk.into_bytes()

@@ -1,0 +1,2 @@
+macros: fix typo in select macro docs (#3629)
+

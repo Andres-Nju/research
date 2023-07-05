@@ -1,0 +1,2 @@
+Fix picker won't scroll down when it hits the bottom #1544 (#1567)
+

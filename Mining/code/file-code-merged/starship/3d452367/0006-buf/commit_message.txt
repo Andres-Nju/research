@@ -1,0 +1,13 @@
+fix(buf): fix spacing & harmonize docs with actual configuration (#4450)
+
+* fix(buf): add whitespace after version string
+
+* fix: update config schema
+
+* fix: config version and bison emoji
+
+* fix: update documentation format
+
+* fix: dprint
+
+* fix: config schema

@@ -1,0 +1,2 @@
+fix(rust, python): include offset in arr.get (#5193)
+

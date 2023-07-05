@@ -1,0 +1,4 @@
+fix(es/regenerator): Fix for nested try (#2463)
+
+swc_ecma_transforms_compat:
+ - `regenerator`: Use correct order for try locations array.

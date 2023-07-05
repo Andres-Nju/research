@@ -1,0 +1,2 @@
+Fix selection update in viless search
+

@@ -1,0 +1,2 @@
+fix(rust, python): fix lit agg (#7904)
+

@@ -1,0 +1,3 @@
+Fix containing block size for absolute root element
+
+Fixes #16248.

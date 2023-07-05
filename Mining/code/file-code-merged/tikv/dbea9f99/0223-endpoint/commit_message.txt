@@ -1,0 +1,3 @@
+Fix unnecessary print in tests (#3906)
+
+Signed-off-by: Breezewish <breezewish@pingcap.com>

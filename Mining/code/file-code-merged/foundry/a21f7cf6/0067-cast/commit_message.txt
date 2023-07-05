@@ -1,0 +1,9 @@
+fix cast autocompletion (#469)
+
+* fix cast autocompletion
+
+re: https://github.com/clap-rs/clap/pull/3295
+
+* Update cli/src/opts/cast.rs
+
+Co-authored-by: Georgios Konstantopoulos <me@gakonst.com>

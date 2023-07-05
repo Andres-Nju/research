@@ -1,0 +1,7 @@
+trace: Fix subscriber benchmarks panicking (#1028)
+
+This branch fixes the `tokio-trace` Subscriber benchmarks panicking due
+to constructing spans with ID 0. They will now use an arbitrary constant
+instead.
+
+Signed-off-by: Eliza Weisman <eliza@buoyant.io>

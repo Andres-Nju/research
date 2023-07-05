@@ -1,0 +1,2 @@
+fs: fix minor documentation error for MetadataFuture (#698)
+

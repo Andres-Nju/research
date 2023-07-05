@@ -1,0 +1,1 @@
+Fix parent element of pseudo element for updating animation
