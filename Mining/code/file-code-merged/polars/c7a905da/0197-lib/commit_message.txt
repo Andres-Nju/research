@@ -1,2 +1,0 @@
-docs(rust): fix typo in polars-lazy docs (#9354)
-

@@ -1,2 +1,0 @@
-util/transport: Fix typos (#2396)
-

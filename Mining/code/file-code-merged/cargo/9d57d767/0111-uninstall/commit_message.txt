@@ -1,6 +1,0 @@
-Allow `-p` in `uninstall` to accommodate error messages.
-
-The ambiguous spec error tells you to use `-p` which wasn't available for
-this command.
-
-Fixes #5006

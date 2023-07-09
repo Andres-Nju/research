@@ -1,6 +1,6 @@
 import os
 import sys
-vector_file = "vector_test.csv"
+vector_file = "vector.csv"
 
 if __name__ == '__main__':
     code_repo = sys.argv[1]

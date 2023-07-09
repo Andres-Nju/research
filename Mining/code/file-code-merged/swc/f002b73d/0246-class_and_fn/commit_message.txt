@@ -1,4 +1,0 @@
-fix(es/parser): Fix error message (#1551)
-
-swc_ecma_parser:
- - Use correct error code for implements preceding extends.

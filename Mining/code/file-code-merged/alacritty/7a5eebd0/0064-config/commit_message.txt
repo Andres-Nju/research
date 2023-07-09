@@ -1,2 +1,0 @@
-List all valid actions in config error message (#848)
-

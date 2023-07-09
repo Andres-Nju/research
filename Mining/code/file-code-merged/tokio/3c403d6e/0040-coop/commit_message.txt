@@ -1,2 +1,0 @@
-coop: fix typo in `poll_proceed()` doc comment (#5589)
-

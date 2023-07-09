@@ -1,0 +1,16 @@
+Merge #2391
+
+2391: Fix Singlepass issue #2347 r=syrusakbary a=chenyukang
+
+# Description
+Fix Singlepass compiler issue: #2347 
+
+I'm not sure whether the unit test case added to a suitable file. 
+Any better suggestion?
+@syrusakbary 
+
+Edit by @Hywan: Close #2347, close #2159.
+
+
+Co-authored-by: yukang <moorekang@gmail.com>
+Co-authored-by: Yukang <moorekang@gmail.com>

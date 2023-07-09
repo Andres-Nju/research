@@ -1,5 +1,0 @@
-Fix indexed color setting regression
-
-Commit 2920cbe7103f03a45080bfb7610bd7f481f36361 introduced a regression because of a typo in the chunk slice index for the `parse_rgb_color` call.
-
-This fixes this issue by resetting it to the state it was before the faulty commit.

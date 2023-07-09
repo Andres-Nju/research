@@ -1,2 +1,0 @@
-fix: typos in cli and core (#8082)
-

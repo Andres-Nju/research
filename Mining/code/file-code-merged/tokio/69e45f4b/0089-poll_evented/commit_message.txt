@@ -1,3 +1,0 @@
-Fix a typo in tokio_reactor::PollEvented (#250)
-
-`read_readiness` -> `write_readiness` in *write* methods

@@ -1,2 +1,0 @@
-macros: fix typo in doc comment (#5671)
-

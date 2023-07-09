@@ -1,3 +1,0 @@
-macros: improve select! error message (#3352)
-
-Co-authored-by: Alice Ryhl <alice@ryhl.io>

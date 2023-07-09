@@ -1,0 +1,11 @@
+Merge #2653 #2654
+
+2653: Remove unused nightly feature r=ptitSeb a=Amanieu
+
+Our `build.rs` doesn't even generate a `nightly ` cfg flag, so this code is unreachable.
+
+2654: Make git use unix-style line endings on Windows for tests r=ptitSeb a=Amanieu
+
+Fixes #1665
+
+Co-authored-by: Amanieu d'Antras <amanieu@gmail.com>

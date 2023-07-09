@@ -1,3 +1,0 @@
-fix a typo (#4236)
-
-Signed-off-by: zhangjinpeng1987 <zhangjinpeng@pingcap.com>

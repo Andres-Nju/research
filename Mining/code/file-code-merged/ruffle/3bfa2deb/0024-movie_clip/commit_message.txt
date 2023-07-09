@@ -1,2 +1,0 @@
-avm2: Log error message instead of error object
-

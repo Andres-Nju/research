@@ -1,3 +1,0 @@
-coprocessor: fix typo (#4677)
-
-Signed-off-by: Lonng <chris@lonng.org>

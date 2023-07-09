@@ -1,2 +1,0 @@
-endpoint: fix typo (#1072)
-

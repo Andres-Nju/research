@@ -1,3 +1,0 @@
-Merge pull request #15551 from benesch/wonky
-
-adapter: fix wonky error message on `CREATE SUBSOURCE`

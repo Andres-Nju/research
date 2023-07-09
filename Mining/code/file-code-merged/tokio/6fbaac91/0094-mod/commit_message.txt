@@ -1,2 +1,0 @@
-docs: typo fix in runtime doc (#2167)
-

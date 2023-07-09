@@ -1,3 +1,0 @@
-apply.rs: error message word misspell fix (#5272)
-
-Signed-off-by: Guangming Wang <guangming.wang@daocloud.io>

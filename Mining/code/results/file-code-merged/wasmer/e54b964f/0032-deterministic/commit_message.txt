@@ -1,0 +1,7 @@
+Fix fuzz build (#3740)
+
+* Fix fuzz build
+
+* Remove unused import
+
+* Applied cargo fmt

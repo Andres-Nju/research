@@ -1,2 +1,0 @@
-chore: fix phrasing in `cast 4byte` error message (#839)
-

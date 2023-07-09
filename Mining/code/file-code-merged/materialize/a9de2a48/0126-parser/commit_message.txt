@@ -1,3 +1,0 @@
-Merge pull request #15322 from benesch/sql-parser-views
-
-sql-parser: remove VIEWS from error message about mistyped CREATE

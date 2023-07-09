@@ -1,6 +1,0 @@
-Fix PHP version including error messages (#1317)
-
-PHP will output error messages when displaying the version if, for
-example, there is something wrong with the local `php.ini` file. Have
-updated the command used to get the PHP version to only use the default
-PHP config.

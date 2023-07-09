@@ -24,8 +24,8 @@ class WidgetGallery(QDialog):
         self.setLayout(mainLayout)
 
         self.setWindowTitle("Styles")
-        self.setFixedWidth(1200)
-        self.setFixedHeight(500)
+        self.setFixedWidth(2200)
+        self.setFixedHeight(1000)
 
     def read_file(self):
         with open('results/hac.txt') as f:
@@ -50,7 +50,7 @@ class WidgetGallery(QDialog):
                 d, g, e, line = self.pos_map[new_index]
                 self.pos_label.setText("Dist = %d, Group = %d, Entry = %d" % (d, g, e))
                 name, commit = eval(line)
-                path = os.path.join('results', 'File_Code', name, commit)
+                path = os.path.join('results', 'file-code-merged', name, commit)
                 dir_name = os.listdir(path)[0]
                 path = os.path.join(path, dir_name)
                 commit_message_file = os.path.join(path, 'commit_message.txt')

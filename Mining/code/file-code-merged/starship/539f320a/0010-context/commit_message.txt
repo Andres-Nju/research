@@ -1,2 +1,0 @@
-fix: Improve error message when current dir is not found (#773)
-

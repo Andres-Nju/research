@@ -3,10 +3,11 @@ import json
 import sys
 import numpy as np
 import sklearn.cluster as clusters
-import matplotlib
+#import pandas as pd
+#import matplotlib
 #matplotlib.use("webagg")
-import matplotlib.pyplot as plt
-import pandas as pd
+#import matplotlib.pyplot as plt
+#import pandas as pd
 
 commits = []
 commit_hash = {}
@@ -39,6 +40,22 @@ def get_clusters(labels, commits):
             else:
                 res[value].append(commits[index])
     return res
+
+def compress_vectors(vectors, m):
+    # 计算协方差矩阵
+    covariance_matrix = np.cov(vectors.T)
+    
+    # 计算特征值和特征向量
+    eigenvalues, eigenvectors = np.linalg.eig(covariance_matrix)
+    
+    # 选择前m个特征向量
+    top_m_eigenvectors = eigenvectors[:, :m]
+    
+    # 将向量投影到选定的特征向量上
+    compressed_vectors = np.dot(vectors, top_m_eigenvectors)
+    
+    return compressed_vectors
+
 
 if __name__ == '__main__':
     parent_dic = {}
@@ -94,7 +111,22 @@ if __name__ == '__main__':
 
     vecs = vecs.reshape(len(commit_hash), -1)
 
+    with open('output.csv', 'w') as csvfile:
+        writer = csv.writer(csvfile)
+        for i in range(0, len(commit_hash)):
+            writer.writerow([commits[i][0] + '/' + commits[i][1]] + list(vecs[i][:10]))
 
+    '''hac = clusters.AgglomerativeClustering(n_clusters=None, distance_threshold=2)
+    # 模型拟合
+    hac.fit(vecs)
+    cluster_results = get_clusters(hac.labels_, commits)
+    with open ("results/hac.txt", 'a') as f:
+        f.write("dis_thresh = " + str(2) + ":\n")
+        for i in sorted(cluster_results.items(), key=lambda x: len(x[1]), reverse=True):
+            for repo_commit in i[1]:
+                f.write(str(repo_commit))
+                f.write("\n")
+            f.write("-----------------------------------------------------------------------------------------------------------\n")'''
     '''res = []
     for dis in range(2, 20):
         hac = clusters.AgglomerativeClustering(n_clusters=None, distance_threshold=dis)
@@ -141,7 +173,7 @@ if __name__ == '__main__':
 
     # 构建空列表，用于保存不同参数组合下的结果
     # DB-SCAN
-    res = []
+    '''res = []
     # 迭代不同的eps值
     for eps in np.arange(1,11):
         # 迭代不同的min_samples值
@@ -179,7 +211,7 @@ if __name__ == '__main__':
     df = pd.DataFrame(res)
 
     # 根据条件筛选合理的参数组合
-    print(df)
+    print(df)'''
 
 
 

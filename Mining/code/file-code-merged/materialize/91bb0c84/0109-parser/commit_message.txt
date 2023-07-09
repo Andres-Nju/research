@@ -1,2 +1,0 @@
-sql: Fix parser create error message (#15050)
-

@@ -1,9 +1,0 @@
-Auto merge of #11401 - adam248:patch-1, r=ehuss
-
-add newline char to `cargo install .` error message for easier reading.
-
-I just noticed the `cargo install .` error message was not formatted very nicely.
-
-Just added a newline char to make it cleaner.
-
-Thanks

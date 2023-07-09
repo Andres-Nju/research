@@ -1,2 +1,0 @@
-docs(ext/http): fix typo in http/lib.rs (#12466)
-

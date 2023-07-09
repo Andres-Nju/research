@@ -1,0 +1,3 @@
+Merge pull request #2005 from wasmerio/fix/emscripten-exports
+
+Improve WasmerEnv, fix emscripten imports

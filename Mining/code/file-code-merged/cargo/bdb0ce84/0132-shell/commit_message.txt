@@ -1,4 +1,0 @@
-Don't suppress error messages with `-q`
-
-If we're printing an error, make sure we always print it regardless of
-verbosity settings!

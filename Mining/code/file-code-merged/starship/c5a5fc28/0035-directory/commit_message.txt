@@ -1,3 +1,0 @@
-chore(directory): fix typo (#3364)
-
-seperators -> separators

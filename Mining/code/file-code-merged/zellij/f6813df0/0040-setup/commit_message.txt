@@ -1,2 +1,0 @@
-fix(typo): fix setup --check (#869)
-

@@ -1,1 +1,0 @@
-avm2: nit: Add error number in error message for BitmapData.drawWithQuality

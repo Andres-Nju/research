@@ -1,3 +1,0 @@
-engine_traits: fix typo (#6590)
-
-Signed-off-by: Rustin-Liu <rustin.liu@gmail.com>

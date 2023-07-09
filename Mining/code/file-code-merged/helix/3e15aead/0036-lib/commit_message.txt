@@ -1,2 +1,0 @@
-Fix typo on docs (#1201)
-

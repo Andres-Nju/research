@@ -1,3 +1,0 @@
-chore: fix typo in main.rs (#3669)
-
-Intialize -> Initialize

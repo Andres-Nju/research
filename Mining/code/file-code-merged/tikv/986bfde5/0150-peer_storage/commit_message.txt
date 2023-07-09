@@ -1,7 +1,0 @@
-raftstore fix typo (#13681)
-
-close tikv/tikv#13682
-
-Signed-off-by: zhangguangchao <1614439+zgcbj@users.noreply.github.com>
-
-Co-authored-by: Ti Chi Robot <ti-community-prow-bot@tidb.io>

@@ -1,3 +1,0 @@
-Update lib.rs
-
-Fix `for` typo in the documentation, should be `fork` instead.

@@ -1,2 +1,0 @@
-doc(es/parser): Typo (#5136)
-

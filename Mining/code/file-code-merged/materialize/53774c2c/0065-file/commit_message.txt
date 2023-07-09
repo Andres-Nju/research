@@ -1,2 +1,0 @@
-Make "file source: unable to open" error message contain path (#1966)
-

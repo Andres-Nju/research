@@ -1,2 +1,0 @@
-Fix on-hover typo in plot module (#1714)
-

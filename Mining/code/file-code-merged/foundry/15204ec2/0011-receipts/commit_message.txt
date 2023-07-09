@@ -1,2 +1,0 @@
-fix: correct error message in script receipt tracking (#3778)
-

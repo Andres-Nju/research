@@ -1,7 +1,0 @@
-doc: fix typo from "Rust langague" to "Rust language" (#2656)
-
-* doc: fix typo in addr
-
-* doc: fix typo in stream
-
-* doc: fix typo in stream/collect

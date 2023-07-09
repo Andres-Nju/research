@@ -1,0 +1,7 @@
+Merge #2067
+
+2067: Fix nightly-only warning in wasmer-derive r=MarkMcCaskey a=MarkMcCaskey
+
+@nlewycky let me know about this, quick fix to remove the warning
+
+Co-authored-by: Mark McCaskey <mark@wasmer.io>

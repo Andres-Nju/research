@@ -1,2 +1,0 @@
-chore(css/lexer): Fix typo (#6588)
-

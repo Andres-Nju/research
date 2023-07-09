@@ -1,3 +1,0 @@
-Merge pull request #2280 from benesch/index-import-panic
-
-dataflow: improve panic error message when index import is missing

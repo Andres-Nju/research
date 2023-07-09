@@ -1,0 +1,14 @@
+Merge #1602
+
+1602: Fix bug relating to type conversion in function calls r=MarkMcCaskey a=MarkMcCaskey
+
+resolves #1596 
+
+I attempted to use constant expressions so we didn't have to duplicate the macro, but `std::mem::transmute` is a compile error if you attempt to transmute from A to B where size_of(A) != size_of(B), even if it's in a branch like `if false`
+
+# Review
+
+- [x] Add a short description of the the change to the CHANGELOG.md file
+
+
+Co-authored-by: Mark McCaskey <mark@wasmer.io>

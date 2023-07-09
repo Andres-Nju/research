@@ -1,2 +1,0 @@
-fix(plugins): typo that gives plugins the wrong theme (#975)
-

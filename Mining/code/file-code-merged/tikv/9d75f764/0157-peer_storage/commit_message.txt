@@ -1,3 +1,0 @@
-tests: fix 'boostrap' typo (#5260)
-
-Signed-off-by: Brian Anderson <andersrb@gmail.com>

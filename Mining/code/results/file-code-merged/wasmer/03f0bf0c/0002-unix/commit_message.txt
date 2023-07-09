@@ -1,0 +1,1 @@
+change void* to stat* for lstat on linux

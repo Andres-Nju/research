@@ -1,2 +1,0 @@
-Fix typo (pallete -> palette) (#2020)
-

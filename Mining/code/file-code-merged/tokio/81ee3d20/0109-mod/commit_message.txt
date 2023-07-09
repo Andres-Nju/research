@@ -1,2 +1,0 @@
-doc: fix minor doc typo (stray backtick) (#3814)
-

@@ -1,2 +1,0 @@
-util: fix a typo in sync/cancellation_token.rs (#2922)
-

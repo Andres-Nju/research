@@ -1,0 +1,3 @@
+Merge pull request #1335 from Hywan/fix-runtime-c-api-1314
+
+ fix(runtime-c-api) Change mutability of `memory` to`const` in `wasmer_memory_data_length`

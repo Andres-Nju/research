@@ -1,3 +1,0 @@
-Auto merge of #12001 - hi-rustin:rustin-patch-dep-empty, r=weihanglo
-
-Improve error message for empty dep

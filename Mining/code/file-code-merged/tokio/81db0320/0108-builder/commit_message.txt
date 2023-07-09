@@ -1,2 +1,0 @@
-Fix doc typo (#2967)
-

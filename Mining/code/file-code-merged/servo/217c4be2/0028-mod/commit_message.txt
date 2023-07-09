@@ -1,1 +1,0 @@
-style: Fix a typo in Integer struct docs

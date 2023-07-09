@@ -1,3 +1,0 @@
-config: fix a typo (ture -> true) (#6570)
-
-Signed-off-by: kennytm <kennytm@gmail.com>

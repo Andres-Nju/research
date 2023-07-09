@@ -1,0 +1,3 @@
+Merge pull request #3630 from wasmerio/fix_linter
+
+Fix linter

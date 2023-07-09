@@ -1,2 +1,0 @@
-Fix typo in SizeInfo padding_y rustdoc
-

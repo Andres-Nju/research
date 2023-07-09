@@ -1,0 +1,3 @@
+Merge pull request #2076 from Hywan/fix-publish-script
+
+fix(scripts) Fix publish script regarding `wasmer-c-api`

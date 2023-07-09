@@ -1,3 +1,0 @@
-style: Fix a typo that makes us resolve styles for the whole spin to the root.
-
-For undisplayed elements, at least.

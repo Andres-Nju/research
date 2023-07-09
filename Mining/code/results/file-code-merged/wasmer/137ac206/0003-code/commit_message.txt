@@ -1,0 +1,1 @@
+Return compile error (llvm) for setting immutable global

@@ -1,3 +1,0 @@
-Fix typo in docstring (#2643)
-
-Tiny typo fix <3

@@ -1,1 +1,0 @@
-Fix a typo in a comment introduced in #5021

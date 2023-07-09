@@ -1,3 +1,0 @@
-feat(rust, python): clearer error message when creating duration string without integer (#7648)
-
-Co-authored-by: MarcoGorelli <>

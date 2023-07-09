@@ -1,2 +1,0 @@
-Fix typo in query parsing error message (#1856)
-

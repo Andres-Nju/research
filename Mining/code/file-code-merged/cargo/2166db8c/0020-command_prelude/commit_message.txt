@@ -1,1 +1,0 @@
-Add a note to the error message for using --feature / --no-default-features in a virtual workspace

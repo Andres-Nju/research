@@ -1,3 +1,0 @@
-layout: fix typo, and improve pronoun
-
-"it" is ambiguous between `new` and `at` (the most recent noun).

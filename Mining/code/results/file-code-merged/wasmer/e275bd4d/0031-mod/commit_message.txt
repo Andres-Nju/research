@@ -1,0 +1,15 @@
+Merge #2666 #2668
+
+2666: fix(windows) Fix slow memory grow handling (fix #2260) r=ptitSeb a=ptitSeb
+
+# Description
+Fix slowiness on Windows plateforms with "memory grow".
+
+Will fix #2260 and should speedup Windows use in general.
+
+2668: Fix time format spec in debug output r=ptitSeb a=Amanieu
+
+`%Z` is not a valid specifier for the `time` crate, it should be `%z` instead. This was causing panics in debug builds.
+
+Co-authored-by: ptitSeb <sebastien.chev@gmail.com>
+Co-authored-by: Amanieu d'Antras <amanieu@gmail.com>

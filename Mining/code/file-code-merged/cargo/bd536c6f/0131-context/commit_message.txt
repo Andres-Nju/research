@@ -1,7 +1,0 @@
-Fix error message when resolving dependencies
-
-The error message:
-> Attempting to resolve a with more then one crate with the links=
-
-seems to be missing a noun. It appears that we are resolving a
-dependency, so adding that.

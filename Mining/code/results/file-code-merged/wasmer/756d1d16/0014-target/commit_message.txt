@@ -1,0 +1,3 @@
+Merge pull request #2006 from wasmerio/fix/enumset-issue-by-using-fork
+
+Use fork of enumset to fix `syn` issue
