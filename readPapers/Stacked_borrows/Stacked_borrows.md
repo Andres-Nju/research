@@ -134,8 +134,8 @@ fn main () {
 
 - 静态borrow checker需要保证：
 
-  - a reference and all references derived from it can only be used during its lifetime
-  - 被引用的对象直到所有借用的生命周期消亡后才可以被使用
+  - a reference and all references derived from it (reborrow) can only be used during its lifetime
+  - the referent does not get used until the lifetime of the loan has expired.
 
 - 去掉lifetime这个概念，上面的规则可以写成：
 
@@ -181,7 +181,7 @@ $Memory$：$Location$，由$Scalar$和同名指针的$Stack$构成
 
 ##### Rule(NEW-MUTABLE-REF)
 
-每当通过某个现有的指针${\rm Pointer}(l,t)$创建一个新的可变引用时(&mut T)，首先要考虑该指针被使用了，根据Rule(USE-1)进行处理。随后为该引用创建一个unique的标签$t^{'}$，并新建一个指针${\rm Pointer}(l,t^{'})$，再将${\rm Unique}(t)$ push进stack 
+每当通过某个现有的指针${\rm Pointer}(l,t)$创建一个新的可变引用时(&mut T)，首先要考虑该指针被使用了，根据Rule(USE-1)进行处理。随后为该引用创建一个unique的标签$t^{'}$，并新建一个指针${\rm Pointer}(l,t^{'})$，再将${\rm Unique}(t')$ push进stack 
 
 
 
@@ -207,7 +207,7 @@ $Memory$：$Location$，由$Scalar$和同名指针的$Stack$构成
 
 ##### Rule(NEW-MUTABLE-REF)
 
-每当通过一个可变引用(&mut T)创建一个新的裸指针时，该可变引用的值为${\rm Pointer}(l,t)$，首先要考虑该可变引用被使用了，根据Rule(USE-2)进行处理。随后为该裸指针新建一个指针${\rm Pointer}(l,\perp)$，再将$\rm SharedRW$ push进stack 
+每当通过一个可变引用(&mut T)创建一个新的裸指针时，该可变引用的值为 ${\rm Pointer}(l,t)$，首先要考虑该可变引用被使用了，根据Rule(USE-2)进行处理。随后为该裸指针新建一个指针${\rm Pointer}(l,\perp)$，再将$\rm SharedRW$ push进stack 
 
 ![](ref/8.png) 
 
@@ -215,7 +215,7 @@ $Memory$：$Location$，由$Scalar$和同名指针的$Stack$构成
 
 #### 4、再进一步：retag
 
-上面的例子还有个问题：当给example1传如的两个指针都有相同的标签时（unsafe代码里可以随便copy数据，所以能够搞出两个相同标签的可变引用），就无法分辨了。所以对于example1中的两个参数，我们需要他俩有不同的标签，并且都是unique的。——unsafe代码可以复制标签，但是没法伪造一个出来。
+上面的例子还有个问题：当给example1传如的两个指针都有相同的标签时（unsafe代码里可以随便copy数据，所以能够搞出两个相同标签的指针），就无法分辨了。所以对于example1中的两个参数，我们需要他俩有不同的标签，并且都是unique的（在前面的例子中做到了这点，其根本目的也是让两个原本同名的裸指针以独占引用形式呈现时能够变成两个不同的tagged pointer）。——unsafe代码可以复制标签，但是没法伪造一个出来。
 
 所以，添加一个$retag$指令，用于保证一个引用有一个全新的标签，这条指令将应用于函数开始执行时，对所有的引用类型参数进行retag
 
@@ -252,3 +252,34 @@ todo：上述代码的推导过程
 
 
 #### 再加上不可变引用shared references
+
+前面的所有操作已经帮助我们**保证了**所有的**可变引用**的uniqueness，接下来还要加入对不可变引用的分析。
+
+borrow checker对可变/不可变引用的约束：
+
+- 任何reference在被创建之后，其使用、以及所有它的reborrow的使用，都只能出现在referent的下一次改动之前
+
+![13](ref/13.png)
+
+在stack的模型中再添加一种item：shared read-only (t)，表示tag为t的引用只被允许用于read对应的内存；同时给之前对应裸指针的SharedRW，即shared read-write也添加一个tag，这样所有的item都有一个自己的tag。
+
+![12](/ref/12.png)
+
+对于之前push一个SharedRW的操作，也改为push一个SharedRW($\perp$)，其他新的规则：
+
+##### Rule(READ-1)
+
+当一个${\rm Pointer}(l,t)$被read时，在stack中必须找到一个tag为t的item，即${\rm Unique}(t), {\rm SharedRO}(t)$或${\rm SharedRW}(t)$的其中之一。如果找到了一个这样的item，不停pop直到**栈中每一个在其上面的item都是SharedRO(_)**；如果没找到，那么程序就是有未定义行为
+
+##### Rule(NEW-SHARED-REF-1)
+
+每当通过某个现有的指针${\rm Pointer}(l,t)$创建一个新的不可变引用时(&Expr)，首先要考虑该指针被read了，根据Rule(READ-1)进行处理。随后为该引用创建一个unique的标签$t^{'}$，并新建一个指针${\rm Pointer}(l,t^{'})$，再将${\rm SharedRO}(t')$ push进stack 
+
+注意，这里的READ-1规则并没有要求**栈顶是SharedRO**，而是允许其上方存在一些别的SharedRO。这也保证了**所有的SharedRO都只连续地存在于栈顶**。因为每次创建可变引用或裸指针时都会触发一次写的操作，会use到某个指针，从而保证了栈顶的所有SharedRO都被pop掉，只剩SharedRW或Unique
+
+根据上述规则，前面的例子将变成：
+
+![14](ref/14.png)
+
+![15](ref/15.png)
+
