@@ -175,54 +175,77 @@ Terminator := Goto(BB) | Panic(BB)
   
   - use-after-free
   - double-free
-  - Invalid memory access (use or drop directly)
+  - Invalid memory access (use or drop directly) 
+  
+- Research Challenge
+  
+  - Dynamic analysis
+    - It is not easy to set up certain conditions to trigger buggy scenarios.
+  
+    - e.g., fuzzing can hardly generate test cases to cover all the panic unwinding paths.
+  
+    - There are also difficult memory modeling issues for path constraint extraction.
+  
+  - Static analysis
+    - alias relationship involves
+      - move
+  
+      - mutable borrow
+  
+      - immutable borrow
+  
+      - dereference
+  
+    - Only **Drop variable** will be automatically deallocated (traits of compound types can be derived from its subtypes) —— need to infer the traits of each type.
+  
+    - NP-hard alias analysis —— sacrifice precision —— false positive
   
 - Approach detecting invalid memory deallocation problems
-  
+
   - **path-sensitive data-flow analysis**
-  
+
     - input: MIR of functions 
-  
+
     - output: warnings of potential invalid memory deallocation issues along with corresponding buggy code snippets. 
-  
+
     - key steps
-  
+
       - path extraction
       - alias analysis
       - invalid drop detection
-  
+
     - **Path extraction**
-  
+
       - Meet-over-paths: traverse CFG of a function and enumerate all **valuable** paths 
-  
+
         - What paths are "valuable"?
           1. a unique set of code blocks with an entrance and an exit
           2. should not be the subset of another valuable path (select the bigger set) —— avoid traversing cycled blocks repeatedly, just consider the maximum set of blocks
-  
+
       - a modified tarjan algorithm to remove redundant paths
-  
+
         - decompose strongly connected components (SCC) of the graph and removes the cycle succinctly --> a DAG
-  
+
         - generate a spanning tree
-  
+
         - enumerate all the valuable paths (ideally)
-  
+
         - above uses the traditional Tarjan Algorithm, but less accurate for some particular statements
-  
+
           Exception example (enumertation) : need to prune unreachable paths and construct independent paths for different variants 
-  
+
     - **Alias Analysis** (inter-procedure)
-  
+
       - perform for each path and establish the alias sets for each program point 
       - Basic rules:
         - not all alias are critical, i.e. we only focus on Drop-trait variables (skip copy-trait [stack-only] variables as well as composite types whose components are all filtered out recursively and are copy-trait)
         - summerize 5 kinds of statements that contribute to alias relationships for Lvalue and Rvalue (use the structure of union-find disjoint set).
-  
+
       - Inter-procedural alias annalysis
         - For function calls, i.e. involving parameters and return value
-  
+
     - **Invalid drop detection**
-  
+
       - based on alias sets obtained in the alias analysis; once detect a memory deallocation bug, record it with related code and then merge the result at the end of this path
       - maintain a taint set to record the deallocated buffers as well as returned dangling pointers; add the dropping variable into the taint set and marks it as the taint source when finding Drop() in the terminator, and the taint source propagates in the alias set and pollutes other aliases (add uninitialized variables as well when declaring, and remove them once they are initialized)
       - 4 rules
@@ -230,7 +253,7 @@ Terminator := Goto(BB) | Panic(BB)
         - Double-free: the taint set contains the alias of variable in the drop() terminator
         - Invalid memory access: the taint set contains an uninitialized variable in a statement or drop()
         - Dangling-pointer: the taint set contains the returned pointer
-  
+
 - Evaluation
 
   - implementation
